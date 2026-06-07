@@ -162,10 +162,15 @@
   #booking p{color:rgba(255,255,255,.9);font-size:1.15rem;font-weight:300;margin-bottom:40px}
   .book-card{margin-top:46px;background:#fff;color:var(--ink);border-radius:14px;padding:40px;text-align:left}
   .book-card .pill-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:26px}
-  .book-opt{flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:22px}
-  .book-opt h4{font-size:1.3rem}
-  .book-opt .price{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep);margin-top:6px}
-  .book-opt p{font-size:.92rem;color:var(--muted);margin-top:10px;margin-bottom:0}
+  .book-opt{flex:1;min-width:220px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;padding:26px 24px;transition:border-color .35s,box-shadow .35s,transform .35s}
+  .book-opt:hover{border-color:var(--accent);box-shadow:0 18px 40px rgba(20,22,28,.10);transform:translateY(-4px)}
+  .book-opt-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .book-opt h4{font-size:1.24rem}
+  .book-opt .price{font-family:var(--mono);font-size:.92rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep);white-space:nowrap}
+  #booking .book-opt p{font-size:.94rem;color:var(--muted);margin-top:16px;margin-bottom:0}
+  .book-opt .opt-list{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
+  .book-opt .opt-list li{font-family:var(--mono);font-size:.71rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-deep);display:flex;gap:9px;line-height:1.45}
+  .book-opt .opt-list li::before{content:"—";color:var(--muted);flex:none}
   .embed-note{font-family:var(--mono);font-size:.7rem;color:var(--muted);background:var(--tint);border:1px dashed var(--accent);border-radius:8px;padding:14px 16px;margin-top:8px}
 
   /* FOOTER */
