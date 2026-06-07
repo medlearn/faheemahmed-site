@@ -168,9 +168,10 @@
   .book-opt h4{font-size:1.24rem}
   .book-opt .price{font-family:var(--mono);font-size:.92rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep);white-space:nowrap}
   #booking .book-opt p{font-size:.94rem;color:var(--muted);margin-top:16px;margin-bottom:0}
-  .book-opt .opt-list{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
+  .book-opt .opt-list{list-style:none;margin-top:18px;margin-bottom:24px;display:flex;flex-direction:column;gap:10px}
   .book-opt .opt-list li{font-family:var(--mono);font-size:.71rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-deep);display:flex;gap:9px;line-height:1.45}
   .book-opt .opt-list li::before{content:"—";color:var(--muted);flex:none}
+  .book-opt .book-btn{margin-top:auto;width:100%;text-align:center}
   .embed-note{font-family:var(--mono);font-size:.7rem;color:var(--muted);background:var(--tint);border:1px dashed var(--accent);border-radius:8px;padding:14px 16px;margin-top:8px}
 
   /* FOOTER */
