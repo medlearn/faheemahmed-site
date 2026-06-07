@@ -16,8 +16,10 @@
     --mono:"IBM Plex Mono", monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--body);background:var(--white);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+  body{font-family:var(--body);background:var(--white);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+  body.menu-open{overflow:hidden}
+  img{max-width:100%}
   .kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:500}
   h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.05;letter-spacing:-.01em;color:var(--ink)}
   a{color:inherit;text-decoration:none}
@@ -38,8 +40,14 @@
   .btn:hover{transform:translateY(-2px);background:var(--accent-deep)}
   .btn.outline{background:transparent;border:1.5px solid var(--accent-deep);color:var(--accent-deep)}
   .btn.outline:hover{background:var(--accent-deep);color:#fff;transform:translateY(-2px)}
-  .menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
-  .menu-toggle span{width:26px;height:2px;background:var(--ink);display:block;transition:.3s}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px;margin:-8px}
+  .menu-toggle span{width:26px;height:2px;background:var(--ink);display:block;transition:transform .3s,opacity .3s}
+  .menu-toggle.open span{background:#fff}
+  .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-toggle.open span:nth-child(2){opacity:0}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-backdrop{position:fixed;inset:0;background:rgba(20,22,28,.5);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;z-index:85}
+  .nav-backdrop.open{opacity:1;visibility:visible}
 
   /* HERO */
   header{background:var(--white);color:var(--ink);position:relative;overflow:hidden;padding:200px 0 80px}
@@ -171,16 +179,52 @@
 
   @media(max-width:900px){
     .hero-grid,.about-grid{grid-template-columns:1fr;gap:48px}
-    .portrait{max-width:340px}
+    .portrait{width:100%;max-width:340px;margin:0 auto}
     .pillars,.video-grid,.book-grid{grid-template-columns:1fr}
     .auth-grid{grid-template-columns:1fr 1fr;gap:26px}
     .foot-grid{grid-template-columns:1fr;gap:34px}
     .post,.paper{grid-template-columns:1fr;gap:8px}
     .post .arrow{display:none}
-    .navlinks{position:fixed;inset:0 0 0 auto;width:76%;max-width:340px;background:var(--block);flex-direction:column;justify-content:center;align-items:flex-start;padding:40px;gap:24px;transform:translateX(100%);transition:transform .4s;z-index:90}
+    .navlinks{position:fixed;inset:0 0 0 auto;width:78%;max-width:340px;background:var(--block);flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;padding:40px max(40px,env(safe-area-inset-right)) max(40px,env(safe-area-inset-bottom)) 40px;overflow-y:auto;transform:translateX(100%);transition:transform .4s;z-index:90}
     .navlinks.open{transform:none}
-    .navlinks a{color:#fff;font-size:1.1rem}
+    .navlinks a{color:#fff;font-size:1.15rem;padding:10px 0;width:100%}
+    .navlinks a.btn{margin-top:10px;padding:14px 24px;width:auto}
     .menu-toggle{display:flex;z-index:95}
     header{padding:150px 0 60px}
     section{padding:80px 0}
+  }
+
+  /* SMALL PHONES */
+  @media(max-width:600px){
+    .wrap{padding:0 20px}
+    nav{padding:16px max(20px,env(safe-area-inset-right)) 16px max(20px,env(safe-area-inset-left))}
+    nav.scrolled{padding-top:12px;padding-bottom:12px}
+    .brand{font-size:1.12rem}
+    .brand .tag{display:none}
+    header{padding:124px 0 50px}
+    .hero h1{font-size:clamp(2.5rem,9vw,3.4rem)}
+    .hero .lede{font-size:1.06rem;margin:24px 0 32px}
+    .hero-cta{gap:12px}
+    .hero-cta .btn{flex:1 1 auto;text-align:center;padding:14px 20px}
+    .portrait{max-width:300px}
+    section{padding:64px 0}
+    .sec-head{margin-bottom:38px}
+    .sec-head h2{font-size:clamp(2rem,7.5vw,2.6rem)}
+    .auth-grid{gap:22px 18px;padding:36px 0}
+    .auth-item .n{font-size:1.9rem}
+    .pillar{padding:28px 22px}
+    .fields{margin-top:38px}
+    .cred{flex-direction:column;gap:4px;align-items:flex-start}
+    .cred .rhs{text-align:left;align-self:flex-start}
+    .book-card{padding:24px}
+    .book-opt{min-width:100%}
+    footer{padding:64px 0 32px}
+    footer h3{font-size:1.7rem}
+    .foot-bottom{font-size:.66rem}
+  }
+
+  /* RESPECT REDUCED-MOTION PREFERENCE */
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
   }
