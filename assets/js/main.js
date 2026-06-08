@@ -48,3 +48,9 @@ const nav=document.getElementById('nav');
     card.addEventListener('click',playTT);
     card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();playTT();}});
   });
+  // "Read the article" links on video cards navigate without triggering play
+  document.querySelectorAll('.tkcard .tkread').forEach(a=>{
+    const stop=e=>e.stopPropagation();
+    a.addEventListener('click',stop);
+    a.addEventListener('keydown',stop);
+  });
