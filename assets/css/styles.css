@@ -147,7 +147,8 @@
   .tiktok-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:16px}
   .tkcard{position:relative;aspect-ratio:9/16;border-radius:12px;overflow:hidden;cursor:pointer;background:linear-gradient(160deg,var(--soft),var(--block));border:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end;transition:transform .4s,box-shadow .4s}
   .tkcard:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(20,22,28,.18)}
-  .tkcard::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,22,28,.06),rgba(20,22,28,.62));z-index:1}
+  .tkcard .tkthumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+  .tkcard::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,22,28,.42),rgba(20,22,28,.10) 32%,rgba(20,22,28,.68));z-index:1}
   .tkcard .glyph{position:absolute;top:13px;left:14px;z-index:2;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.92}
   .tkcard .tkplay{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.94);z-index:2;display:flex;align-items:center;justify-content:center;transition:transform .3s}
   .tkcard:hover .tkplay{transform:translate(-50%,-50%) scale(1.1)}
