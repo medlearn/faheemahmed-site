@@ -38,7 +38,7 @@ const nav=document.getElementById('nav');
       if(card.querySelector('iframe'))return;
       const id=card.getAttribute('data-tt');
       const f=document.createElement('iframe');
-      f.src='https://www.tiktok.com/embed/v2/'+id;
+      f.src='https://www.tiktok.com/player/v1/'+id+'?rel=0&autoplay=1&controls=1&description=0&music_info=0';
       f.title=card.getAttribute('aria-label')||'TikTok video';
       f.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';
       f.allowFullscreen=true;
