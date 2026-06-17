@@ -45,7 +45,7 @@ cp .env.example .env       # then fill in the real values
 ```bash
 # one-time
 npm i -g netlify-cli
-npm --prefix netlify/functions install
+npm install            # installs function deps (stripe, supabase-js) from the root package.json
 
 # terminal A
 netlify dev                # serves the site + functions on http://localhost:8888
