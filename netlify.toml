@@ -2,6 +2,16 @@
   publish = "."
   command = ""
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Friendly short paths → the functions.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
