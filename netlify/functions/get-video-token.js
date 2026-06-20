@@ -76,8 +76,8 @@ exports.handler = async (event) => {
     .digest("hex");
 
   const embedUrl =
-    `https://iframe.mediadelivery.net/embed/${libraryId}/${bunnyId}` +
-    `?token=${token}&expires=${expires}&autoplay=true&preload=true`;
+    `https://player.mediadelivery.net/embed/${libraryId}/${bunnyId}` +
+    `?token=${token}&expires=${expires}&autoplay=true&preload=true&responsive=true`;
 
   // Optional: a directly-playable HLS URL via the CDN pull zone, using
   // path-based CDN token authentication. Handy if you swap the iframe for
