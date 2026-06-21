@@ -26,6 +26,7 @@ create table if not exists public.videos (
   thumb_g2         text,                     -- gradient end   (optional)
   published        boolean not null default false,
   coming_soon      boolean not null default true,   -- true = teaser, shows "Coming soon" (not buyable)
+  category         text,                             -- 'clinical' | 'business' | 'mentoring'
   sort_order       integer default 0,
   created_at       timestamptz default now()
 );

@@ -93,7 +93,7 @@
   async function loadData() {
     var vids = await sb
       .from("videos")
-      .select("id,title,blurb,price_pence,currency,duration_seconds,thumbnail_url,thumb_g1,thumb_g2,sort_order,coming_soon")
+      .select("id,title,blurb,price_pence,currency,duration_seconds,thumbnail_url,thumb_g1,thumb_g2,sort_order,coming_soon,category")
       .eq("published", true)
       .order("sort_order", { ascending: true })
       .order("created_at", { ascending: true });
@@ -342,7 +342,22 @@
         "<p>Buy a video and it'll appear here the moment you do.</p>" +
         '<button class="fa-buy" style="margin-top:18px" id="browseBtn">Browse videos</button></div>';
     } else {
-      grid = '<div class="fa-grid">' + visible.map(renderCard).join("") + "</div>";
+      // Group into category sections (Clinical → Business → Mentoring → More).
+      var CATS = [["clinical", "Clinical"], ["business", "Business"], ["mentoring", "Mentoring"]];
+      var used = {};
+      grid = "";
+      CATS.forEach(function (c) {
+        var items = visible.filter(function (v) { return (v.category || "") === c[0]; });
+        if (!items.length) return;
+        items.forEach(function (v) { used[v.id] = true; });
+        grid += '<section class="fa-cat"><h3 class="fa-cat-title">' + c[1] + "</h3>" +
+          '<div class="fa-grid">' + items.map(renderCard).join("") + "</div></section>";
+      });
+      var other = visible.filter(function (v) { return !used[v.id]; });
+      if (other.length) {
+        grid += '<section class="fa-cat"><h3 class="fa-cat-title">More</h3>' +
+          '<div class="fa-grid">' + other.map(renderCard).join("") + "</div></section>";
+      }
     }
 
     var userbox = loggedIn
