@@ -377,9 +377,10 @@
       : "";
 
     return (
-      '<header class="fa-bar"><div class="mark">' +
+      '<header class="fa-bar">' +
+      '<a class="mark" href="/" title="Back to faheemahmed.co.uk" style="text-decoration:none;color:inherit">' +
       '<span class="fa-eyebrow">Video library</span>' +
-      '<span class="name">Faheem Ahmed</span></div>' +
+      '<span class="name">Faheem Ahmed</span></a>' +
       '<div class="fa-userbox">' + userbox + "</div></header>" +
       '<main class="fa-main"><div class="fa-lib-head"><div>' +
       "<h2>" + headTitle + "</h2>" +

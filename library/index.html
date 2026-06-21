@@ -18,6 +18,16 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+:root {
+  --ink: #15211C; --paper: #EAEEE8; --card: #FFFFFF;
+  --green: #1F6B4F; --green-deep: #164E39; --green-soft: #E3EDE6;
+  --brass: #A67C2E; --brass-soft: #F4ECD9; --muted: #5E6862; --line: #D8DED5;
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Hanken Grotesk', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+body { background: var(--paper); }
+
 .fa-root {
   --ink: #15211C;
   --paper: #EAEEE8;
@@ -227,6 +237,27 @@
 .fa-toast .ok { color: #7BD3A6; flex-shrink: 0; }
 .fa-toast.err { background: #6E2230; }
 
+/* ── footer ── */
+.fa-foot { border-top: 1px solid var(--line); background: var(--card); }
+.fa-foot-inner {
+  max-width: 1120px; margin: 0 auto; padding: 40px 28px 26px;
+  display: flex; flex-wrap: wrap; gap: 26px 40px; justify-content: space-between; align-items: flex-start;
+  font-family: var(--sans);
+}
+.fa-foot-brand .fa-eyebrow { color: var(--green); }
+.fa-foot-brand .nm { font-family: var(--display); font-size: 19px; font-weight: 600; display: block; margin: 4px 0 8px; color: var(--ink); }
+.fa-foot-brand p { color: var(--muted); font-size: 13.5px; line-height: 1.5; max-width: 320px; }
+.fa-foot-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.fa-foot-links a { color: var(--ink); font-size: 14px; font-weight: 500; text-decoration: none; }
+.fa-foot-links a:hover { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+.fa-foot-links a.home { color: var(--green); font-weight: 600; }
+.fa-foot-bottom {
+  max-width: 1120px; margin: 0 auto; padding: 16px 28px 36px;
+  display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  border-top: 1px solid var(--line); color: var(--muted);
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fa-root * { animation: none !important; transition: none !important; }
 }
@@ -239,6 +270,28 @@
 </head>
 <body>
   <div id="root" class="fa-root" aria-busy="true"></div>
+
+  <footer class="fa-foot">
+    <div class="fa-foot-inner">
+      <div class="fa-foot-brand">
+        <span class="fa-eyebrow">Video library</span>
+        <span class="nm">Faheem Ahmed</span>
+        <p>Clinical, business and mentoring training — buy individual videos, yours to keep.</p>
+      </div>
+      <nav class="fa-foot-links" aria-label="Footer">
+        <a class="home" href="/">← Back to faheemahmed.co.uk</a>
+        <a href="/#services">Services</a>
+        <a href="/#writing">Writing</a>
+        <a href="/#videos">Videos</a>
+        <a href="/#booking">Book a session</a>
+        <a href="mailto:hello@faheemahmed.co.uk">Contact</a>
+      </nav>
+    </div>
+    <div class="fa-foot-bottom">
+      <span>© 2026 Faheem Ahmed</span>
+      <span>faheemahmed.co.uk</span>
+    </div>
+  </footer>
 
   <!-- Supabase JS (UMD global: window.supabase) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
