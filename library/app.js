@@ -93,7 +93,7 @@
   async function loadData() {
     var vids = await sb
       .from("videos")
-      .select("id,title,blurb,price_pence,currency,duration_seconds,thumbnail_url,thumb_g1,thumb_g2,sort_order")
+      .select("id,title,blurb,price_pence,currency,duration_seconds,thumbnail_url,thumb_g1,thumb_g2,sort_order,coming_soon")
       .eq("published", true)
       .order("sort_order", { ascending: true })
       .order("created_at", { ascending: true });
@@ -168,14 +168,20 @@
     state.user = null;
     state.email = "";
     state.code = "";
-    state.videos = [];
-    state.owned = {};
-    set({ stage: "login" });
+    state.filter = "all";
+    // Back to the public catalogue, not a login wall.
+    await enterApp();
   }
 
   // ── buy / watch ──────────────────────────────────────────
   async function buy(videoId) {
     if (state.buying) return;
+    if (!state.user) {
+      // Not signed in — send them to sign in first, then they can buy.
+      set({ stage: "login", authError: "" });
+      showToast("Sign in to buy this video.");
+      return;
+    }
     set({ buying: videoId });
     try {
       var headers = Object.assign({ "Content-Type": "application/json" }, await authHeader());
@@ -274,6 +280,7 @@
         (state.sending ? '<span class="fa-spin"></span> Sending…' : "Email me a code") +
         "</button>" +
         '<p class="fa-err">' + esc(state.authError) + "</p>" +
+        '<button class="fa-link" id="backToLib">← Back to the library</button>' +
         "</div></div>"
       );
     }
@@ -300,6 +307,8 @@
       email.addEventListener("input", function (e) { state.email = e.target.value; });
       email.addEventListener("keydown", function (e) { if (e.key === "Enter") sendCode(); });
       document.getElementById("sendBtn").addEventListener("click", sendCode);
+      var back = document.getElementById("backToLib");
+      if (back) back.addEventListener("click", function () { set({ stage: "app", authError: "" }); });
       email.focus();
     } else {
       var code = document.getElementById("code");
@@ -317,6 +326,7 @@
   }
 
   function renderApp() {
+    var loggedIn = !!state.user;
     var ownedCount = Object.keys(state.owned).length;
     var visible = state.filter === "owned"
       ? state.videos.filter(function (v) { return state.owned[v.id]; })
@@ -325,30 +335,42 @@
     var grid;
     if (state.videos.length === 0) {
       grid =
-        '<div class="fa-empty"><h3>No videos yet</h3><p>Check back soon — published videos will appear here.</p></div>';
+        '<div class="fa-empty"><h3>Coming soon</h3><p>New videos are on the way — check back shortly.</p></div>';
     } else if (visible.length === 0) {
       grid =
         '<div class="fa-empty"><h3>Nothing in your library yet</h3>' +
-        "<p>Pick a video to get started — it'll appear here the moment you buy it.</p>" +
+        "<p>Buy a video and it'll appear here the moment you do.</p>" +
         '<button class="fa-buy" style="margin-top:18px" id="browseBtn">Browse videos</button></div>';
     } else {
       grid = '<div class="fa-grid">' + visible.map(renderCard).join("") + "</div>";
     }
 
+    var userbox = loggedIn
+      ? '<span class="who">' + esc(state.user.email || "") + "</span>" +
+        '<button class="fa-logout" id="logoutBtn">Log out</button>'
+      : '<button class="fa-logout" id="signinBtn">Sign in</button>';
+
+    var headTitle = loggedIn ? "Your library" : "Video library";
+    var headCount = loggedIn
+      ? ownedCount + " " + (ownedCount === 1 ? "video" : "videos") + " owned · " + state.videos.length + " available"
+      : state.videos.length + " " + (state.videos.length === 1 ? "video" : "videos") + " · sign in to access yours";
+
+    var filterHtml = loggedIn
+      ? '<div class="fa-filter">' +
+        '<button class="' + (state.filter === "all" ? "on" : "") + '" data-filter="all">All videos</button>' +
+        '<button class="' + (state.filter === "owned" ? "on" : "") + '" data-filter="owned">Owned</button></div>'
+      : "";
+
     return (
       '<header class="fa-bar"><div class="mark">' +
       '<span class="fa-eyebrow">Video library</span>' +
       '<span class="name">Faheem Ahmed</span></div>' +
-      '<div class="fa-userbox"><span class="who">' + esc(state.user && state.user.email ? state.user.email : "") + "</span>" +
-      '<button class="fa-logout" id="logoutBtn">Log out</button></div></header>' +
+      '<div class="fa-userbox">' + userbox + "</div></header>" +
       '<main class="fa-main"><div class="fa-lib-head"><div>' +
-      "<h2>Your library</h2>" +
-      '<div class="count">' + ownedCount + " " + (ownedCount === 1 ? "video" : "videos") +
-      " owned · " + state.videos.length + " available</div></div>" +
-      '<div class="fa-filter">' +
-      '<button class="' + (state.filter === "all" ? "on" : "") + '" data-filter="all">All videos</button>' +
-      '<button class="' + (state.filter === "owned" ? "on" : "") + '" data-filter="owned">Owned</button>' +
-      "</div></div>" + grid + "</main>" +
+      "<h2>" + headTitle + "</h2>" +
+      '<div class="count">' + headCount + "</div></div>" +
+      filterHtml +
+      "</div>" + grid + "</main>" +
       (state.playing ? renderPlayer() : "") +
       (state.toast ? renderToast() : "")
     );
@@ -356,30 +378,46 @@
 
   function renderCard(v) {
     var isOwned = !!state.owned[v.id];
+    var soon = !isOwned && !!v.coming_soon;
     var mins = minutesOf(v);
     var buying = state.buying === v.id;
     var loading = state.loadingVideo === v.id;
+
+    var seal = "";
+    if (isOwned) {
+      seal = '<span class="fa-seal"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19l11-11-1.5-1.5z"/></svg>In your library</span>';
+    } else if (soon) {
+      seal = '<span class="fa-seal" style="color:#fff;background:rgba(0,0,0,0.42);border-color:rgba(255,255,255,0.28)">Coming soon</span>';
+    }
+
+    var foot;
+    if (isOwned) {
+      foot =
+        '<span class="fa-price" style="color:var(--brass)">Owned</span>' +
+        '<button class="fa-watch" data-watch="' + esc(v.id) + '"' + (loading ? " disabled" : "") + ">" +
+        (loading ? '<span class="fa-spin"></span> Loading…' : playSvg(14, "#fff") + " Watch") + "</button>";
+    } else if (soon) {
+      foot =
+        '<span class="fa-price" style="color:var(--muted)">' + priceLabel(v.price_pence) + "</span>" +
+        '<span style="font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--muted);background:var(--paper);padding:9px 16px;border-radius:999px;border:1px solid var(--line)">Coming soon</span>';
+    } else {
+      foot =
+        '<span class="fa-price">' + priceLabel(v.price_pence) + "</span>" +
+        '<button class="fa-buy" data-buy="' + esc(v.id) + '"' + (buying ? " disabled" : "") + ">" +
+        (buying ? '<span class="fa-spin"></span> Starting…' : "Buy " + priceLabel(v.price_pence)) + "</button>";
+    }
+
     return (
       '<article class="fa-card' + (isOwned ? " owned" : "") + '">' +
       '<div class="fa-thumb" style="' + thumbStyle(v) + (isOwned ? "cursor:pointer" : "") + '" ' +
       (isOwned ? 'data-watch="' + esc(v.id) + '"' : "") + ">" +
-      (isOwned
-        ? '<span class="fa-seal"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19l11-11-1.5-1.5z"/></svg>In your library</span>'
-        : "") +
+      seal +
       '<span class="play">' + PLAY_SVG + "</span>" +
       (mins ? '<span class="fa-dur">' + mins + " min</span>" : "") +
       "</div>" +
       '<div class="fa-card-body"><h3>' + esc(v.title) + "</h3>" +
       '<p class="blurb">' + esc(v.blurb) + "</p>" +
-      '<div class="fa-card-foot">' +
-      (isOwned
-        ? '<span class="fa-price" style="color:var(--brass)">Owned</span>' +
-          '<button class="fa-watch" data-watch="' + esc(v.id) + '"' + (loading ? " disabled" : "") + ">" +
-          (loading ? '<span class="fa-spin"></span> Loading…' : playSvg(14, "#fff") + " Watch") + "</button>"
-        : '<span class="fa-price">' + priceLabel(v.price_pence) + "</span>" +
-          '<button class="fa-buy" data-buy="' + esc(v.id) + '"' + (buying ? " disabled" : "") + ">" +
-          (buying ? '<span class="fa-spin"></span> Starting…' : "Buy " + priceLabel(v.price_pence)) + "</button>") +
-      "</div></div></article>"
+      '<div class="fa-card-foot">' + foot + "</div></div></article>"
     );
   }
 
@@ -411,6 +449,8 @@
   function bindApp() {
     var logoutBtn = document.getElementById("logoutBtn");
     if (logoutBtn) logoutBtn.addEventListener("click", logout);
+    var signinBtn = document.getElementById("signinBtn");
+    if (signinBtn) signinBtn.addEventListener("click", function () { set({ stage: "login", authError: "" }); });
 
     Array.prototype.forEach.call(document.querySelectorAll("[data-filter]"), function (b) {
       b.addEventListener("click", function () { set({ filter: b.getAttribute("data-filter") }); });
@@ -453,9 +493,8 @@
     if (session && session.user) {
       state.user = session.user;
       state.email = session.user.email || "";
-      await enterApp();
-    } else {
-      set({ stage: "login" });
     }
+    // Everyone lands on the catalogue — logged out users browse, sign in to buy.
+    await enterApp();
   })();
 })();

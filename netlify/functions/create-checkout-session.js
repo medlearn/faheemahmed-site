@@ -33,12 +33,15 @@ exports.handler = async (event) => {
   // 3. Look the price up SERVER-SIDE from the DB. Only published videos.
   const { data: video, error: vErr } = await supa
     .from("videos")
-    .select("id, title, blurb, price_pence, currency, published")
+    .select("id, title, blurb, price_pence, currency, published, coming_soon")
     .eq("id", videoId)
     .eq("published", true)
     .single();
 
   if (vErr || !video) return json(404, { error: "Video not found" });
+
+  // Coming-soon videos can't be bought — even if a client forges the request.
+  if (video.coming_soon) return json(400, { error: "Not available yet" });
 
   // 4. Already owned? Don't let them pay twice.
   const { data: existing } = await supa
