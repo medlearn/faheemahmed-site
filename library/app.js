@@ -427,7 +427,7 @@
       '<div class="fa-thumb" style="' + thumbStyle(v) + (isOwned ? "cursor:pointer" : "") + '" ' +
       (isOwned ? 'data-watch="' + esc(v.id) + '"' : "") + ">" +
       seal +
-      '<span class="play">' + PLAY_SVG + "</span>" +
+      (soon ? "" : '<span class="play">' + PLAY_SVG + "</span>") +
       (mins ? '<span class="fa-dur">' + mins + " min</span>" : "") +
       "</div>" +
       '<div class="fa-card-body"><h3>' + esc(v.title) + "</h3>" +
