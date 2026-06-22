@@ -74,5 +74,45 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: "DB error" };
   }
 
+  // Notify Faheem by email (best-effort — never fails the webhook).
+  try {
+    await notifyPurchase(supa, session, videoId);
+  } catch (e) {
+    console.error("Purchase notification failed:", e.message);
+  }
+
   return { statusCode: 200, body: "ok" };
 };
+
+// Email Faheem on each sale via Resend's API. No-op if RESEND_API_KEY unset.
+async function notifyPurchase(supa, session, videoId) {
+  const key = process.env.RESEND_API_KEY;
+  const to = process.env.NOTIFY_EMAIL || "hello@faheemahmed.co.uk";
+  if (!key) return;
+
+  const { data: v } = await supa.from("videos").select("title").eq("id", videoId).single();
+  const title = (v && v.title) || videoId;
+  const amount = ((session.amount_total || 0) / 100).toFixed(2);
+  const cur = (session.currency || "gbp").toUpperCase();
+  const buyer =
+    (session.customer_details && session.customer_details.email) ||
+    session.customer_email ||
+    "unknown";
+  const esc = (s) =>
+    String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+  await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: "Bearer " + key, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: "Faheem Ahmed Library <noreply@faheemahmed.co.uk>",
+      to: [to],
+      subject: `New purchase — ${title} (£${amount})`,
+      html:
+        "<h2>New library purchase 🎉</h2>" +
+        "<p><b>Video:</b> " + esc(title) + "<br>" +
+        "<b>Amount:</b> £" + amount + " " + cur + "<br>" +
+        "<b>Customer:</b> " + esc(buyer) + "</p>",
+    }),
+  });
+}
