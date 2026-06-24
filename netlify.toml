@@ -12,6 +12,19 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
+# clinickly.com → serve the Clinickly Co-pilot site (which lives under /clinically/)
+# at the domain root. Rewrites (200) keep the clinickly.com URL in the bar.
+[[redirects]]
+  from = "https://clinickly.com/*"
+  to = "/clinically/:splat"
+  status = 200
+  force = true
+[[redirects]]
+  from = "https://www.clinickly.com/*"
+  to = "/clinically/:splat"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

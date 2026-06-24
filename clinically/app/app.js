@@ -1,5 +1,5 @@
 /* ============================================================
-   ClinicAlly — application logic (front-end demo)
+   Clinickly — application logic (front-end demo)
    Hash-routed single-page app. All "AI" output is pre-authored in
    data.js and rendered with a simulated processing delay; nothing
    is sent anywhere. State persists to localStorage within the demo.
@@ -251,7 +251,7 @@
 
     function renderTranscript() {
       if (!sessionStore.transcript.length) {
-        transWrap.innerHTML = `<div class="rec-empty"><span class="mic">${ic("i-mic")}</span><div><b>Ready to listen</b><div class="muted" style="font-size:.84rem;margin-top:4px">Press start to simulate an ambient consultation. ClinicAlly transcribes in the background.</div></div></div>`;
+        transWrap.innerHTML = `<div class="rec-empty"><span class="mic">${ic("i-mic")}</span><div><b>Ready to listen</b><div class="muted" style="font-size:.84rem;margin-top:4px">Press start to simulate an ambient consultation. Clinickly transcribes in the background.</div></div></div>`;
         return;
       }
       transWrap.innerHTML = `<div class="transcript" id="tscroll">${sessionStore.transcript.map(l =>
@@ -261,7 +261,7 @@
 
     function renderNoteEmpty() {
       noteActions.style.display = "none";
-      noteWrap.innerHTML = `<div class="note-empty"><span class="ic">${ic("i-spark")}</span><div><b>No note yet</b><div style="font-size:.84rem;margin-top:4px;max-width:230px">Once the consultation is captured, ClinicAlly drafts a structured SOAP note for you to review and sign.</div></div></div>`;
+      noteWrap.innerHTML = `<div class="note-empty"><span class="ic">${ic("i-spark")}</span><div><b>No note yet</b><div style="font-size:.84rem;margin-top:4px;max-width:230px">Once the consultation is captured, Clinickly drafts a structured SOAP note for you to review and sign.</div></div></div>`;
     }
     function renderDsEmpty() {
       dsWrap.innerHTML = `<div class="ds-empty">Guideline-backed checks appear here as the consultation progresses.</div>`;
@@ -281,7 +281,7 @@
         <div class="divider"></div>
         <div class="lbl mono" style="font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Suggested coding</div>
         <div class="note-codes">${n.codes.map(c => `<span class="tag">${esc(c)}</span>`).join("")}</div>
-        <div class="disc">${ic("i-info")} ClinicAlly drafts and supports — it does not diagnose or prescribe. Review, edit and sign. The decision and accountability remain yours.</div>
+        <div class="disc">${ic("i-info")} Clinickly drafts and supports — it does not diagnose or prescribe. Review, edit and sign. The decision and accountability remain yours.</div>
       </div>`;
       noteActions.style.display = "flex";
     }
@@ -586,7 +586,7 @@
       const cs = allCases();
       v.innerHTML = `
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap">
-          <div class="anon-note" style="flex:1;min-width:260px">${ic("i-shield")}<span>Submit <b>anonymised</b> cases only. ClinicAlly strips identifiers in the live product; never include names, DOB or NHS numbers.</span></div>
+          <div class="anon-note" style="flex:1;min-width:260px">${ic("i-shield")}<span>Submit <b>anonymised</b> cases only. Clinickly strips identifiers in the live product; never include names, DOB or NHS numbers.</span></div>
           <button class="btn" id="addCase">${ic("i-plus")} New case</button>
         </div>
         <div class="grid" id="caseList">${cs.map(caseCard).join("")}</div>`;

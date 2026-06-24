@@ -1,4 +1,4 @@
-/* Shared styles for ClinicAlly social cards (rendered to PNG via headless Chrome) */
+/* Shared styles for Clinickly social cards (rendered to PNG via headless Chrome) */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --brand:#0E8C84;--brand-deep:#0A6E68;--brand-soft:#E3F4F2;
@@ -18,6 +18,7 @@ body{font-family:var(--body);color:#fff;position:relative}
 .brandname{font-family:var(--display);font-weight:700;letter-spacing:-.01em;line-height:1}
 .brandname .a{color:var(--mint)}
 .light .brandname{color:#10151C}.light .brandname .a{color:var(--brand)}
+.brandname .cp{font-size:.56em;font-weight:500;opacity:.6}
 .kick{font-family:var(--mono);text-transform:uppercase;color:var(--mint);font-weight:600}
 .light .kick{color:var(--brand-deep)}
 .display{font-family:var(--display);font-weight:600;letter-spacing:-.015em;line-height:1.04}

@@ -1,5 +1,5 @@
 /* ============================================================
-   ClinicAlly — demo data layer
+   Clinickly — demo data layer
    Everything here is mock/illustrative content used to make the
    front-end demo feel like a real clinical product. No data leaves
    the browser; "AI" output is pre-authored and template-driven.

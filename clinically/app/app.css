@@ -1,5 +1,5 @@
 /* ============================================================
-   ClinicAlly — application styles
+   Clinickly — application styles
    Self-contained clinical-SaaS theme. Reuses the site's font
    families (Hanken Grotesk / Bodoni Moda / IBM Plex Mono) but has
    its own clinical-teal identity to read as a distinct product.
@@ -66,6 +66,7 @@ input,textarea,select{font-family:inherit;font-size:1rem;color:var(--ink)}
 .logo .mark svg{width:20px;height:20px}
 .logo .name{font-family:var(--display);font-weight:700;font-size:1.32rem;letter-spacing:-.01em;line-height:1}
 .logo .name span{color:#7FE9DF}
+.logo .name .cp{font-size:.56em;font-weight:500;color:#B6D6D2;opacity:.85}
 .side .seg{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#5E8C88;padding:18px 10px 8px}
 .nav-i{
   display:flex;align-items:center;gap:12px;width:100%;border:none;background:none;
