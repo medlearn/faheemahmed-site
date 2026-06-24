@@ -1,6 +1,6 @@
 # Clinickly — LinkedIn kit
 
-**Link to share everywhere:** https://copilot.clinickly.com/
+**Link to share everywhere:** https://faheemahmed.co.uk/clinically/
 
 ## Images (in this folder)
 | File | Use | Size |
@@ -31,7 +31,7 @@ AI for the everyday. The MDT for the difficult. And the clinician stays in charg
 It's built for the fast-growing group of independent prescribers — pharmacists, nurses, physios, paramedics — often practising alone, carrying full accountability with no colleague down the corridor.
 
 Have a look (there's an interactive demo you can actually click through):
-https://copilot.clinickly.com/
+https://faheemahmed.co.uk/clinically/
 
 #IndependentPrescribing #Pharmacy #ClinicalGovernance #HealthTech #AIinHealthcare
 
@@ -51,7 +51,7 @@ The clinical decisions are the part you trained for. It's the admin around them 
 It supports your judgement — the decision, and the accountability, stay with you.
 
 I'm taking on a small group of founding clinics for early access. If that's you, book a 20-minute walkthrough:
-https://copilot.clinickly.com/
+https://faheemahmed.co.uk/clinically/
 
 #Pharmacy #IndependentPrescriber #PrivateClinic #ClinicalGovernance #HealthTech
 
@@ -74,7 +74,7 @@ What it involves: a light, predictable, **virtual** commitment around your exist
 It's advisory peer input — not a transfer of clinical responsibility.
 
 If it sounds like you, or you know someone, express your interest here:
-https://copilot.clinickly.com/
+https://faheemahmed.co.uk/clinically/
 
 #Psychiatry #Dermatology #GeneralPractice #MDT #ClinicalGovernance #Prescribing
 
@@ -87,7 +87,7 @@ Built a thing.
 **Clinickly** — an AI co-pilot for clinicians, backed by a human MDT. It does the admin and supports the routine calls; the panel helps with the difficult ones. The clinician stays in charge throughout.
 
 There's a clickable demo — run a consultation and watch it draft the note:
-https://copilot.clinickly.com/
+https://faheemahmed.co.uk/clinically/
 
 Would love your honest thoughts. 👇
 
