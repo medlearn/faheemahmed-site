@@ -100,3 +100,68 @@ Would love your honest thoughts. 👇
 - **Tag people / pages** relevant to each audience (pharmacy bodies, prescriber groups) where appropriate.
 - **Re-post across the week** — don't use all four at once. Space them: announcement → demo → panel → customer.
 - The hashtags are starting points; trim to ~3–5 that fit your network.
+
+---
+
+# Brand-voice versions (post from the Clinickly LinkedIn page)
+
+Use these when posting **as Clinickly** (company page) rather than as Faheem personally.
+
+## BRAND POST 1 — Launch (use with `post-hero.png`)
+
+Introducing **Clinickly Co-pilot**.
+
+Most clinicians don't burn out from seeing patients. They burn out from everything around it — the notes, the reports, the SOPs, and proving months later that every decision was sound.
+
+Clinickly Co-pilot takes that weight off. Two pillars, one platform:
+→ An **AI co-pilot** that handles the admin and supports routine decisions
+→ A **human multidisciplinary team** for the difficult and uncertain cases
+
+AI for the everyday. The MDT for the difficult. And the clinician stays in charge throughout — it supports judgement, it never replaces it.
+
+Built for independent prescribers — pharmacists, nurses, physios, paramedics — who carry full accountability, often without a colleague down the corridor.
+
+Take a look — there's an interactive demo you can click through. 👇
+
+#IndependentPrescribing #Pharmacy #HealthTech #ClinicalGovernance #AIinHealthcare
+
+**First comment:** Try the interactive demo → faheemahmed.co.uk/clinically/
+
+## BRAND POST 2 — For clinics (use with `post-customer.png`)
+
+Running a private clinic, or prescribing solo?
+
+The clinical decisions are what you trained for. It's the admin around them that eats the day — and the audit trail you'll wish you had if anyone ever asks.
+
+**Clinickly Co-pilot** is built for exactly that:
+✅ Consultation notes drafted in seconds
+✅ Guideline-backed decision support (NICE, GMC, GPhC)
+✅ Templates, SOPs and an audit trail that stands up
+
+It supports your judgement — the decision, and the accountability, stay with you.
+
+We're taking a small group of founding clinics into early access. Book a 20-minute walkthrough 👇
+
+#Pharmacy #IndependentPrescriber #PrivateClinic #ClinicalGovernance #HealthTech
+
+**First comment:** Book a demo → faheemahmed.co.uk/clinically/
+
+## BRAND POST 3 — Panel recruitment (use with `post-panel.png`)
+
+We're building the Clinickly clinical panel — and we're looking for experienced clinicians to join it.
+
+Clinickly Co-pilot pairs an AI co-pilot with a real multidisciplinary team that supports independent prescribers through their difficult and uncertain cases. The MDT is the human heart of it.
+
+We're looking for **GPs, psychiatrists, dermatologists** (and more specialties as we grow).
+
+A light, predictable, **virtual** commitment around your existing work. **Paid sessional work**, a named role in a governance-led service, and a genuinely interesting case mix. Advisory peer input — not a transfer of clinical responsibility.
+
+Interested, or know someone who'd be a fit? 👇
+
+#Psychiatry #Dermatology #GeneralPractice #MDT #Prescribing
+
+**First comment:** Express your interest → faheemahmed.co.uk/clinically/
+
+## Universal one-liner (WhatsApp / Instagram / email / anywhere)
+
+Meet **Clinickly Co-pilot** — an AI co-pilot for clinicians, backed by a human MDT. It handles the admin and supports the routine calls; the panel helps with the difficult ones. The clinician stays in charge throughout. Try the demo: faheemahmed.co.uk/clinically/
