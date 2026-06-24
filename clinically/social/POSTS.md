@@ -193,3 +193,29 @@ Take a look — interactive demo in the comments. 👇
 #Pharmacy #IndependentPrescribing #MedEd #HealthTech #ClinicalGovernance #Prescribing
 
 **First comment:** Try the interactive demo → faheemahmed.co.uk/clinically/
+
+---
+
+# Post from Faheem Ahmed (founder / personal voice) — use with `post-hero.png`
+
+I'm a pharmacist independent prescriber — and I spend a lot of my time teaching other clinicians how to prescribe safely.
+
+The same thing kept coming up, from newly qualified IPs and experienced clinicians alike:
+
+It isn't the patients that overwhelm you. It's everything around them. The notes. The reports. The SOPs. Staying current with NICE, GMC and GPhC. And proving, months later, that every decision you made was sound.
+
+And for prescribers working alone — in private and community settings — there's often no colleague down the corridor to sanity-check a difficult case.
+
+So I built **Clinickly Co-pilot** to close that gap.
+
+Two pillars:
+→ An **AI co-pilot** that handles the admin and supports routine decisions
+→ A **human MDT** — real clinicians you meet with to talk through the difficult cases
+
+AI for the everyday. The MDT for the difficult. The clinician stays in charge throughout — it supports your judgement, it never replaces it.
+
+It's early, and I'd genuinely value your eyes on it. There's an interactive demo you can click through. 👇
+
+#IndependentPrescribing #Pharmacy #ClinicalGovernance #HealthTech #AIinHealthcare
+
+**First comment:** Try the interactive demo → faheemahmed.co.uk/clinically/
