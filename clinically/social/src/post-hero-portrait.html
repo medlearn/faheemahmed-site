@@ -1,27 +1,40 @@
 <!DOCTYPE html><html lang="en-GB"><head><meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_base.css">
 <style>
-  html,body,.card{width:1080px;height:1350px}
-  .card{padding:96px 84px}
-  .mark{width:78px;height:78px}.mark svg{width:46px;height:46px}
-  .brandname{font-size:50px}
-  .kick{font-size:21px;letter-spacing:.22em;margin-top:130px}
-  .display{font-size:112px;margin-top:34px}
-  .sub{font-size:36px;color:#CFF0EC;font-weight:300;margin-top:40px;line-height:1.4;max-width:840px}
-  .pill{font-size:30px;padding:26px 46px;margin-top:auto;align-self:flex-start}
-  .pill svg{width:28px;height:28px}
-  .foot{font-size:26px;margin-top:48px}
+  /* fully self-contained — no external CSS dependency */
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px}
+  body{font-family:"Hanken Grotesk",system-ui,sans-serif}
+  .card{width:1080px;height:1350px;padding:100px 90px;display:flex;flex-direction:column;
+    background:linear-gradient(150deg,#0C2C2A 0%,#0E615B 100%);color:#fff;position:relative;overflow:hidden}
+  .card::after{content:"";position:absolute;right:-10%;top:-12%;width:60%;height:55%;
+    background:radial-gradient(circle at 50% 50%,rgba(127,233,223,.20),transparent 65%)}
+  .lock{display:flex;align-items:center;gap:16px;position:relative;z-index:2}
+  .mark{width:74px;height:74px;border-radius:20px;flex:0 0 auto;display:grid;place-items:center;
+    background:linear-gradient(150deg,#0E8C84,#13B3A8);box-shadow:0 10px 28px rgba(14,140,132,.4)}
+  .mark svg{width:44px;height:44px}
+  .nm{font-family:"Bodoni Moda",Georgia,serif;font-weight:700;font-size:48px;letter-spacing:-.01em;color:#fff}
+  .nm .k{color:#7FE9DF}
+  .nm .cp{font-size:.56em;font-weight:500;opacity:.6}
+  .kick{font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;letter-spacing:.22em;
+    text-transform:uppercase;color:#7FE9DF;margin-top:120px;position:relative;z-index:2}
+  .title{font-family:"Bodoni Moda",Georgia,serif;font-weight:600;font-size:96px;line-height:1.04;
+    letter-spacing:-.015em;color:#fff;margin-top:30px;position:relative;z-index:2}
+  .sub{font-size:34px;font-weight:300;line-height:1.4;color:#CFF0EC;margin-top:38px;max-width:840px;position:relative;z-index:2}
+  .pill{display:inline-flex;align-items:center;gap:14px;background:#fff;color:#0A6E68;font-weight:700;
+    font-size:30px;padding:26px 46px;border-radius:100px;margin-top:auto;align-self:flex-start;position:relative;z-index:2}
+  .pill svg{width:28px;height:28px;fill:#0A6E68}
+  .url{font-family:"IBM Plex Mono",monospace;font-size:26px;color:#7FE9DF;margin-top:46px;position:relative;z-index:2}
 </style></head>
-<body><div class="card dark">
+<body><div class="card">
   <div class="lock">
-    <span class="mark"><svg class="spark-white" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" fill="none" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 4l.7 1.8L20.5 6.5l-1.8.7L18 9l-.7-1.8L15.5 6.5l1.8-.7z" fill="#fff"/></svg></span>
-    <span class="brandname">Clinic<span class="a">kly</span><span class="cp"> Co-pilot</span></span>
+    <span class="mark"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 4l.7 1.8L20.5 6.5l-1.8.7L18 9l-.7-1.8L15.5 6.5l1.8-.7z" fill="#fff"/></svg></span>
+    <span class="nm">Clinic<span class="k">kly</span><span class="cp"> Co-pilot</span></span>
   </div>
   <div class="kick">An AI co-pilot · A human MDT</div>
-  <div class="display">A co-pilot<br>for <span class="hl">clinicians.</span></div>
+  <div class="title">A co-pilot<br>for clinicians.</div>
   <div class="sub">The AI handles the admin. A real multidisciplinary team keeps you sharp. You stay in charge.</div>
-  <span class="pill"><svg viewBox="0 0 24 24" fill="#0A6E68"><path d="M7 4.5v15l13-7.5z"/></svg> Try the interactive demo</span>
-  <div class="foot">faheemahmed.co.uk/clinically</div>
+  <span class="pill"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg> Try the interactive demo</span>
+  <div class="url">faheemahmed.co.uk/clinically</div>
 </div></body></html>
