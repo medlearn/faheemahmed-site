@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ClinicAlly — A co-pilot for clinicians</title>
+<meta name="description" content="ClinicAlly is a clinical co-pilot that handles the admin and a human multidisciplinary team that keeps clinicians sharp. Supports your judgement — never replaces it. Interactive product demo.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E8C84">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ClinicAlly — A co-pilot for clinicians">
+<meta property="og:description" content="AI for the everyday, the MDT for the difficult. Interactive product demo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ===== SVG icon sprite (referenced via <use href="#i-xxx">) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-spark"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 4l.7 1.8L20.5 6.5l-1.8.7L18 9l-.7-1.8L15.5 6.5l1.8-.7z" fill="currentColor"/></g>
+    <g id="i-grid" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></g>
+    <g id="i-stetho" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4a4 4 0 0 0 8 0V3"/><path d="M5 3H4M13 3h1M9 15v1a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2.3"/></g>
+    <g id="i-mic" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></g>
+    <g id="i-note" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h7l5 5V21a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 21z"/><path d="M13 2.5V8h5M9 13h6M9 16.5h4"/></g>
+    <g id="i-book" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 1 6 18h14"/></g>
+    <g id="i-doc" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></g>
+    <g id="i-cap" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5M21.5 8v5"/></g>
+    <g id="i-people" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.2a3 3 0 0 1 0 5.6M17 14.5a5.5 5.5 0 0 1 3.5 4.5"/></g>
+    <g id="i-inbox" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2.5-8.5A2 2 0 0 1 7.4 3h9.2a2 2 0 0 1 1.9 1.5L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h5l1.5 2.5h5L21 13"/></g>
+    <g id="i-cal" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9h17M8 2.5v4M16 2.5v4"/></g>
+    <g id="i-search" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.7-4.7"/></g>
+    <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 6.5"/></g>
+    <g id="i-clock" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g>
+    <g id="i-shield" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4.5 5.5V11c0 5 3.5 8 7.5 10.5C16 19 19.5 16 19.5 11V5.5z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></g>
+    <g id="i-x" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></g>
+    <g id="i-menu" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></g>
+    <g id="i-plus" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></g>
+    <g id="i-play" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></g>
+    <g id="i-download" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10.5l5 5 5-5M4.5 20.5h15"/></g>
+    <g id="i-bolt" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 13.5h6L11 22l9-11.5h-6z"/></g>
+    <g id="i-info" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.1"/></g>
+    <g id="i-send" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-8-8-4z"/></g>
+    <g id="i-pulse" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-7 5 14 2.5-7H21"/></g>
+  </defs>
+</svg>
+
+<div class="app" id="app">
+  <div class="scrim" id="scrim"></div>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="side" id="side">
+    <div class="logo">
+      <span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
+      <span class="name">Clinic<span>Ally</span></span>
+    </div>
+
+    <div class="seg">Co-pilot</div>
+    <nav id="navTop"></nav>
+
+    <div class="seg">Multidisciplinary team</div>
+    <nav id="navMdt"></nav>
+
+    <div class="side-foot">
+      <div class="user">
+        <span class="av" id="userAv">FA</span>
+        <span class="who"><b id="userName">Faheem Ahmed</b><small id="userRole">Pharmacist IP</small></span>
+      </div>
+      <a class="back" href="/clinically/">← About ClinicAlly</a>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+    <div class="demobar" id="demobar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-info"/></svg>
+      <span><b>Concept demo.</b> An interactive prototype — the AI output is illustrative and pre-written, not a live clinical system. Nothing you type leaves your browser.</span>
+      <a class="db-link" href="/clinically/">About ClinicAlly →</a>
+      <button class="db-x" id="demobarX" aria-label="Dismiss"><svg viewBox="0 0 24 24"><use href="#i-x"/></svg></button>
+    </div>
+    <header class="topbar">
+      <button class="hamb" id="hamb" aria-label="Open menu"><svg viewBox="0 0 24 24"><use href="#i-menu"/></svg></button>
+      <div>
+        <h1 id="pageTitle">Dashboard</h1>
+        <div class="sub" id="pageSub">Your clinical day at a glance</div>
+      </div>
+      <div class="spacer"></div>
+      <span class="pill"><span class="dot"></span> Demo mode</span>
+    </header>
+    <div class="view" id="view"></div>
+  </main>
+</div>
+
+<div class="toasts" id="toasts"></div>
+<div id="modalRoot"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

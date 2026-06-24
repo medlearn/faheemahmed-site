@@ -88,6 +88,17 @@ input,textarea,select{font-family:inherit;font-size:1rem;color:var(--ink)}
 
 /* ---------- Main ---------- */
 .main{min-width:0;display:flex;flex-direction:column}
+.demobar{display:flex;align-items:center;gap:11px;background:#0C2C2A;color:#CFEFEB;padding:9px 18px;font-size:.8rem;line-height:1.4}
+.demobar svg{width:17px;height:17px;flex:0 0 auto;color:#7FE9DF}
+.demobar b{color:#fff;font-weight:600}
+.demobar span{flex:1;min-width:0}
+.demobar .db-link{color:#7FE9DF;font-family:var(--mono);font-size:.72rem;font-weight:600;white-space:nowrap;flex:0 0 auto}
+.demobar .db-link:hover{text-decoration:underline}
+.demobar .db-x{background:rgba(255,255,255,.1);border:none;border-radius:7px;width:26px;height:26px;display:grid;place-items:center;color:#CFEFEB;flex:0 0 auto}
+.demobar .db-x:hover{background:rgba(255,255,255,.2)}
+.demobar .db-x svg{width:14px;height:14px;color:#fff}
+.demobar.hidden{display:none}
+@media(max-width:600px){.demobar .db-link{display:none}}
 .topbar{
   position:sticky;top:0;z-index:30;background:rgba(246,248,251,.86);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);padding:14px 30px;display:flex;align-items:center;gap:18px

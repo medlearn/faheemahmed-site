@@ -4,95 +4,388 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ClinicAlly — A co-pilot for clinicians</title>
-<meta name="description" content="ClinicAlly is a clinical co-pilot that handles the admin and a human multidisciplinary team that keeps clinicians sharp. Supports your judgement — never replaces it. Interactive product demo.">
+<meta name="description" content="ClinicAlly pairs an AI co-pilot that handles the admin with a human multidisciplinary team that keeps clinicians sharp. Supports your judgement — never replaces it. Try the interactive demo or join the clinical panel.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0E8C84">
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="ClinicAlly — A co-pilot for clinicians">
-<meta property="og:description" content="AI for the everyday, the MDT for the difficult. Interactive product demo.">
+<meta property="og:description" content="AI for the everyday, the MDT for the difficult. Try the interactive demo.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="app.css">
+
+<style>
+  :root{
+    --ink:#10151C;--ink-2:#36414F;--muted:#6A7787;--line:#E4E9F0;--bg:#FFFFFF;--tint:#F4F8F8;
+    --brand:#0E8C84;--brand-deep:#0A6E68;--brand-soft:#E3F4F2;--ai:#6A4BF0;--ai-soft:#EEEAFD;
+    --ink-bg:#0C2C2A;--ink-bg2:#0A2422;
+    --display:"Bodoni Moda",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+  body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.01em;line-height:1.08}
+  .kick{font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brand-deep);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--brand);color:#fff;padding:13px 24px;border-radius:40px;font-weight:600;font-size:.92rem;border:1.5px solid var(--brand);transition:transform .2s,background .2s,box-shadow .2s}
+  .btn:hover{background:var(--brand-deep);border-color:var(--brand-deep);transform:translateY(-2px);box-shadow:0 12px 28px rgba(14,140,132,.3)}
+  .btn svg{width:17px;height:17px}
+  .btn.outline{background:transparent;color:var(--brand-deep);border-color:var(--line)}
+  .btn.outline:hover{background:var(--brand-soft);box-shadow:none;color:var(--brand-deep)}
+  .btn.light{background:#fff;color:var(--brand-deep);border-color:#fff}
+  .btn.light:hover{background:#EAFBF9;border-color:#EAFBF9}
+  .btn.big{padding:15px 30px;font-size:1rem}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 28px;transition:background .35s,box-shadow .35s,padding .35s}
+  nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:11px 28px}
+  .logo{display:flex;align-items:center;gap:11px}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(150deg,var(--brand),#13B3A8);display:grid;place-items:center;box-shadow:0 6px 16px rgba(14,140,132,.35)}
+  .logo .mark svg{width:20px;height:20px;color:#fff}
+  .logo .nm{font-family:var(--display);font-weight:700;font-size:1.32rem;letter-spacing:-.01em}
+  .logo .nm span{color:var(--brand)}
+  .nlinks{display:flex;align-items:center;gap:26px}
+  .nlinks a:not(.btn){font-size:.88rem;font-weight:500;color:var(--ink-2)}
+  .nlinks a:not(.btn):hover{color:var(--brand-deep)}
+  @media(max-width:760px){.nlinks a:not(.btn){display:none}}
+
+  /* hero */
+  header{padding:150px 0 90px;position:relative;overflow:hidden;background:radial-gradient(900px 500px at 80% -5%,rgba(14,140,132,.1),transparent 60%)}
+  .hero{max-width:780px}
+  .hero h1{font-size:clamp(2.8rem,6.4vw,5rem);margin:22px 0 0}
+  .hero h1 em{font-style:italic;background:linear-gradient(transparent 60%,rgba(14,140,132,.22) 60%);padding:0 .04em}
+  .hero .lede{font-size:1.25rem;color:var(--muted);font-weight:300;max-width:600px;margin:26px 0 0}
+  .hero .tagline{font-family:var(--mono);font-size:.82rem;color:var(--brand-deep);margin-top:18px;letter-spacing:.02em}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+  .trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:46px;padding-top:28px;border-top:1px solid var(--line)}
+  .trust div{font-size:.84rem;color:var(--muted)}
+  .trust b{display:block;font-family:var(--display);font-size:1.5rem;color:var(--ink);font-weight:600}
+
+  /* sections */
+  section{padding:84px 0}
+  .sec-head{max-width:680px;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(2rem,4vw,3rem);margin-top:14px}
+  .sec-head p{color:var(--muted);font-size:1.12rem;margin-top:16px}
+  .tint{background:var(--tint)}
+
+  /* pillars */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .pillar{border:1px solid var(--line);border-radius:18px;padding:32px;background:#fff;position:relative;overflow:hidden}
+  .pillar.dark{background:linear-gradient(160deg,var(--ink-bg),#0e524d);color:#EAFBF9;border:none}
+  .pillar .pn{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-deep)}
+  .pillar.dark .pn{color:#7FE9DF}
+  .pillar h3{font-size:1.7rem;margin:14px 0 12px}
+  .pillar p{color:var(--muted);font-size:.98rem}
+  .pillar.dark p{color:#BFE5E1}
+  .pillar .ic{width:48px;height:48px;border-radius:13px;background:var(--brand-soft);color:var(--brand-deep);display:grid;place-items:center;margin-bottom:18px}
+  .pillar.dark .ic{background:rgba(127,233,223,.16);color:#7FE9DF}
+  .pillar .ic svg{width:24px;height:24px}
+  .mantra{text-align:center;font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:500;font-style:italic;max-width:760px;margin:0 auto;color:var(--ink-2)}
+  .mantra b{color:var(--brand-deep);font-style:normal;font-weight:600}
+
+  /* feature grid */
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .fcard{border:1px solid var(--line);border-radius:15px;padding:24px;transition:border-color .2s,transform .15s,box-shadow .2s}
+  .fcard:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,21,28,.07)}
+  .fcard .ic{width:42px;height:42px;border-radius:11px;background:var(--brand-soft);color:var(--brand-deep);display:grid;place-items:center;margin-bottom:15px}
+  .fcard .ic svg{width:21px;height:21px}
+  .fcard h4{font-family:var(--body);font-size:1.05rem;font-weight:600;margin-bottom:6px}
+  .fcard p{color:var(--muted);font-size:.9rem}
+
+  /* panel */
+  .panel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+  .pm{border:1px solid var(--line);border-radius:15px;padding:22px;text-align:center;background:#fff}
+  .pm .av{width:54px;height:54px;border-radius:14px;margin:0 auto 14px;display:grid;place-items:center;color:#fff;font-family:var(--mono);font-weight:600;background:linear-gradient(150deg,var(--brand),var(--brand-deep))}
+  .pm.chair .av{background:linear-gradient(150deg,var(--ai),#4a2fd0)}
+  .pm b{display:block;font-size:1rem}
+  .pm .role{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-deep);margin:6px 0 10px}
+  .pm small{color:var(--muted);font-size:.84rem;line-height:1.45}
+  .ask{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .ask div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+  .ask h4{font-family:var(--body);font-size:1rem;font-weight:600;margin-bottom:6px;display:flex;gap:9px;align-items:center}
+  .ask h4 svg{width:18px;height:18px;color:var(--brand)}
+  .ask p{color:var(--muted);font-size:.88rem}
+
+  /* who for */
+  .who{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .who div{display:flex;gap:13px;align-items:flex-start;padding:18px;border-radius:13px;background:#fff;border:1px solid var(--line)}
+  .who .ck{width:26px;height:26px;border-radius:8px;background:var(--brand-soft);color:var(--brand-deep);display:grid;place-items:center;flex:0 0 auto}
+  .who .ck svg{width:15px;height:15px}
+  .who b{font-size:.98rem}
+  .who p{color:var(--muted);font-size:.86rem;margin-top:2px}
+
+  /* form */
+  .join{background:linear-gradient(160deg,var(--ink-bg),var(--ink-bg2));color:#EAFBF9}
+  .join .sec-head h2{color:#fff}
+  .join .sec-head p{color:#BFE5E1}
+  .join .kick{color:#7FE9DF}
+  .joingrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .joingrid ul{list-style:none;margin-top:8px}
+  .joingrid li{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.95rem;color:#D9F2EF}
+  .joingrid li svg{width:18px;height:18px;color:#7FE9DF;flex:0 0 auto;margin-top:3px}
+  .formcard{background:#fff;border-radius:18px;padding:28px;color:var(--ink)}
+  .formcard .fg{margin-bottom:15px}
+  .formcard label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px}
+  .formcard label .rq{color:#C2483B}
+  .formcard input,.formcard select,.formcard textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:.92rem;font-family:var(--body);transition:border-color .18s,box-shadow .18s}
+  .formcard input:focus,.formcard select:focus,.formcard textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(14,140,132,.14)}
+  .formcard textarea{resize:vertical;min-height:90px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  .hp{position:absolute;left:-9999px}
+  .formcard .note{font-size:.74rem;color:var(--muted);margin-top:6px}
+  .formok{display:none;text-align:center;padding:30px 10px}
+  .formok.show{display:block}
+  .formok .big{width:56px;height:56px;border-radius:50%;background:var(--brand-soft);color:var(--brand-deep);display:grid;place-items:center;margin:0 auto 16px}
+  .formok .big svg{width:28px;height:28px}
+  .formok h3{font-size:1.4rem;margin-bottom:8px}
+  .formok p{color:var(--muted)}
+
+  /* demo band */
+  .demoband{text-align:center}
+  .demoband .box{background:var(--brand-soft);border-radius:22px;padding:54px 32px;border:1px solid #C4E8E4}
+  .demoband h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+  .demoband p{color:var(--ink-2);font-size:1.1rem;max-width:520px;margin:14px auto 28px}
+
+  /* footer */
+  footer{background:var(--ink-bg2);color:#9FC4C0;padding:48px 0 36px;font-size:.86rem}
+  footer .frow2{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  footer .logo .nm{color:#fff}
+  footer a{color:#7FE9DF}
+  footer .disc{margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:.78rem;color:#6E9C98;line-height:1.6;max-width:760px}
+
+  @media(max-width:860px){
+    .two-col,.feat,.panel-grid,.ask,.who,.joingrid{grid-template-columns:1fr}
+    .panel-grid{grid-template-columns:1fr 1fr}
+    .frow{grid-template-columns:1fr}
+  }
+  @media(max-width:520px){.panel-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
-<!-- ===== SVG icon sprite (referenced via <use href="#i-xxx">) ===== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <g id="i-spark"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 4l.7 1.8L20.5 6.5l-1.8.7L18 9l-.7-1.8L15.5 6.5l1.8-.7z" fill="currentColor"/></g>
-    <g id="i-grid" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></g>
-    <g id="i-stetho" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4a4 4 0 0 0 8 0V3"/><path d="M5 3H4M13 3h1M9 15v1a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2.3"/></g>
-    <g id="i-mic" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></g>
-    <g id="i-note" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h7l5 5V21a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 21z"/><path d="M13 2.5V8h5M9 13h6M9 16.5h4"/></g>
-    <g id="i-book" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 1 6 18h14"/></g>
-    <g id="i-doc" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></g>
-    <g id="i-cap" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5M21.5 8v5"/></g>
-    <g id="i-people" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.2a3 3 0 0 1 0 5.6M17 14.5a5.5 5.5 0 0 1 3.5 4.5"/></g>
-    <g id="i-inbox" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2.5-8.5A2 2 0 0 1 7.4 3h9.2a2 2 0 0 1 1.9 1.5L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h5l1.5 2.5h5L21 13"/></g>
-    <g id="i-cal" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9h17M8 2.5v4M16 2.5v4"/></g>
-    <g id="i-search" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.7-4.7"/></g>
-    <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 6.5"/></g>
-    <g id="i-clock" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g>
-    <g id="i-shield" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4.5 5.5V11c0 5 3.5 8 7.5 10.5C16 19 19.5 16 19.5 11V5.5z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></g>
-    <g id="i-x" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></g>
-    <g id="i-menu" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></g>
-    <g id="i-plus" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></g>
-    <g id="i-play" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></g>
-    <g id="i-download" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10.5l5 5 5-5M4.5 20.5h15"/></g>
-    <g id="i-bolt" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13 2 4 13.5h6L11 22l9-11.5h-6z"/></g>
-    <g id="i-info" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.1"/></g>
-    <g id="i-send" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-8-8-4z"/></g>
-    <g id="i-pulse" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-7 5 14 2.5-7H21"/></g>
-  </defs>
-</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-spark"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 4l.7 1.8L20.5 6.5l-1.8.7L18 9l-.7-1.8L15.5 6.5l1.8-.7z" fill="currentColor"/></g>
+  <g id="i-stetho" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4a4 4 0 0 0 8 0V3"/><path d="M5 3H4M13 3h1M9 15v1a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2.3"/></g>
+  <g id="i-people" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.2a3 3 0 0 1 0 5.6M17 14.5a5.5 5.5 0 0 1 3.5 4.5"/></g>
+  <g id="i-note" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h7l5 5V21a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 21z"/><path d="M13 2.5V8h5M9 13h6M9 16.5h4"/></g>
+  <g id="i-mic" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></g>
+  <g id="i-book" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 1 6 18h14"/></g>
+  <g id="i-doc" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></g>
+  <g id="i-cap" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5M21.5 8v5"/></g>
+  <g id="i-shield" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4.5 5.5V11c0 5 3.5 8 7.5 10.5C16 19 19.5 16 19.5 11V5.5z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></g>
+  <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 6.5"/></g>
+  <g id="i-cal" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9h17M8 2.5v4M16 2.5v4"/></g>
+  <g id="i-send" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-8-8-4z"/></g>
+  <g id="i-play" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></g>
+  <g id="i-clock" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g>
+  <g id="i-coin" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v10M14.5 9.3c-.6-.8-1.6-1-2.5-1-1.2 0-2.3.6-2.3 1.8 0 2.6 5 1.3 5 3.9 0 1.3-1.2 1.9-2.5 1.9-1 0-2.1-.3-2.6-1.2"/></g>
+</defs></svg>
 
-<div class="app" id="app">
-  <div class="scrim" id="scrim"></div>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#top" class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span><span class="nm">Clinic<span>Ally</span></span></a>
+  <div class="nlinks">
+    <a href="#how">How it works</a>
+    <a href="#panel">The panel</a>
+    <a href="#who">Who it's for</a>
+    <a href="app/" class="btn">Try the demo</a>
+  </div>
+</nav>
 
-  <!-- ===== SIDEBAR ===== -->
-  <aside class="side" id="side">
-    <div class="logo">
-      <span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
-      <span class="name">Clinic<span>Ally</span></span>
+<!-- HERO -->
+<header id="top">
+  <div class="wrap hero">
+    <span class="kick">An AI co-pilot · A human MDT</span>
+    <h1>A co-pilot for clinicians. <em>Supports your judgement</em> — never replaces it.</h1>
+    <p class="lede">Most clinicians don't burn out from seeing patients. They burn out from everything around it — the notes, the reports, the SOPs, proving months later that every decision was sound. ClinicAlly takes that weight off.</p>
+    <p class="tagline">AI for the everyday · the MDT for the difficult.</p>
+    <div class="hero-cta">
+      <a href="app/" class="btn big"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg> Try the interactive demo</a>
+      <a href="#panel" class="btn outline big">Join the clinical panel</a>
     </div>
+    <div class="trust">
+      <div><b>Two pillars</b>Software for the routine, people for the difficult</div>
+      <div><b>You stay in charge</b>The decision and accountability remain yours</div>
+      <div><b>Built for IPs</b>Pharmacists, nurses, physios, paramedics</div>
+    </div>
+  </div>
+</header>
 
-    <div class="seg">Co-pilot</div>
-    <nav id="navTop"></nav>
-
-    <div class="seg">Multidisciplinary team</div>
-    <nav id="navMdt"></nav>
-
-    <div class="side-foot">
-      <div class="user">
-        <span class="av" id="userAv">FA</span>
-        <span class="who"><b id="userName">Faheem Ahmed</b><small id="userRole">Pharmacist IP</small></span>
+<!-- WHY -->
+<section class="tint" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick">Why ClinicAlly exists</span>
+      <h2>The colleague down the corridor you never had.</h2>
+      <p>A fast-growing group of independent prescribers now practise in private and community settings — often alone. Full clinical accountability, but no one to sanity-check a difficult case, no structured way to reflect, no easy way to evidence that decisions were sound. That clinical isolation is the gap ClinicAlly was built to close.</p>
+    </div>
+    <div class="two-col">
+      <div class="pillar">
+        <span class="ic"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
+        <span class="pn">Pillar one — software</span>
+        <h3>The AI co-pilot</h3>
+        <p>Always on. Handles the admin and supports routine decisions, so the clinician spends less time on paperwork and more time on patients. It does not diagnose or prescribe — it supports judgement and leaves the decision with the clinician.</p>
       </div>
-      <a class="back" href="/">← Back to faheemahmed.co.uk</a>
+      <div class="pillar dark">
+        <span class="ic"><svg viewBox="0 0 24 24"><use href="#i-people"/></svg></span>
+        <span class="pn">Pillar two — people</span>
+        <h3>The human MDT</h3>
+        <p>A real multidisciplinary team the clinician meets with regularly — to reflect on practice, discuss complex cases, and stay safe and growing, especially when newly qualified. Peer support and supervision, never a transfer of responsibility.</p>
+      </div>
     </div>
-  </aside>
+  </div>
+</section>
 
-  <!-- ===== MAIN ===== -->
-  <main class="main">
-    <header class="topbar">
-      <button class="hamb" id="hamb" aria-label="Open menu"><svg viewBox="0 0 24 24"><use href="#i-menu"/></svg></button>
+<!-- HOW / FEATURES -->
+<section id="how">
+  <div class="wrap">
+    <p class="mantra">The software speeds up the work; <b>the people keep the standards high.</b></p>
+  </div>
+  <div class="wrap" style="margin-top:54px">
+    <div class="sec-head">
+      <span class="kick">Pillar one — the AI co-pilot</span>
+      <h2>Less admin. Cleaner records. A defensible audit trail.</h2>
+    </div>
+    <div class="feat">
+      <div class="fcard"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><h4>Decision support</h4><p>Suggestions and checks backed by current guidelines — surfaced in context, not in the way.</p></div>
+      <div class="fcard"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-note"/></svg></span><h4>Clinical note writing</h4><p>Structured, consultation-ready SOAP notes drafted in seconds for you to review and sign.</p></div>
+      <div class="fcard"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-mic"/></svg></span><h4>Transcription</h4><p>Ambient consultation-to-text, automatically — so you can stay with the patient.</p></div>
+      <div class="fcard"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span><h4>Up-to-date guidance</h4><p>NICE, GMC and GPhC, kept current and version-tracked to the moment of your decision.</p></div>
+      <div class="fcard"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><h4>Templates, SOPs &amp; governance</h4><p>Documentation that stands up to inspection — note templates, SOPs and a governance pack.</p></div>
+      <div class="fcard"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-cap"/></svg></span><h4>Training</h4><p>Upskill new prescribers and whole clinic teams, with CPD auto-logged for revalidation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL -->
+<section class="tint" id="panel">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick">Pillar two — the multidisciplinary team</span>
+      <h2>An invitation to join the ClinicAlly panel.</h2>
+      <p>The MDT is the human heart of ClinicAlly — a small panel of experienced clinicians who meet regularly with our prescribers to reflect on practice, talk through uncertain cases, and offer a senior, multi-specialty perspective.</p>
+    </div>
+
+    <div class="panel-grid">
+      <div class="pm chair"><span class="av">AO</span><b>Chair</b><div class="role">Clinical lead</div><small>Sets the agenda, leads reflection, signs off the session record.</small></div>
+      <div class="pm"><span class="av">GP</span><b>GP</b><div class="role">General practice</div><small>Comorbidity, red flags, referral thresholds, whole-patient context.</small></div>
+      <div class="pm"><span class="av">LB</span><b>Psychiatrist</b><div class="role">Mental health</div><small>ADHD, mood and anxiety presentations seen in pharmacist-led clinics.</small></div>
+      <div class="pm"><span class="av">RK</span><b>Dermatologist</b><div class="role">Skin</div><small>Diagnosis, escalation and safe prescribing within scope.</small></div>
+    </div>
+
+    <div class="ask">
+      <div><h4><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg> Light, predictable commitment</h4><p>A defined contribution — the regular live session plus a capped number of asynchronous cases in your specialty. Delivered virtually, agreed up front.</p></div>
+      <div><h4><svg viewBox="0 0 24 24"><use href="#i-coin"/></svg> Paid sessional work</h4><p>Indicative sessional rate of ~£100–£150 per hour for panel time, with the Chair at a higher rate. Confirmed with each clinician before any commitment.</p></div>
+      <div><h4><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg> A named, credible role</h4><p>Meaningful clinical impact in a governance-led service, an interesting case mix, and a collegiate, teaching-oriented environment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick">Who ClinicAlly is for</span>
+      <h2>For pharmacies, prescribers and private clinics — established or just starting out.</h2>
+    </div>
+    <div class="who">
+      <div><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div><b>Pharmacies setting up private clinics</b><p>Running a prescriber-led service, moving beyond the limits of PGDs.</p></div></div>
+      <div><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div><b>Newly qualified pharmacist IPs</b><p>Structured support at exactly the point it's needed most.</p></div></div>
+      <div><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div><b>Prescribing clinicians</b><p>Nurses, physiotherapists, paramedics and others.</p></div></div>
+      <div><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div><b>Established private practices</b><p>From ADHD assessment clinics to private GP reviews.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN FORM -->
+<section class="join" id="join">
+  <div class="wrap">
+    <div class="joingrid">
       <div>
-        <h1 id="pageTitle">Dashboard</h1>
-        <div class="sub" id="pageSub">Your clinical day at a glance</div>
+        <span class="kick">Express your interest</span>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);color:#fff;margin-top:12px">Join the clinical panel</h2>
+        <p style="color:#BFE5E1;margin-top:14px;font-size:1.02rem">A short conversation first — your specialty, the commitment that suits you, and how your input would fit. Terms, format and remuneration are agreed in writing before anything begins.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Virtual, around your existing clinical work</li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Paid sessional rate, confirmed up front</li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Advisory peer input — not a transfer of responsibility</li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> No obligation — this is just the start of a conversation</li>
+        </ul>
       </div>
-      <div class="spacer"></div>
-      <span class="pill"><span class="dot"></span> Demo mode</span>
-    </header>
-    <div class="view" id="view"></div>
-  </main>
-</div>
 
-<div class="toasts" id="toasts"></div>
-<div id="modalRoot"></div>
+      <div class="formcard">
+        <form name="panel-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="panelForm">
+          <input type="hidden" name="form-name" value="panel-interest">
+          <p class="hp"><label>Don't fill this in <input name="bot-field"></label></p>
+          <div class="fg"><label>Full name <span class="rq">*</span></label><input name="name" required placeholder="Dr Jane Smith"></div>
+          <div class="frow">
+            <div class="fg"><label>Email <span class="rq">*</span></label><input type="email" name="email" required placeholder="you@clinic.co.uk"></div>
+            <div class="fg"><label>Profession</label>
+              <select name="profession"><option>GP</option><option>Psychiatrist</option><option>Dermatologist</option><option>Pharmacist IP</option><option>Nurse prescriber</option><option>Other specialty</option></select></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label>Specialty / area</label><input name="specialty" placeholder="e.g. ADHD, women's health"></div>
+            <div class="fg"><label>Role of interest</label>
+              <select name="role"><option>Panel member</option><option>Chair</option><option>Either — happy to discuss</option></select></div>
+          </div>
+          <div class="fg"><label>Anything you'd like us to know</label><textarea name="message" placeholder="Availability, interests, questions…"></textarea></div>
+          <button type="submit" class="btn big" style="width:100%;justify-content:center"><svg viewBox="0 0 24 24"><use href="#i-send"/></svg> Express interest</button>
+          <p class="note">Submitted in confidence to ClinicAlly. We'll reply to arrange a short, no-obligation conversation.</p>
+        </form>
+        <div class="formok" id="formOk">
+          <div class="big"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
+          <h3>Thank you</h3>
+          <p>Your interest has been received. We'll be in touch shortly to arrange a short conversation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<script src="data.js"></script>
-<script src="app.js"></script>
+<!-- DEMO BAND -->
+<section class="demoband">
+  <div class="wrap">
+    <div class="box">
+      <span class="kick">See it in action</span>
+      <h2>Try the ClinicAlly co-pilot</h2>
+      <p>An interactive prototype of the whole platform — run a consultation, watch it draft a note, and submit a case to the MDT. No sign-up.</p>
+      <a href="app/" class="btn big"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg> Launch the demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="frow2">
+      <a href="#top" class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span><span class="nm">Clinic<span style="color:#7FE9DF">Ally</span></span></a>
+      <div style="text-align:right">
+        <div>Faheem Ahmed — Pharmacist Independent Prescriber</div>
+        <div style="margin-top:4px">The Pharmacy Guy · <a href="https://faheemahmed.co.uk">faheemahmed.co.uk</a></div>
+      </div>
+    </div>
+    <p class="disc">This page describes a concept in development. Product features, panel structure, governance arrangements and figures are indicative and subject to confirmation. The interactive demo uses illustrative, pre-written content — it is not a live clinical system and processes no real patient data. ClinicAlly does not replace clinical judgement: the treating prescriber remains the decision-maker and stays accountable throughout. Shared in confidence.</p>
+  </div>
+</footer>
+
+<script>
+  // sticky nav
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 20);
+  onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+
+  // AJAX submit to Netlify Forms (keeps user on page)
+  const form = document.getElementById("panelForm");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new URLSearchParams(new FormData(form)).toString();
+    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data })
+      .then(() => { form.style.display = "none"; document.getElementById("formOk").classList.add("show"); })
+      .catch(() => { form.style.display = "none"; document.getElementById("formOk").classList.add("show"); });
+  });
+</script>
 </body>
 </html>

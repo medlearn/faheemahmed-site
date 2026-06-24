@@ -55,7 +55,17 @@
     window.addEventListener("hashchange", route);
     $("#hamb").addEventListener("click", () => $("#app").classList.toggle("nav-open"));
     $("#scrim").addEventListener("click", () => $("#app").classList.remove("nav-open"));
+    initDemoBar();
     route();
+  }
+
+  function initDemoBar() {
+    const bar = $("#demobar"); if (!bar) return;
+    if (persisted.demobarDismissed) { bar.classList.add("hidden"); return; }
+    $("#demobarX").addEventListener("click", () => {
+      bar.classList.add("hidden");
+      state.demobarDismissed = true; save();
+    });
   }
 
   function buildSidebar() {
