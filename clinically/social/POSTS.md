@@ -165,3 +165,31 @@ Interested, or know someone who'd be a fit? 👇
 ## Universal one-liner (WhatsApp / Instagram / email / anywhere)
 
 Meet **Clinickly Co-pilot** — an AI co-pilot for clinicians, backed by a human MDT. It handles the admin and supports the routine calls; the panel helps with the difficult ones. The clinician stays in charge throughout. Try the demo: faheemahmed.co.uk/clinically/
+
+---
+
+# Post from MEDLRN (education-brand voice) — use with `post-features.png`
+
+If you've learned with MEDLRN, you know our whole focus is helping clinicians prescribe **safely and confidently**.
+
+Here's what we kept seeing: confidence doesn't stop at qualification. Out in practice — often alone — it's the admin, the documentation, and the hard cases with no one to ask that wear people down.
+
+So we've been building something for exactly that: **Clinickly Co-pilot**.
+
+🟢 Decision support, backed by current guidelines
+🟢 Clinical notes drafted in seconds
+🟢 Consultation transcription
+🟢 NICE · GMC · GPhC, kept current
+🟢 Templates, SOPs & inspection-ready governance
+🟢 Training for new prescribers & teams
+🟢 + access to a human **MDT** to reflect on and talk through the difficult cases
+
+AI for the everyday. A human MDT for the difficult. And the clinician stays in charge throughout — it supports your judgement, it never replaces it.
+
+For pharmacies, prescribers and private clinics — established or just starting out.
+
+Take a look — interactive demo in the comments. 👇
+
+#Pharmacy #IndependentPrescribing #MedEd #HealthTech #ClinicalGovernance #Prescribing
+
+**First comment:** Try the interactive demo → faheemahmed.co.uk/clinically/
