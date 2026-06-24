@@ -349,4 +349,9 @@ h2.h{font-family:var(--display);font-size:1.5rem;font-weight:600;letter-spacing:
   .metrics{grid-template-columns:1fr}
   .topbar{padding:12px 16px}
   .topbar h1{font-size:1.2rem}
+  .banner{flex-wrap:wrap}
+  .banner .bi{width:40px;height:40px}
+  .banner .when{margin-left:0;text-align:left;width:100%;padding-top:12px;margin-top:4px;border-top:1px solid rgba(255,255,255,.18);white-space:nowrap}
+  .banner .when b{display:inline;margin-right:9px;font-size:1rem}
+  .litem .meta{display:none}
 }
