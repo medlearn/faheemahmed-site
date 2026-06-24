@@ -12,15 +12,11 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-# clinickly.com → serve the Clinickly Co-pilot site (which lives under /clinically/)
-# at the domain root. Rewrites (200) keep the clinickly.com URL in the bar.
+# copilot.clinickly.com (subdomain) → serve the Clinickly Co-pilot site,
+# which lives under /clinically/, at the subdomain root. 200 = rewrite (URL stays).
+# The apex clinickly.com is a separate site (the clinic) and is untouched.
 [[redirects]]
-  from = "https://clinickly.com/*"
-  to = "/clinically/:splat"
-  status = 200
-  force = true
-[[redirects]]
-  from = "https://www.clinickly.com/*"
+  from = "https://copilot.clinickly.com/*"
   to = "/clinically/:splat"
   status = 200
   force = true
