@@ -1,0 +1,34 @@
+/* Shared styles for ClinicAlly social cards (rendered to PNG via headless Chrome) */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --brand:#0E8C84;--brand-deep:#0A6E68;--brand-soft:#E3F4F2;
+  --ink-bg:#0C2C2A;--ink-bg2:#08201E;--ai:#6A4BF0;--mint:#7FE9DF;
+  --display:"Bodoni Moda",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;
+}
+html,body{overflow:hidden}
+body{font-family:var(--body);color:#fff;position:relative}
+.card{position:relative;overflow:hidden;display:flex;flex-direction:column}
+.dark{background:linear-gradient(145deg,var(--ink-bg) 0%,#0e615b 100%)}
+.dark::after{content:"";position:absolute;right:-8%;top:-18%;width:55%;height:75%;
+  background:radial-gradient(circle at 50% 50%,rgba(127,233,223,.22),transparent 65%);pointer-events:none}
+.light{background:#F4F8F8;color:#10151C}
+.lock{display:flex;align-items:center;gap:18px;position:relative;z-index:2}
+.mark{border-radius:24%;background:linear-gradient(150deg,var(--brand),#13B3A8);display:grid;place-items:center;flex:0 0 auto;box-shadow:0 12px 30px rgba(14,140,132,.45)}
+.mark svg{display:block}
+.brandname{font-family:var(--display);font-weight:700;letter-spacing:-.01em;line-height:1}
+.brandname .a{color:var(--mint)}
+.light .brandname{color:#10151C}.light .brandname .a{color:var(--brand)}
+.kick{font-family:var(--mono);text-transform:uppercase;color:var(--mint);font-weight:600}
+.light .kick{color:var(--brand-deep)}
+.display{font-family:var(--display);font-weight:600;letter-spacing:-.015em;line-height:1.04}
+.hl{background:linear-gradient(transparent 58%,rgba(127,233,223,.32) 58%);padding:0 .04em}
+.light .hl{background:linear-gradient(transparent 58%,rgba(14,140,132,.22) 58%)}
+.foot{font-family:var(--mono);color:var(--mint);position:relative;z-index:2;display:flex;align-items:center;gap:14px}
+.light .foot{color:var(--brand-deep)}
+.pill{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--brand-deep);font-weight:700;border-radius:100px;font-family:var(--body)}
+.chiprow{display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:2}
+.chip{display:inline-flex;align-items:center;gap:12px;border:1.5px solid rgba(127,233,223,.4);border-radius:18px;color:#EAFBF9;font-weight:500}
+.light .chip{border-color:rgba(14,140,132,.25);color:#1d3b39;background:#fff}
+.chip .dot{width:12px;height:12px;border-radius:50%;background:var(--mint);flex:0 0 auto}
+.light .chip .dot{background:var(--brand)}
+.spark-white path{stroke:#fff}
