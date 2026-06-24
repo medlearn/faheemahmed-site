@@ -7,6 +7,9 @@
 <meta name="description" content="ClinicAlly pairs an AI co-pilot that handles the admin with a human multidisciplinary team that keeps clinicians sharp. Supports your judgement — never replaces it. Try the interactive demo or join the clinical panel.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0E8C84">
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RG1R95GPT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-6RG1R95GPT");</script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="ClinicAlly — A co-pilot for clinicians">
 <meta property="og:description" content="AI for the everyday, the MDT for the difficult. Try the interactive demo.">
@@ -60,6 +63,9 @@
   .hero .lede{font-size:1.25rem;color:var(--muted);font-weight:300;max-width:600px;margin:26px 0 0}
   .hero .tagline{font-family:var(--mono);font-size:.82rem;color:var(--brand-deep);margin-top:18px;letter-spacing:.02em}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+  .hero-sublink{margin-top:18px;font-size:.92rem;color:var(--muted)}
+  .hero-sublink a{color:var(--brand-deep);font-weight:600;border-bottom:1.5px solid var(--brand-soft)}
+  .hero-sublink a:hover{border-color:var(--brand)}
   .trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:46px;padding-top:28px;border-top:1px solid var(--line)}
   .trust div{font-size:.84rem;color:var(--muted)}
   .trust b{display:block;font-family:var(--display);font-size:1.5rem;color:var(--ink);font-weight:600}
@@ -189,9 +195,10 @@
   <a href="#top" class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span><span class="nm">Clinic<span>Ally</span></span></a>
   <div class="nlinks">
     <a href="#how">How it works</a>
-    <a href="#panel">The panel</a>
     <a href="#who">Who it's for</a>
-    <a href="app/" class="btn">Try the demo</a>
+    <a href="#panel">For clinicians</a>
+    <a href="app/">Try the demo</a>
+    <a href="#demo" class="btn">Book a demo</a>
   </div>
 </nav>
 
@@ -203,9 +210,10 @@
     <p class="lede">Most clinicians don't burn out from seeing patients. They burn out from everything around it — the notes, the reports, the SOPs, proving months later that every decision was sound. ClinicAlly takes that weight off.</p>
     <p class="tagline">AI for the everyday · the MDT for the difficult.</p>
     <div class="hero-cta">
-      <a href="app/" class="btn big"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg> Try the interactive demo</a>
-      <a href="#panel" class="btn outline big">Join the clinical panel</a>
+      <a href="#demo" class="btn big"><svg viewBox="0 0 24 24"><use href="#i-cal"/></svg> Book a demo</a>
+      <a href="app/" class="btn outline big"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg> Try the interactive demo</a>
     </div>
+    <p class="hero-sublink">Are you a clinician? <a href="#panel">Join the MDT panel →</a></p>
     <div class="trust">
       <div><b>Two pillars</b>Software for the routine, people for the difficult</div>
       <div><b>You stay in charge</b>The decision and accountability remain yours</div>
@@ -300,7 +308,59 @@
   </div>
 </section>
 
-<!-- JOIN FORM -->
+<!-- DEMO REQUEST (customers — primary CTA) -->
+<section class="join" id="demo">
+  <div class="wrap">
+    <div class="joingrid">
+      <div>
+        <span class="kick">For pharmacies, prescribers &amp; clinics</span>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);color:#fff;margin-top:12px">Book a demo &amp; get early access</h2>
+        <p style="color:#BFE5E1;margin-top:14px;font-size:1.02rem">A short walkthrough of ClinicAlly mapped to how your clinic actually works — plus a founding-clinic place on the early-access list.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> See the co-pilot and MDT with your own workflow</li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Founding-clinic early-access pricing</li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Less time on admin, a tighter audit trail</li>
+          <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> No commitment — just a 20-minute conversation</li>
+        </ul>
+      </div>
+      <div class="formcard">
+        <form name="demo-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="demoForm">
+          <input type="hidden" name="form-name" value="demo-request">
+          <p class="hp"><label>Don't fill this in <input name="bot-field"></label></p>
+          <div class="fg"><label>Full name <span class="rq">*</span></label><input name="name" required placeholder="Your name"></div>
+          <div class="frow">
+            <div class="fg"><label>Email <span class="rq">*</span></label><input type="email" name="email" required placeholder="you@clinic.co.uk"></div>
+            <div class="fg"><label>Your role</label>
+              <select name="role"><option>Pharmacist IP</option><option>Pharmacy owner / manager</option><option>Nurse prescriber</option><option>Private GP / clinic</option><option>Other</option></select></div>
+          </div>
+          <div class="fg"><label>Organisation / clinic</label><input name="organisation" placeholder="Pharmacy or clinic name"></div>
+          <div class="fg"><label>What would you like to see?</label><textarea name="message" placeholder="Your setup and what you're hoping ClinicAlly could help with…"></textarea></div>
+          <button type="submit" class="btn big" style="width:100%;justify-content:center"><svg viewBox="0 0 24 24"><use href="#i-cal"/></svg> Book a demo</button>
+          <p class="note">No obligation. We'll reply to arrange a time. Your details are used only to contact you about ClinicAlly.</p>
+        </form>
+        <div class="formok" id="demoOk">
+          <div class="big"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
+          <h3>Thank you</h3>
+          <p>Your request is in. We'll be in touch shortly to arrange your demo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO BAND -->
+<section class="demoband">
+  <div class="wrap">
+    <div class="box">
+      <span class="kick">Prefer to look first?</span>
+      <h2>Try the ClinicAlly co-pilot</h2>
+      <p>An interactive prototype of the whole platform — run a consultation, watch it draft a note, and submit a case to the MDT. No sign-up.</p>
+      <a href="app/" class="btn big"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg> Launch the demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN PANEL (clinicians — secondary) -->
 <section class="join" id="join">
   <div class="wrap">
     <div class="joingrid">
@@ -345,18 +405,6 @@
   </div>
 </section>
 
-<!-- DEMO BAND -->
-<section class="demoband">
-  <div class="wrap">
-    <div class="box">
-      <span class="kick">See it in action</span>
-      <h2>Try the ClinicAlly co-pilot</h2>
-      <p>An interactive prototype of the whole platform — run a consultation, watch it draft a note, and submit a case to the MDT. No sign-up.</p>
-      <a href="app/" class="btn big"><svg viewBox="0 0 24 24"><use href="#i-play"/></svg> Launch the demo</a>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
@@ -368,6 +416,7 @@
       </div>
     </div>
     <p class="disc">This page describes a concept in development. Product features, panel structure, governance arrangements and figures are indicative and subject to confirmation. The interactive demo uses illustrative, pre-written content — it is not a live clinical system and processes no real patient data. ClinicAlly does not replace clinical judgement: the treating prescriber remains the decision-maker and stays accountable throughout. Shared in confidence.</p>
+    <p class="disc" style="margin-top:10px;border-top:none;padding-top:0">Privacy: details you submit are used only to contact you about ClinicAlly. They are not sold or shared, and you can ask us to delete them at any time by emailing <a href="mailto:contact@medlrn.co.uk">contact@medlrn.co.uk</a>.</p>
   </div>
 </footer>
 
@@ -377,15 +426,24 @@
   const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 20);
   onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
 
-  // AJAX submit to Netlify Forms (keeps user on page)
-  const form = document.getElementById("panelForm");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const data = new URLSearchParams(new FormData(form)).toString();
-    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data })
-      .then(() => { form.style.display = "none"; document.getElementById("formOk").classList.add("show"); })
-      .catch(() => { form.style.display = "none"; document.getElementById("formOk").classList.add("show"); });
-  });
+  // AJAX submit to Netlify Forms (keeps user on page) + GA4 conversion event
+  function wireForm(formId, okId, leadType) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    const done = () => {
+      form.style.display = "none";
+      document.getElementById(okId).classList.add("show");
+      if (window.gtag) gtag("event", "generate_lead", { lead_type: leadType });
+    };
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new URLSearchParams(new FormData(form)).toString();
+      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data })
+        .then(done).catch(done);
+    });
+  }
+  wireForm("demoForm", "demoOk", "demo_request");
+  wireForm("panelForm", "formOk", "panel_interest");
 </script>
 </body>
 </html>
