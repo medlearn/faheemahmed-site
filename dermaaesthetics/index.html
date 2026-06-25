@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>DermaAesthetics — Dr Aya | Aesthetics &amp; Dermatology Consultations</title>
+<meta name="description" content="DermaAesthetics with Dr Aya — expert face-to-face aesthetics and dermatology consultations. Personalised, doctor-led skin and aesthetic care in a calm, private clinic. Book your consultation today.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#B76E79">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DermaAesthetics — Dr Aya | Aesthetics &amp; Dermatology">
+<meta property="og:description" content="Doctor-led aesthetics and dermatology consultations, face to face. Personalised skin and aesthetic care with Dr Aya.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#2A2024;--ink-2:#564A50;--muted:#8E8086;--line:#EFE6E8;--bg:#FFFFFF;--tint:#FBF5F4;
+    --rose:#B76E79;--rose-deep:#9A5662;--rose-soft:#F6E7E9;--gold:#C9A96A;--blush:#FDF4F2;
+    --ink-bg:#2C2026;--ink-bg2:#1F171B;
+    --display:"Cormorant Garamond",Georgia,serif;--body:"Jost",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+  body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.005em;line-height:1.08}
+  .kick{font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose-deep);font-weight:500}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--rose);color:#fff;padding:14px 30px;border-radius:40px;font-weight:500;font-size:.9rem;letter-spacing:.04em;border:1.5px solid var(--rose);transition:transform .2s,background .2s,box-shadow .2s}
+  .btn:hover{background:var(--rose-deep);border-color:var(--rose-deep);transform:translateY(-2px);box-shadow:0 14px 30px rgba(183,110,121,.32)}
+  .btn svg{width:16px;height:16px}
+  .btn.outline{background:transparent;color:var(--rose-deep);border-color:var(--line)}
+  .btn.outline:hover{background:var(--rose-soft);box-shadow:none;color:var(--rose-deep)}
+  .btn.light{background:#fff;color:var(--rose-deep);border-color:#fff}
+  .btn.light:hover{background:var(--blush);border-color:var(--blush)}
+  .btn.big{padding:16px 36px;font-size:.98rem}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 28px;transition:background .35s,box-shadow .35s,padding .35s}
+  nav.scrolled{background:rgba(255,255,255,.93);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:13px 28px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo .mark{width:38px;height:38px;border-radius:50%;background:linear-gradient(150deg,var(--rose),var(--gold));display:grid;place-items:center;box-shadow:0 6px 16px rgba(183,110,121,.32)}
+  .logo .mark svg{width:21px;height:21px;color:#fff}
+  .logo .nm{font-family:var(--display);font-weight:600;font-size:1.46rem;letter-spacing:.01em}
+  .logo .nm span{color:var(--rose)}
+  .logo .nm .cp{font-family:var(--body);font-size:.4em;font-weight:400;display:block;letter-spacing:.28em;text-transform:uppercase;opacity:.6;margin-top:-2px}
+  .nlinks{display:flex;align-items:center;gap:30px}
+  .nlinks a:not(.btn){font-size:.86rem;font-weight:400;letter-spacing:.03em;color:var(--ink-2)}
+  .nlinks a:not(.btn):hover{color:var(--rose-deep)}
+  @media(max-width:820px){
+    nav{padding:14px 18px}
+    nav.scrolled{padding:10px 18px}
+    .nlinks a:not(.btn){display:none}
+    .logo .nm{font-size:1.2rem}
+    .logo .nm .cp{font-size:.46em}
+    .logo .mark{width:34px;height:34px}
+    /* compact CTA so it never collides with the wordmark */
+    nav .nlinks .btn{padding:11px 18px;font-size:.8rem;letter-spacing:.02em}
+    nav .nlinks .btn .full{display:none}
+  }
+  @media(max-width:380px){
+    .logo .nm{font-size:1.05rem}
+    nav .nlinks .btn{padding:10px 15px;font-size:.76rem}
+  }
+  @media(max-width:600px){
+    section{padding:64px 0}
+    .wrap{padding:0 22px}
+    header{padding:130px 0 70px}
+    .sec-head{margin-bottom:40px}
+    .scard{padding:30px 26px}
+    .cta-band{padding:46px 26px;border-radius:22px}
+    .contact-row{gap:20px;flex-direction:column;align-items:center}
+    .creds{gap:8px}
+  }
+
+  /* hero */
+  header{padding:165px 0 100px;position:relative;overflow:hidden;background:radial-gradient(900px 560px at 82% -8%,rgba(183,110,121,.13),transparent 62%),linear-gradient(180deg,var(--blush),#fff 70%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(3rem,6.6vw,5.3rem);margin:20px 0 0}
+  .hero h1 em{font-style:italic;color:var(--rose-deep)}
+  .hero .lede{font-size:1.18rem;color:var(--ink-2);max-width:520px;margin:26px 0 0;font-weight:300}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+  .hero-sub{margin-top:22px;font-size:.9rem;color:var(--muted)}
+  .trust{display:flex;gap:34px;flex-wrap:wrap;margin-top:48px;padding-top:30px;border-top:1px solid var(--line)}
+  .trust div{font-size:.82rem;color:var(--muted);letter-spacing:.02em}
+  .trust b{display:block;font-family:var(--display);font-size:1.7rem;color:var(--ink);font-weight:600;margin-bottom:2px}
+  /* hero portrait */
+  .portrait{position:relative}
+  .portrait .frame{aspect-ratio:4/5;border-radius:220px 220px 24px 24px;background:linear-gradient(160deg,var(--rose-soft),var(--blush));display:grid;place-items:center;overflow:hidden;box-shadow:0 30px 70px rgba(183,110,121,.22);border:1px solid var(--line)}
+  .portrait .frame svg{width:42%;color:var(--rose);opacity:.55}
+  .portrait .badge{position:absolute;bottom:-18px;left:-18px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;box-shadow:0 18px 40px rgba(42,32,36,.1)}
+  .portrait .badge .nm{font-family:var(--display);font-size:1.3rem;font-weight:600}
+  .portrait .badge .rl{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-deep);margin-top:2px}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:50px}.portrait{max-width:380px;margin:0 auto}}
+
+  /* sections */
+  section{padding:92px 0}
+  .sec-head{max-width:680px;margin:0 auto 56px;text-align:center}
+  .sec-head h2{font-size:clamp(2.2rem,4.6vw,3.4rem);margin-top:14px}
+  .sec-head p{color:var(--ink-2);font-size:1.1rem;margin-top:16px;font-weight:300}
+  .tint{background:var(--tint)}
+
+  /* services */
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .scard{border:1px solid var(--line);border-radius:22px;padding:40px;background:#fff;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .scard:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(42,32,36,.08);border-color:var(--rose-soft)}
+  .scard .ic{width:58px;height:58px;border-radius:16px;background:var(--rose-soft);color:var(--rose-deep);display:grid;place-items:center;margin-bottom:22px}
+  .scard .ic svg{width:28px;height:28px}
+  .scard h3{font-size:1.85rem;margin-bottom:12px}
+  .scard p{color:var(--muted);font-size:.98rem;font-weight:300}
+  .scard ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:9px}
+  .scard li{font-size:.92rem;color:var(--ink-2);display:flex;gap:10px;align-items:flex-start}
+  .scard li::before{content:"";flex:0 0 7px;height:7px;border-radius:50%;background:var(--gold);margin-top:8px}
+  @media(max-width:760px){.svc{grid-template-columns:1fr}}
+
+  /* treatments grid */
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .fcard{border:1px solid var(--line);border-radius:18px;padding:30px;background:#fff;transition:border-color .2s,transform .15s,box-shadow .2s}
+  .fcard:hover{border-color:var(--rose);transform:translateY(-3px);box-shadow:0 16px 34px rgba(42,32,36,.07)}
+  .fcard .ic{width:46px;height:46px;border-radius:12px;background:var(--blush);color:var(--rose-deep);display:grid;place-items:center;margin-bottom:16px}
+  .fcard .ic svg{width:23px;height:23px}
+  .fcard h4{font-family:var(--display);font-size:1.4rem;font-weight:600;margin-bottom:6px}
+  .fcard p{color:var(--muted);font-size:.9rem;font-weight:300}
+  @media(max-width:760px){.feat{grid-template-columns:1fr}}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+  .about-img .frame{aspect-ratio:1;border-radius:24px;background:linear-gradient(160deg,var(--rose-soft),var(--blush));display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 56px rgba(183,110,121,.18)}
+  .about-img .frame svg{width:40%;color:var(--rose);opacity:.5}
+  .about-text h2{font-size:clamp(2rem,4vw,3rem);margin:14px 0 18px}
+  .about-text p{color:var(--ink-2);font-size:1.05rem;font-weight:300;margin-bottom:16px}
+  .creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .creds span{font-size:.8rem;letter-spacing:.02em;background:var(--rose-soft);color:var(--rose-deep);padding:8px 16px;border-radius:30px;font-weight:400}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:40px}.about-img{max-width:340px;margin:0 auto}}
+
+  /* process */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:8px}
+  .step{text-align:center;padding:0 10px}
+  .step .num{width:62px;height:62px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;font-family:var(--display);font-size:1.7rem;font-weight:600;color:#fff;background:linear-gradient(150deg,var(--rose),var(--gold))}
+  .step h4{font-family:var(--display);font-size:1.5rem;font-weight:600;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:.92rem;font-weight:300}
+  @media(max-width:760px){.steps{grid-template-columns:1fr;gap:34px}}
+
+  /* quote */
+  .quote{text-align:center;max-width:840px;margin:0 auto}
+  .quote p{font-family:var(--display);font-style:italic;font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:500;color:var(--ink);line-height:1.28}
+  .quote .who{font-family:var(--body);font-size:.84rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose-deep);margin-top:26px;font-weight:500}
+
+  /* testimonials */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tcard{border:1px solid var(--line);border-radius:18px;padding:30px;background:#fff}
+  .tcard .stars{color:var(--gold);letter-spacing:3px;margin-bottom:14px;font-size:.9rem}
+  .tcard p{font-size:.98rem;color:var(--ink-2);font-weight:300;font-style:italic}
+  .tcard .nm{margin-top:18px;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  @media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+
+  /* CTA / booking */
+  .cta-band{background:linear-gradient(160deg,var(--ink-bg),var(--rose-deep));color:#fff;border-radius:28px;padding:64px 56px;text-align:center;position:relative;overflow:hidden}
+  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 80% 0%,rgba(201,169,106,.22),transparent 60%);pointer-events:none}
+  .cta-band h2{font-size:clamp(2.2rem,4.6vw,3.4rem);margin-bottom:16px;position:relative}
+  .cta-band p{color:rgba(255,255,255,.82);font-size:1.1rem;max-width:560px;margin:0 auto 32px;font-weight:300;position:relative}
+  .cta-band .btn{position:relative}
+  .contact-row{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:34px;position:relative}
+  .contact-row a{font-size:.92rem;color:rgba(255,255,255,.9);display:inline-flex;align-items:center;gap:9px;letter-spacing:.02em}
+  .contact-row a:hover{color:#fff}
+  .contact-row svg{width:17px;height:17px;color:var(--gold)}
+
+  /* footer */
+  footer{padding:60px 0 40px;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+  .foot .logo .nm{font-size:1.3rem}
+  .foot p{font-size:.82rem;color:var(--muted)}
+  .foot-links{display:flex;gap:24px}
+  .foot-links a{font-size:.84rem;color:var(--ink-2)}
+  .foot-links a:hover{color:var(--rose-deep)}
+  .disclaimer{margin-top:32px;font-size:.74rem;color:var(--muted);line-height:1.6;max-width:760px}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="logo" aria-label="DermaAesthetics home">
+    <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg></span>
+    <span class="nm">Derma<span>Aesthetics</span><span class="cp">with Dr Aya</span></span>
+  </a>
+  <div class="nlinks">
+    <a href="#services">Services</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#about">Dr Aya</a>
+    <a href="#process">How it works</a>
+    <a href="#book" class="btn">Book<span class="full">&nbsp;a consultation</span></a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero">
+        <span class="kick">Aesthetics &amp; Dermatology</span>
+        <h1>Confident skin, <em>expertly</em> cared for.</h1>
+        <p class="lede">Doctor-led, face-to-face aesthetics and dermatology consultations with Dr Aya. Honest advice, natural results, and a treatment plan built entirely around you.</p>
+        <div class="hero-cta">
+          <a href="#book" class="btn big">Book a consultation
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#services" class="btn outline big">Explore services</a>
+        </div>
+        <p class="hero-sub">Private clinic · Same-week appointments · No obligation to treat</p>
+        <div class="trust">
+          <div><b>10+ yrs</b>Medical experience</div>
+          <div><b>1,500+</b>Consultations</div>
+          <div><b>Face&nbsp;to&nbsp;face</b>Always doctor-led</div>
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="frame">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        </div>
+        <div class="badge">
+          <div class="nm">Dr Aya</div>
+          <div class="rl">Aesthetic &amp; Skin Doctor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">What we offer</span>
+      <h2>Two ways to care for your skin</h2>
+      <p>Whether you're exploring aesthetic treatments or managing a skin concern, every journey begins with an unhurried, face-to-face consultation.</p>
+    </div>
+    <div class="svc">
+      <div class="scard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg></div>
+        <h3>Aesthetic Consultations</h3>
+        <p>A relaxed, face-to-face conversation about your goals — followed by a clear, personalised plan. We never upsell; we recommend only what's right for you.</p>
+        <ul>
+          <li>Anti-wrinkle &amp; line-softening treatments</li>
+          <li>Dermal fillers &amp; facial balancing</li>
+          <li>Skin boosters &amp; profhilo</li>
+          <li>Bespoke skin rejuvenation plans</li>
+        </ul>
+      </div>
+      <div class="scard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m18 0V5a2 2 0 0 0-2-2h-4M3 15v4a2 2 0 0 0 2 2h4m6 0h4a2 2 0 0 0 2-2v-4"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Dermatology Consultations</h3>
+        <p>Medical assessment of skin conditions by a doctor — with diagnosis, evidence-based treatment, and a follow-up plan. Clarity and reassurance, in one visit.</p>
+        <ul>
+          <li>Acne, rosacea &amp; eczema management</li>
+          <li>Pigmentation &amp; melasma</li>
+          <li>Mole &amp; lesion checks</li>
+          <li>Medical skincare prescribing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section id="treatments" class="tint">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Treatments</span>
+      <h2>Refined, evidence-based care</h2>
+      <p>A curated menu of treatments — each delivered by Dr Aya herself, with safety and natural results at the centre of every decision.</p>
+    </div>
+    <div class="feat">
+      <div class="fcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-7 15-7 18 0-3 7-15 7-18 0z"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+        <h4>Anti-Wrinkle</h4>
+        <p>Subtle softening of expression lines for a refreshed, rested look — never frozen.</p>
+      </div>
+      <div class="fcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6 6 .5-4.5 4 1.4 6L12 15.5 6.6 18.5 8 12.5 3.5 8.5l6-.5z"/></svg></div>
+        <h4>Dermal Fillers</h4>
+        <p>Restore volume and balance facial features with natural, proportionate results.</p>
+      </div>
+      <div class="fcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21c-2.5 0-4-2-4-4 0-3 4-5 4-9a5 5 0 0 1 10 0c0 4 4 6 4 9 0 2-1.5 4-4 4z"/></svg></div>
+        <h4>Skin Boosters</h4>
+        <p>Deep hydration and glow with profhilo and microinjectable treatments.</p>
+      </div>
+      <div class="fcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Acne &amp; Rosacea</h4>
+        <p>Medical-grade plans to calm, clear and control problem skin for the long term.</p>
+      </div>
+      <div class="fcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h4>Mole &amp; Skin Checks</h4>
+        <p>Professional examination and peace of mind for moles, marks and lesions.</p>
+      </div>
+      <div class="fcard rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></div>
+        <h4>Skincare Prescribing</h4>
+        <p>Tailored medical skincare and routines that actually suit your skin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT DR AYA -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img rv">
+        <div class="frame">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        </div>
+      </div>
+      <div class="about-text rv">
+        <span class="kick">Meet your doctor</span>
+        <h2>Dr Aya</h2>
+        <p>Dr Aya is a medical doctor with a deep focus on aesthetics and dermatology. Her philosophy is simple: results should look like you, only more refreshed — and every recommendation should be honest, safe and led by clinical judgement.</p>
+        <p>Patients come to Dr Aya for her unhurried, thorough consultations and her commitment to natural-looking outcomes. You'll never be rushed, never pressured, and always treated by the doctor herself — face to face, from first consultation to follow-up.</p>
+        <div class="creds">
+          <span>Medical Doctor</span>
+          <span>Aesthetic Medicine</span>
+          <span>Dermatology Focus</span>
+          <span>Fully Insured</span>
+          <span>Doctor-led Care</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="tint">
+  <div class="wrap">
+    <div class="quote rv">
+      <p>"Good aesthetic medicine isn't about changing how you look — it's about helping you look like the best version of yourself."</p>
+      <div class="who">— Dr Aya</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">How it works</span>
+      <h2>Simple, considered, unhurried</h2>
+      <p>Three steps from first enquiry to results you'll love — with no obligation to proceed at any stage.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <div class="num">1</div>
+        <h4>Consultation</h4>
+        <p>Meet Dr Aya face to face. Share your goals or concerns and have all your questions answered honestly.</p>
+      </div>
+      <div class="step rv">
+        <div class="num">2</div>
+        <h4>Your plan</h4>
+        <p>Receive a clear, personalised plan — including options, expectations, costs and aftercare. No pressure to decide on the day.</p>
+      </div>
+      <div class="step rv">
+        <div class="num">3</div>
+        <h4>Treatment &amp; care</h4>
+        <p>Your treatment delivered safely by Dr Aya, with attentive follow-up to make sure you're delighted with the result.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews" class="tint">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Patient stories</span>
+      <h2>Loved by our patients</h2>
+    </div>
+    <div class="tgrid">
+      <div class="tcard rv">
+        <div class="stars">★★★★★</div>
+        <p>"Dr Aya took the time to really listen. The results are so natural that my friends just say I look well-rested. I couldn't be happier."</p>
+        <div class="nm">Sarah M.</div>
+      </div>
+      <div class="tcard rv">
+        <div class="stars">★★★★★</div>
+        <p>"After years of struggling with acne, I finally have clear skin. The dermatology consultation was thorough and genuinely life-changing."</p>
+        <div class="nm">Priya K.</div>
+      </div>
+      <div class="tcard rv">
+        <div class="stars">★★★★★</div>
+        <p>"Professional, honest and never pushy. Dr Aya only recommended what I actually needed. A truly five-star experience from start to finish."</p>
+        <div class="nm">Emma T.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK / CONTACT -->
+<section id="book">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <span class="kick" style="color:var(--gold)">Book your consultation</span>
+      <h2>Ready to feel confident in your skin?</h2>
+      <p>Book a private, no-obligation consultation with Dr Aya. Same-week appointments are usually available.</p>
+      <a href="mailto:hello@dermaaesthetics.co.uk?subject=Consultation%20enquiry" class="btn light big">Request an appointment
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="contact-row">
+        <a href="tel:+440000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call the clinic</a>
+        <a href="mailto:hello@dermaaesthetics.co.uk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>hello@dermaaesthetics.co.uk</a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Visit our clinic</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#" class="logo">
+        <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg></span>
+        <span class="nm">Derma<span>Aesthetics</span></span>
+      </a>
+      <div class="foot-links">
+        <a href="#services">Services</a>
+        <a href="#about">Dr Aya</a>
+        <a href="#book">Book</a>
+      </div>
+    </div>
+    <p class="disclaimer">DermaAesthetics provides medical aesthetic and dermatology consultations led by Dr Aya. All treatments follow an in-person consultation and are subject to clinical suitability. Results vary between individuals and are not guaranteed. This website is for information only and does not constitute medical advice.</p>
+    <p style="margin-top:18px;font-size:.8rem;color:var(--muted)">© <span id="yr"></span> DermaAesthetics · Dr Aya. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // nav scroll
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>20)});
+  // year
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
