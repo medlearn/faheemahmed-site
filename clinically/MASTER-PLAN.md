@@ -150,6 +150,25 @@ Integrations (PMR/EHR), more specialties, partnerships (pharmacy groups), consid
 
 ---
 
+## 7a. Domain setup — `copilot.clinickly.com` (access required)
+
+The Co-pilot's intended home is the subdomain `copilot.clinickly.com`. It is currently **blocked**: a *different* Netlify account (the one hosting the `clinickly.com` clinic site) has already claimed the subdomain (or a `*.clinickly.com` wildcard). Freeing it needs **two logins**:
+
+| System | Who likely has it | Action |
+|--------|-------------------|--------|
+| **Netlify account hosting the clinic site** (separate from the faheemahmed account) | Whoever built clinickly.com | Domain management → remove `copilot.clinickly.com` / `*.clinickly.com` |
+| **IONOS** (DNS for `clinickly.com` — `ui-dns` nameservers) | Faheem / clinic-site owner | Add **CNAME** `copilot` → the target Netlify shows (usually `<site>.netlify.app`) |
+
+**Sequence to go live:**
+1. Remove the claim on the clinic's Netlify project.
+2. Add `copilot.clinickly.com` as a domain alias on the **faheemahmed.co.uk** Netlify site.
+3. Add the IONOS CNAME → Netlify target; wait for DNS + auto-SSL.
+4. Verify it serves the Co-pilot (rewrite already in `netlify.toml`), then flip all marketing/og links from `faheemahmed.co.uk/clinically/` → `copilot.clinickly.com`.
+
+**Until then:** everything runs on `faheemahmed.co.uk/clinically/` (live, working) — safe to advertise.
+
+---
+
 ## 8. Decision log (fill in as you go)
 
 | Date | Decision | Notes |
