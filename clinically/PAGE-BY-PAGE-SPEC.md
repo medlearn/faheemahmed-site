@@ -111,9 +111,9 @@ The front door to Pillar 2 (the human MDT). Send an **anonymised** difficult cas
 
 **Decision:** the separate "Saved records" page is **not needed** — it duplicates the notes list.
 - Everything is persisted automatically, so **notes live only in Clinical notes** and **cases only in My cases** (both DB-backed). **One notes list, not two.** Delete the "Saved records" page.
-- **Remove "Release to patient."** Clinickly is the clinician's assistant (Version A); anything patient-facing goes through the clinic's **own/alongside patient portal**, not Clinickly.
+- **Remove "Release to patient" for now.** Clinickly is the clinician's assistant (Version A). If a clinician wants to share something with a patient during the pilot, they do it **their own way** — email, or their own notes/patient system. Clinickly does **not** handle patient sharing yet.
 
-**Open question flagged for later (Patient portal review):** if patients are served entirely by the clinic's own portal, the **patient portal built inside Clinickly may not be needed at all** — which would also simplify roles to **clinician + MDT panel + admin** (removing the doctor/patient login confusion). *Revisit at the Patient portal page.*
+**Patient portal = deferred to a later phase (not scrapped).** For the pilot, roles simplify to **clinician + MDT panel + admin** (this also removes the doctor/patient login confusion Faheem started with). The **full patient portal is built later**, and the **"share/release to patient" capability returns then**, done properly as part of it. *Revisit at the Patient portal page.*
 
 ---
 
