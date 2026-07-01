@@ -117,6 +117,38 @@ The front door to Pillar 2 (the human MDT). Send an **anonymised** difficult cas
 
 ---
 
+## 6. Guidelines
+
+**Purpose**
+A searchable library of clinical guidance (NICE, CKS, GMC, GPhC, BNF, MHRA + licensed point-of-care sources). Same source that feeds the **decision-support flags** on the Consultation page, and underpins the *"what did guidance say at the time"* defensibility.
+
+**What we have now**
+- Searchable cards + source filters; opening a card shows a stub marked **"Demo content."** Not connected to real guidance yet.
+
+**Sources — APIs applied for:** NICE (Syndication), **BMJ Best Practice**, **UpToDate**, **DynaMed**.
+
+**Decisions — target state**
+- **Two mechanisms, both grounded in official sources:**
+  1. **Curated library:** AI **drafts** a plain-English summary → **clinician checks** it against the source → published with a **link to source + date-checked**.
+  2. **Restricted official-site search:** for anything not curated, the AI searches **official domains only** (`nice.org.uk`, `cks.nice.org.uk`, BNF), reads the **current** text, and answers from that (with a link). This same engine grounds the **decision-support** flags (fixes the "AI-from-memory" weakness).
+- **Guardrails:** human-checked before publish · always link + **"verify at source"** · official domains only · closed pilot while unlicensed.
+- **⚠️ Copyright split (critical):** the curated DB / pipeline covers **NICE/CKS + your own clinical summaries ONLY**. Commercial sources (**UpToDate / DynaMed / BMJ Best Practice**) are copyrighted — **link-out only until their licence/API lands**; do **NOT** AI-clone them into the DB.
+
+**Guideline governance pipeline — STANDARD build (not phased)**
+The tool keeps guidance current through a governed workflow that **reuses the MDT / roles / DB machinery already being built**:
+1. AI **drafts** an update/summary →
+2. **MDT reviews** (routed to the relevant specialty) →
+3. **Clinical lead signs off** (named, dated) →
+4. **Published** to clinicians, **versioned** →
+5. **Every step audit-logged** (AI draft, reviewer, signer, when).
+- Run from an **Admin / Clinical Governance console** (the admin role's main job).
+- **Benefits:** always-current + human-governed + defensible ("published on X, reviewed by Dr Y, signed by Z") + strengthens clinical-safety (DCB0129) + a trust story to sell.
+- **Fast-follow (not day-one):** **AI auto change-detection** (watches sources, auto-flags "NG87 changed"). **Launch interim:** manual **"review due"** schedule (~every 3 months).
+
+**Updates handled by:** link + last-checked + **live-search for real decisions** (never trust a stale cache) + review cycle → becomes **automatic** once the APIs land.
+
+---
+
 *(more pages added as we review them)*
 
 ---
