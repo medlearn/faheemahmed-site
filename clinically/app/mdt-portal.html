@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clinickly — MDT panel portal (reference mockup)</title>
+<title>Clinickly — MDT panel portal (prototype)</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,61 +20,102 @@
   <g id="i-send" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-8-8-4z"/></g>
   <g id="i-book" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 1 6 18h14"/></g>
   <g id="i-doc" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></g>
-  <g id="i-clock" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g>
+  <g id="i-cap" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5M21.5 8v5"/></g>
+  <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 6.5"/></g>
+  <g id="i-play" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></g>
+  <g id="i-x" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></g>
 </defs></svg>
 
 <div class="app">
   <aside class="side">
-    <div class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span><span class="name">Clinic<span>kly</span><span class="cp"> MDT panel</span></span></div>
+    <div class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span><span class="name">Clinic<span>kly</span><span class="cp"> MDT</span></span></div>
     <div class="seg">Panel</div>
-    <nav>
-      <button class="nav-i active"><svg viewBox="0 0 24 24"><use href="#i-inbox"/></svg><span>My assigned cases</span><span class="badge">2</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>Governance review</span><span class="badge">3</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-cal"/></svg><span>Sessions</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-people"/></svg><span>Panel directory</span></button>
-    </nav>
+    <nav id="nav"></nav>
     <div class="side-foot">
       <div class="user"><span class="av">RK</span><span class="who"><b>Dr R. Kaur</b><small>Dermatologist · Panel</small></span></div>
+      <a class="back" href="portals.html">↔ Switch portal</a>
     </div>
   </aside>
-
   <main class="main">
-    <header class="topbar"><div><h1>MDT panel</h1><div class="sub">Cases routed to you &amp; content to review — advisory input only</div></div><div class="spacer"></div><span class="pill"><span class="dot"></span> Panel: Dermatology</span></header>
-    <div class="view">
-      <div class="metrics" style="grid-template-columns:repeat(3,1fr)">
-        <div class="metric"><div class="v">2</div><div class="l">Cases awaiting your response</div><div class="d">this cycle</div></div>
-        <div class="metric"><div class="v">14</div><div class="l">Cases answered</div><div class="d">last 3 months</div></div>
-        <div class="metric"><div class="v">3</div><div class="l">Content to review</div><div class="d">governance</div></div>
-      </div>
-
-      <div class="sec-title" style="margin-top:26px"><h2 class="h">Cases assigned to you</h2></div>
-      <div class="grid">
-        <div class="case">
-          <div class="ch"><span class="ic" style="width:34px;height:34px;border-radius:9px;background:var(--brand-soft);color:var(--brand-deep);display:grid;place-items:center;flex:0 0 auto"><svg viewBox="0 0 24 24" style="width:18px;height:18px"><use href="#i-inbox"/></svg></span><b>Uncertain rosacea vs. perioral dermatitis</b><span style="margin-left:auto" class="tag warn">Awaiting your response</span></div>
-          <div class="cb">
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><span class="tag">Dermatology</span><span class="tag">Diagnostic uncertainty</span><span class="tag">C-228</span><span class="tag">Submitted 20 Jun</span></div>
-            <div class="lbl" style="font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Anonymised case</div>
-            <p style="font-size:.86rem;color:var(--ink-2);line-height:1.5">34M, central facial erythema with papulopustules, no comedones, gritty eyes. Querying rosacea with ocular involvement vs. perioral dermatitis before committing to topical. <b>Question:</b> which is more likely, and safe first-line?</p>
-            <div style="margin-top:14px"><div class="lbl" style="font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:6px">Your response</div>
-              <textarea class="textarea" placeholder="Advisory input — the treating clinician remains responsible for the decision…">Features fit papulopustular rosacea with early ocular involvement (distribution + telangiectasia + lid signs). Reasonable to start topical ivermectin + lid hygiene, review 6–8 weeks; low threshold for optometry if eyes worsen.</textarea>
-              <div style="display:flex;gap:10px;margin-top:10px"><button class="btn"><svg viewBox="0 0 24 24"><use href="#i-send"/></svg> Submit response</button><button class="btn ghost sm">Save draft</button></div>
-            </div>
-          </div>
-        </div>
-        <div class="case">
-          <div class="ch"><span class="ic" style="width:34px;height:34px;border-radius:9px;background:var(--brand-soft);color:var(--brand-deep);display:grid;place-items:center;flex:0 0 auto"><svg viewBox="0 0 24 24" style="width:18px;height:18px"><use href="#i-inbox"/></svg></span><b>Persistent facial rash — ?rosacea subtype</b><span style="margin-left:auto" class="tag warn">Awaiting your response</span></div>
-          <div class="cb"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><span class="tag">Dermatology</span><span class="tag">Treatment choice</span><span class="tag">C-235</span></div><p style="font-size:.86rem;color:var(--ink-2)">41F, erythematotelangiectatic pattern, flushing, minimal papules. Asking whether topical vs oral is warranted. <button class="btn ghost sm" style="margin-left:6px">Open &amp; respond</button></p></div>
-        </div>
-      </div>
-
-      <div class="sec-title" style="margin-top:26px"><h2 class="h">Governance review queue</h2><span class="tag teal">Panel signs off content</span></div>
-      <div class="list">
-        <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span><span class="bd"><b>NICE CKS — Rosacea · update draft</b><small>AI-drafted summary of the latest change — check for accuracy before it publishes</small></span><span class="meta"><button class="btn sm">Review</button></span></div>
-        <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><span class="bd"><b>Dermatology note template v2</b><small>New history prompts added — confirm clinically sound</small></span><span class="meta"><button class="btn sm">Review</button></span></div>
-        <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg></span><span class="bd"><b>Rosacea &amp; facial dermatoses — training module</b><small>Review before it goes to clinicians</small></span><span class="meta"><button class="btn sm">Review</button></span></div>
-      </div>
-    </div>
+    <header class="topbar"><div><h1 id="pt">My assigned cases</h1><div class="sub" id="ps">Cases routed to you — advisory input only</div></div><div class="spacer"></div><span class="pill"><span class="dot"></span> Panel: Dermatology · Prototype</span></header>
+    <div class="view" id="view"></div>
   </main>
 </div>
+<div class="toasts" id="toasts"></div>
+<div id="modalRoot"></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstElementChild};
+const ic=id=>`<svg viewBox="0 0 24 24"><use href="#${id}"/></svg>`;
+const toast=m=>{const t=el(`<div class="toast"><span class="ti">${ic('i-check')}</span><span>${m}</span></div>`);$('#toasts').appendChild(t);setTimeout(()=>{t.style.transition='opacity .4s';t.style.opacity='0';setTimeout(()=>t.remove(),400)},2800)};
+function modal(title,body,onMount){const bg=el(`<div class="modal-bg"><div class="modal"><div class="mh"><h3>${title}</h3><button class="x">${ic('i-x')}</button></div><div class="mb"></div></div></div>`);$('.mb',bg).innerHTML=body;const close=()=>bg.remove();$('.x',bg).addEventListener('click',close);bg.addEventListener('click',e=>{if(e.target===bg)close()});$('#modalRoot').appendChild(bg);if(onMount)onMount(bg,close);}
+
+const cases=[
+ {id:'C-228',title:'Uncertain rosacea vs. perioral dermatitis',area:'Dermatology',qtype:'Diagnostic uncertainty',sub:'20 Jun',status:'awaiting',summary:'34M, central facial erythema with papulopustules, no comedones, gritty eyes. Querying rosacea with ocular involvement vs. perioral dermatitis before committing to topical.',q:'Which is more likely, and safe first-line?'},
+ {id:'C-235',title:'Persistent facial rash — ?rosacea subtype',area:'Dermatology',qtype:'Treatment choice',sub:'26 Jun',status:'awaiting',summary:'41F, erythematotelangiectatic pattern, flushing, minimal papules. Asking whether topical vs oral is warranted.',q:'Topical or oral first?'},
+ {id:'C-221',title:'Peri-oral rash in pregnancy',area:'Dermatology',qtype:'Medication query',sub:'11 Jun',status:'answered',summary:'29F, 2nd trimester, perioral dermatitis. Which topical is safe in pregnancy?',q:'Safe topical in pregnancy?',resp:'Avoid topical steroids; topical erythromycin is a reasonable pregnancy-safe option. Stop any steroid creams. Advisory only.'}
+];
+const govern=[
+ {t:'NICE CKS — Rosacea · update draft',d:'AI-drafted summary of the latest change — check accuracy before it publishes',ic:'i-book'},
+ {t:'Dermatology note template v2',d:'New history prompts added — confirm clinically sound',ic:'i-doc'},
+ {t:'Rosacea & facial dermatoses — training module',d:'Review before it goes to clinicians',ic:'i-cap'}
+];
+const sessions=[
+ {t:'Monthly MDT — July cycle',d:'Tue 28 Jul 2026 · 19:00–20:30 · Virtual',tag:'Upcoming',cls:'teal'},
+ {t:'Monthly MDT — June cycle',d:'30 Jun 2026 · recording available',tag:'Recorded',cls:''},
+ {t:'Monthly MDT — May cycle',d:'27 May 2026 · recording available',tag:'Recorded',cls:''}
+];
+const panel=[
+ {i:'AO',n:'Dr A. Okafor',r:'Chair / Clinical lead · Governance',chair:true},
+ {i:'SM',n:'Dr S. Mehta',r:'GP · General practice'},
+ {i:'LB',n:'Dr L. Bright',r:'Psychiatrist · Psychiatry'},
+ {i:'RK',n:'Dr R. Kaur',r:'Dermatologist · Dermatology'}
+];
+
+const NAV=[
+ {id:'cases',label:'My assigned cases',icon:'i-inbox',title:'My assigned cases',sub:'Cases routed to you — advisory input only',badge:()=>cases.filter(c=>c.status==='awaiting').length},
+ {id:'govern',label:'Governance review',icon:'i-shield',title:'Governance review',sub:'Content to check & sign before it publishes',badge:()=>govern.length},
+ {id:'sessions',label:'Sessions',icon:'i-cal',title:'MDT sessions',sub:'Upcoming and recorded'},
+ {id:'panel',label:'Panel directory',icon:'i-people',title:'The panel',sub:'Your multidisciplinary team'}
+];
+
+function caseCard(c){const answered=c.status==='answered';
+ return `<div class="case"><div class="ch"><span class="ic" style="width:34px;height:34px;border-radius:9px;background:var(--brand-soft);color:var(--brand-deep);display:grid;place-items:center;flex:0 0 auto">${ic('i-inbox')}</span><b>${c.title}</b><span style="margin-left:auto" class="tag ${answered?'ok':'warn'}">${answered?'Answered':'Awaiting your response'}</span></div>
+ <div class="cb"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><span class="tag">${c.area}</span><span class="tag">${c.qtype}</span><span class="tag">${c.id}</span><span class="tag">Submitted ${c.sub}</span></div>
+ <div style="font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Anonymised case</div><p style="font-size:.86rem;color:var(--ink-2);line-height:1.5">${c.summary} <b>Q:</b> ${c.q}</p>
+ ${answered?`<div class="resp" style="margin-top:12px;background:var(--brand-soft);border-radius:11px;padding:13px 15px"><div style="font-size:.84rem;color:var(--brand-deep);font-weight:600;margin-bottom:4px">Your response</div><p style="font-size:.85rem;color:var(--ink-2)">${c.resp}</p></div>`
+ :`<div style="margin-top:12px"><button class="btn" data-open="${c.id}">${ic('i-send')} Write response</button></div>`}</div></div>`;
+}
+
+const VIEWS={
+ cases(v){const await_=cases.filter(c=>c.status==='awaiting').length;
+  v.innerHTML=`<div class="metrics" style="grid-template-columns:repeat(3,1fr)"><div class="metric"><div class="v">${await_}</div><div class="l">Awaiting your response</div><div class="d">this cycle</div></div><div class="metric"><div class="v">14</div><div class="l">Answered</div><div class="d">last 3 months</div></div><div class="metric"><div class="v">3</div><div class="l">Content to review</div><div class="d">governance</div></div></div>
+  <div class="sec-title" style="margin-top:24px"><h2 class="h">Cases assigned to you</h2></div><div class="grid">${cases.map(caseCard).join('')}</div>`;
+  v.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openCase(b.dataset.open)));
+ },
+ govern(v){v.innerHTML=`<div class="sec-title"><h2 class="h">Governance review queue</h2><span class="tag teal">Panel signs off content</span></div><div class="list">${govern.map((g,i)=>`<div class="litem"><span class="ic">${ic(g.ic)}</span><span class="bd"><b>${g.t}</b><small>${g.d}</small></span><span class="meta"><button class="btn sm" data-rev="${i}">Review</button></span></div>`).join('')}</div>
+  <div class="disc" style="margin-top:16px">${ic('i-shield')} You review for clinical accuracy; the clinical lead gives final sign-off in the admin console. Every step is versioned and audit-logged.</div>`;
+  v.querySelectorAll('[data-rev]').forEach(b=>b.addEventListener('click',()=>{const g=govern[b.dataset.rev];modal(g.t,`<p class="muted" style="font-size:.9rem;line-height:1.6">${g.d}.</p><p style="font-size:.88rem;margin-top:12px;color:var(--ink-2)">In the live product this shows the full AI-drafted content to check against source. Approve to pass it to the clinical lead for sign-off.</p><div style="display:flex;gap:10px;margin-top:16px"><button class="btn" id="ap">${ic('i-check')} Approve &amp; pass to sign-off</button><button class="btn ghost" id="rq">Request changes</button></div>`,(bg,close)=>{$('#ap',bg).addEventListener('click',()=>{close();toast('Reviewed — passed to clinical lead for sign-off.')});$('#rq',bg).addEventListener('click',()=>{close();toast('Sent back with change request.')})})}));
+ },
+ sessions(v){v.innerHTML=`<div class="banner"><span class="bi">${ic('i-cal')}</span><div><b>Monthly MDT — July cycle</b><p>Part teaching · part case discussion · part reflection</p></div><div class="when"><b>28 Jul 2026</b>19:00–20:30 BST</div></div>
+  <div class="list">${sessions.map(s=>`<div class="litem"><span class="ic">${ic('i-play')}</span><span class="bd"><b>${s.t}</b><small>${s.d}</small></span><span class="meta"><span class="tag ${s.cls}">${s.tag}</span></span></div>`).join('')}</div>`;
+ },
+ panel(v){v.innerHTML=`<div class="sec-title"><h2 class="h">The panel</h2></div><div class="panel-list">${panel.map(p=>`<div class="pmember ${p.chair?'chair':''}"><span class="av">${p.i}</span><div class="bd"><b>${p.n}</b><small>${p.r}</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>`).join('')}</div><div class="disc" style="margin-top:14px">${ic('i-shield')} Advisory peer input — the treating clinician remains responsible for the decision.</div>`;
+ }
+};
+
+function openCase(id){const c=cases.find(x=>x.id===id);
+ modal(c.title,`<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><span class="tag">${c.area}</span><span class="tag">${c.qtype}</span><span class="tag">${c.id}</span></div>
+ <div style="font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Anonymised case</div><p style="font-size:.9rem;color:var(--ink-2);line-height:1.55">${c.summary}</p><p style="font-size:.9rem;margin-top:8px"><b>Question:</b> ${c.q}</p>
+ <div style="margin-top:14px"><label style="font-size:.82rem;font-weight:600;display:block;margin-bottom:6px">Your response <span style="color:var(--muted);font-weight:400">(advisory only)</span></label><textarea class="textarea" id="rt" placeholder="Advisory input — the treating clinician remains responsible…"></textarea></div>
+ <div style="display:flex;gap:10px;margin-top:14px"><button class="btn" id="sub">${ic('i-send')} Submit response</button><button class="btn ghost" id="cn">Cancel</button></div>`,
+ (bg,close)=>{$('#cn',bg).addEventListener('click',close);$('#sub',bg).addEventListener('click',()=>{const t=$('#rt',bg).value.trim();if(!t){$('#rt',bg).focus();return}c.status='answered';c.resp=t;close();toast('Response submitted — clinician notified.');buildNav();route();})});
+}
+
+function buildNav(){const n=$('#nav');n.innerHTML='';NAV.forEach(it=>{const b=el(`<button class="nav-i" data-go="${it.id}">${ic(it.icon)}<span>${it.label}</span></button>`);const bd=it.badge&&it.badge();if(bd)b.insertAdjacentHTML('beforeend',`<span class="badge">${bd}</span>`);b.addEventListener('click',()=>location.hash='#'+it.id);n.appendChild(b)})}
+function route(){const id=location.hash.replace('#','')||'cases';const it=NAV.find(x=>x.id===id)||NAV[0];$('#pt').textContent=it.title;$('#ps').textContent=it.sub;document.querySelectorAll('.nav-i').forEach(b=>b.classList.toggle('active',b.dataset.go===it.id));const v=$('#view');v.innerHTML='';VIEWS[it.id](v);window.scrollTo(0,0)}
+window.addEventListener('hashchange',route);buildNav();route();
+</script>
 </body>
 </html>

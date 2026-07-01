@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clinickly — Admin / Governance console (reference mockup)</title>
+<title>Clinickly — Admin / Governance console (prototype)</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,87 +21,112 @@
   <g id="i-doc" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></g>
   <g id="i-cap" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5M21.5 8v5"/></g>
   <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 6.5"/></g>
-  <g id="i-users" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.2a3 3 0 0 1 0 5.6M17 14.5a5.5 5.5 0 0 1 3.5 4.5"/></g>
   <g id="i-chart" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4M4 20h16M8 20v-6M12 20v-10M16 20v-4"/></g>
   <g id="i-plus" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></g>
+  <g id="i-x" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></g>
+  <g id="i-up" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V8M7 12.5l5-5 5 5M4.5 4h15"/></g>
 </defs></svg>
 
 <div class="app">
   <aside class="side">
     <div class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span><span class="name">Clinic<span>kly</span><span class="cp"> Admin</span></span></div>
     <div class="seg">Engine room</div>
-    <nav>
-      <button class="nav-i active"><svg viewBox="0 0 24 24"><use href="#i-grid"/></svg><span>Overview</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>Governance sign-off</span><span class="badge">4</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-people"/></svg><span>Panel management</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-cal"/></svg><span>MDT schedule</span></button>
-    </nav>
+    <nav id="navTop"></nav>
     <div class="seg">Content &amp; data</div>
-    <nav>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg><span>Content libraries</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg><span>Regulatory standards</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-users"/></svg><span>Users &amp; clinics</span></button>
-      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg><span>Reports &amp; audit</span></button>
-    </nav>
-    <div class="side-foot"><div class="user"><span class="av">FA</span><span class="who"><b>Faheem Ahmed</b><small>Admin · Clinical lead</small></span></div></div>
-  </aside>
-
-  <main class="main">
-    <header class="topbar"><div><h1>Admin &amp; Governance</h1><div class="sub">Manage the panel, content, users and audits — the engine room</div></div><div class="spacer"></div><span class="pill"><span class="dot"></span> Admin</span></header>
-    <div class="view">
-      <div class="metrics">
-        <div class="metric"><div class="v">26</div><div class="l">Active clinicians</div><div class="d">+4 this month</div></div>
-        <div class="metric"><div class="v">4</div><div class="l">Panel members</div><div class="d">GP · Psych · Derm · Chair</div></div>
-        <div class="metric"><div class="v">4</div><div class="l">Awaiting sign-off</div><div class="d">governance</div></div>
-        <div class="metric"><div class="v">31</div><div class="l">Open MDT cases</div><div class="d">across clinics</div></div>
-      </div>
-
-      <div class="dash-grid">
-        <div>
-          <div class="sec-title" style="margin-top:22px"><h2 class="h">Governance sign-off queue</h2><span class="tag teal">Human-signed, versioned</span></div>
-          <div class="list">
-            <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span><span class="bd"><b>NICE NG87 (ADHD) — update</b><small>AI-drafted · reviewed by Dr L. Bright · awaiting your sign-off</small></span><span class="meta"><button class="btn sm"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Sign off</button></span></div>
-            <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><span class="bd"><b>Consent &amp; confidentiality SOP v2</b><small>Clinic-tailored · AI-checked vs GPhC/CQC · reviewed · awaiting sign-off</small></span><span class="meta"><button class="btn sm"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Sign off</button></span></div>
-            <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-cap"/></svg></span><span class="bd"><b>Recognising the deteriorating patient — module</b><small>Awaiting MDT review (Dr S. Mehta)</small></span><span class="meta"><span class="tag warn">In review</span></span></div>
-            <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><span class="bd"><b>ADHD titration note template</b><small>New history prompts · awaiting sign-off</small></span><span class="meta"><button class="btn sm"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Sign off</button></span></div>
-          </div>
-
-          <div class="sec-title" style="margin-top:26px"><h2 class="h">The panel</h2><button class="btn ghost sm"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add member</button></div>
-          <div class="panel-list">
-            <div class="pmember chair"><span class="av">AO</span><div class="bd"><b>Dr A. Okafor</b><small>Chair / Clinical lead · Governance</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>
-            <div class="pmember"><span class="av">SM</span><div class="bd"><b>Dr S. Mehta</b><small>GP · General practice</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>
-            <div class="pmember"><span class="av">LB</span><div class="bd"><b>Dr L. Bright</b><small>Psychiatrist · Psychiatry</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>
-            <div class="pmember"><span class="av">RK</span><div class="bd"><b>Dr R. Kaur</b><small>Dermatologist · Dermatology</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>
-          </div>
-        </div>
-
-        <div>
-          <div class="sec-title" style="margin-top:22px"><h2 class="h">Next MDT session</h2></div>
-          <div class="card pad">
-            <div style="font-family:var(--display);font-size:1.15rem;font-weight:600">Monthly MDT — July cycle</div>
-            <div class="muted" style="font-size:.86rem;margin-top:2px">Tue 28 Jul 2026 · 19:00–20:30 · Virtual</div>
-            <div class="mono" style="font-size:.72rem;color:var(--muted);margin-top:10px">AUTO-ADVANCES · LAST TUE MONTHLY</div>
-            <hr class="divider">
-            <div class="mono" style="font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Agenda (auto-built)</div>
-            <ul class="feed">
-              <li><span class="fi">1</span><div class="ft">Teaching slot — set by Chair</div></li>
-              <li><span class="fi">2</span><div class="ft">Case discussion — <b>3 flagged cases</b></div></li>
-              <li><span class="fi">3</span><div class="ft">Open reflection</div></li>
-            </ul>
-            <button class="btn ghost sm" style="margin-top:12px">Edit schedule &amp; agenda</button>
-          </div>
-
-          <div class="sec-title" style="margin-top:22px"><h2 class="h">Content libraries</h2></div>
-          <div class="quick">
-            <button class="qa"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span><span><b>Guidelines</b><small>18 published · 1 in review</small></span></button>
-            <button class="qa"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><span><b>SOPs &amp; templates</b><small>12 published · 2 requested</small></span></button>
-            <button class="qa"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-cap"/></svg></span><span><b>Training</b><small>9 modules · 1 in review</small></span></button>
-            <button class="qa"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg></span><span><b>Reports</b><small>Consultations · MDT · CPD</small></span></button>
-          </div>
-        </div>
-      </div>
+    <nav id="navBot"></nav>
+    <div class="side-foot">
+      <div class="user"><span class="av">FA</span><span class="who"><b>Faheem Ahmed</b><small>Admin · Clinical lead</small></span></div>
+      <a class="back" href="portals.html">↔ Switch portal</a>
     </div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><h1 id="pt">Overview</h1><div class="sub" id="ps">The engine room</div></div><div class="spacer"></div><span class="pill"><span class="dot"></span> Admin · Prototype</span></header>
+    <div class="view" id="view"></div>
   </main>
 </div>
+<div class="toasts" id="toasts"></div>
+<div id="modalRoot"></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const el=h=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstElementChild};
+const ic=id=>`<svg viewBox="0 0 24 24"><use href="#${id}"/></svg>`;
+const toast=m=>{const t=el(`<div class="toast"><span class="ti">${ic('i-check')}</span><span>${m}</span></div>`);$('#toasts').appendChild(t);setTimeout(()=>{t.style.transition='opacity .4s';t.style.opacity='0';setTimeout(()=>t.remove(),400)},2800)};
+
+let signoff=[
+ {t:'NICE NG87 (ADHD) — update',d:'AI-drafted · reviewed by Dr L. Bright',ic:'i-book',status:'ready'},
+ {t:'Consent & confidentiality SOP v2',d:'Clinic-tailored · AI-checked vs GPhC/CQC · reviewed',ic:'i-doc',status:'ready'},
+ {t:'ADHD titration note template',d:'New history prompts · reviewed',ic:'i-doc',status:'ready'},
+ {t:'Recognising the deteriorating patient — module',d:'Awaiting MDT review (Dr S. Mehta)',ic:'i-cap',status:'review'}
+];
+const panel=[
+ {i:'AO',n:'Dr A. Okafor',r:'Chair / Clinical lead · Governance',chair:true},
+ {i:'SM',n:'Dr S. Mehta',r:'GP · General practice'},
+ {i:'LB',n:'Dr L. Bright',r:'Psychiatrist · Psychiatry'},
+ {i:'RK',n:'Dr R. Kaur',r:'Dermatologist · Dermatology'}
+];
+const libs=[
+ {t:'Guidelines',d:'18 published · 1 in review',ic:'i-book'},
+ {t:'SOPs & templates',d:'12 published · 2 requested',ic:'i-doc'},
+ {t:'Training',d:'9 modules · 1 in review',ic:'i-cap'},
+ {t:'Regulatory standards',d:'GPhC · CQC · MHRA · NHS',ic:'i-shield'}
+];
+const standards=[['GPhC','Standards for pharmacy professionals'],['CQC','Fundamental standards'],['MHRA','Drug safety updates'],['NHS','Information governance']];
+const reportRows=[['ADHD',38],['Weight management',22],['Dermatology',17],['Mental health',14],['General & acute',9]];
+const qtypeRows=[['Treatment choice',31],['Diagnostic uncertainty',24],['Medication query',18],['Safety/risk',15],['Other',12]];
+
+const NAV_TOP=[
+ {id:'overview',label:'Overview',icon:'i-grid',title:'Overview',sub:'The engine room'},
+ {id:'signoff',label:'Governance sign-off',icon:'i-shield',title:'Governance sign-off',sub:'AI-drafted → MDT-reviewed → your sign-off',badge:()=>signoff.filter(s=>s.status==='ready').length},
+ {id:'panel',label:'Panel management',icon:'i-people',title:'Panel management',sub:'Manage MDT members'},
+ {id:'schedule',label:'MDT schedule',icon:'i-cal',title:'MDT schedule',sub:'Recurring session + agenda'}
+];
+const NAV_BOT=[
+ {id:'content',label:'Content libraries',icon:'i-book',title:'Content libraries',sub:'Create, review, publish'},
+ {id:'standards',label:'Regulatory standards',icon:'i-doc',title:'Regulatory standards',sub:'Uploaded reference for AI gap-checks'},
+ {id:'users',label:'Users & clinics',icon:'i-people',title:'Users & clinics',sub:'Accounts, roles, permissions'},
+ {id:'reports',label:'Reports & audit',icon:'i-chart',title:'Reports & audit',sub:'Usage, MDT, CPD, audit trail'}
+];
+const ALL=[...NAV_TOP,...NAV_BOT];
+
+function bar(rows){const max=Math.max(...rows.map(r=>r[1]));return `<div class="card pad">${rows.map(r=>`<div style="display:flex;align-items:center;gap:12px;margin:10px 0"><div style="width:150px;font-size:.85rem">${r[0]}</div><div style="flex:1;background:var(--line-2);border-radius:8px;height:16px;overflow:hidden"><i style="display:block;height:100%;width:${Math.round(r[1]/max*100)}%;background:linear-gradient(90deg,var(--brand),#19c2b6)"></i></div><div class="mono" style="font-size:.8rem;width:32px;text-align:right">${r[1]}</div></div>`).join('')}</div>`}
+
+const VIEWS={
+ overview(v){const ready=signoff.filter(s=>s.status==='ready').length;
+  v.innerHTML=`<div class="metrics"><div class="metric"><div class="v">26</div><div class="l">Active clinicians</div><div class="d">+4 this month</div></div><div class="metric"><div class="v">4</div><div class="l">Panel members</div><div class="d">GP·Psych·Derm·Chair</div></div><div class="metric"><div class="v">${ready}</div><div class="l">Awaiting sign-off</div><div class="d">governance</div></div><div class="metric"><div class="v">31</div><div class="l">Open MDT cases</div><div class="d">across clinics</div></div></div>
+  <div class="dash-grid"><div><div class="sec-title" style="margin-top:22px"><h2 class="h">Governance sign-off queue</h2><button class="btn ghost sm" data-go="signoff">Open</button></div><div class="list">${signoff.map((s,i)=>`<div class="litem"><span class="ic">${ic(s.ic)}</span><span class="bd"><b>${s.t}</b><small>${s.d}</small></span><span class="meta">${s.status==='ready'?`<button class="btn sm" data-sign="${i}">${ic('i-check')} Sign off</button>`:`<span class="tag warn">In review</span>`}</span></div>`).join('')}</div></div>
+  <div><div class="sec-title" style="margin-top:22px"><h2 class="h">Content libraries</h2></div><div class="quick" style="grid-template-columns:1fr 1fr">${libs.map(l=>`<button class="qa" data-go="content"><span class="ic">${ic(l.ic)}</span><span><b>${l.t}</b><small>${l.d}</small></span></button>`).join('')}</div></div></div>`;
+  wire(v);
+ },
+ signoff(v){v.innerHTML=`<div class="sec-title"><h2 class="h">Governance sign-off queue</h2><span class="tag teal">Human-signed · versioned · audited</span></div><div class="list" id="sl">${signoff.map((s,i)=>rowSign(s,i)).join('')}</div><div class="disc" style="margin-top:16px">${ic('i-shield')} Flow: AI drafts → MDT reviews → you sign off → published & versioned. Every step is audit-logged.</div>`;
+  v.querySelectorAll('[data-sign]').forEach(b=>b.addEventListener('click',()=>{signoff[b.dataset.sign].status='signed';toast('Signed off &amp; published — version recorded.');route()}));
+ },
+ panel(v){v.innerHTML=`<div class="sec-title"><h2 class="h">Panel members</h2><button class="btn sm" id="add">${ic('i-plus')} Add member</button></div><div class="panel-list">${panel.map(p=>`<div class="pmember ${p.chair?'chair':''}"><span class="av">${p.i}</span><div class="bd"><b>${p.n}</b><small>${p.r}</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>`).join('')}</div><div class="disc" style="margin-top:14px">${ic('i-people')} New members come from the "Join the panel" recruitment form. Set each member's specialty so cases route correctly.</div>`;
+  $('#add',v).addEventListener('click',()=>toast('Invite sent (prototype).'));
+ },
+ schedule(v){v.innerHTML=`<div class="banner"><span class="bi">${ic('i-cal')}</span><div><b>Monthly MDT — auto-advancing</b><p>Last Tuesday monthly · 19:00–20:30 · Virtual</p></div><div class="when"><b>28 Jul 2026</b>next session</div></div>
+  <div class="card pad"><div class="mono" style="font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Agenda (auto-built)</div><ul class="feed"><li><span class="fi">1</span><div class="ft">Teaching slot — set by Chair</div></li><li><span class="fi">2</span><div class="ft">Case discussion — <b>3 flagged cases</b> (auto-pulled)</div></li><li><span class="fi">3</span><div class="ft">Open reflection</div></li></ul><div style="display:flex;gap:10px;margin-top:14px"><button class="btn sm" id="ed">Edit schedule</button><button class="btn ghost sm" id="ag">Set teaching slot</button></div></div>`;
+  $('#ed',v).addEventListener('click',()=>toast('Schedule editor (prototype).'));$('#ag',v).addEventListener('click',()=>toast('Teaching slot updated (prototype).'));
+ },
+ content(v){v.innerHTML=`<div class="sec-title"><h2 class="h">Content libraries</h2><button class="btn sm" id="new">${ic('i-plus')} New item</button></div><div class="cards">${libs.map(l=>`<div class="tile"><div class="th"><span class="ic">${ic(l.ic)}</span></div><h3>${l.t}</h3><p>${l.d}</p><div class="tf"><span class="mono" style="font-size:.72rem;color:var(--muted)">Governed</span><button class="btn ghost sm" data-mng>Manage</button></div></div>`).join('')}</div><div class="disc" style="margin-top:16px">${ic('i-shield')} Everything here is created (AI-assisted) → MDT-reviewed → signed off → published & versioned.</div>`;
+  $('#new',v).addEventListener('click',()=>toast('New content draft started (prototype).'));v.querySelectorAll('[data-mng]').forEach(b=>b.addEventListener('click',()=>toast('Opening library (prototype).')));
+ },
+ standards(v){v.innerHTML=`<div class="sec-title"><h2 class="h">Regulatory standards</h2><button class="btn sm" id="up">${ic('i-up')} Upload</button></div><div class="list">${standards.map(s=>`<div class="litem"><span class="ic">${ic('i-doc')}</span><span class="bd"><b>${s[0]} — ${s[1]}</b><small>Reference · used for AI gap-checks on SOPs</small></span><span class="meta"><span class="tag ok">Loaded</span></span></div>`).join('')}</div><div class="disc" style="margin-top:16px">${ic('i-shield')} Public/regulatory standards only. Commercial sources (UpToDate/DynaMed/BMJ) are link-out until licensed.</div>`;
+  $('#up',v).addEventListener('click',()=>toast('Standard uploaded (prototype).'));
+ },
+ users(v){const rows=[['Faheem Ahmed','Admin · Clinical lead','—'],['Dr S. Mehta','MDT panel','—'],['J. Okoro','Clinician','Clinic A'],['A. Shah','Clinician','Clinic A'],['P. Nnamdi','Clinician','Clinic B']];
+  v.innerHTML=`<div class="sec-title"><h2 class="h">Users &amp; clinics</h2><button class="btn sm" id="inv">${ic('i-plus')} Invite user</button></div><div class="list">${rows.map(r=>`<div class="litem"><span class="ic">${ic('i-people')}</span><span class="bd"><b>${r[0]}</b><small>${r[1]}${r[2]!=='—'?' · '+r[2]:''}</small></span><span class="meta"><span class="tag ${r[1].includes('Admin')?'ai':r[1].includes('panel')?'teal':''}">${r[1].split(' ')[0]}</span></span></div>`).join('')}</div><div class="disc" style="margin-top:16px">${ic('i-shield')} Roles: Clinician · MDT panel · Admin. Each role is locked to its own area (permissions).</div>`;
+  $('#inv',v).addEventListener('click',()=>toast('Invite sent (prototype).'));
+ },
+ reports(v){v.innerHTML=`<div class="sec-title"><h2 class="h">Reports &amp; audit</h2></div><h3 style="font-family:var(--body);font-size:1rem;font-weight:600;margin:6px 0 8px">Consultations by clinical area</h3>${bar(reportRows)}<h3 style="font-family:var(--body);font-size:1rem;font-weight:600;margin:22px 0 8px">MDT questions by type</h3>${bar(qtypeRows)}<div class="disc" style="margin-top:16px">${ic('i-chart')} Powered by the structured tags. The commonest MDT question types tell you what to teach → feeds Training. Full audit trail on every note, case &amp; sign-off.</div>`;
+ }
+};
+function rowSign(s,i){return `<div class="litem"><span class="ic">${ic(s.ic)}</span><span class="bd"><b>${s.t}</b><small>${s.d}</small></span><span class="meta">${s.status==='signed'?`<span class="tag ok">Published</span>`:s.status==='review'?`<span class="tag warn">In review</span>`:`<button class="btn sm" data-sign="${i}">${ic('i-check')} Sign off</button>`}</span></div>`}
+function wire(v){v.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>location.hash='#'+b.dataset.go));v.querySelectorAll('[data-sign]').forEach(b=>b.addEventListener('click',()=>{signoff[b.dataset.sign].status='signed';toast('Signed off &amp; published.');route()}));}
+
+function buildNav(){[['navTop',NAV_TOP],['navBot',NAV_BOT]].forEach(([el_,arr])=>{const n=$('#'+el_);n.innerHTML='';arr.forEach(it=>{const b=el(`<button class="nav-i" data-go="${it.id}">${ic(it.icon)}<span>${it.label}</span></button>`);const bd=it.badge&&it.badge();if(bd)b.insertAdjacentHTML('beforeend',`<span class="badge">${bd}</span>`);b.addEventListener('click',()=>location.hash='#'+it.id);n.appendChild(b)})})}
+function route(){const id=location.hash.replace('#','')||'overview';const it=ALL.find(x=>x.id===id)||ALL[0];$('#pt').textContent=it.title;$('#ps').textContent=it.sub;document.querySelectorAll('.nav-i').forEach(b=>b.classList.toggle('active',b.dataset.go===it.id));const v=$('#view');v.innerHTML='';VIEWS[it.id](v);buildNav();window.scrollTo(0,0)}
+window.addEventListener('hashchange',route);buildNav();route();
+</script>
 </body>
 </html>
