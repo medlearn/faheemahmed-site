@@ -74,6 +74,31 @@ A web app with **two pillars**:
 
 ---
 
+## 4A. The three portals — front-end + back-end (build breakdown)
+
+**One product, one codebase, three role-based portals.** Build the **shared foundation once**, then each portal is a set of screens (front-end) on top of shared APIs + data (back-end).
+
+**Shared foundation (built once — powers all three):**
+- **Auth + 3 roles + permissions** (RLS: each role sees only its own area/data).
+- **Database** (Postgres/Supabase) · **API layer** (Netlify Functions, `/api/*`).
+- **AI + integrations** (Claude, STT, guidance, codes — §7) · **audit log** · **hosting/deploy**.
+
+### Portal 1 — Clinician
+- **Front-end (screens):** Dashboard · Consultation · Clinical notes · Guidelines · Note-templates · Training · MDT overview · My cases (submit + track) · Session library · Ask Clinickly.
+- **Back-end:** `/api/notes` (SOAP), `/api/support` (decision support), `/api/transcribe-token`, `/api/codes` (SNOMED/ICD validate), `/api/guidelines` (search), `/api/cases` (create/list), `/api/cpd`. **Data:** consultations, notes, note_addenda, mdt_cases (create), training/CPD. **Logic:** template auto-select by consultation type, anonymise-on-create, note sign/lock.
+
+### Portal 2 — MDT panel member
+- **Front-end (screens):** My assigned cases (routed by specialty) · Case detail + **write response** · **Governance review queue** (content to check) · Session tools (agenda/recordings) · Profile.
+- **Back-end:** `/api/panel/cases` (list routed by specialty), `/api/panel/respond` (write → persist → **notify clinician**), `/api/governance/review` (submit review). **Data:** mdt_responses, governance review records. **Logic:** routing by specialty, notifications.
+
+### Portal 3 — Admin / Governance console
+- **Front-end (screens):** Panel management · MDT scheduling + agenda · **Governance sign-off queues** · Content libraries (create/edit/**publish** guidelines/SOPs/templates/training) · Regulatory-standards upload · Users/clinics/permissions · Reporting & audit · Billing (later).
+- **Back-end:** `/api/admin/panel`, `/api/admin/schedule`, `/api/admin/content` (CRUD + **publish/version**), `/api/admin/standards` (upload), `/api/admin/users`, `/api/admin/reports`, governance **sign-off** endpoints. **Data:** guidelines/templates/sops/training (+ version, reviewer_id, signer_id, published_at), schedules, users, clinics, audit_log. **Logic:** the **governance pipeline** (§8), AI change-detection (fast-follow), reporting queries.
+
+*Build order across portals: shared foundation → Clinician (core value) → MDT panel (answering loop) → Admin (governance). A minimal Admin ships with auth/DB; it grows into the full console. See §10.*
+
+---
+
 ## 5. The product, page by page
 
 ### 5.1 Dashboard
