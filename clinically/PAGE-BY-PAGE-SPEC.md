@@ -9,6 +9,8 @@
 - **Roles aren't locked down** — a "patient" login could see the whole clinician co-pilot. Needs proper role permissions (clinician / patient / MDT panel / admin).
 - **Payments not wired** — patient "Activate membership" does nothing.
 
+**Cross-cutting data rule — structured tags, not free text.** Any field you'll ever want to count, filter, route or report on must be a **controlled dropdown** (consultation type, specialty, urgency, etc.) — never a free-text box. Free text is only for **clinical content** (the note body, case summaries). This is what makes the data trackable and taggable. See **Appendix A** for the consultation taxonomy.
+
 ---
 
 ## 1. Dashboard
@@ -47,6 +49,7 @@ Where the clinical work happens. It listens to the appointment, drafts the clini
   - Recommended: **Speechmatics** (🇬🇧 UK data residency) for transcription + **Recall.ai** meeting-bot to capture Zoom/Teams/Meet audio (both sides). In-person = good room mic → same service.
 - **Codes:** **not AI-guessed.** AI proposes the clinical concept → validate the official code against the **NHS Terminology Server** (SNOMED CT, FHIR API) + **WHO ICD API**. Medicines via **dm+d**.
 - **Guidance:** connect to **real, current NICE/CKS** via the **NICE Syndication API (licensed)**, ingested into our own **version-tracked index (RAG)** so the AI cites genuine references and we can evidence *"what guidance said on date X."*
+- **Consultation type = structured, not free text.** Tag every consultation on **two required dropdowns — Clinical area × Encounter type** (see **Appendix A**). "Other" is allowed but **logged & reviewed monthly**. The current "Scenario" dropdown is **demo-only** — replace it with this real tagging. Drives reporting, auto-template selection, and MDT-specialty routing.
 - Every decision-support item keeps **"Requires clinician judgement."**
 
 **Interim (until approvals land) — agreed**
@@ -63,3 +66,37 @@ Where the clinical work happens. It listens to the appointment, drafts the clini
 ---
 
 *(more pages added as we review them)*
+
+---
+
+## Appendix A — Consultation taxonomy (controlled lists · no free text)
+
+Every consultation is tagged on **two required dropdowns**. This replaces the demo "Scenario" picker.
+
+**Facet 1 — Clinical area**
+1. ADHD
+2. Autism (ASD)
+3. Mental health
+4. Weight management
+5. Dermatology
+6. Sexual & reproductive health
+7. General & acute prescribing
+8. Long-term condition
+9. Travel health
+10. Other *(logged & reviewed)*
+
+**Facet 2 — Encounter type**
+1. New / initial assessment
+2. Medication review / titration
+3. Routine / annual review
+4. Follow-up / monitoring
+5. Acute / minor illness
+6. Prescribing query / second opinion
+7. Shared-care review
+
+**Rules**
+- Both fields **required**, both **dropdowns** — never free text.
+- **"Other"** allowed but **logged and reviewed monthly** — promote recurring ones to proper options.
+- Clinical *content* (note body, case summary) stays free text — only the *tags* are structured.
+- **Forward-looking:** map each tag to a **SNOMED CT** concept so the data is standards-based (not needed for pilot).
+- Combining facets gives natural types (e.g. "ADHD × Titration") and lets you report by **either** dimension.
