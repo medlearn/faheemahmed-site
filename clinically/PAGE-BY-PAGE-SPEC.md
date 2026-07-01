@@ -87,6 +87,26 @@ The record-keeping hub — where drafted notes are stored, reviewed, edited, **s
 
 ---
 
+## 4. MDT case (create + track)
+
+**Purpose**
+The front door to Pillar 2 (the human MDT). Send an **anonymised** difficult case to the expert panel and get written advice. Created from scratch or **pre-filled from a note**. Tracked in "My cases" (Awaiting → Answered).
+
+**What we have now**
+- Case form (Specialty, Urgency, Case title, Anonymised summary, Key question) + case list with status + panel responses marked *"Advisory only — the clinician decides."* — looks great.
+- ⚠️ **Answering loop is the gap:** panel responses appear to be pre-written samples, and "Saved records" showed **"MDT cases: 0 in DB"** — submitted cases may not persist, and there is **no panel-member login to actually answer**. This is the main Pillar-2 build.
+
+**Decisions — target state**
+- **Two structured dropdowns (no free text for categories):**
+  - **Specialty** — who answers; clean list, see **Appendix B** (fixes the messy "Dermatology pharmacy / Dermatology / Pharmacy" list).
+  - **Query type** — what *kind* of question, for audit; see **Appendix C**. The **AI auto-suggests** it from the free text; clinician confirms.
+- Keep **Urgency** as a dropdown; case title / summary / key question stay free text (content).
+- **Anonymise on create.** When creating from a note, the summary must be stripped of identifiers — ideally the AI **auto-anonymises** and flags anything identifiable before submit.
+- **Build the answering loop:** panel-member **login/role**, cases **persist to DB**, routed to the right specialty, panel writes the response, clinician notified.
+- **Audit reporting:** report cases by **specialty × query type × urgency × status**; feed the commonest query types straight into **Training** (closes the MDT → training loop).
+
+---
+
 *(more pages added as we review them)*
 
 ---
@@ -122,3 +142,35 @@ Every consultation is tagged on **two required dropdowns**. This replaces the de
 - Clinical *content* (note body, case summary) stays free text — only the *tags* are structured.
 - **Forward-looking:** map each tag to a **SNOMED CT** concept so the data is standards-based (not needed for pilot).
 - Combining facets gives natural types (e.g. "ADHD × Titration") and lets you report by **either** dimension.
+
+---
+
+## Appendix B — MDT routing specialty (who answers)
+
+Dropdown, required. Maps to the panel.
+1. General practice (GP)
+2. Psychiatry / mental health
+3. Dermatology
+4. Pharmacy & prescribing
+5. Weight management *(as panel grows)*
+6. Women's / sexual & reproductive health *(as panel grows)*
+7. Governance / ethics *(Chair)*
+8. Unsure — triage to Chair
+
+---
+
+## Appendix C — MDT query type (what kind of question · for audit)
+
+Dropdown, required. The **AI auto-suggests** from the free-text question; the clinician confirms. "Other" is logged & reviewed.
+1. Diagnostic uncertainty
+2. Treatment / management choice
+3. Medication query (dose, choice, interaction, monitoring)
+4. Escalation / referral threshold
+5. Safety / risk (red flags, safety-netting)
+6. Scope of practice / competence
+7. Shared-care question
+8. Second opinion / sense-check
+9. Complex / multi-morbidity
+10. Other *(logged & reviewed)*
+
+**Audit value:** report by specialty × query type (e.g. "most Dermatology questions are diagnostic uncertainty; most Psychiatry ones are medication queries"), and use the commonest types to decide what to **teach**.
