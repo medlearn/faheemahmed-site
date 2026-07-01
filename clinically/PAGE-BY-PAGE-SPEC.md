@@ -149,6 +149,34 @@ The tool keeps guidance current through a governed workflow that **reuses the MD
 
 ---
 
+## 7. Templates & SOPs → **SPLIT into two**
+
+**Decision:** this page currently mixes two unrelated jobs — split them.
+- **Note templates** → move to sit **with note-writing** (Consultation / Clinical notes). Used *during* a consultation.
+- **SOPs / policies / governance docs** → their own **Governance / Documents** area (admin-managed). Set up *once*.
+- *(The demo's template list is **AI-drafted placeholder** content — real templates must be authored + MDT-validated.)*
+
+### 7a. Note templates
+- **What they are:** the skeleton (headings + prompts) the AI fills in when drafting a note — this is what **standardises** notes.
+- **Who provides them:** **Clinickly** ships a standard, **MDT-validated** library. Clinics may optionally customise; new ones added by Clinickly or **requested** by clinics → governed (draft → review → sign-off → versioned).
+- **Structure = SOAP frame + clinical history framework *inside* "Subjective", scaled by consultation type:**
+  - **New / initial assessment** → full history: **Presenting complaint · HPC · PMH · DH · FH · SH · Menstrual (if relevant) · Review of systems** → + Examination (Objective) · Impression (Assessment) · Plan.
+  - **Follow-up / medication review** → focused/lighter (interval history, response, obs, plan) — no full re-clerk.
+  - The **consultation type (taxonomy) auto-selects** the right template.
+- **Does two jobs (clinician still just talks/types — no rigid form):** (1) structures the AI's output; (2) **flags gaps** ("no drug history captured") = a completeness + safety prompt (great for newly-qualified prescribers).
+
+### 7b. SOPs, policies & governance documents (own area, admin-managed)
+**Lifecycle (reuses the governance pipeline):**
+1. Clinickly provides **starter templates** per SOP type.
+2. **AI helps populate/customise** for the clinic.
+3. **AI checks the draft against uploaded regulatory standards** (GPhC / CQC / MHRA / NHS) → flags gaps = the cheap, automatic **safety net**.
+4. **Sign-off, tiered:** *standard* = clinic's **named lead** signs off (versioned, audit-logged); *premium (paid)* = **MDT / expert review**.
+5. **"Request an SOP"** button for missing ones (also tells you what clinics need).
+- **Upload the public regulatory standards** (GPhC, CQC, MHRA, NHS) as read-only reference **and** for the AI gap-check. *(Public/regulatory — safe to hold, unlike commercial clinical content.)*
+- **Patient-facing leaflet builder:** keep — it *generates a document* the clinician gives the patient their own way (fits Version A; not the patient portal).
+
+---
+
 *(more pages added as we review them)*
 
 ---
@@ -216,3 +244,17 @@ Dropdown, required. The **AI auto-suggests** from the free-text question; the cl
 10. Other *(logged & reviewed)*
 
 **Audit value:** report by specialty × query type (e.g. "most Dermatology questions are diagnostic uncertainty; most Psychiatry ones are medication queries"), and use the commonest types to decide what to **teach**.
+
+---
+
+## Appendix D — Templates & SOPs taxonomy
+
+**Facet 1 — Document category**
+1. Note template *(drives AI note drafting)*
+2. SOP *(operating procedure)*
+3. Policy & governance *(risk register, incidents, complaints)*
+4. Patient-facing document *(leaflets, consent forms)*
+5. Regulatory standard / reference *(uploaded — GPhC, CQC, MHRA, NHS)*
+
+**Facet 2 — SOP type**
+Private prescribing · Consent & confidentiality · Safeguarding & escalation · Data protection / GDPR · Controlled drugs · Infection prevention & control · Complaints & incidents · Chaperoning · Record-keeping & audit · Business continuity · Premises & equipment · **Other (request)**
