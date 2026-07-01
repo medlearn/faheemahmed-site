@@ -197,6 +197,32 @@ Upskilling + CPD hub — modules to keep clinicians and their team sharp, with r
 
 ---
 
+## 9. Admin / Governance console (the "engine room")
+
+**Purpose**
+The **back office** where everything the clinicians and panel *use* is managed, created, approved and scheduled. **Clinicians never see it.** Used by the **admin** (+ the **Chair / clinical lead** for clinical sign-offs). Almost every "who manages / creates / approves / schedules this?" decision in this spec resolves *here*.
+
+**What lives here (synthesis of decisions across this doc)**
+- **Panel management** — add/remove MDT members, set specialties, manage their logins/access. *(New members flow in from the "Join the panel" landing-page form.)*
+- **MDT scheduling** — recurring session rule + specific dates (**auto-advance + admin override**); build the agenda (**auto-pulls submitted cases** + a teaching slot).
+- **Governance sign-off queues** — review & sign off **guidelines, SOPs, note templates, training content** (draft → **MDT review** → **clinical-lead sign-off** → published → **versioned** → **audit-logged**). This is where the MDT's "dual role" (content governance) happens — keeping the clinician pages clean.
+- **Content libraries** — create/edit/publish guidelines, templates, SOPs, training modules; handle **"Request an SOP / template."**
+- **Regulatory standards** — upload **GPhC / CQC / MHRA / NHS** (reference + the AI gap-check).
+- **Users, clinics & permissions** — accounts, roles, and **locking each role to its own area** *(fixes the "patient could see the whole co-pilot" problem)*.
+- **Reporting & audit** — consultation types, MDT query types, CPD completion, and full audit trails.
+- **Billing** — later (Stripe), incl. the premium MDT-review add-on.
+
+**Roles (pilot) — final**
+| Role | Where they work |
+|---|---|
+| **Clinician** | The co-pilot (notes · cases · training) |
+| **MDT panel member** | Answer cases + do governance sign-offs |
+| **Admin (+ Chair / clinical lead)** | This Admin / Governance console |
+
+*(Patient portal + patient role = deferred to a later phase — see Saved records §5.)*
+
+---
+
 *(more pages added as we review them)*
 
 ---
