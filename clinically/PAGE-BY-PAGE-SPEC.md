@@ -29,4 +29,37 @@ The home/overview screen — "your clinical day at a glance." A summary + quick 
 
 ---
 
+## 2. Consultation (co-pilot) — the core
+
+**Purpose**
+Where the clinical work happens. It listens to the appointment, drafts the clinical note, and checks it against guidelines — all in one screen, while the clinician focuses on the patient. 3-column flow: **Live transcription → AI-drafted SOAP note → Decision support.**
+
+**What we have now**
+- Transcription uses the **browser's built-in speech service** (in-room microphone). Transcript is editable; "Play demo" plays a sample; **"Label speakers (AI)"** is a best-effort AI *guess* (not reliable).
+- The **note is generated fresh by the AI** (Claude) from the transcript — real and working.
+- **Decision support** flags issues against guidance — real AI (e.g. it caught "transcript says 5-year-old but note says Adult ADHD").
+- **SNOMED/ICD codes are AI-suggested from memory** — not validated against a real code source.
+- **Guidance comes from the AI's training memory**, NOT connected to live NICE/CKS (the Guidelines page still says "demo content").
+- The **"Scenario" dropdown** (ADHD review, Dermatology query, etc.) is **demo examples only** — there is no scenario picker in real use; you just start a real consultation.
+
+**Decisions — target state**
+- **Transcription:** proper speech-to-text with **speaker separation (diarization)** and **remote/video-call** support.
+  - Recommended: **Speechmatics** (🇬🇧 UK data residency) for transcription + **Recall.ai** meeting-bot to capture Zoom/Teams/Meet audio (both sides). In-person = good room mic → same service.
+- **Codes:** **not AI-guessed.** AI proposes the clinical concept → validate the official code against the **NHS Terminology Server** (SNOMED CT, FHIR API) + **WHO ICD API**. Medicines via **dm+d**.
+- **Guidance:** connect to **real, current NICE/CKS** via the **NICE Syndication API (licensed)**, ingested into our own **version-tracked index (RAG)** so the AI cites genuine references and we can evidence *"what guidance said on date X."*
+- Every decision-support item keeps **"Requires clinician judgement."**
+
+**Interim (until approvals land) — agreed**
+- Guidance via **web search restricted to OFFICIAL sources only** (`nice.org.uk`, `cks.nice.org.uk`, BNF) — **not** the open web. Label every result **"Indicative — verify at source"** with a link. Do **not** market as "official NICE guidance" until licensed.
+- Run a **closed pilot to a selected few clinics** on **synthetic/anonymised data** (or with minimum compliance in place) while integrations + approvals proceed. *(Compliance floor applies per patient, not per user count — see MASTER-PLAN Gate B.)*
+
+**Applications to START NOW (long lead time)**
+- [ ] **NICE Syndication API** — licence/registration.
+- [ ] **NHS Terminology Server** — access for SNOMED CT.
+- [ ] Contract **STT provider (Speechmatics)** + **meeting-bot (Recall.ai)**.
+
+**Data residency:** keep all audio + text processing in **UK/EU**.
+
+---
+
 *(more pages added as we review them)*
