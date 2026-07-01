@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinickly — Admin / Governance console (reference mockup)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-spark"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 4l.7 1.8L20.5 6.5l-1.8.7L18 9l-.7-1.8L15.5 6.5l1.8-.7z" fill="currentColor"/></g>
+  <g id="i-grid" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></g>
+  <g id="i-people" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.2a3 3 0 0 1 0 5.6M17 14.5a5.5 5.5 0 0 1 3.5 4.5"/></g>
+  <g id="i-cal" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9h17M8 2.5v4M16 2.5v4"/></g>
+  <g id="i-shield" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4.5 5.5V11c0 5 3.5 8 7.5 10.5C16 19 19.5 16 19.5 11V5.5z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></g>
+  <g id="i-book" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 1 6 18h14"/></g>
+  <g id="i-doc" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></g>
+  <g id="i-cap" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5M21.5 8v5"/></g>
+  <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 6.5"/></g>
+  <g id="i-users" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 5.2a3 3 0 0 1 0 5.6M17 14.5a5.5 5.5 0 0 1 3.5 4.5"/></g>
+  <g id="i-chart" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4M4 20h16M8 20v-6M12 20v-10M16 20v-4"/></g>
+  <g id="i-plus" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></g>
+</defs></svg>
+
+<div class="app">
+  <aside class="side">
+    <div class="logo"><span class="mark"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span><span class="name">Clinic<span>kly</span><span class="cp"> Admin</span></span></div>
+    <div class="seg">Engine room</div>
+    <nav>
+      <button class="nav-i active"><svg viewBox="0 0 24 24"><use href="#i-grid"/></svg><span>Overview</span></button>
+      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>Governance sign-off</span><span class="badge">4</span></button>
+      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-people"/></svg><span>Panel management</span></button>
+      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-cal"/></svg><span>MDT schedule</span></button>
+    </nav>
+    <div class="seg">Content &amp; data</div>
+    <nav>
+      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg><span>Content libraries</span></button>
+      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg><span>Regulatory standards</span></button>
+      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-users"/></svg><span>Users &amp; clinics</span></button>
+      <button class="nav-i"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg><span>Reports &amp; audit</span></button>
+    </nav>
+    <div class="side-foot"><div class="user"><span class="av">FA</span><span class="who"><b>Faheem Ahmed</b><small>Admin · Clinical lead</small></span></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div><h1>Admin &amp; Governance</h1><div class="sub">Manage the panel, content, users and audits — the engine room</div></div><div class="spacer"></div><span class="pill"><span class="dot"></span> Admin</span></header>
+    <div class="view">
+      <div class="metrics">
+        <div class="metric"><div class="v">26</div><div class="l">Active clinicians</div><div class="d">+4 this month</div></div>
+        <div class="metric"><div class="v">4</div><div class="l">Panel members</div><div class="d">GP · Psych · Derm · Chair</div></div>
+        <div class="metric"><div class="v">4</div><div class="l">Awaiting sign-off</div><div class="d">governance</div></div>
+        <div class="metric"><div class="v">31</div><div class="l">Open MDT cases</div><div class="d">across clinics</div></div>
+      </div>
+
+      <div class="dash-grid">
+        <div>
+          <div class="sec-title" style="margin-top:22px"><h2 class="h">Governance sign-off queue</h2><span class="tag teal">Human-signed, versioned</span></div>
+          <div class="list">
+            <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span><span class="bd"><b>NICE NG87 (ADHD) — update</b><small>AI-drafted · reviewed by Dr L. Bright · awaiting your sign-off</small></span><span class="meta"><button class="btn sm"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Sign off</button></span></div>
+            <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><span class="bd"><b>Consent &amp; confidentiality SOP v2</b><small>Clinic-tailored · AI-checked vs GPhC/CQC · reviewed · awaiting sign-off</small></span><span class="meta"><button class="btn sm"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Sign off</button></span></div>
+            <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-cap"/></svg></span><span class="bd"><b>Recognising the deteriorating patient — module</b><small>Awaiting MDT review (Dr S. Mehta)</small></span><span class="meta"><span class="tag warn">In review</span></span></div>
+            <div class="litem"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><span class="bd"><b>ADHD titration note template</b><small>New history prompts · awaiting sign-off</small></span><span class="meta"><button class="btn sm"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg> Sign off</button></span></div>
+          </div>
+
+          <div class="sec-title" style="margin-top:26px"><h2 class="h">The panel</h2><button class="btn ghost sm"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add member</button></div>
+          <div class="panel-list">
+            <div class="pmember chair"><span class="av">AO</span><div class="bd"><b>Dr A. Okafor</b><small>Chair / Clinical lead · Governance</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>
+            <div class="pmember"><span class="av">SM</span><div class="bd"><b>Dr S. Mehta</b><small>GP · General practice</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>
+            <div class="pmember"><span class="av">LB</span><div class="bd"><b>Dr L. Bright</b><small>Psychiatrist · Psychiatry</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>
+            <div class="pmember"><span class="av">RK</span><div class="bd"><b>Dr R. Kaur</b><small>Dermatologist · Dermatology</small></div><span class="tag ok" style="margin-left:auto">Active</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="sec-title" style="margin-top:22px"><h2 class="h">Next MDT session</h2></div>
+          <div class="card pad">
+            <div style="font-family:var(--display);font-size:1.15rem;font-weight:600">Monthly MDT — July cycle</div>
+            <div class="muted" style="font-size:.86rem;margin-top:2px">Tue 28 Jul 2026 · 19:00–20:30 · Virtual</div>
+            <div class="mono" style="font-size:.72rem;color:var(--muted);margin-top:10px">AUTO-ADVANCES · LAST TUE MONTHLY</div>
+            <hr class="divider">
+            <div class="mono" style="font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Agenda (auto-built)</div>
+            <ul class="feed">
+              <li><span class="fi">1</span><div class="ft">Teaching slot — set by Chair</div></li>
+              <li><span class="fi">2</span><div class="ft">Case discussion — <b>3 flagged cases</b></div></li>
+              <li><span class="fi">3</span><div class="ft">Open reflection</div></li>
+            </ul>
+            <button class="btn ghost sm" style="margin-top:12px">Edit schedule &amp; agenda</button>
+          </div>
+
+          <div class="sec-title" style="margin-top:22px"><h2 class="h">Content libraries</h2></div>
+          <div class="quick">
+            <button class="qa"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg></span><span><b>Guidelines</b><small>18 published · 1 in review</small></span></button>
+            <button class="qa"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-doc"/></svg></span><span><b>SOPs &amp; templates</b><small>12 published · 2 requested</small></span></button>
+            <button class="qa"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-cap"/></svg></span><span><b>Training</b><small>9 modules · 1 in review</small></span></button>
+            <button class="qa"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg></span><span><b>Reports</b><small>Consultations · MDT · CPD</small></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
