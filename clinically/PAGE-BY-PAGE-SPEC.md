@@ -177,6 +177,26 @@ The tool keeps guidance current through a governed workflow that **reuses the MD
 
 ---
 
+## 8. Training
+
+**Purpose**
+Upskilling + CPD hub — modules to keep clinicians and their team sharp, with revalidation evidence auto-logged. Especially valuable for newly-qualified prescribers.
+
+**What we have now**
+- Module cards by category (Core / Specialty / Safety / Professional), progress bars, "Mark complete", a "CPD auto-logged" stat. Content is placeholder; "Mark complete" is just a toggle.
+
+**Decisions — target state**
+- **Embedded learning content.** Modules contain **video** (host on **Bunny Stream — already in the stack**), plus text/slides + downloadable resources + an optional **quiz** to confirm learning. Completion (watched / quiz passed) → marks complete → **logs CPD + prompts a reflective account**. *(Keep v1 simple: video + complete + reflect + CPD; quizzes/certificates = Phase 2 polish — don't over-build a full LMS.)*
+- **CPD recording — standards-aligned:**
+  - **Now:** structured record per activity — what · date · hours · type (planned/participatory) · **reflective account** · link to professional standard → **export as a CPD portfolio (PDF)** the clinician uploads to their own body. Works for **GPhC / GMC / NMC** (shared core).
+  - **Phase 2:** per-body exact formatting (GPhC 4-records/peer-discussion/reflective account · NMC 35h + 450 practice hours + 5 reflections · GMC appraisal) + any direct submission.
+- **Content sources:** Clinickly-produced (+ **Faheem's own educational library** — The Pharmacy Guy / MEDLRN, repurposed), **MDT session recordings** (Session library → modules), curated. All go through the **governance sign-off** pipeline.
+- **Data-driven curriculum:** the commonest **MDT query types + decision-support flags** reveal learning gaps → become new modules (closes the loop across all three pillars).
+- **Team training (admin):** admin can **assign modules to staff + track completion** — inspection evidence the whole team is trained.
+- **MDT = peer discussion + reflection** → premium revalidation evidence produced as a by-product of using the tool (a selling point).
+
+---
+
 *(more pages added as we review them)*
 
 ---
