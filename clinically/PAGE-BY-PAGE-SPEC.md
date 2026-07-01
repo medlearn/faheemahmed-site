@@ -11,6 +11,8 @@
 
 **Cross-cutting data rule — structured tags, not free text.** Any field you'll ever want to count, filter, route or report on must be a **controlled dropdown** (consultation type, specialty, urgency, etc.) — never a free-text box. Free text is only for **clinical content** (the note body, case summaries). This is what makes the data trackable and taggable. See **Appendix A** for the consultation taxonomy.
 
+**Foundational decision — Clinickly is an anonymised ASSISTANT (Version A), not the patient record.** For the pilot/launch: only **anonymised / minimal** info goes in (age range, reason, a clinician-controlled **patient reference** like initials — never name/DOB/NHS number). Clinickly **drafts and supports**; the clinician **copies/exports the note into their own record system**, which stays the source of truth. Chosen because Version B (Clinickly = the medical record) triggers the full weight of health-record/medical-device compliance and would massively delay launch. **Known trade-off:** clinicians use two tools + potential double cost — mitigated by one-click export now, **integration** next, and **Version B** later (which collapses it to one tool once compliance is in place).
+
 ---
 
 ## 1. Dashboard
@@ -62,6 +64,26 @@ Where the clinical work happens. It listens to the appointment, drafts the clini
 - [ ] Contract **STT provider (Speechmatics)** + **meeting-bot (Recall.ai)**.
 
 **Data residency:** keep all audio + text processing in **UK/EU**.
+
+---
+
+## 3. Clinical notes
+
+**Purpose**
+The record-keeping hub — where drafted notes are stored, reviewed, edited, **signed**, searched, and turned into MDT cases. Holds the audit trail.
+
+**What we have now**
+- List of notes with **status (Draft / Signed)**; the live note from a consultation is real + saved to the database; the "Sample records" list is demo.
+- Per note: **Edit draft · Mark as signed · Copy SOAP note · Create MDT case · Activity log**.
+- Search is a **basic free-text box**.
+
+**Decisions — target state**
+- **Model = Version A** (see Foundational decision). Notes are drafted here and **copied/exported into the clinician's own record system**; Clinickly is not the system of record for the pilot. Each note carries a **clinician-controlled patient reference** (their code/initials), not identifiable data.
+- **Standardised output.** The AI always produces the **same SOAP structure** regardless of how each clinician speaks or writes — governed by the clinic's chosen **note template** (Templates & SOPs). Consistent + inspection-ready; content reflects only what was said; clinician reviews & signs.
+- **Flexible input.** Clinician can **transcribe live**, **type/paste** their own history, or a **mix** — the SOAP is generated from whatever's in the box, then remains **editable**. Not transcription-only.
+- **Search = filters + keyword.** Filter by the **taxonomy tags** (Clinical area × Encounter type), **Status**, **Date**, **Patient reference**; plus a keyword box to find text *inside* notes. (Keyword *search* is fine; free-text *categorising* is not.)
+- **Signing = lock.** Once **Signed**, the note is **locked/immutable** with a timestamped audit entry; changes after signing create an **addendum**, not an overwrite. (Defensibility.)
+- **Export.** One-click copy now; **standard-format export / integration** later to remove double-entry (the "two tools" mitigation).
 
 ---
 
