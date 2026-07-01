@@ -107,6 +107,16 @@ The front door to Pillar 2 (the human MDT). Send an **anonymised** difficult cas
 
 ---
 
+## 5. Saved records → **remove / merge away**
+
+**Decision:** the separate "Saved records" page is **not needed** — it duplicates the notes list.
+- Everything is persisted automatically, so **notes live only in Clinical notes** and **cases only in My cases** (both DB-backed). **One notes list, not two.** Delete the "Saved records" page.
+- **Remove "Release to patient."** Clinickly is the clinician's assistant (Version A); anything patient-facing goes through the clinic's **own/alongside patient portal**, not Clinickly.
+
+**Open question flagged for later (Patient portal review):** if patients are served entirely by the clinic's own portal, the **patient portal built inside Clinickly may not be needed at all** — which would also simplify roles to **clinician + MDT panel + admin** (removing the doctor/patient login confusion). *Revisit at the Patient portal page.*
+
+---
+
 *(more pages added as we review them)*
 
 ---
