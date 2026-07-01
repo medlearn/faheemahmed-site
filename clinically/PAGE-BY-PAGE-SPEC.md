@@ -223,7 +223,58 @@ The **back office** where everything the clinicians and panel *use* is managed, 
 
 ---
 
-*(more pages added as we review them)*
+## 10. My cases (MDT case tracking)
+
+**Purpose**
+The clinician's list of submitted MDT cases + panel responses (Awaiting → Answered). The "track" half of the MDT flow (submission spec'd in §4).
+
+**Decisions**
+- Reuse the case taxonomies: **specialty (Appendix B)** + **query type (Appendix C)**.
+- **Filter/search cases by specialty × query type × status × date** — powers the MDT audit.
+- **Confirm cases persist to the DB** (the build showed "0 in DB").
+- The **panel-answering loop is the key Pillar-2 build** (panel login → routed case → written response → clinician notified).
+
+---
+
+## 11. Session library
+
+**Purpose**
+Searchable library of **recorded MDT sessions** — a learning resource that builds over time.
+
+**Decisions**
+- Record **only with consent + anonymisation**.
+- Each recording goes through **governance sign-off before publishing** (admin console).
+- **Tagged** (clinical area / query type) for search.
+- A session can be **promoted into a Training module** — video hosted on **Bunny** (already in the stack). This is the **Session library → Training** loop.
+
+---
+
+## 12. Ask Clinickly (AI chat assistant)
+
+**Purpose**
+The AI assistant at the top — ask a clinical question, get a **guideline-backed answer**. The general-purpose cousin of the in-consultation decision support.
+
+**Decisions**
+- **Grounded in the same restricted official sources** (NICE/CKS + the guidelines library) — **not the AI's memory**.
+- Every answer **cites its source + "verify at source."**
+- Framed as **"decision support, not a decision — clinician judgement required."**
+- **Logged / audited.**
+- Can *also* answer **"how do I use Clinickly?"** (product help).
+- Same guardrails as decision support; **interim = official-site search → licensed APIs later.**
+
+---
+
+## 13. Patient portal & roles
+
+**As built:** patient login → portal (membership £49/mo + "shared by clinician" notes).
+
+**Decision (agreed):** **patient portal = deferred to a later phase.**
+- For the **pilot: remove the patient portal + patient login.** Roles = **clinician + MDT panel + admin** (see §9).
+- Membership / "Activate" (Stripe) and "release to patient" are **out of scope for the pilot**; they return **done properly** when the full patient portal is built later (patient sees released notes/info, self-book, payments).
+
+---
+
+*Page-by-page review complete (§1–§13 + Appendices A–D). Next: consolidate into a single master build document.*
 
 ---
 
