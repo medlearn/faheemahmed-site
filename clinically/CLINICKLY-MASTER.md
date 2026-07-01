@@ -1,9 +1,9 @@
 # Clinickly Co-pilot — MASTER BUILD DOCUMENT
 
-**The single source of truth.** Read this top to bottom. It supersedes the other docs; those remain as supporting detail:
-[PAGE-BY-PAGE-SPEC.md](PAGE-BY-PAGE-SPEC.md) (full page detail) · [DEVELOPER-MASTER-PLAN.md](DEVELOPER-MASTER-PLAN.md) (extra code) · [HANDOFF.md](HANDOFF.md) (architecture) · [MASTER-PLAN.md](MASTER-PLAN.md) (business/compliance).
+**The single source of truth for Clinickly Co-pilot — a standalone product.**
+Read top to bottom. **Clinickly Co-pilot is built as its own independent project** — its own code repository, its own hosting, and its own domain. It is **not** part of, and must **not** depend on, reference, or have access to, any other website or codebase.
 
-**Owner:** Faheem Ahmed · **Status:** front-end prototype live; large parts built with real AI + real DB (see §2).
+**Status:** a working prototype exists with real AI + a real database (see §2).
 
 ---
 
@@ -63,7 +63,7 @@ A web app with **two pillars**:
 | **Admin (+ Chair/clinical lead)** | The Admin / Governance console (below) |
 
 **Admin / Governance console — the "engine room"** (clinicians never see it):
-- **Panel management** — add/remove MDT members, set specialties, manage logins (members recruited via the landing "Join the panel" form).
+- **Panel management** — add/remove MDT members, set specialties, manage logins (members recruited via a panel-interest / recruitment form).
 - **MDT scheduling** — recurring session rule + dates (auto-advance + override); agenda auto-pulls submitted cases + a teaching slot.
 - **Governance sign-off queues** — review & sign off guidelines, SOPs, note templates, training (the §8 pipeline).
 - **Content libraries** — create/edit/publish all clinical content; handle "Request an SOP/template".
@@ -118,9 +118,9 @@ Searchable guidance library; also feeds the decision-support flags; underpins "w
 
 ### 5.8 Training
 Upskilling + CPD hub.
-- **Embedded learning:** video (host on **Bunny** — already in stack) + text + optional quiz. Completion → logs CPD + prompts reflection. *(Keep v1 simple; quizzes/certs = Phase 2.)*
+- **Embedded learning:** video (host on **Bunny** — recommended) + text + optional quiz. Completion → logs CPD + prompts reflection. *(Keep v1 simple; quizzes/certs = Phase 2.)*
 - **CPD recording (standards-aligned):** *now* — structured record (what/date/hours/type + reflective account + standard link) → **export as CPD portfolio (PDF)** the clinician uploads to their body; works for **GPhC/GMC/NMC** (shared core). *Phase 2* — per-body exact formatting + any direct submission.
-- **Content:** Clinickly-produced (+ Faheem's own library), **MDT session recordings → modules**, all governance-signed.
+- **Content:** Clinickly-produced (your own educational content) + **MDT session recordings → modules**, all governance-signed.
 - **Data-driven curriculum:** commonest MDT query types + decision-support flags → new modules.
 - **Team training (admin):** assign modules to staff + track completion (inspection evidence).
 - **MDT = peer discussion + reflection** → revalidation evidence as a by-product.
@@ -187,18 +187,18 @@ Keeps all clinical content current + safe. **Reuses the MDT/roles/DB machinery.*
 
 ## 9. Technical build — step by step
 
-**Stack:** vanilla HTML/CSS/JS front end · **Netlify Functions** (backend, `netlify/functions/`, reached at `/api/*`) · **Supabase** (Postgres + Auth) · **Bunny** (video) · **Stripe** (billing, later) · **Claude** (`claude-sonnet-4-6` default, `claude-opus-4-8` for hardest). All already present in the repo.
+**Recommended stack (set up fresh in your own new project — do NOT reuse any other site's codebase):** static front end (plain HTML/CSS/JS or a framework of your choice) · **Netlify Functions** (backend, `/api/*`) · **Supabase** (Postgres + Auth) · **Bunny** (video) · **Stripe** (billing, later) · **Claude** (`claude-sonnet-4-6` default, `claude-opus-4-8` for hardest).
 
-**Setup**
+**Setup (your own repo)**
 ```bash
-git clone https://github.com/medlearn/faheemahmed-site.git
-cd faheemahmed-site && npm install
+mkdir clinickly && cd clinickly && npm init -y
+npm install @anthropic-ai/sdk @supabase/supabase-js
 npm install -g netlify-cli
-cp .env.example .env   # fill keys (§12)
-netlify dev            # site + functions at http://localhost:8888
+# add your keys to .env (§12)
+netlify dev            # runs the app + functions locally
 ```
 
-**Phase 1 — real note drafting** (`netlify/functions/notes.js`): POST `{transcript, patient, template}` → Claude with a forced-JSON tool returning `{S,O,A,P,codes}`. System prompt: draft SOAP from transcript only, **do not invent findings**, flag uncertainty, follow the selected template, does not diagnose/prescribe. Wire into the consultation view's note generation (replace the mock). *(Full code in [DEVELOPER-MASTER-PLAN.md §4](DEVELOPER-MASTER-PLAN.md).)*
+**Phase 1 — real note drafting** (`netlify/functions/notes.js`): POST `{transcript, patient, template}` → Claude with a forced-JSON tool returning `{S,O,A,P,codes}`. System prompt: draft SOAP from transcript only, **do not invent findings**, flag uncertainty, follow the selected template, does not diagnose/prescribe. Wire into the consultation view's note generation (replace any mock).
 
 **Phase 2 — decision support** (`/api/support`): grounded in the restricted official-site search (§7), returns `{level,title,body,ref}[]`, each cites source + "verify at source".
 
