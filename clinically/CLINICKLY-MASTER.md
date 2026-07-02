@@ -17,7 +17,7 @@ Read top to bottom. **Clinickly Co-pilot is built as its own independent project
 ## 1. What you're building (plain English)
 
 A web app with **two pillars**:
-1. **AI co-pilot (software)** — during/around a consultation it **transcribes → drafts a structured SOAP note → flags guideline-backed checks**; plus guidelines, templates/SOPs, training.
+1. **AI co-pilot (software)** — during/around a consultation it **transcribes → drafts a structured SOAP note (documentation aid) → surfaces the relevant guidance** for the clinician to apply; plus a guidelines library, templates/SOPs, training. *(Guidance surfaced for the clinician — not patient-specific directives; see §3 positioning.)*
 2. **Human MDT (people)** — an expert panel (GP, psychiatrist, dermatologist, chair) that clinicians **submit anonymised cases to** and **meet with**; the panel also **governs the clinical content**.
 
 **Tagline:** *AI for the everyday, the MDT for the difficult.*
@@ -44,6 +44,11 @@ A web app with **two pillars**:
 ---
 
 ## 3. Foundational decisions (read before building)
+
+**⭐ Product positioning — build to this.** Clinickly is a **clinical guidance/reference + documentation tool**, plus an **anonymised education/CPD** activity (the MDT). It is **NOT patient-specific clinical decision-support software**, and is **not intended to be a medical device.** Build consequences:
+- The consultation **surfaces the relevant guidance for the clinician to read and apply** — it does **not** issue patient-specific directions. Frame prompts as *"relevant guidance,"* not *"do X for this patient."*
+- The **MDT is anonymised case-based teaching / training / CPD** — not a clinical advisory service on live patients. Panel responses are **teaching/discussion points.**
+- The clinician **reviews, applies and signs** everything — accountability stays with them.
 
 1. **Version A — Clinickly is an anonymised ASSISTANT, not the patient record.** Only **anonymised/minimal** data goes in (age range, reason, a clinician-controlled **patient reference** like initials — never name/DOB/NHS number). It **drafts + supports**; the clinician **copies/exports into their own record system**, which stays the source of truth. *(Version B — Clinickly as the medical record — is a much bigger compliance build for later.)* Known trade-off: two tools + cost → mitigated by one-click export now, integration next.
 2. **Three roles only for the pilot:** **Clinician · MDT panel member · Admin** (+ Chair/clinical lead). **No patient role** — the patient portal is **deferred to a later phase**.
@@ -106,7 +111,7 @@ Home/overview. Shows next-MDT banner, headline numbers, quick actions, recent no
 - **Build:** the four numbers must **count real usage** (not samples). The **MDT date auto-advances** on a recurring rule (+ admin override) — not hard-coded.
 
 ### 5.2 Consultation (the core)
-3 columns: **Live transcription → AI-drafted SOAP note → Decision support.**
+3 columns: **Live transcription → AI-drafted SOAP note → Relevant guidance.** *(The third column surfaces guidance for the clinician to apply — reference, not patient-specific directives; see §3.)*
 - **Input is flexible:** transcribe live, type/paste, or a mix → AI drafts → editable. Not transcription-only.
 - **Standardised output** governed by the chosen **note template**; content reflects only what was said; clinician reviews & signs.
 - **Note template = SOAP frame + clinical history structure *inside* Subjective**, scaled by consultation type:
@@ -124,7 +129,7 @@ Record-keeping hub — store, edit, **sign**, search, turn into MDT case; holds 
 - One-click **export** now → integration later (removes double-entry).
 
 ### 5.4 MDT case (create + track = "My cases")
-Send an **anonymised** case to the panel; track Awaiting → Answered.
+Submit an **anonymised** case to the panel for **teaching, discussion & CPD** — case-based education, **not** advice on a live patient. Track Awaiting → Answered; panel responses are **teaching/discussion points** (advisory/educational, clinician stays responsible).
 - **Two structured dropdowns:** Specialty (who answers — Appendix B) + **Query type** (for audit — Appendix C; AI auto-suggests). Keep Urgency dropdown.
 - **Anonymise on create** (esp. from a note) — AI auto-anonymises + flags identifiers before submit.
 - **Image upload (essential — esp. dermatology):** attach **1–5 clinical photos** per case, visible to the routed panel member. Rules: anonymisation guidance at upload (crop to lesion; avoid faces/tattoos/jewellery/backgrounds) · **AI pre-check** flags identifiable images before submit · **auto-strip EXIF** (GPS/timestamps) · **required consent checkbox** (patient consent for clinical photography + sharing, logged) · encrypted **UK/EU storage** (Supabase Storage), access limited to submitter + routed panel member, audited, deletable.
@@ -134,7 +139,7 @@ Send an **anonymised** case to the panel; track Awaiting → Answered.
 ### 5.5 Saved records → **removed** (merged into Clinical notes / My cases). Delete the page. Remove "Release to patient" (Version A).
 
 ### 5.6 Guidelines
-Searchable guidance library; also feeds the decision-support flags; underpins "what did guidance say at the time". Sources + interim/target in §7. Kept current via the **§8 governance pipeline**.
+Searchable guidance library; also feeds the guidance surfaced in the consultation; underpins "what did guidance say at the time". Sources + interim/target in §7. Kept current via the **§8 governance pipeline**. Reference implementations: `guideline-sample.html` (published, clinician⟷patient views, cited) + `guideline-review.html` (MDT review & sign-off: each recommendation checked against its source).
 
 **Content authoring standard (non-negotiable — this is what makes it defensible):**
 - **Every recommendation is cited to a named source, per-statement** (not just a generic "sources" bar). The AI drafts **from retrieved source text, not from memory** — each claim carries its citation; a clinician verifies against the cited source before sign-off.
@@ -160,7 +165,7 @@ Upskilling + CPD hub.
 - **MDT = peer discussion + reflection** → revalidation evidence as a by-product.
 
 ### 5.9 MDT overview
-Front page of Pillar 2 — panel, next session + agenda, how it works, links to submit/library. Informational. Panel + scheduling + governance all managed in the **admin console** (§4).
+Front page of Pillar 2 — panel, next session + agenda, how it works, links to submit/library. Informational. **Framed throughout as anonymised teaching/training/CPD (case-based education)**, not a clinical advisory service. Panel + scheduling + governance all managed in the **admin console** (§4).
 
 ### 5.10 Session library
 Searchable recorded MDT sessions. **Consent + anonymisation required**; governance-signed before publishing; **tagged** for search; a session can be **promoted into a Training module** (Bunny video).
@@ -276,12 +281,13 @@ RLS: clinicians see only their own notes/cases; panel see cases routed to them; 
 
 ## 11. Compliance & safety (do NOT skip)
 
-- **Clinical safety:** UK **DCB0129 / DCB0160** apply to clinical decision-support software. Appoint a **Clinical Safety Officer**; keep a **hazard log**. (The §8 sign-off pipeline supports this.)
+- **Positioning:** built as a **guidance/reference + documentation tool + anonymised education/CPD** — **not** patient-specific decision-support software, and **not intended as a medical device** (§3). Device status turns on *function*, so **avoid patient-specific directives** — surface guidance, don't instruct. (Confirm scope with a regulatory adviser.)
+- **Clinical safety:** UK **DCB0129 / DCB0160** (clinical risk management for health IT) — good practice even as a guidance/documentation tool. Appoint a **Clinical Safety Officer**; keep a **hazard log**. (The §8 sign-off pipeline supports this.)
 - **Data protection:** UK GDPR — **DPIA** before any real patient data; UK/EU residency; retention; subject access/erasure. (Version A minimises this by holding no identifiers.)
 - **No auto-prescribe.** AI drafts; clinician signs. Keep **"supports, not decides"** in the UI + T&Cs.
 - **Audit everything** — who saw/signed/published what, when. (Selling point *and* safety.)
 - **Keys server-side only.** Never ship API keys to the browser.
-- **MDT framing:** advisory peer input, not transfer of responsibility; sort indemnity/consent before launch.
+- **MDT framing:** **anonymised teaching/training/CPD** (case-based education), advisory only — not a clinical service, not transfer of responsibility; sort indemnity/consent + panel agreements before launch.
 - **Copyright:** §7 split — never republish commercial guidance without a licence.
 
 ---
