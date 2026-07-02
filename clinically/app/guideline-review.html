@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinickly — MDT review & sign-off (Rosacea)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+<style>
+  .doc{max-width:960px;margin:0 auto}
+  .rev{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden}
+  .rev.done{border-color:var(--brand)}
+  .revgrid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .revcol{padding:16px 18px}
+  .revcol.claim{border-right:1px solid var(--line-2)}
+  .revlbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .revcol.claim .revlbl{color:var(--brand-deep)}
+  .revcol.src{background:var(--tint)}
+  .revcol p{font-size:.9rem;line-height:1.55;color:var(--ink-2)}
+  .revcol p b{color:var(--ink)}
+  .srcq{font-size:.86rem;line-height:1.55;color:var(--ink-2);font-style:italic;border-left:3px solid var(--brand);padding-left:12px}
+  .srcmeta{margin-top:8px;font-family:var(--mono);font-size:.66rem;color:var(--brand-deep)}
+  .revfoot{display:flex;align-items:center;gap:12px;padding:11px 18px;border-top:1px solid var(--line-2);background:#fbfdfd}
+  .chk{display:flex;align-items:center;gap:9px;font-size:.85rem;font-weight:600;cursor:pointer}
+  .chk input{width:18px;height:18px;accent-color:var(--brand)}
+  .revfoot .flag{margin-left:auto}
+  .barwrap{position:sticky;top:64px;z-index:20;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:14px 18px;margin-bottom:18px;display:flex;align-items:center;gap:16px}
+  .barwrap .prog{flex:1}
+  .barwrap .progbar{height:8px;background:var(--line-2);border-radius:8px;overflow:hidden;margin-top:6px}
+  .barwrap .progbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),#19c2b6);border-radius:8px;transition:width .3s}
+  @media(max-width:720px){.revgrid{grid-template-columns:1fr}.revcol.claim{border-right:none;border-bottom:1px solid var(--line-2)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-info" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.1"/></g>
+  <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 6.5"/></g>
+  <g id="i-book" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 1 6 18h14"/></g>
+</defs></svg>
+
+<main class="main" style="display:block">
+  <header class="topbar"><a href="guideline-sample.html" style="font-family:var(--mono);font-size:.78rem;color:var(--brand-deep)">← Guideline</a><div class="spacer"></div><span class="pill"><span class="dot"></span> MDT review &amp; sign-off</span></header>
+  <div class="view">
+    <div class="doc">
+      <span class="kick">Governance · MDT review</span>
+      <h2 class="h" style="font-size:2.1rem;margin:8px 0 4px">Rosacea — review &amp; sign off</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"><span class="tag">Dermatology</span><span class="tag">Draft v1.0</span><span class="tag warn">Awaiting sign-off</span><span class="tag">Reviewer: Dr R. Kaur</span></div>
+
+      <div class="anon-note" style="margin-bottom:16px"><svg viewBox="0 0 24 24"><use href="#i-info"/></svg><span>MDT review: verify each recommendation against its source, then sign off. <b>Nothing publishes until every item is confirmed.</b></span></div>
+
+      <div class="barwrap"><div class="prog"><b id="pcount">0 of 6 recommendations verified</b><div class="progbar"><i id="pbar"></i></div></div><button class="btn" id="signBtn" disabled>Sign off &amp; publish</button></div>
+
+      <p class="muted" style="font-size:.85rem;margin-bottom:14px">Check each recommendation on the left against its source passage on the right. Tick <b>"matches source"</b> when confirmed, or <b>flag</b> to send back. <span style="color:var(--brand-deep)">Source passages are illustrative in this prototype; in the live product they are the actual retrieved text from the cited source.</span></p>
+
+      <div id="rows"></div>
+
+      <div class="disc" style="margin-top:8px">Every tick is recorded — who verified which recommendation, against which source, when. That audit trail is what makes the published guideline defensible. Decision support, not a directive.</div>
+    </div>
+  </div>
+</main>
+<div class="toasts" id="toasts"></div>
+
+<script>
+const items=[
+ {c:'<b>Diagnosis:</b> papules/pustules + central erythema, <b>no comedones</b> → papulopustular rosacea (not acne).',
+  s:'"Papulopustular rosacea presents with papules and pustules on the central face; the absence of comedones helps distinguish it from acne vulgaris."', ref:'NICE CKS Rosacea — Diagnosis'},
+ {c:'<b>All patients:</b> daily SPF 30+, trigger avoidance, gentle non-soap cleanser + fragrance-free moisturiser.',
+  s:'"Advise sun protection, avoidance of trigger factors, and use of non-alkaline, non-abrasive cleansers and emollients."', ref:'NICE CKS Rosacea — General measures'},
+ {c:'<b>First-line (papulopustular):</b> topical <b>ivermectin OR metronidazole</b> (or azelaic acid) — no single mandated first-line.',
+  s:'"For mild to moderate papules and pustules, consider topical ivermectin, topical metronidazole, or azelaic acid."', ref:'NICE CKS Rosacea — Management'},
+ {c:'<b>Moderate–severe / not responding ~8–12 wks:</b> add an oral agent — low-dose doxycycline.',
+  s:'"For more severe or unresponsive papulopustular rosacea, consider an oral antibiotic such as doxycycline."', ref:'NICE CKS Rosacea — Management'},
+ {c:'<b>Ocular:</b> lid hygiene + warm compresses + lubricants; refer if not settling or vision affected.',
+  s:'"For ocular rosacea, advise lid hygiene and warm compresses; refer to ophthalmology if severe or not responding."', ref:'NICE CKS Rosacea — Ocular'},
+ {c:'<b>Doses, cautions, interactions, monitoring:</b> from the BNF — not authored here.',
+  s:'Prescribing detail (dose, cautions, monitoring) is taken from the British National Formulary, not hand-authored.', ref:'BNF'}
+];
+const $=(s,r=document)=>r.querySelector(s);
+const toast=m=>{const t=document.createElement('div');t.className='toast';t.innerHTML='<span class="ti"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span>'+m+'</span>';$('#toasts').appendChild(t);setTimeout(()=>{t.style.transition='opacity .4s';t.style.opacity='0';setTimeout(()=>t.remove(),400)},3000)};
+const rows=$('#rows');
+rows.innerHTML=items.map((it,i)=>`<div class="rev" id="rev${i}"><div class="revgrid"><div class="revcol claim"><div class="revlbl">Recommendation</div><p>${it.c}</p></div><div class="revcol src"><div class="revlbl">${'<svg viewBox="0 0 24 24" style="width:13px;height:13px"><use href="#i-book"/></svg>'} Source passage</div><p class="srcq">${it.s}</p><div class="srcmeta">${it.ref}</div></div></div><div class="revfoot"><label class="chk"><input type="checkbox" data-i="${i}"> Matches source</label><button class="btn ghost sm flag" data-flag="${i}">Flag / request change</button></div></div>`).join('');
+function update(){const n=document.querySelectorAll('#rows input:checked').length;const tot=items.length;$('#pcount').textContent=n+' of '+tot+' recommendations verified';$('#pbar').style.width=Math.round(n/tot*100)+'%';const btn=$('#signBtn');btn.disabled=n<tot;btn.innerHTML=(n<tot?'':'<svg viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-check"/></svg> ')+'Sign off &amp; publish';}
+rows.querySelectorAll('input').forEach(c=>c.addEventListener('change',()=>{$('#rev'+c.dataset.i).classList.toggle('done',c.checked);update()}));
+rows.querySelectorAll('[data-flag]').forEach(b=>b.addEventListener('click',()=>{const cb=rows.querySelector('input[data-i="'+b.dataset.flag+'"]');cb.checked=false;$('#rev'+b.dataset.flag).classList.remove('done');update();toast('Flagged — sent back to drafting with your note.')}));
+$('#signBtn').addEventListener('click',()=>{if($('#signBtn').disabled)return;$('#signBtn').innerHTML='<svg viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-check"/></svg> Signed off';$('#signBtn').classList.add('dark');$('#signBtn').disabled=true;document.querySelectorAll('.tag.warn').forEach(t=>{t.className='tag ok';t.textContent='Signed off · v1.0'});toast('Signed off &amp; published — version 1.0 recorded with your name, date and each verification.');});
+update();
+</script>
+</body>
+</html>
