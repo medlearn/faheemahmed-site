@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pharmora Consultancy | Specialist Pharmacy Business Consultants</title>
+<meta name="description" content="Pharmora is a specialist consultancy for the pharmacy sector. From buying and selling to finance, regulation, recruitment and running, one expert partner for the business of pharmacy.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A3B33">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pharmora Consultancy | Specialist Pharmacy Business Consultants">
+<meta property="og:description" content="The business of pharmacy, expertly handled. One specialist partner for buying, financing, regulation, recruitment and running a pharmacy.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --pine-900:#0A3B33; --pharmora-700:#0F564B; --green-500:#1A7A6B;
+    --sage-300:#6FA89C; --mint-100:#D9E8E4; --brass-500:#C7A14E; --brass-700:#9C7A33;
+    --ink:#15201D; --slate:#5A6B66; --line:#DCE3E0;
+    --ivory:#F6F4EE; --mist:#FBFAF6; --white:#FFF;
+    --success:#2E7D5B; --alert:#B4452F;
+    --display:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --shadow-card:0 2px 8px rgba(21,32,29,.05);
+    --shadow-lift:0 8px 24px rgba(21,32,29,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:500;line-height:1.1;letter-spacing:-.01em;color:var(--ink)}
+  p{max-width:68ch}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+  .eyebrow{font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-500);display:inline-block}
+  .eyebrow.brass{color:var(--brass-700)}
+
+  /* divider rule under section headings */
+  .rule{width:48px;height:2px;background:var(--brass-500);border:0;margin:0 0 22px}
+  .rule.c{margin-left:auto;margin-right:auto}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1;padding:14px 28px;border-radius:8px;border:1.5px solid transparent;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;text-align:center}
+  .btn svg{width:17px;height:17px}
+  .btn-primary{background:var(--pharmora-700);color:#fff;border-color:var(--pharmora-700)}
+  .btn-primary:hover{background:var(--pine-900);border-color:var(--pine-900);box-shadow:var(--shadow-lift);transform:translateY(-1px)}
+  .btn-secondary{background:transparent;color:var(--pharmora-700);border-color:var(--pharmora-700)}
+  .btn-secondary:hover{background:var(--mint-100)}
+  .btn-light{background:#fff;color:var(--pharmora-700);border-color:#fff}
+  .btn-light:hover{background:var(--mint-100);border-color:var(--mint-100)}
+  .btn-ghost-light{background:transparent;color:var(--ivory);border-color:rgba(246,244,238,.45)}
+  .btn-ghost-light:hover{background:rgba(246,244,238,.12);border-color:var(--ivory)}
+  :focus-visible{outline:2px solid var(--brass-500);outline-offset:2px;border-radius:4px}
+
+  /* skip link */
+  .skip{position:absolute;left:-999px;top:8px;background:var(--pharmora-700);color:#fff;padding:10px 16px;border-radius:8px;z-index:200}
+  .skip:focus{left:12px}
+
+  /* ===== header / nav ===== */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,244,238,.85);backdrop-filter:blur(12px);transition:box-shadow .3s,background .3s;border-bottom:1px solid transparent}
+  header.nav.scrolled{background:rgba(246,244,238,.95);border-bottom-color:var(--line);box-shadow:0 1px 0 rgba(21,32,29,.03)}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:15px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
+  .logo .mark{width:38px;height:38px;flex-shrink:0}
+  .logo .wm{font-family:var(--display);font-weight:500;font-size:1.5rem;letter-spacing:-.015em;color:var(--pharmora-700)}
+  .nlinks{display:flex;align-items:center;gap:30px}
+  .nlinks > a, .nav-dd > button{font-size:.95rem;font-weight:500;color:var(--ink);background:none;border:0;cursor:pointer;font-family:var(--sans);display:inline-flex;align-items:center;gap:5px;padding:6px 0;transition:color .15s}
+  .nlinks > a:hover, .nav-dd > button:hover{color:var(--pharmora-700)}
+  .nav-dd{position:relative}
+  .nav-dd > button svg{width:14px;height:14px;transition:transform .2s}
+  .nav-dd:hover > button svg{transform:rotate(180deg)}
+  .dd-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(8px);background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lift);padding:12px;width:340px;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s}
+  .nav-dd:hover .dd-menu, .nav-dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .dd-menu a{display:block;padding:10px 12px;border-radius:10px;transition:background .15s}
+  .dd-menu a:hover{background:var(--mint-100)}
+  .dd-menu .t{font-weight:600;font-size:.92rem;color:var(--ink)}
+  .dd-menu .d{font-size:.8rem;color:var(--slate);margin-top:1px}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .nav-cta .btn{padding:11px 20px;font-size:.92rem}
+  .burger{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px;align-items:center;justify-content:center;color:var(--ink)}
+  .burger svg{width:26px;height:26px}
+
+  /* mobile overlay menu */
+  .mobile-menu{position:fixed;inset:0;z-index:99;background:var(--ivory);display:flex;flex-direction:column;padding:84px 28px 28px;transform:translateY(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+  .mobile-menu.open{transform:translateY(0)}
+  .mobile-menu a{font-family:var(--display);font-size:1.9rem;font-weight:500;color:var(--ink);padding:14px 0;border-bottom:1px solid var(--line)}
+  .mobile-menu a:active{color:var(--pharmora-700)}
+  .mobile-menu .mm-foot{margin-top:auto;padding-top:28px}
+  .mobile-menu .btn{width:100%}
+
+  /* ===== hero ===== */
+  .hero{padding:150px 0 88px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(720px 480px at 88% 0%,rgba(111,168,156,.22),transparent 60%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;position:relative}
+  .hero h1{font-size:clamp(2.45rem,5.4vw,3.75rem);margin:18px 0 0;letter-spacing:-.02em}
+  .hero .lede{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--slate);margin-top:24px;max-width:34ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero-trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:40px;align-items:center;color:var(--slate);font-size:.86rem}
+  .hero-trust .dot{width:5px;height:5px;border-radius:50%;background:var(--brass-500)}
+  .hero-trust span{display:inline-flex;align-items:center;gap:9px}
+
+  /* hero visual card */
+  .hero-art{position:relative}
+  .hero-card{background:var(--pine-900);border-radius:16px;padding:34px;color:var(--ivory);box-shadow:var(--shadow-lift);position:relative;overflow:hidden}
+  .hero-card::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(199,161,78,.22),transparent 70%);bottom:-120px;right:-90px}
+  .hero-card .ec{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-500)}
+  .hero-card .lifecycle{margin-top:22px;display:flex;flex-direction:column;gap:2px;position:relative}
+  .lifecycle-step{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid rgba(246,244,238,.12)}
+  .lifecycle-step:last-child{border-bottom:0}
+  .lifecycle-step .n{width:30px;height:30px;flex-shrink:0;border-radius:8px;background:rgba(199,161,78,.16);color:var(--brass-500);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:.95rem}
+  .lifecycle-step .lab{font-weight:500;font-size:.98rem}
+  .lifecycle-step .sub{font-size:.8rem;color:rgba(246,244,238,.6)}
+  .hero-badge{position:absolute;bottom:-20px;left:-18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-lift);display:flex;align-items:center;gap:12px}
+  .hero-badge .ic{width:38px;height:38px;border-radius:9px;background:var(--mint-100);color:var(--pharmora-700);display:grid;place-items:center;flex-shrink:0}
+  .hero-badge .ic svg{width:20px;height:20px}
+  .hero-badge b{font-family:var(--display);font-size:1.02rem;display:block;line-height:1.2}
+  .hero-badge span{font-size:.76rem;color:var(--slate)}
+
+  /* ===== generic section ===== */
+  section{padding:104px 0}
+  .mist{background:var(--mist)}
+  .sec-head{max-width:720px;margin-bottom:54px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.85rem,3.6vw,2.45rem)}
+  .sec-head p{color:var(--slate);font-size:1.12rem;margin-top:16px}
+  .sec-head.center p{margin-left:auto;margin-right:auto}
+
+  /* intro band */
+  .intro-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+  .intro-grid h2{font-size:clamp(1.7rem,3.2vw,2.3rem)}
+  .intro-grid .body p{color:var(--slate);font-size:1.08rem}
+  .intro-grid .body p + p{margin-top:18px}
+
+  /* services grid */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;box-shadow:var(--shadow-card)}
+  .scard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--mint-100)}
+  .scard .ic{width:50px;height:50px;border-radius:12px;background:var(--mint-100);color:var(--pharmora-700);display:grid;place-items:center;margin-bottom:20px}
+  .scard .ic svg{width:25px;height:25px}
+  .scard h3{font-size:1.22rem;font-weight:600}
+  .scard p{font-size:.96rem;color:var(--slate);margin-top:9px;flex-grow:1}
+  .scard .more{margin-top:18px;font-size:.9rem;font-weight:600;color:var(--green-500);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+  .scard:hover .more{gap:11px}
+  .scard .more svg{width:15px;height:15px}
+
+  /* why pharmora — dark band */
+  .why{background:var(--pine-900);color:var(--ivory)}
+  .why .eyebrow{color:var(--brass-500)}
+  .why h2{color:var(--ivory)}
+  .why .sec-head p{color:rgba(246,244,238,.72)}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px}
+  .why-item{display:flex;gap:18px;padding-top:26px;border-top:1px solid rgba(246,244,238,.14)}
+  .why-item .ic{flex-shrink:0;width:44px;height:44px;border-radius:11px;background:rgba(199,161,78,.14);color:var(--brass-500);display:grid;place-items:center}
+  .why-item .ic svg{width:23px;height:23px}
+  .why-item h3{color:var(--ivory);font-size:1.18rem;font-weight:600}
+  .why-item p{color:rgba(246,244,238,.7);font-size:.97rem;margin-top:7px}
+
+  /* who we help */
+  .who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .who-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:30px 32px;display:flex;gap:20px;align-items:flex-start;box-shadow:var(--shadow-card);transition:transform .2s,box-shadow .2s}
+  .who-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+  .who-card .num{font-family:var(--display);font-size:1.1rem;font-weight:600;color:var(--brass-700);flex-shrink:0;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--brass-500);display:grid;place-items:center}
+  .who-card h3{font-size:1.18rem;font-weight:600}
+  .who-card p{font-size:.96rem;color:var(--slate);margin-top:7px}
+
+  /* how we work — timeline */
+  .steps{display:flex;flex-direction:column;gap:0;max-width:820px;margin:0 auto}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:28px;position:relative;padding-bottom:38px}
+  .step:last-child{padding-bottom:0}
+  .step .marker{display:flex;flex-direction:column;align-items:center}
+  .step .num{width:54px;height:54px;border-radius:50%;background:var(--pharmora-700);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:1.35rem;flex-shrink:0;z-index:1}
+  .step .line{width:2px;flex-grow:1;background:var(--line);margin-top:6px}
+  .step:last-child .line{display:none}
+  .step .content{padding-top:8px}
+  .step h3{font-size:1.3rem;font-weight:600}
+  .step p{color:var(--slate);font-size:1.02rem;margin-top:8px}
+
+  /* credibility band */
+  .cred{background:var(--mint-100)}
+  .flag{display:inline-flex;align-items:center;gap:8px;background:rgba(199,161,78,.16);color:var(--brass-700);border:1px solid rgba(199,161,78,.4);font-size:.78rem;font-weight:600;padding:6px 13px;border-radius:999px;margin-bottom:22px}
+  .flag svg{width:14px;height:14px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:46px}
+  .stat{background:#fff;border-radius:16px;padding:30px;text-align:center;box-shadow:var(--shadow-card)}
+  .stat b{font-family:var(--display);font-size:2.6rem;font-weight:500;color:var(--pharmora-700);display:block;line-height:1}
+  .stat span{font-size:.95rem;color:var(--slate);margin-top:8px;display:block}
+  .quote{background:#fff;border-radius:16px;padding:42px;box-shadow:var(--shadow-card);max-width:820px;margin:0 auto;position:relative}
+  .quote .qm{font-family:var(--display);font-size:4rem;line-height:.6;color:var(--brass-500);height:34px;display:block}
+  .quote blockquote{font-family:var(--display);font-size:clamp(1.2rem,2.3vw,1.55rem);font-weight:400;line-height:1.4;color:var(--ink);margin:0}
+  .quote cite{display:block;margin-top:20px;font-style:normal;font-size:.92rem;color:var(--slate);font-weight:500}
+
+  /* FAQ */
+  .faq-wrap{max-width:820px;margin:0 auto}
+  .faq{border-bottom:1px solid var(--line)}
+  .faq button{width:100%;background:none;border:0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;text-align:left;font-family:var(--display);font-size:1.18rem;font-weight:500;color:var(--ink)}
+  .faq .ico{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:transform .25s,background .2s,border-color .2s;color:var(--pharmora-700)}
+  .faq .ico svg{width:14px;height:14px}
+  .faq[open] .ico, .faq.open .ico{transform:rotate(45deg);background:var(--mint-100);border-color:var(--mint-100)}
+  .faq .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq .ans p{color:var(--slate);font-size:1.02rem;padding:0 40px 24px 0}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:36px;box-shadow:var(--shadow-card)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:500;font-size:.88rem;margin-bottom:7px;color:var(--ink)}
+  .field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;transition:border-color .15s,box-shadow .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pharmora-700);box-shadow:0 0 0 3px rgba(217,232,228,.7)}
+  .field textarea{resize:vertical;min-height:110px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .form-card .btn{width:100%;margin-top:6px}
+  .form-note{font-size:.82rem;color:var(--slate);margin-top:14px;text-align:center}
+  .form-success{display:none;background:rgba(46,125,91,.1);border:1px solid rgba(46,125,91,.35);color:var(--success);border-radius:10px;padding:16px;font-size:.95rem;font-weight:500;margin-bottom:18px}
+  .form-success.show{display:block}
+  .confid{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--slate);margin-bottom:22px}
+  .confid svg{width:16px;height:16px;color:var(--green-500)}
+
+  .contact-info .info-item{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .contact-info .info-item:first-of-type{padding-top:0}
+  .contact-info .ic{flex-shrink:0;width:44px;height:44px;border-radius:11px;background:var(--mint-100);color:var(--pharmora-700);display:grid;place-items:center}
+  .contact-info .ic svg{width:21px;height:21px}
+  .contact-info .info-item b{font-family:var(--display);font-size:1.05rem;font-weight:500;display:block}
+  .contact-info .info-item a,.contact-info .info-item span{font-size:.96rem;color:var(--slate)}
+  .contact-info .info-item a:hover{color:var(--pharmora-700)}
+  .ph{color:var(--brass-700);font-size:.84rem}
+
+  /* closing CTA */
+  .closing{background:var(--pine-900);color:var(--ivory);text-align:center;position:relative;overflow:hidden}
+  .closing::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 400px at 50% 120%,rgba(199,161,78,.18),transparent 60%)}
+  .closing .inner{position:relative;max-width:680px;margin:0 auto}
+  .closing .eyebrow{color:var(--brass-500)}
+  .closing h2{color:var(--ivory);font-size:clamp(1.9rem,4vw,2.7rem);margin-top:16px}
+  .closing p{color:rgba(246,244,238,.78);font-size:1.12rem;margin:18px auto 32px}
+  .closing .btn{margin:0 auto}
+
+  /* footer */
+  footer{background:var(--pine-900);color:var(--ivory);padding:72px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+  .foot-col h4{font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-500);margin-bottom:18px}
+  .foot-col .logo{margin-bottom:16px}
+  .foot-col .logo .wm{color:var(--ivory)}
+  .foot-blurb{color:rgba(246,244,238,.66);font-size:.94rem;max-width:30ch}
+  .foot-tag{color:var(--brass-500);font-family:var(--display);font-size:1rem;margin-top:16px;font-style:italic}
+  .foot-col ul{list-style:none}
+  .foot-col li{margin-bottom:11px}
+  .foot-col li a{color:rgba(246,244,238,.78);font-size:.94rem;transition:color .15s}
+  .foot-col li a:hover{color:var(--ivory)}
+  .foot-bottom{border-top:1px solid rgba(246,244,238,.14);margin-top:52px;padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+  .foot-bottom p,.foot-bottom a{font-size:.85rem;color:rgba(246,244,238,.6)}
+  .foot-bottom .links{display:flex;gap:22px}
+  .foot-bottom a:hover{color:var(--ivory)}
+
+  /* scroll reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease-out,transform .5s ease-out}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== responsive ===== */
+  @media(max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:56px}
+    .hero-art{max-width:440px}
+    .intro-grid{grid-template-columns:1fr;gap:24px}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr;gap:40px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
+  }
+  @media(max-width:860px){
+    .nlinks,.nav-cta .btn{display:none}
+    .burger{display:flex}
+    .nav-inner{padding:13px 24px}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 24px}
+    section{padding:68px 0}
+    .hero{padding:120px 0 64px}
+    .sec-head{margin-bottom:38px}
+    .svc-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr;gap:0}
+    .why-item{padding:22px 0;border-top:1px solid rgba(246,244,238,.14)}
+    .who-grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr;gap:16px}
+    .stat{display:flex;align-items:center;gap:16px;text-align:left;padding:22px 24px}
+    .stat b{font-size:2.1rem}
+    .quote{padding:30px 26px}
+    .form-card{padding:26px}
+    .field-row{grid-template-columns:1fr;gap:0}
+    .foot-grid{grid-template-columns:1fr;gap:34px}
+    .foot-bottom{flex-direction:column;align-items:flex-start;gap:16px}
+    .step{gap:20px}
+    .step .num{width:46px;height:46px;font-size:1.15rem}
+    .hero-card{padding:26px}
+    .hero-badge{position:static;margin-top:18px;width:100%}
+  }
+  @media(max-width:380px){
+    .logo .wm{font-size:1.3rem}
+    .hero h1{font-size:2.1rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto !important}
+    .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+    .btn,.scard,.who-card{transition:none !important}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<!-- ===== HEADER ===== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="Pharmora Consultancy home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#0F564B"/>
+        <path d="M20 9c-4.5 3-7 6.4-7 10.6 0 4 3.1 7.4 7 7.4s7-3.4 7-7.4C27 15.4 24.5 12 20 9Z" fill="#C7A14E"/>
+        <path d="M20 31V19" stroke="#F6F4EE" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span class="wm">Pharmora</span>
+    </a>
+
+    <nav class="nlinks" aria-label="Primary">
+      <div class="nav-dd">
+        <button aria-haspopup="true" aria-expanded="false">Services
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dd-menu" role="menu">
+          <a href="#services" role="menuitem"><span class="t">Buying &amp; Selling Pharmacies</span><span class="d">Acquisitions, disposals, valuations</span></a>
+          <a href="#services" role="menuitem"><span class="t">Finance &amp; Funding</span><span class="d">Lending, refinancing, deal structuring</span></a>
+          <a href="#services" role="menuitem"><span class="t">Legal &amp; Regulatory</span><span class="d">Change of ownership, GPhC, CQC</span></a>
+          <a href="#services" role="menuitem"><span class="t">Investment Advisory</span><span class="d">Pharmacy as an asset class</span></a>
+          <a href="#services" role="menuitem"><span class="t">Accounting &amp; Business Finance</span><span class="d">Accounts, tax, payroll</span></a>
+          <a href="#services" role="menuitem"><span class="t">People &amp; Recruitment</span><span class="d">Staffing and sponsor licences</span></a>
+          <a href="#services" role="menuitem"><span class="t">Business Setup &amp; Administration</span><span class="d">Registrations, systems, compliance</span></a>
+        </div>
+      </div>
+      <a href="#about">About</a>
+      <a href="#who">Who we help</a>
+      <a href="#how">How we work</a>
+      <a href="#insights">Insights</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Book a consultation</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#who">Who we help</a>
+  <a href="#how">How we work</a>
+  <a href="#insights">Insights</a>
+  <a href="#faq">FAQ</a>
+  <div class="mm-foot">
+    <a href="#contact" class="btn btn-primary" style="font-size:1rem">Book a consultation</a>
+  </div>
+</div>
+
+<main id="main"><span id="top"></span>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Specialist pharmacy consultancy</span>
+        <h1>The business of pharmacy, expertly handled.</h1>
+        <p class="lede">Pharmora is a specialist consultancy for the pharmacy sector. From buying and selling to finance, regulation, recruitment and day-to-day running, we are the single partner who understands both your business and your profession.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Book a consultation
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#services" class="btn btn-secondary">Explore our services</a>
+        </div>
+        <div class="hero-trust">
+          <span><span class="dot"></span> Run by healthcare professionals</span>
+          <span><span class="dot"></span> Confidential by default</span>
+        </div>
+      </div>
+
+      <div class="hero-art reveal">
+        <div class="hero-card">
+          <span class="ec">One partner, the whole lifecycle</span>
+          <div class="lifecycle">
+            <div class="lifecycle-step"><span class="n">1</span><span><span class="lab">Buy</span><br><span class="sub">Source, value, acquire</span></span></div>
+            <div class="lifecycle-step"><span class="n">2</span><span><span class="lab">Build</span><br><span class="sub">Set up, register, comply</span></span></div>
+            <div class="lifecycle-step"><span class="n">3</span><span><span class="lab">Run</span><br><span class="sub">Finance, staff, account</span></span></div>
+            <div class="lifecycle-step"><span class="n">4</span><span><span class="lab">Exit</span><br><span class="sub">Value, sell, hand over</span></span></div>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span><b>Pharmacy-only</b><span>GPhC · CQC · NHS · Home Office</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTRO BAND ===== -->
+<section class="mist">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="reveal">
+        <hr class="rule">
+        <span class="eyebrow brass">Our specialism</span>
+        <h2 style="margin-top:14px">Pharmacy is our specialism, not a sideline.</h2>
+      </div>
+      <div class="body reveal">
+        <p>A pharmacy is not an ordinary business. It answers to the GPhC, it may answer to the CQC, it operates under an NHS contract, and it employs registered professionals whose standing matters as much as its turnover. Decisions that look simple on paper — a change of ownership, taking on staff from overseas, restructuring finance — carry regulatory weight that a generalist adviser will miss.</p>
+        <p>Pharmora exists to close that gap. We bring business, financial and legal expertise that is already grounded in how pharmacy actually works, so you are never paying someone to learn your sector on your time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <hr class="rule c">
+      <span class="eyebrow">Services</span>
+      <h2 style="margin-top:14px">Everything the business of pharmacy demands, in one place.</h2>
+      <p>Seven specialist services, one joined-up team. No stitching together a broker, a solicitor, an accountant and a recruiter who never speak to each other.</p>
+    </div>
+    <div class="svc-grid">
+      <!-- 1 -->
+      <a href="#contact" class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg></span>
+        <h3>Buying &amp; Selling Pharmacies</h3>
+        <p>Acquisitions, disposals, valuations and brokerage, handled end to end.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <!-- 2 -->
+      <a href="#contact" class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3>Finance &amp; Funding</h3>
+        <p>Lending, refinancing and deal structuring built around healthcare assets.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <!-- 3 -->
+      <a href="#contact" class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-4Z"/><path d="M12 8v5M9.5 10.5h5"/></svg></span>
+        <h3>Legal &amp; Regulatory</h3>
+        <p>Change of ownership, GPhC and CQC registration, and fitness-to-practise support.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <!-- 4 -->
+      <a href="#contact" class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg></span>
+        <h3>Investment Advisory</h3>
+        <p>Pharmacy as an asset class: portfolios, market entry and returns.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <!-- 5 -->
+      <a href="#contact" class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 17V7M15 17v-4M3 3v16a2 2 0 0 0 2 2h16"/></svg></span>
+        <h3>Accounting &amp; Business Finance</h3>
+        <p>Accounts, tax, payroll and bookkeeping for pharmacy businesses.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <!-- 6 -->
+      <a href="#contact" class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></span>
+        <h3>People &amp; Recruitment</h3>
+        <p>Finding the right staff and securing sponsorship licences.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <!-- 7 -->
+      <a href="#contact" class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.82 1.17V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 7 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 14H4.5a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 6 8.6l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 11 5.4V5a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 2.82 1.17l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 21 11.4"/></svg></span>
+        <h3>Business Setup &amp; Administration</h3>
+        <p>Registrations, systems and the operational backbone of a compliant pharmacy.</p>
+        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY PHARMORA ===== -->
+<section class="why" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <hr class="rule">
+      <span class="eyebrow">Why Pharmora</span>
+      <h2 style="margin-top:14px">Why owners and investors choose Pharmora.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span>
+        <div><h3>Specialists, not generalists.</h3><p>We work in pharmacy and only pharmacy. The regulation, the contracts and the clinical context are our starting point, not an afterthought.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.2-8.56"/><path d="m21 4-9 9-3-3"/></svg></span>
+        <div><h3>One partner, the whole lifecycle.</h3><p>Buy, build, run, finance, staff and sell. You are not stitching together a broker, a solicitor, an accountant and a recruiter who never speak to each other.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-4Z"/></svg></span>
+        <div><h3>Run by healthcare professionals.</h3><p>Our advice comes from people who have owned, registered and run pharmacies, not just read about them.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        <div><h3>Discreet and commercial.</h3><p>Buying or selling a pharmacy is sensitive. We protect confidentiality and keep the focus on the result.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHO WE HELP ===== -->
+<section id="who" class="mist">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <hr class="rule c">
+      <span class="eyebrow">Who we help</span>
+      <h2 style="margin-top:14px">Built for everyone with a stake in a pharmacy.</h2>
+      <p>Whatever your stake in a pharmacy business, we have done this before.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card reveal"><span class="num">1</span><div><h3>First-time buyers</h3><p>Buying your first pharmacy is daunting. We guide you from finding the right opportunity, through valuation, finance and due diligence, to the day you take the keys.</p></div></div>
+      <div class="who-card reveal"><span class="num">2</span><div><h3>Existing owners</h3><p>Whether you are scaling to a second site, restructuring, refinancing or tightening up compliance and accounts, we help you run a stronger business.</p></div></div>
+      <div class="who-card reveal"><span class="num">3</span><div><h3>Investors &amp; groups</h3><p>We advise on pharmacy as an asset class: entering the market, building portfolios and structuring investments to perform.</p></div></div>
+      <div class="who-card reveal"><span class="num">4</span><div><h3>Sellers</h3><p>Planning an exit deserves the same care as a purchase. We value your business properly, find the right buyer and protect your confidentiality throughout.</p></div></div>
+      <div class="who-card reveal" style="grid-column:1/-1"><span class="num">5</span><div><h3>Individual pharmacists</h3><p>When you are facing a fitness-to-practise matter or a regulatory question, early specialist support makes a real difference. We are in your corner.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW WE WORK ===== -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <hr class="rule c">
+      <span class="eyebrow">How we work</span>
+      <h2 style="margin-top:14px">A clear process, start to finish.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="marker"><span class="num">1</span><span class="line"></span></div>
+        <div class="content"><h3>Conversation</h3><p>We start with a straightforward, no-obligation discussion to understand what you need and what success looks like for you.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="marker"><span class="num">2</span><span class="line"></span></div>
+        <div class="content"><h3>Assessment</h3><p>We assess the situation properly — the numbers, the regulation, the risks and the opportunities — and tell you plainly where you stand.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="marker"><span class="num">3</span><span class="line"></span></div>
+        <div class="content"><h3>Plan</h3><p>We set out a clear plan with defined steps, costs and timelines. No surprises.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="marker"><span class="num">4</span><span class="line"></span></div>
+        <div class="content"><h3>Delivery</h3><p>We do the work, keeping you informed and handling the detail so you can stay focused on your business or your patients.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="marker"><span class="num">5</span><span class="line"></span></div>
+        <div class="content"><h3>Beyond</h3><p>Pharmacy is a long game. We stay available for what comes next, because most clients work with us across more than one stage.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CREDIBILITY BAND ===== -->
+<section class="cred">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="flag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.42 0Z"/></svg> Placeholder — replace with real figures before launch</span>
+      <hr class="rule c">
+      <span class="eyebrow brass">Trusted across the sector</span>
+      <h2 style="margin-top:14px">The trust driver this business runs on.</h2>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b>£X</b><span>of pharmacy transactions advised</span></div>
+      <div class="stat reveal"><b>X</b><span>change-of-ownership applications completed</span></div>
+      <div class="stat reveal"><b>X</b><span>sponsor licences secured</span></div>
+    </div>
+    <div class="quote reveal">
+      <span class="qm">&ldquo;</span>
+      <blockquote>They understood the NHS contract, the valuation and the regulation from the first call. We never once had to explain pharmacy to them — and the deal completed without a single nasty surprise.</blockquote>
+      <cite>— Placeholder testimonial. Add a named client quote before launch.</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSIGHTS ===== -->
+<section id="insights" class="mist">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <hr class="rule c">
+      <span class="eyebrow">Insights</span>
+      <h2 style="margin-top:14px">Insight from people who do this every day.</h2>
+      <p>Practical thinking on the business of pharmacy: buying and selling, finance, regulation, recruitment and running a stronger business.</p>
+    </div>
+    <div class="svc-grid">
+      <a href="#contact" class="scard reveal">
+        <span class="eyebrow brass" style="font-size:.72rem">Valuations</span>
+        <h3 style="margin-top:10px">What a pharmacy is really worth: how valuations actually work</h3>
+        <p style="margin-top:12px">The NHS contract, dispensing profile and goodwill — what really drives the number.</p>
+        <span class="more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="#contact" class="scard reveal">
+        <span class="eyebrow brass" style="font-size:.72rem">Regulatory</span>
+        <h3 style="margin-top:10px">Change of ownership: the steps that catch buyers out</h3>
+        <p style="margin-top:12px">The NHS and GPhC sequence that derails deals when it is left too late.</p>
+        <span class="more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="#contact" class="scard reveal">
+        <span class="eyebrow brass" style="font-size:.72rem">Recruitment</span>
+        <h3 style="margin-top:10px">Sponsor licences for pharmacies: a plain-English guide</h3>
+        <p style="margin-top:12px">Employing pharmacists from overseas under the Skilled Worker route, explained.</p>
+        <span class="more">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <hr class="rule c">
+      <span class="eyebrow">FAQ</span>
+      <h2 style="margin-top:14px">Questions owners ask us.</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq reveal">
+        <button aria-expanded="false">Do you only work with pharmacies?<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="ans"><p>Yes. Pharmacy is our specialism, and that focus is exactly why our advice is sharper than a generalist's.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button aria-expanded="false">Can you handle a complete pharmacy purchase from start to finish?<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="ans"><p>Yes. We can manage the whole process: sourcing, valuation, finance, due diligence, regulatory applications and completion.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button aria-expanded="false">Do you help individual pharmacists, or only businesses?<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="ans"><p>Both. As well as advising owners and investors, we support individual pharmacists with regulatory and fitness-to-practise matters.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button aria-expanded="false">Can you help us employ pharmacists from overseas?<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="ans"><p>Yes. We handle sponsor licence applications and the compliance that comes with employing staff under the Skilled Worker route.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button aria-expanded="false">Do you provide accounting as well as one-off advice?<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="ans"><p>Yes. We offer ongoing accounting and finance management built specifically for pharmacy businesses, as well as project-based consultancy.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button aria-expanded="false">Where do you operate, and how do your fees work?<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="ans"><p><em>Placeholder — confirm before launch.</em> Geographic coverage (for example, across the UK) and fee model (fixed-fee projects, retained advisory, or transaction-based) to be added.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="mist">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <hr class="rule">
+        <span class="eyebrow brass">Contact</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3.4vw,2.4rem)">Let's talk about your pharmacy.</h2>
+        <p style="color:var(--slate);font-size:1.08rem;margin-top:16px">Whether you are buying your first pharmacy, selling after twenty years, or trying to keep a growing group compliant, the first step is a straightforward conversation. No obligation, no jargon — just specialist advice.</p>
+
+        <div class="contact-info" style="margin-top:36px">
+          <div class="info-item">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+            <div><b>Email</b><a href="mailto:hello@pharmoraconsultancy.com">hello@pharmoraconsultancy.com</a></div>
+          </div>
+          <div class="info-item">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+            <div><b>Phone</b><span>+44 (0)20 0000 0000 <span class="ph">· placeholder</span></span></div>
+          </div>
+          <div class="info-item">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <div><b>Book a consultation</b><a href="#contact">Pick a time that suits you <span class="ph">· scheduling link placeholder</span></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <div class="confid">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          Every conversation is confidential and there is no obligation.
+        </div>
+        <div class="form-success" id="formSuccess">Thank you — your enquiry has been sent. We will get back to you quickly.</div>
+        <form id="enquiryForm" novalidate>
+          <div class="field-row">
+            <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+          <div class="field">
+            <label for="topic">What can we help with?</label>
+            <select id="topic" name="topic">
+              <option value="">Please choose…</option>
+              <option>Buying a pharmacy</option>
+              <option>Selling a pharmacy</option>
+              <option>Finance &amp; funding</option>
+              <option>Legal &amp; regulatory</option>
+              <option>Investment</option>
+              <option>Accounting</option>
+              <option>Recruitment &amp; sponsorship</option>
+              <option>Business setup</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us a little about what you need."></textarea></div>
+          <button type="submit" class="btn btn-primary">Send enquiry</button>
+          <p class="form-note">We typically reply within one working day.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLOSING CTA ===== -->
+<section class="closing">
+  <div class="wrap">
+    <div class="inner reveal">
+      <span class="eyebrow">Let's begin</span>
+      <h2>Let's talk about your pharmacy.</h2>
+      <p>No obligation, no jargon — just specialist advice from people who understand both your business and your profession.</p>
+      <a href="#contact" class="btn btn-light">Book a consultation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a href="#top" class="logo">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="#0F564B"/>
+            <path d="M20 9c-4.5 3-7 6.4-7 10.6 0 4 3.1 7.4 7 7.4s7-3.4 7-7.4C27 15.4 24.5 12 20 9Z" fill="#C7A14E"/>
+            <path d="M20 31V19" stroke="#F6F4EE" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span class="wm">Pharmora</span>
+        </a>
+        <p class="foot-blurb">Specialist business consultancy for the UK pharmacy sector.</p>
+        <p class="foot-tag">The business of pharmacy, expertly handled.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Buying &amp; Selling</a></li>
+          <li><a href="#services">Finance &amp; Funding</a></li>
+          <li><a href="#services">Legal &amp; Regulatory</a></li>
+          <li><a href="#services">Investment Advisory</a></li>
+          <li><a href="#services">Accounting</a></li>
+          <li><a href="#services">People &amp; Recruitment</a></li>
+          <li><a href="#services">Business Setup</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#how">How we work</a></li>
+          <li><a href="#who">Who we help</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:hello@pharmoraconsultancy.com">hello@pharmoraconsultancy.com</a></li>
+          <li><a href="#contact">+44 (0)20 0000 0000</a></li>
+          <li><a href="#contact" class="btn btn-ghost-light" style="margin-top:8px;padding:11px 20px;font-size:.9rem">Book a consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© Pharmora Consultancy 2026. All rights reserved.</p>
+      <div class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky nav shadow
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 12); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  var toggleMenu = function(open){
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  burger.addEventListener('click', function(){ toggleMenu(!menu.classList.contains('open')); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ toggleMenu(false); }); });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var faq = btn.parentElement;
+      var ans = faq.querySelector('.ans');
+      var isOpen = faq.classList.contains('open');
+      document.querySelectorAll('.faq').forEach(function(f){
+        f.classList.remove('open');
+        f.querySelector('.ans').style.maxHeight = null;
+        f.querySelector('button').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        faq.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // contact form (demo — no backend)
+  var form = document.getElementById('enquiryForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    document.getElementById('formSuccess').classList.add('show');
+    form.reset();
+    document.getElementById('formSuccess').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  // scroll reveal
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en, i){
+        if(en.isIntersecting){
+          var el = en.target;
+          var sibs = Array.prototype.slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('reveal');});
+          var idx = sibs.indexOf(el);
+          el.style.transitionDelay = (Math.min(idx,5) * 70) + 'ms';
+          el.classList.add('in');
+          io.unobserve(el);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
+</script>
+</body>
+</html>
