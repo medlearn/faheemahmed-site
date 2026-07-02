@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#5b3df5">
+<meta name="robots" content="noindex, nofollow">
+<title>Learning Quest 🚀</title>
+<style>
+  :root{
+    --purple:#5b3df5; --purple-dark:#3d28b0;
+    --yellow:#ffcc33; --green:#22c55e; --red:#ef4444;
+    --sky1:#7f5bff; --sky2:#4bc0ff;
+    --card:#ffffff; --ink:#2b2358;
+    --shadow:0 8px 0 rgba(0,0,0,.14);
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;height:100%;}
+  body{
+    font-family:'Baloo 2','Comic Sans MS','Chalkboard SE',system-ui,sans-serif;
+    background:linear-gradient(160deg,var(--sky1),var(--sky2) 60%,#7ef0c9);
+    background-attachment:fixed;
+    color:var(--ink);
+    min-height:100dvh;
+    touch-action:manipulation;
+    user-select:none; -webkit-user-select:none;
+    overflow-x:hidden;
+  }
+  #app{
+    max-width:540px;margin:0 auto;min-height:100dvh;
+    padding:calc(58px + env(safe-area-inset-top)) 16px calc(20px + env(safe-area-inset-bottom));
+    display:flex;flex-direction:column;
+  }
+  .screen{display:none;flex-direction:column;flex:1;animation:pop .25s ease;}
+  .screen.active{display:flex;}
+  @keyframes pop{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+  @keyframes bounceIn{0%{transform:scale(.3);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+  @keyframes wiggle{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+
+  h1{font-size:clamp(28px,8vw,40px);margin:8px 0;text-align:center;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.2);}
+  .sub{color:#fff;text-align:center;opacity:.95;margin:0 0 18px;font-size:17px;font-weight:600;}
+
+  .card{
+    background:var(--card);border-radius:24px;padding:18px;
+    box-shadow:var(--shadow);margin-bottom:14px;
+  }
+
+  button{
+    font-family:inherit;border:none;cursor:pointer;color:var(--ink);
+    border-radius:18px;font-weight:700;
+    transition:transform .08s ease;
+  }
+  button:active{transform:scale(.95);}
+
+  .btn-big{
+    display:block;width:100%;padding:16px;font-size:22px;
+    background:var(--yellow);box-shadow:0 6px 0 #d9a400;margin-top:8px;
+  }
+  .btn-big:active{box-shadow:0 2px 0 #d9a400;transform:translateY(4px);}
+
+  /* ---------- HOME ---------- */
+  .mascot{font-size:72px;text-align:center;animation:float 3s ease-in-out infinite;}
+  .pet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px;}
+  .pet-opt{
+    font-size:38px;padding:12px 4px;background:#f1eeff;border-radius:18px;
+    border:3px solid transparent;
+  }
+  .pet-opt.sel{border-color:var(--purple);background:#e4dcff;animation:wiggle .5s ease;}
+  input[type=text]{
+    width:100%;padding:14px;font-size:20px;border-radius:16px;
+    border:3px solid #d9d2ff;font-family:inherit;font-weight:700;color:var(--ink);
+    text-align:center;outline:none;background:#faf9ff;
+  }
+  input[type=text]:focus{border-color:var(--purple);}
+  label{font-weight:800;font-size:15px;display:block;margin:10px 0 6px;color:#6a5cc4;}
+
+  /* ---------- MENU ---------- */
+  .hero{
+    display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.92);
+    border-radius:24px;padding:14px 16px;box-shadow:var(--shadow);margin-bottom:14px;
+  }
+  .hero .pet{font-size:54px;animation:float 3s ease-in-out infinite;}
+  .hero .info{flex:1;}
+  .hero .nm{font-size:20px;font-weight:800;}
+  .lvl-bar{height:14px;background:#e8e4ff;border-radius:99px;overflow:hidden;margin-top:6px;}
+  .lvl-fill{height:100%;background:linear-gradient(90deg,#8b5cf6,#ec4899);border-radius:99px;transition:width .6s ease;}
+  .lvl-txt{font-size:13px;font-weight:800;color:#7a6ed0;margin-top:3px;}
+  .world{
+    display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+    padding:16px;border-radius:22px;margin-bottom:12px;box-shadow:var(--shadow);
+  }
+  .world .ic{font-size:44px;}
+  .world .t{font-size:21px;font-weight:800;}
+  .world .d{font-size:14px;font-weight:600;opacity:.85;}
+  .world .stars{margin-left:auto;font-size:18px;letter-spacing:2px;}
+  .w-maths{background:#ffe3ec;} .w-english{background:#e0f2ff;} .w-science{background:#e3ffe9;}
+  .w-daily{background:linear-gradient(120deg,#fff3c4,#ffe08a);}
+  .badge-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+  .badge{
+    font-size:26px;background:#fff;border-radius:14px;padding:8px 10px;box-shadow:0 4px 0 rgba(0,0,0,.1);
+  }
+  .badge.locked{filter:grayscale(1);opacity:.35;}
+  .row-title{color:#fff;font-weight:800;text-align:center;margin:6px 0 10px;text-shadow:0 2px 0 rgba(0,0,0,.15);}
+
+  /* ---------- GAME ---------- */
+  .hud{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .hud .quit{font-size:20px;background:rgba(255,255,255,.9);width:44px;height:44px;border-radius:14px;flex:none;}
+  .hud .prog{flex:1;height:16px;background:rgba(255,255,255,.5);border-radius:99px;overflow:hidden;}
+  .hud .prog i{display:block;height:100%;background:var(--yellow);border-radius:99px;transition:width .4s ease;}
+  .hud .streak{
+    background:rgba(255,255,255,.9);border-radius:14px;padding:8px 12px;
+    font-weight:800;font-size:16px;min-width:60px;text-align:center;
+  }
+  .q-card{
+    background:#fff;border-radius:26px;padding:20px 18px;box-shadow:var(--shadow);
+    text-align:center;margin-bottom:14px;position:relative;
+  }
+  .say{
+    position:absolute;top:10px;left:10px;width:46px;height:46px;border-radius:16px;
+    background:#efeaff;font-size:22px;box-shadow:0 4px 0 #cfc7f5;
+  }
+  .say:active{box-shadow:0 1px 0 #cfc7f5;transform:translateY(3px);}
+  .q-cat{font-size:13px;font-weight:800;color:#9b8ff0;text-transform:uppercase;letter-spacing:1px;}
+  .q-emoji{font-size:56px;margin:6px 0;}
+  .q-text{font-size:clamp(20px,6vw,26px);font-weight:800;line-height:1.3;}
+  .timer{height:10px;background:#eee9ff;border-radius:99px;overflow:hidden;margin-top:14px;}
+  .timer i{display:block;height:100%;background:var(--green);border-radius:99px;}
+  .timer i.low{background:var(--red);}
+
+  .answers{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .answers.one-col{grid-template-columns:1fr;}
+  .ans{
+    padding:18px 10px;font-size:21px;background:#fff;box-shadow:0 6px 0 #cfc7f5;
+    border-radius:20px;min-height:64px;word-break:break-word;
+  }
+  .ans:active{box-shadow:0 2px 0 #cfc7f5;transform:translateY(4px);}
+  .ans.good{background:var(--green);color:#fff;box-shadow:0 6px 0 #15803d;animation:bounceIn .4s ease;}
+  .ans.bad{background:var(--red);color:#fff;box-shadow:0 6px 0 #991b1b;animation:shake .4s ease;}
+  .ans.reveal{background:#bbf7d0;box-shadow:0 6px 0 #4ade80;}
+  .ans:disabled{cursor:default;}
+
+  /* number pad */
+  .num-display{
+    background:#fff;border-radius:18px;font-size:34px;font-weight:800;
+    min-height:64px;display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;box-shadow:inset 0 3px 8px rgba(0,0,0,.08);letter-spacing:3px;
+  }
+  .numpad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .numpad button{
+    padding:14px;font-size:26px;background:#fff;border-radius:18px;box-shadow:0 5px 0 #cfc7f5;
+  }
+  .numpad button:active{box-shadow:0 1px 0 #cfc7f5;transform:translateY(4px);}
+  .numpad .ok{background:var(--green);color:#fff;box-shadow:0 5px 0 #15803d;}
+  .numpad .del{background:#ffd7d7;box-shadow:0 5px 0 #e89b9b;}
+
+  /* letter tiles */
+  .slots,.tiles{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .slots{margin-bottom:16px;}
+  .slot{
+    width:52px;height:56px;border-radius:14px;background:#fff;
+    border:3px dashed #c9befa;display:flex;align-items:center;justify-content:center;
+    font-size:28px;font-weight:800;
+  }
+  .slot.filled{border-style:solid;border-color:var(--purple);background:#efeaff;}
+  .tile{
+    width:52px;height:56px;border-radius:14px;background:var(--yellow);
+    box-shadow:0 5px 0 #d9a400;font-size:26px;font-weight:800;
+  }
+  .tile:disabled{opacity:.25;box-shadow:none;}
+
+  /* feedback overlay */
+  #fb{
+    position:fixed;inset:0;display:none;align-items:center;justify-content:center;
+    pointer-events:none;z-index:50;
+  }
+  #fb.show{display:flex;}
+  #fb .bubble{
+    background:#fff;border-radius:28px;padding:22px 34px;text-align:center;
+    box-shadow:0 12px 40px rgba(0,0,0,.25);animation:bounceIn .35s ease;max-width:85vw;
+  }
+  #fb .big{font-size:60px;}
+  #fb .msg{font-size:24px;font-weight:800;}
+  #fb .xp{font-size:16px;font-weight:800;color:#a855f7;margin-top:4px;}
+
+  /* ---------- RESULTS ---------- */
+  .res-stars{font-size:58px;text-align:center;letter-spacing:6px;margin:6px 0;}
+  .res-big{font-size:70px;text-align:center;animation:float 3s ease-in-out infinite;}
+  .res-title{font-size:30px;font-weight:800;text-align:center;margin:4px 0;}
+  .res-line{text-align:center;font-size:18px;font-weight:700;margin:4px 0;}
+  .new-badge{
+    background:#fff7d6;border:3px solid var(--yellow);border-radius:18px;
+    padding:10px;text-align:center;font-weight:800;margin-top:10px;font-size:17px;
+    animation:bounceIn .5s ease;
+  }
+  .snd{
+    position:fixed;top:calc(10px + env(safe-area-inset-top));right:10px;z-index:60;
+    width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.9);font-size:20px;
+  }
+  #confetti{position:fixed;inset:0;pointer-events:none;z-index:40;}
+  .footnote{text-align:center;color:#fff;font-size:13px;font-weight:600;opacity:.85;margin-top:auto;padding-top:14px;}
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<button class="snd" id="sndBtn">🔊</button>
+
+<div id="app">
+
+  <!-- HOME -->
+  <div class="screen active" id="scr-home">
+    <div class="mascot">🚀</div>
+    <h1>Learning Quest</h1>
+    <p class="sub">Play games. Earn stars. Grow your pet!</p>
+    <div class="card">
+      <label>What's your name, explorer?</label>
+      <input type="text" id="nameInput" maxlength="14" placeholder="Type your name" autocomplete="off">
+      <label>Choose your pet egg 🥚</label>
+      <div class="pet-grid" id="petGrid"></div>
+      <button class="btn-big" id="startBtn">Start Adventure! 🎉</button>
+    </div>
+    <div class="footnote">Made with ❤️ · progress saves on this device</div>
+  </div>
+
+  <!-- MENU -->
+  <div class="screen" id="scr-menu">
+    <div class="hero">
+      <div class="pet" id="heroPet">🥚</div>
+      <div class="info">
+        <div class="nm" id="heroName">Explorer</div>
+        <div class="lvl-bar"><div class="lvl-fill" id="lvlFill"></div></div>
+        <div class="lvl-txt" id="lvlTxt">Level 1</div>
+      </div>
+      <div style="text-align:center;font-weight:800;">
+        <div style="font-size:22px;">⭐</div>
+        <div id="starCount" style="font-size:16px;">0/9</div>
+      </div>
+    </div>
+
+    <button class="world w-maths" data-sub="maths">
+      <span class="ic">🔢</span>
+      <span><span class="t">Maths Mountain</span><br><span class="d">Adding, times tables & more</span></span>
+      <span class="stars" id="st-maths">☆☆☆</span>
+    </button>
+    <button class="world w-english" data-sub="english">
+      <span class="ic">📚</span>
+      <span><span class="t">Word Wizard</span><br><span class="d">Spelling, rhymes & words</span></span>
+      <span class="stars" id="st-english">☆☆☆</span>
+    </button>
+    <button class="world w-science" data-sub="science">
+      <span class="ic">🔬</span>
+      <span><span class="t">Science Safari</span><br><span class="d">Animals, space & nature</span></span>
+      <span class="stars" id="st-science">☆☆☆</span>
+    </button>
+    <button class="world w-daily" data-sub="daily">
+      <span class="ic">🎁</span>
+      <span><span class="t">Daily Quest</span><br><span class="d" id="dailyDesc">Mixed round · DOUBLE XP!</span></span>
+      <span class="stars" id="dailyMark">✨</span>
+    </button>
+
+    <div class="row-title">🏆 Your badges</div>
+    <div class="badge-row" id="badgeRow"></div>
+    <div class="footnote">Beat every world to fill your star jar! ⭐</div>
+  </div>
+
+  <!-- GAME -->
+  <div class="screen" id="scr-game">
+    <div class="hud">
+      <button class="quit" id="quitBtn">🏠</button>
+      <div class="prog"><i id="progFill"></i></div>
+      <div class="streak" id="streakBox">🔥 0</div>
+    </div>
+    <div class="q-card" id="qCard">
+      <button class="say" id="sayBtn" title="Hear it again">🔈</button>
+      <div class="q-cat" id="qCat">MATHS</div>
+      <div class="q-emoji" id="qEmoji">🐸</div>
+      <div class="q-text" id="qText">Question</div>
+      <div class="timer"><i id="timerFill"></i></div>
+    </div>
+    <div id="ansArea"></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="screen" id="scr-results">
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <div class="res-big" id="resPet">🐣</div>
+      <div class="card">
+        <div class="res-stars" id="resStars">⭐⭐⭐</div>
+        <div class="res-title" id="resTitle">Amazing!</div>
+        <div class="res-line" id="resScore">You got 8 out of 8!</div>
+        <div class="res-line" id="resXp" style="color:#a855f7;">+120 XP</div>
+        <div id="resBadges"></div>
+        <button class="btn-big" id="againBtn">Play again 🔁</button>
+        <button class="btn-big" id="menuBtn" style="background:#e8e4ff;box-shadow:0 6px 0 #b9aef0;">Map 🗺️</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="fb"><div class="bubble"><div class="big" id="fbEmoji">🎉</div><div class="msg" id="fbMsg">Brilliant!</div><div class="xp" id="fbXp"></div></div></div>
+
+<script>
+'use strict';
+/* ================= STATE ================= */
+const DEFAULTS = {name:'', pet:'dragon', xp:0, stars:{maths:0,english:0,science:0},
+  badges:[], bestStreak:0, rounds:0, perfects:0, dailyDone:'', dailies:0, sound:true};
+let S = load();
+function load(){
+  try{ const s = JSON.parse(localStorage.getItem('lq-save')); return s ? Object.assign({},DEFAULTS,s) : {...DEFAULTS}; }
+  catch(e){ return {...DEFAULTS}; }
+}
+function save(){ try{ localStorage.setItem('lq-save', JSON.stringify(S)); }catch(e){} }
+
+const PETS = {
+  dragon:{label:'Dragon', stages:['🥚','🐣','🦎','🐲','🐉']},
+  unicorn:{label:'Unicorn',stages:['🥚','🐣','🐴','🎠','🦄']},
+  cat:{label:'Cat', stages:['🥚','🐣','🐱','🐈','🦁']},
+  robot:{label:'Robot', stages:['🔩','⚙️','🤖','🚀','🛸']},
+};
+const STAGE_LEVELS = [1,3,5,8,12];
+function level(){ return Math.floor(S.xp/100)+1; }
+function petEmoji(){
+  const st = PETS[S.pet].stages; let i=0;
+  for(let k=0;k<STAGE_LEVELS.length;k++){ if(level()>=STAGE_LEVELS[k]) i=k; }
+  return st[i];
+}
+
+const BADGES = [
+  {id:'first', icon:'🎈', name:'First Quest', test:s=>s.rounds>=1},
+  {id:'fire5', icon:'🔥', name:'5 Streak', test:s=>s.bestStreak>=5},
+  {id:'fire8', icon:'⚡', name:'8 Streak', test:s=>s.bestStreak>=8},
+  {id:'perfect', icon:'💯', name:'Perfect Round',test:s=>s.perfects>=1},
+  {id:'maths3', icon:'🧮', name:'Maths Master', test:s=>s.stars.maths>=3},
+  {id:'eng3', icon:'✍️', name:'Word Wizard', test:s=>s.stars.english>=3},
+  {id:'sci3', icon:'🧪', name:'Scientist', test:s=>s.stars.science>=3},
+  {id:'lvl5', icon:'🚀', name:'Level 5', test:s=>Math.floor(s.xp/100)+1>=5},
+  {id:'daily3', icon:'🎁', name:'3 Daily Quests',test:s=>s.dailies>=3},
+  {id:'super', icon:'👑', name:'Star King', test:s=>s.stars.maths+s.stars.english+s.stars.science>=9},
+];
+
+/* ================= SOUND ================= */
+let AC=null;
+function ac(){ if(!AC){ try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){} } return AC; }
+function tone(freq,dur,delay=0,type='triangle',vol=.18){
+  if(!S.sound) return; const c=ac(); if(!c) return;
+  const t=c.currentTime+delay, o=c.createOscillator(), g=c.createGain();
+  o.type=type; o.frequency.value=freq;
+  g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.001,t+dur);
+  o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+dur);
+}
+const sfx = {
+  click:()=>tone(600,.08,0,'square',.08),
+  good:()=>{tone(660,.12);tone(880,.18,.1);},
+  great:()=>{tone(660,.1);tone(880,.1,.09);tone(1100,.22,.18);},
+  bad:()=>tone(160,.35,0,'sawtooth',.12),
+  win:()=>{[523,659,784,1047].forEach((f,i)=>tone(f,.22,i*.13));},
+  level:()=>{[523,659,784,880,1047,1319].forEach((f,i)=>tone(f,.18,i*.09));},
+};
+
+/* --------- SPEECH (reads questions aloud for young readers) --------- */
+function speak(txt, delay=0){
+  if(!S.sound || !('speechSynthesis' in window) || !txt) return;
+  try{
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(txt);
+    u.lang='en-GB'; u.rate=.88; u.pitch=1.15;
+    if(delay) setTimeout(()=>{ try{speechSynthesis.speak(u);}catch(e){} },delay);
+    else speechSynthesis.speak(u);
+  }catch(e){}
+}
+function stripEmoji(t){ return t.replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}]/gu,''); }
+function speechFor(q){
+  if(q.speak) return q.speak;
+  let t=stripEmoji(q.text)
+    .replace(/\+/g,' plus ').replace(/−/g,' minus ').replace(/×/g,' times ')
+    .replace(/=\s*\?/g,' equals what?').replace(/_/g,' blank ');
+  if(q.type==='mcq' && q.speakOpts!==false){
+    t+=' ... Is it: '+q.options.map(stripEmoji).join(', ... ')+'?';
+  }
+  return t;
+}
+let curSpeech='';
+
+/* ================= CONFETTI ================= */
+const cvs=document.getElementById('confetti'), ctx=cvs.getContext('2d');
+let parts=[], rafOn=false;
+function sizeCanvas(){ cvs.width=innerWidth*devicePixelRatio; cvs.height=innerHeight*devicePixelRatio; }
+addEventListener('resize',sizeCanvas); sizeCanvas();
+const COLS=['#ffcc33','#ef4444','#22c55e','#3b82f6','#ec4899','#a855f7'];
+function confetti(n=40){
+  const d=devicePixelRatio;
+  for(let i=0;i<n;i++){
+    parts.push({x:cvs.width/2+(Math.random()-.5)*cvs.width*.7, y:cvs.height*.25*Math.random(),
+      vx:(Math.random()-.5)*8*d, vy:(Math.random()*-6-2)*d,
+      s:(Math.random()*8+5)*d, c:COLS[i%COLS.length], r:Math.random()*Math.PI, vr:(Math.random()-.5)*.3, life:1});
+  }
+  if(!rafOn){ rafOn=true; requestAnimationFrame(step); }
+}
+function step(){
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+  parts=parts.filter(p=>p.life>0);
+  for(const p of parts){
+    p.vy+=.25*devicePixelRatio; p.x+=p.vx; p.y+=p.vy; p.r+=p.vr; p.life-=.008;
+    ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.globalAlpha=Math.max(p.life,0);
+    ctx.fillStyle=p.c; ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6); ctx.restore();
+  }
+  if(parts.length){ requestAnimationFrame(step); } else { rafOn=false; ctx.clearRect(0,0,cvs.width,cvs.height); }
+}
+
+/* ================= HELPERS ================= */
+const $=id=>document.getElementById(id);
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+function ri(a,b){ return a+Math.floor(Math.random()*(b-a+1)); }
+function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+function show(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); $(id).classList.add('active'); }
+
+/* ================= QUESTION BANKS ================= */
+const WORDS=[
+ {w:'cat',e:'🐱'},{w:'dog',e:'🐶'},{w:'sun',e:'☀️'},{w:'bus',e:'🚌'},{w:'bee',e:'🐝'},
+ {w:'pig',e:'🐷'},{w:'cow',e:'🐮'},{w:'egg',e:'🥚'},{w:'hat',e:'🧢'},{w:'cup',e:'🥤'},
+ {w:'fish',e:'🐟'},{w:'tree',e:'🌳'},{w:'book',e:'📖'},{w:'rain',e:'🌧️'},{w:'star',e:'⭐'},
+ {w:'milk',e:'🥛'},{w:'frog',e:'🐸'},{w:'cake',e:'🎂'},{w:'ship',e:'🚢'},{w:'hand',e:'✋'},
+ {w:'moon',e:'🌙'},{w:'king',e:'👑'},{w:'duck',e:'🦆'},{w:'bear',e:'🐻'},{w:'kite',e:'🪁'},
+ {w:'leaf',e:'🍃'},{w:'ring',e:'💍'},{w:'drum',e:'🥁'},{w:'sock',e:'🧦'},{w:'crab',e:'🦀'},
+ {w:'lion',e:'🦁'},{w:'corn',e:'🌽'},{w:'shoe',e:'👟'},{w:'snow',e:'❄️'},{w:'mango',e:'🥭'},
+];
+const RHYMES=[
+ {q:'cat',a:'hat',d:['dog','sun','cup'],e:'🐱'},{q:'frog',a:'log',d:['fish','hat','bee'],e:'🐸'},
+ {q:'cake',a:'lake',d:['bread','cup','pie'],e:'🎂'},{q:'star',a:'car',d:['moon','sky','sun'],e:'⭐'},
+ {q:'moon',a:'spoon',d:['fork','star','night'],e:'🌙'},{q:'king',a:'ring',d:['queen','crown','hat'],e:'👑'},
+ {q:'goat',a:'boat',d:['sheep','farm','grass'],e:'🐐'},{q:'mouse',a:'house',d:['cheese','cat','trap'],e:'🐭'},
+ {q:'tree',a:'bee',d:['leaf','wood','bird'],e:'🌳'},{q:'night',a:'light',d:['dark','day','moon'],e:'🌃'},
+ {q:'dog',a:'frog',d:['puppy','bone','cat'],e:'🐶'},{q:'snake',a:'cake',d:['worm','hiss','egg'],e:'🐍'},
+];
+const OPPOSITES=[
+ {q:'hot',a:'cold',d:['warm','wet','red'],e:'🔥'},{q:'big',a:'small',d:['tall','wide','huge'],e:'🐘'},
+ {q:'up',a:'down',d:['over','high','top'],e:'⬆️'},{q:'fast',a:'slow',d:['quick','speedy','soon'],e:'🏎️'},
+ {q:'happy',a:'sad',d:['glad','funny','silly'],e:'😊'},{q:'day',a:'night',d:['morning','noon','week'],e:'☀️'},
+ {q:'open',a:'closed',d:['wide','free','out'],e:'🚪'},{q:'full',a:'empty',d:['big','half','lots'],e:'🥛'},
+ {q:'hard',a:'soft',d:['strong','rocky','heavy'],e:'🪨'},{q:'loud',a:'quiet',d:['noisy','big','shouty'],e:'📢'},
+];
+const PLURALS=[
+ {q:'mouse',a:'mice',d:['mouses','mices'],e:'🐭'},{q:'child',a:'children',d:['childs','childes'],e:'🧒'},
+ {q:'foot',a:'feet',d:['foots','feets'],e:'🦶'},{q:'tooth',a:'teeth',d:['tooths','teeths'],e:'🦷'},
+ {q:'sheep',a:'sheep',d:['sheeps','shoop'],e:'🐑'},{q:'box',a:'boxes',d:['boxs','boxies'],e:'📦'},
+ {q:'bus',a:'buses',d:['buss','busies'],e:'🚌'},{q:'baby',a:'babies',d:['babys','babes'],e:'👶'},
+ {q:'fox',a:'foxes',d:['foxs','foxies'],e:'🦊'},{q:'wish',a:'wishes',d:['wishs','wishies'],e:'🌠'},
+];
+const SPELLING=[
+ {a:'was',d:['woz','wos'],e:'💬'},{a:'they',d:['thay','thei'],e:'👥'},
+ {a:'come',d:['cum','kome'],e:'👋'},{a:'like',d:['liek','lyke'],e:'👍'},
+ {a:'play',d:['plai','pley'],e:'⚽'},{a:'went',d:['wend','whent'],e:'🚶'},
+ {a:'good',d:['gud','goud'],e:'🌟'},{a:'said',d:['sed','sayd'],e:'🗣️'},
+ {a:'ball',d:['bal','boll'],e:'🏏'},{a:'home',d:['hoam','houm'],e:'🏠'},
+];
+const SCIENCE=[
+ {q:'How many legs does a spider have?',a:'8',d:['6','4','10'],e:'🕷️'},
+ {q:'What do plants need to grow?',a:'Sun and water',d:['Sweets','TV','Toys'],e:'🌱'},
+ {q:'Which part of a plant drinks water?',a:'Roots',d:['Flower','Leaf','Seed'],e:'🌷'},
+ {q:'What season comes after summer?',a:'Autumn',d:['Winter','Spring','Rainy'],e:'🍂'},
+ {q:'How many planets go around our Sun?',a:'8',d:['5','12','100'],e:'🪐'},
+ {q:'What is the Sun?',a:'A star',d:['A planet','A moon','A cloud'],e:'☀️'},
+ {q:'Water freezes into...?',a:'Ice',d:['Steam','Mud','Juice'],e:'🧊'},
+ {q:'What do bees make?',a:'Honey',d:['Jam','Milk','Butter'],e:'🐝'},
+ {q:'A baby frog is called a...?',a:'Tadpole',d:['Puppy','Kitten','Cub'],e:'🐸'},
+ {q:'Which one is a living thing?',a:'A tree',d:['A rock','A car','A cloud'],e:'🌳'},
+ {q:'We breathe with our...?',a:'Lungs',d:['Ears','Tummy','Knees'],e:'😮‍💨'},
+ {q:'Which part pumps blood around your body?',a:'Heart',d:['Brain','Nose','Bones'],e:'❤️'},
+ {q:'How many senses do we have?',a:'5',d:['2','7','10'],e:'👀'},
+ {q:'What does a magnet stick to?',a:'Iron nail',d:['Plastic cup','Wood','Paper'],e:'🧲'},
+ {q:'Which material can you see through?',a:'Glass',d:['Wood','Metal','Brick'],e:'🪟'},
+ {q:'Which animal is awake at night?',a:'Owl',d:['Chicken','Butterfly','Bee'],e:'🦉'},
+ {q:'What does a caterpillar turn into?',a:'Butterfly',d:['Bee','Bird','Worm'],e:'🐛'},
+ {q:'Where do fish breathe?',a:'In water',d:['In air','On land','In sand'],e:'🐠'},
+ {q:'What is the fastest land animal?',a:'Cheetah',d:['Horse','Rabbit','Lion'],e:'🐆'},
+ {q:'What is the biggest animal ever?',a:'Blue whale',d:['Elephant','T-Rex','Giraffe'],e:'🐋'},
+ {q:'What makes ice melt?',a:'Heat',d:['Cold','Wind','Dark'],e:'☀️'},
+ {q:'Which bone protects your brain?',a:'Skull',d:['Ribs','Knee','Elbow'],e:'🧠'},
+ {q:'Where does a plant make its food?',a:'Leaves',d:['Roots','Flower','Soil'],e:'🍃'},
+ {q:'The Earth goes around the...?',a:'Sun',d:['Moon','Mars','Clouds'],e:'🌍'},
+ {q:'Can penguins fly?',a:'No, they swim!',d:['Yes, very high','Only at night','Only in winter'],e:'🐧'},
+ {q:'A thermometer measures...?',a:'Temperature',d:['Weight','Time','Sound'],e:'🌡️'},
+ {q:'Which animal lays eggs?',a:'Hen',d:['Cow','Dog','Cat'],e:'🐔'},
+ {q:'Where do polar bears live?',a:'The Arctic',d:['The desert','The jungle','The beach'],e:'🐻‍❄️'},
+ {q:'What does a camel store in its hump?',a:'Fat',d:['Water bottles','Sand','Food'],e:'🐫'},
+ {q:'How many colours are in a rainbow?',a:'7',d:['3','5','10'],e:'🌈'},
+ {q:'We hear sounds with our...?',a:'Ears',d:['Eyes','Nose','Hands'],e:'👂'},
+ {q:'A seed grows into a...?',a:'Plant',d:['Rock','Animal','Cloud'],e:'🌰'},
+ {q:'What gas do we need to breathe?',a:'Oxygen',d:['Smoke','Helium','Steam'],e:'💨'},
+ {q:'What does a spider make?',a:'A web',d:['A nest','A dam','A hive'],e:'🕸️'},
+ {q:'At night the Moon shines with light from...?',a:'The Sun',d:['Stars','Lamps','Fire'],e:'🌕'},
+ {q:'Which floats on water?',a:'Wooden stick',d:['Stone','Coin','Brick'],e:'🛁'},
+ {q:'What is rain made of?',a:'Water',d:['Milk','Juice','Snowmen'],e:'🌧️'},
+ {q:'Which animal is a mammal?',a:'Whale',d:['Shark','Crocodile','Eagle'],e:'🐳'},
+];
+const SHAPES=[
+ {q:'How many sides does a triangle have?',a:'3',d:['4','5','6'],e:'🔺'},
+ {q:'How many sides does a square have?',a:'4',d:['3','5','6'],e:'🟥'},
+ {q:'How many sides does a hexagon have?',a:'6',d:['5','7','8'],e:'⬡'},
+ {q:'Which shape is round?',a:'Circle',d:['Square','Triangle','Star'],e:'⚪'},
+];
+
+/* ================= QUESTION GENERATORS ================= */
+function mcq(cat,emoji,text,answer,distractors){
+  return {type:'mcq',cat,emoji,text,answer:String(answer),
+    options:shuffle([String(answer),...distractors.map(String)])};
+}
+function numq(cat,emoji,text,answer){ return {type:'num',cat,emoji,text,answer:String(answer)}; }
+
+function genMaths(){
+  const kind=pick(['add','sub','mul','miss','double','half','next','word','compare','shape']);
+  if(kind==='add'){ const a=ri(3,50),b=ri(2,40); return numq('Maths','➕',`${a} + ${b} = ?`,a+b); }
+  if(kind==='sub'){ const a=ri(10,60),b=ri(1,a-1); return numq('Maths','➖',`${a} − ${b} = ?`,a-b); }
+  if(kind==='mul'){ const t=pick([2,5,10]),n=ri(1,10); return numq('Maths','✖️',`${n} × ${t} = ?`,n*t); }
+  if(kind==='miss'){ const a=ri(2,9),c=a+ri(2,9);
+    const q=numq('Maths','❓',`${a} + ? = ${c}`,c-a);
+    q.speak=`${a} plus what makes ${c}?`; return q; }
+  if(kind==='double'){ const n=ri(2,15); return numq('Maths','👯',`Double ${n} = ?`,n*2); }
+  if(kind==='half'){ const n=ri(2,12)*2; return numq('Maths','✂️',`Half of ${n} = ?`,n/2); }
+  if(kind==='next'){ const st=pick([2,5,10]),s=ri(1,4)*st;
+    const q=numq('Maths','🪜',`What comes next? ${s}, ${s+st}, ${s+2*st}, ?`,s+3*st);
+    q.speak=`Count with me: ${s}, ${s+st}, ${s+2*st}... What comes next?`; return q; }
+  if(kind==='word'){
+    const nm=S.name||'Sam';
+    const t=pick([
+      ()=>{const a=ri(3,10),b=ri(2,8);return [`${nm} has ${a} mangoes 🥭. He gets ${b} more. How many now?`,a+b];},
+      ()=>{const a=ri(6,12),b=ri(2,5);return [`${a} birds 🐦 on a tree. ${b} fly away. How many left?`,a-b];},
+      ()=>{const n=ri(2,5);return [`One hand has 5 fingers ✋. How many on ${n} hands?`,n*5];},
+      ()=>{const a=ri(4,10),b=ri(2,6);return [`${nm} hits ${a} runs 🏏, then ${b} more runs. How many runs?`,a+b];},
+      ()=>{const a=ri(5,12),b=ri(1,4);return [`${nm} has ${a} kites 🪁. ${b} fly away. How many left?`,a-b];},
+    ])();
+    return numq('Maths','🧠',t[0],t[1]);
+  }
+  if(kind==='compare'){
+    const nums=shuffle([ri(10,30),ri(31,55),ri(56,80),ri(81,99)]);
+    return mcq('Maths','⚖️','Which number is the BIGGEST?',Math.max(...nums),nums.filter(n=>n!==Math.max(...nums)));
+  }
+  const s=pick(SHAPES); return mcq('Maths',s.e,s.q,s.a,s.d);
+}
+
+function genEnglish(){
+  const kind=pick(['tiles','missing','rhyme','opp','plural','spell']);
+  if(kind==='tiles'){
+    const w=pick(WORDS.filter(x=>x.w.length<=4));
+    return {type:'tiles',cat:'English',emoji:w.e,text:'Make the word!',word:w.w,
+      speak:`Make the word: ${w.w}!`};
+  }
+  if(kind==='missing'){
+    const w=pick(WORDS.filter(x=>x.w.length<=4));
+    const i=ri(1,w.w.length-2), c=w.w[i];
+    const others=shuffle('bcdfghjklmnpqrstvwz'.split('').filter(l=>l!==c)).slice(0,2);
+    const disp=w.w.slice(0,i)+'_'+w.w.slice(i+1);
+    const q=mcq('English',w.e,`Which letter is missing?  ${disp.toUpperCase()}`,c.toUpperCase(),others.map(l=>l.toUpperCase()));
+    q.speak=`The word is ${w.w}. Which letter is missing? Is it ${q.options.join(', or ')}?`;
+    return q;
+  }
+  if(kind==='rhyme'){ const r=pick(RHYMES); return mcq('English',r.e,`Which word rhymes with “${r.q}”?`,r.a,r.d); }
+  if(kind==='opp'){ const o=pick(OPPOSITES); return mcq('English',o.e,`What is the OPPOSITE of “${o.q}”?`,o.a,o.d); }
+  if(kind==='plural'){ const p=pick(PLURALS); return mcq('English',p.e,`One ${p.q}, two ...?`,p.a,p.d); }
+  const s=pick(SPELLING);
+  const q=mcq('English',s.e,'Which spelling is correct?',s.a,s.d);
+  q.speak=`How do you write the word: ${s.a}? Tap the right spelling.`;
+  q.speakOpts=false;
+  return q;
+}
+
+function genScience(){ const s=pick(SCIENCE); return mcq('Science',s.e,s.q,s.a,s.d); }
+
+function buildRound(sub){
+  const n = sub==='daily' ? 10 : 8;
+  const qs=[]; const seen=new Set();
+  let guard=0;
+  while(qs.length<n && guard<300){
+    guard++;
+    let q;
+    if(sub==='maths') q=genMaths();
+    else if(sub==='english') q=genEnglish();
+    else if(sub==='science') q=genScience();
+    else q=[genMaths,genEnglish,genScience][qs.length%3]();
+    const key=q.text+(q.word||q.answer||'');
+    if(seen.has(key)) continue;
+    seen.add(key); qs.push(q);
+  }
+  return qs;
+}
+
+/* ================= ROUND ENGINE ================= */
+const PRAISE=[['🎉','Brilliant!'],['🌟','Super star!'],['🚀','Zoom! Correct!'],['🥳','Yes! Amazing!'],['💪','You got it!'],['🦄','Magic!']];
+const OOPS=[['🙈','Nearly!'],['🤗','Good try!'],['🌈','Keep going!']];
+const TIME_LIMIT=40000;
+
+let R=null; // current round
+let timerId=null, timeLeft=0, answered=false;
+
+function startRound(sub){
+  R={sub, qs:buildRound(sub), idx:0, correct:0, streak:0, xp:0, mult: sub==='daily'?2:1};
+  show('scr-game'); renderQ();
+}
+
+function renderQ(){
+  const q=R.qs[R.idx]; answered=false;
+  $('progFill').style.width=(R.idx/R.qs.length*100)+'%';
+  $('streakBox').textContent='🔥 '+R.streak;
+  $('qCat').textContent=(R.sub==='daily'?'🎁 ':'')+q.cat.toUpperCase();
+  $('qEmoji').textContent=q.emoji;
+  $('qText').textContent=q.text;
+  curSpeech=speechFor(q);
+  speak(curSpeech,400);
+  const area=$('ansArea'); area.innerHTML='';
+
+  if(q.type==='mcq'){
+    const grid=document.createElement('div');
+    grid.className='answers'+(q.options.some(o=>o.length>12)?' one-col':'');
+    q.options.forEach(opt=>{
+      const b=document.createElement('button'); b.className='ans'; b.textContent=opt;
+      b.onclick=()=>{ if(answered)return; answered=true;
+        const ok=opt===q.answer;
+        b.classList.add(ok?'good':'bad');
+        if(!ok) grid.querySelectorAll('button').forEach(x=>{ if(x.textContent===q.answer) x.classList.add('reveal'); });
+        grid.querySelectorAll('button').forEach(x=>x.disabled=true);
+        finishQ(ok,q.answer);
+      };
+      grid.appendChild(b);
+    });
+    area.appendChild(grid);
+  }
+  else if(q.type==='num'){
+    const disp=document.createElement('div'); disp.className='num-display'; disp.textContent='?';
+    const pad=document.createElement('div'); pad.className='numpad';
+    let val='';
+    const upd=()=>{ disp.textContent=val||'?'; };
+    [1,2,3,4,5,6,7,8,9].forEach(n=>{
+      const b=document.createElement('button'); b.textContent=n;
+      b.onclick=()=>{ if(answered||val.length>=4)return; sfx.click(); val+=n; upd(); };
+      pad.appendChild(b);
+    });
+    const del=document.createElement('button'); del.textContent='⌫'; del.className='del';
+    del.onclick=()=>{ if(answered)return; sfx.click(); val=val.slice(0,-1); upd(); };
+    const zero=document.createElement('button'); zero.textContent='0';
+    zero.onclick=()=>{ if(answered||val.length>=4)return; sfx.click(); val+='0'; upd(); };
+    const ok=document.createElement('button'); ok.textContent='✓'; ok.className='ok';
+    ok.onclick=()=>{ if(answered||val==='')return; answered=true;
+      const good=parseInt(val,10)===parseInt(q.answer,10);
+      disp.style.background=good?'#dcfce7':'#fee2e2';
+      if(!good){ disp.textContent=val+' → '+q.answer; }
+      finishQ(good,q.answer);
+    };
+    pad.appendChild(del); pad.appendChild(zero); pad.appendChild(ok);
+    area.appendChild(disp); area.appendChild(pad);
+  }
+  else if(q.type==='tiles'){
+    const word=q.word;
+    let letters=shuffle(word.split(''));
+    if(letters.join('')===word) letters=letters.reverse();
+    const slotWrap=document.createElement('div'); slotWrap.className='slots';
+    const tileWrap=document.createElement('div'); tileWrap.className='tiles';
+    const slots=[], tiles=[];
+    const placed=new Array(word.length).fill(null); // tile index in each slot
+    function redraw(){ slots.forEach((s,i)=>{ s.textContent=placed[i]===null?'':letters[placed[i]].toUpperCase(); s.classList.toggle('filled',placed[i]!==null); }); }
+    function check(){
+      if(placed.some(p=>p===null)) return;
+      if(answered) return;
+      answered=true;
+      const guess=placed.map(p=>letters[p]).join('');
+      const good=guess===word;
+      slots.forEach(s=>{ s.style.borderColor=good?'#22c55e':'#ef4444'; s.style.background=good?'#dcfce7':'#fee2e2'; });
+      if(!good){ setTimeout(()=>{ slots.forEach((s,i)=>{ s.textContent=word[i].toUpperCase(); s.style.background='#dcfce7'; s.style.borderColor='#22c55e'; }); },600); }
+      finishQ(good,word.toUpperCase());
+    }
+    for(let i=0;i<word.length;i++){
+      const s=document.createElement('button'); s.className='slot';
+      s.onclick=()=>{ if(answered)return;
+        if(placed[i]!==null){ sfx.click(); tiles[placed[i]].disabled=false; placed[i]=null; redraw(); } };
+      slots.push(s); slotWrap.appendChild(s);
+    }
+    letters.forEach((L,ti)=>{
+      const t=document.createElement('button'); t.className='tile'; t.textContent=L.toUpperCase();
+      t.onclick=()=>{ if(answered||t.disabled)return; sfx.click();
+        const free=placed.indexOf(null); if(free===-1)return;
+        placed[free]=ti; t.disabled=true; redraw();
+        setTimeout(check,150);
+      };
+      tiles.push(t); tileWrap.appendChild(t);
+    });
+    area.appendChild(slotWrap); area.appendChild(tileWrap);
+  }
+
+  startTimer();
+}
+
+function startTimer(){
+  clearInterval(timerId);
+  timeLeft=TIME_LIMIT;
+  const fill=$('timerFill'); fill.style.width='100%'; fill.classList.remove('low');
+  const t0=Date.now();
+  timerId=setInterval(()=>{
+    timeLeft=TIME_LIMIT-(Date.now()-t0);
+    const pct=Math.max(timeLeft/TIME_LIMIT*100,0);
+    fill.style.width=pct+'%';
+    if(pct<30) fill.classList.add('low');
+    if(timeLeft<=0 && !answered){
+      answered=true; clearInterval(timerId);
+      const q=R.qs[R.idx];
+      finishQ(false, q.type==='tiles'? q.word.toUpperCase() : q.answer, true);
+    }
+  },100);
+}
+
+function finishQ(ok, answer, timedOut=false){
+  clearInterval(timerId);
+  let gained=0;
+  if(ok){
+    R.correct++; R.streak++;
+    if(R.streak>S.bestStreak) S.bestStreak=R.streak;
+    gained=10+Math.min(R.streak*2,10)+(timeLeft>TIME_LIMIT/2?5:0);
+    gained*=R.mult;
+    R.xp+=gained;
+    (R.streak>=3?sfx.great:sfx.good)();
+    confetti(R.streak>=3?36:20);
+  } else { R.streak=0; sfx.bad(); }
+
+  const [em,msg]= ok? pick(PRAISE) : (timedOut? ['⏰','Time\'s up!'] : pick(OOPS));
+  $('fbEmoji').textContent=em;
+  $('fbMsg').textContent= ok? msg : msg+'  It was: '+answer;
+  speak(ok? stripEmoji(msg) : stripEmoji(msg)+' The answer was: '+stripEmoji(String(answer)));
+  $('fbXp').textContent= ok? `+${gained} XP${R.mult>1?' (x2!)':''}` : '';
+  $('fb').classList.add('show');
+  $('streakBox').textContent='🔥 '+R.streak;
+
+  setTimeout(()=>{
+    $('fb').classList.remove('show');
+    R.idx++;
+    if(R.idx>=R.qs.length) endRound(); else renderQ();
+  }, ok?1150:1900);
+}
+
+function endRound(){
+  const total=R.qs.length, c=R.correct;
+  const frac=c/total;
+  const stars= frac===1?3 : frac>=.75?2 : frac>=.5?1 : 0;
+  const prevLevel=level(), prevPet=petEmoji();
+  S.xp+=R.xp; S.rounds++;
+  if(frac===1) S.perfects++;
+  if(R.sub!=='daily' && stars>S.stars[R.sub]) S.stars[R.sub]=stars;
+  if(R.sub==='daily'){ S.dailyDone=new Date().toDateString(); S.dailies++; }
+  const newBadges=BADGES.filter(b=>!S.badges.includes(b.id)&&b.test(S));
+  newBadges.forEach(b=>S.badges.push(b.id));
+  save();
+
+  $('resPet').textContent=petEmoji();
+  $('resStars').textContent='⭐'.repeat(stars)+'☆'.repeat(3-stars);
+  $('resTitle').textContent= stars===3?'PERFECT! 🏆' : stars===2?'Great job!' : stars===1?'Well done!' : 'Good try!';
+  $('resScore').textContent=`You got ${c} out of ${total}!`;
+  $('resXp').textContent=`+${R.xp} XP ${R.mult>1?'(Daily x2!)':''}`;
+  const rb=$('resBadges'); rb.innerHTML='';
+  if(level()>prevLevel){
+    const d=document.createElement('div'); d.className='new-badge';
+    d.textContent= petEmoji()!==prevPet
+      ? `🎊 LEVEL UP! You are now level ${level()} — your pet grew! ${prevPet} → ${petEmoji()}`
+      : `🎊 LEVEL UP! You are now level ${level()}! Keep going to grow your pet ${petEmoji()}`;
+    rb.appendChild(d); sfx.level();
+  }
+  newBadges.forEach(b=>{
+    const d=document.createElement('div'); d.className='new-badge';
+    d.textContent=`${b.icon} New badge: ${b.name}!`;
+    rb.appendChild(d);
+  });
+  show('scr-results');
+  if(stars>=2){ sfx.win(); confetti(90); }
+}
+
+/* ================= MENU / HOME ================= */
+function renderMenu(){
+  $('heroPet').textContent=petEmoji();
+  $('heroName').textContent=S.name||'Explorer';
+  const lv=level(), into=S.xp%100;
+  $('lvlFill').style.width=into+'%';
+  $('lvlTxt').textContent=`Level ${lv} · ${into}/100 XP`;
+  const totStars=S.stars.maths+S.stars.english+S.stars.science;
+  $('starCount').textContent=totStars+'/9';
+  for(const sub of ['maths','english','science']){
+    $('st-'+sub).textContent='⭐'.repeat(S.stars[sub])+'☆'.repeat(3-S.stars[sub]);
+  }
+  const doneToday=S.dailyDone===new Date().toDateString();
+  $('dailyDesc').textContent= doneToday? 'Done today! Come back tomorrow 🌙' : 'Mixed round · DOUBLE XP!';
+  $('dailyMark').textContent= doneToday? '✅' : '✨';
+  const row=$('badgeRow'); row.innerHTML='';
+  BADGES.forEach(b=>{
+    const d=document.createElement('div');
+    d.className='badge'+(S.badges.includes(b.id)?'':' locked');
+    d.textContent=b.icon; d.title=b.name;
+    row.appendChild(d);
+  });
+}
+
+function renderHome(){
+  $('nameInput').value=S.name;
+  const grid=$('petGrid'); grid.innerHTML='';
+  Object.entries(PETS).forEach(([id,p])=>{
+    const b=document.createElement('button');
+    b.className='pet-opt'+(S.pet===id?' sel':'');
+    b.textContent=p.stages[2];
+    b.onclick=()=>{ sfx.click(); S.pet=id;
+      grid.querySelectorAll('.pet-opt').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel'); };
+    grid.appendChild(b);
+  });
+}
+
+/* ================= WIRING ================= */
+$('startBtn').onclick=()=>{
+  ac(); // unlock audio on first tap
+  S.name=($('nameInput').value||'').trim()||'Explorer';
+  save(); sfx.good(); renderMenu(); show('scr-menu');
+};
+document.querySelectorAll('.world').forEach(b=>{
+  b.onclick=()=>{ const sub=b.dataset.sub;
+    if(sub==='daily' && S.dailyDone===new Date().toDateString()){ sfx.click(); return; }
+    sfx.click(); startRound(sub); };
+});
+$('sayBtn').onclick=()=>{ speak(curSpeech); };
+$('quitBtn').onclick=()=>{ clearInterval(timerId); try{speechSynthesis.cancel();}catch(e){} sfx.click(); renderMenu(); show('scr-menu'); };
+$('againBtn').onclick=()=>{ sfx.click(); startRound(R.sub==='daily'?'daily':R.sub); };
+$('menuBtn').onclick=()=>{ sfx.click(); renderMenu(); show('scr-menu'); };
+$('sndBtn').onclick=()=>{ S.sound=!S.sound; save(); $('sndBtn').textContent=S.sound?'🔊':'🔇'; if(S.sound) sfx.click(); };
+$('sndBtn').textContent=S.sound?'🔊':'🔇';
+
+/* boot */
+renderHome();
+if(S.rounds>0 || S.xp>0){ renderMenu(); show('scr-menu'); }
+</script>
+</body>
+</html>
