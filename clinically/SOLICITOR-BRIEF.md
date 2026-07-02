@@ -8,7 +8,7 @@
 
 ## 1. What Clinickly Co-pilot is (plain English)
 A software tool for **independent prescribers and private clinics** (pharmacists, nurses, and other prescribers), with two parts:
-1. **AI co-pilot** — during/around a consultation it transcribes, **drafts a structured clinical note**, and surfaces **guideline-backed prompts** ("decision support"). It does **not** diagnose or prescribe.
+1. **AI co-pilot** — during/around a consultation it transcribes, **drafts a structured clinical note** (a documentation aid), and **surfaces the relevant clinical guidance** for the clinician to read and apply. It does **not** diagnose, prescribe, or give patient-specific instructions.
 2. **Human MDT** — an expert panel (GP, psychiatrist, dermatologist, chair) the clinician can submit **anonymised** cases to for **advisory** opinions, and meet with.
 
 **The golden rule, built into the product:** *the tool supports the clinician's judgement; it never decides.* Every note and prompt is reviewed and signed by the treating clinician, who **remains the decision-maker and remains accountable.**
@@ -33,7 +33,7 @@ For the pilot, Clinickly is an **anonymised assistant, not the patient record.**
 
 **3.2 Roles.** Three roles only for the pilot: **clinician · MDT panel member · admin**. **No patient portal / patient login** in the pilot (deferred).
 
-**3.3 Decision support, not a decision.** The AI drafts notes and surfaces guideline prompts; the clinician **reviews, edits and signs**. The tool never diagnoses, prescribes, or makes clinical decisions. **Accountability stays with the treating clinician.** Every action is audit-logged.
+**3.3 Guidance + documentation — the clinician decides.** The tool **offers clinical guidance/reference** and **drafts documentation**; the clinician **reads, applies, edits and signs**. It does not diagnose, prescribe, or issue patient-specific instructions. **Accountability stays with the treating clinician.** Every action is audit-logged. *(We are deliberately positioning Clinickly as a guidance/reference + documentation tool, not patient-specific decision-support software — see §7.)*
 
 **3.4 The MDT is advisory only.** Panel members give **advisory peer opinions on anonymised cases** — this is **not** a transfer of clinical responsibility to them. We need panel agreements covering advisory scope, indemnity, remuneration and confidentiality.
 
@@ -77,7 +77,7 @@ The tool records **CPD** and generates reflective material for **GPhC/GMC/NMC re
 ---
 
 ## 7. Regulatory flags — please advise / signpost specialists
-- **Medical device status (MHRA).** Clinical decision-support software **may be a regulated medical device** under the UK medical devices regime. We need clear advice on whether Clinickly is in scope and, if so, the classification and obligations. *(This is potentially significant — flagging early.)*
+- **Medical device status (MHRA) — please confirm.** Our position is that Clinickly is a **guidance/reference and documentation tool** (it offers guidance for the clinician to apply, and drafts notes) — **not** patient-specific clinical decision-support software — and so we do **not** consider it a medical device. But device status turns on **function, not labelling**: software that produces **patient-specific recommendations** can fall in scope. Please **confirm** we are out of scope given how the tool works, and flag anything (e.g. any patient-specific prompting) we should avoid or change to stay out of scope.
 - **Clinical safety standards** — **DCB0129 / DCB0160** (clinical risk management for health IT); we intend to appoint a Clinical Safety Officer and keep a hazard log.
 - **UK GDPR** — DPIA before any real patient data; data residency UK/EU.
 - **Advertising / claims** — ensure marketing stays within "decision support," no overclaiming of clinical outcomes.
