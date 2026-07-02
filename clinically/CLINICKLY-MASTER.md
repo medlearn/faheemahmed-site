@@ -136,6 +136,14 @@ Send an **anonymised** case to the panel; track Awaiting → Answered.
 ### 5.6 Guidelines
 Searchable guidance library; also feeds the decision-support flags; underpins "what did guidance say at the time". Sources + interim/target in §7. Kept current via the **§8 governance pipeline**.
 
+**Content authoring standard (non-negotiable — this is what makes it defensible):**
+- **Every recommendation is cited to a named source, per-statement** (not just a generic "sources" bar). The AI drafts **from retrieved source text, not from memory** — each claim carries its citation; a clinician verifies against the cited source before sign-off.
+- **State the first-line and *why*.** Don't just list options — say where to start and the rationale (efficacy/cost/tolerability/evidence strength). **Where there is no single first-line, say so** rather than inventing a preference.
+- **Approach vs dose:** our content gives the treatment *approach* (with its source); **doses, cautions, interactions & monitoring come from the BNF** (link/integrate) — never hand-authored or AI-guessed.
+- **Dual-audience:** each entry renders a **clinician view and a patient view** from one governed source.
+- **Governance metadata shown on every entry:** sources · version · last-reviewed · review state (drafted → reviewed → signed) · "verify at source" link · "decision support, not a directive."
+- *Reference format proven in the working sample: `clinically/app/guideline-sample.html` (Rosacea).*
+
 ### 5.7 Templates & SOPs → **split**
 - **Note templates** (move next to note-writing): the SOAP+history skeletons the AI fills. **Clinickly provides them, MDT-validated**; clinics may customise; new ones requested → governed.
 - **SOPs / policies / governance docs** (own admin area): Clinickly provides **starter templates** → AI helps populate → **AI checks against uploaded GPhC/CQC/MHRA/NHS standards** → **clinic lead signs off (standard)** / **MDT review (premium)** → versioned/audited. **"Request an SOP"** button.

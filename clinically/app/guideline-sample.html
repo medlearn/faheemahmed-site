@@ -30,6 +30,7 @@
   .redflag h3::before{background:var(--alert)}
   .redflag h3{color:var(--alert)}
   .redflag li::before{background:var(--alert)}
+  .ref{display:inline-block;font-family:var(--mono);font-size:.62rem;font-weight:600;color:var(--brand-deep);background:var(--brand-soft);border-radius:20px;padding:1px 8px;margin-left:6px;vertical-align:middle;letter-spacing:.02em}
   .draftbar{background:var(--warn-soft);border:1px solid #EBD9AE;color:#7a5a12;border-radius:12px;padding:12px 16px;font-size:.82rem;display:flex;gap:10px;align-items:flex-start;margin-bottom:18px}
   .draftbar svg{width:18px;height:18px;flex:0 0 auto;margin-top:1px}
   .hide{display:none}
@@ -94,23 +95,29 @@
           </ul>
         </div>
 
-        <div class="gsec"><h3>Manage — by presentation</h3>
+        <div class="gsec"><h3>Manage — by subtype</h3>
+          <p>General measures apply to everyone (above). Then, by subtype:</p>
           <ul>
-            <li><b>Papulopustular:</b> first-line topical — ivermectin or metronidazole (or azelaic acid). Moderate–severe/refractory — add an oral option (e.g. low-dose doxycycline). Confirm within your scope/formulary.</li>
-            <li><b>Persistent redness/flushing:</b> topical brimonidine can reduce redness short-term; prioritise trigger control.</li>
-            <li><b>Phymatous:</b> refer to dermatology (may need procedural treatment).</li>
-            <li><b>Ocular:</b> lid hygiene + warm compresses + ocular lubricants; refer optometry/ophthalmology if not settling or vision affected.</li>
+            <li><b>Papulopustular:</b> topical first-line → oral if moderate–severe/refractory (see "Treatment — where to start" below). <span class="ref">NICE CKS Rosacea</span></li>
+            <li><b>Persistent redness/flushing:</b> trigger control ± short-term topical brimonidine. <span class="ref">NICE CKS Rosacea</span></li>
+            <li><b>Phymatous:</b> refer to dermatology (may need procedural treatment). <span class="ref">BAD</span></li>
+            <li><b>Ocular:</b> lid hygiene + warm compresses + lubricants; refer optometry/ophthalmology if not settling or vision affected. <span class="ref">NICE CKS Rosacea</span></li>
           </ul>
         </div>
 
-        <div class="gsec"><h3>Treatment options — doses via BNF</h3>
-          <p>The approach below is guideline-based. <b>Doses, cautions, interactions and monitoring come from the BNF</b> — always check the current entry before prescribing. Clinickly does not generate or store doses.</p>
+        <div class="gsec"><h3>Treatment — where to start &amp; why</h3>
+          <p><b>Papulopustular rosacea — start with a topical.</b> There is <b>no single mandated first-line</b> — two options are both reasonable:</p>
           <ul>
-            <li><b>Topical (first-line, papulopustular):</b> ivermectin · metronidazole · azelaic acid — <a href="https://bnf.nice.org.uk/" target="_blank" rel="noopener" style="color:var(--brand-deep);font-weight:600">check BNF ↗</a></li>
-            <li><b>Oral (moderate–severe / refractory):</b> low-dose doxycycline — <a href="https://bnf.nice.org.uk/drugs/doxycycline/" target="_blank" rel="noopener" style="color:var(--brand-deep);font-weight:600">check BNF ↗</a> <span style="color:var(--muted)">(photosensitivity; avoid in pregnancy &amp; children)</span>.</li>
-            <li><b>Persistent redness:</b> topical brimonidine, short-term — <a href="https://bnf.nice.org.uk/" target="_blank" rel="noopener" style="color:var(--brand-deep);font-weight:600">check BNF ↗</a></li>
+            <li><b>Topical ivermectin</b> — often the most effective topical for papulopustular rosacea; good first choice when efficacy is the priority. <span class="ref">NICE CKS Rosacea</span></li>
+            <li><b>Topical metronidazole</b> — well-established, widely available, lower cost; a sound first choice, especially where cost/access matter. <span class="ref">NICE CKS Rosacea</span></li>
+            <li><b>Azelaic acid</b> — reasonable alternative if the above aren't suitable or tolerated. <span class="ref">NICE CKS Rosacea</span></li>
           </ul>
-          <div style="margin-top:10px;font-size:.82rem;color:var(--muted);background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:11px 13px"><b>The rule:</b> our guidance gives the <b>approach</b>; the <b>BNF</b> gives the <b>dose</b>. Prescribing specifics are never hand-authored or AI-guessed.</div>
+          <p><b>Why it's a choice, not a rule:</b> head-to-head evidence is limited — ivermectin edges ahead on efficacy in some trials, metronidazole on cost and long experience. Choose on severity, cost, tolerability and patient preference. <span class="ref">BAD</span></p>
+          <ul>
+            <li><b>Not responding after ~8–12 weeks, or moderate–severe:</b> add an <b>oral</b> agent — low-dose (anti-inflammatory) doxycycline. <span class="ref">NICE CKS Rosacea</span></li>
+            <li><b>Persistent redness/flushing (not papules):</b> short-term topical brimonidine — effect is temporary; set expectations. <span class="ref">NICE CKS Rosacea</span></li>
+          </ul>
+          <div style="margin-top:10px;font-size:.82rem;color:var(--muted);background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:11px 13px"><b>The rule:</b> our guidance gives the <b>approach + its source</b>; the <b>BNF</b> gives the <b>dose, cautions &amp; interactions</b> — <a href="https://bnf.nice.org.uk/" target="_blank" rel="noopener" style="color:var(--brand-deep);font-weight:600">check BNF ↗</a>. Prescribing specifics are never hand-authored or AI-guessed.</div>
         </div>
 
         <div class="gsec"><h3>Review &amp; expectations</h3>
@@ -127,6 +134,12 @@
             <li>Diagnostic uncertainty, or not responding to first-line.</li>
           </ul>
           <p style="margin-top:6px"><b>Safety-net:</b> advise the patient to seek prompt review for worsening eye symptoms or any change in vision.</p>
+        </div>
+
+        <div class="gsec"><h3>Evidence &amp; provenance</h3>
+          <p>Every recommendation above is drafted from — and <b>cited to — a named source</b> (NICE CKS Rosacea; British Association of Dermatologists), then <b>verified by a clinician</b> against that source before sign-off. Where the evidence doesn't favour one option, we <b>say so</b> rather than invent a preference.</p>
+          <p>The AI drafts <b>from the retrieved source text, not from memory</b>, and each claim carries its citation. Doses come from the BNF, not from us. This is what makes the content defensible — a clinician (or an auditor) can trace every statement back to its basis.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><a class="btn ghost sm" href="https://cks.nice.org.uk/topics/rosacea/" target="_blank" rel="noopener">NICE CKS Rosacea ↗</a><a class="btn ghost sm" href="https://www.bad.org.uk/" target="_blank" rel="noopener">BAD guidelines ↗</a><a class="btn ghost sm" href="https://bnf.nice.org.uk/" target="_blank" rel="noopener">BNF ↗</a></div>
         </div>
       </div>
 
