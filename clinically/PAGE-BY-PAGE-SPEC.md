@@ -103,6 +103,12 @@ The front door to Pillar 2 (the human MDT). Send an **anonymised** difficult cas
 - Keep **Urgency** as a dropdown; case title / summary / key question stay free text (content).
 - **Anonymise on create.** When creating from a note, the summary must be stripped of identifiers — ideally the AI **auto-anonymises** and flags anything identifiable before submit.
 - **Build the answering loop:** panel-member **login/role**, cases **persist to DB**, routed to the right specialty, panel writes the response, clinician notified.
+- **Image upload (essential — esp. dermatology):** clinician can attach **1–5 clinical photos** to a case; shown to the routed panel member. Rules:
+  - **Anonymisation guidance at upload** — crop to lesion/area; avoid full face, tattoos, jewellery, backgrounds.
+  - **AI pre-check** — auto-flag images with faces/identifiable features before submit ("may identify the patient — crop or confirm consent").
+  - **Auto-strip EXIF metadata** (phone photos embed GPS + timestamps).
+  - **Consent checkbox (required, logged)** — clinician confirms patient consent for clinical photography + sharing for advice.
+  - **Secure storage** — encrypted, **UK/EU residency** (Supabase Storage), access limited to submitting clinician + routed panel member, audited, deletable.
 - **Audit reporting:** report cases by **specialty × query type × urgency × status**; feed the commonest query types straight into **Training** (closes the MDT → training loop).
 
 ---

@@ -127,6 +127,7 @@ Record-keeping hub — store, edit, **sign**, search, turn into MDT case; holds 
 Send an **anonymised** case to the panel; track Awaiting → Answered.
 - **Two structured dropdowns:** Specialty (who answers — Appendix B) + **Query type** (for audit — Appendix C; AI auto-suggests). Keep Urgency dropdown.
 - **Anonymise on create** (esp. from a note) — AI auto-anonymises + flags identifiers before submit.
+- **Image upload (essential — esp. dermatology):** attach **1–5 clinical photos** per case, visible to the routed panel member. Rules: anonymisation guidance at upload (crop to lesion; avoid faces/tattoos/jewellery/backgrounds) · **AI pre-check** flags identifiable images before submit · **auto-strip EXIF** (GPS/timestamps) · **required consent checkbox** (patient consent for clinical photography + sharing, logged) · encrypted **UK/EU storage** (Supabase Storage), access limited to submitter + routed panel member, audited, deletable.
 - **Filter/search cases** by specialty × query type × status × date (powers the MDT audit).
 - **⭐ Key build — the answering loop:** panel-member **login** → case routed by specialty → panel writes response → **persists to DB** → clinician notified. (Currently responses are samples; "0 in DB".)
 
@@ -236,6 +237,7 @@ notes(id, consultation_id, clinician_id, patient_ref, s,o,a,p, codes[], status[d
 note_addenda(id, note_id, author_id, body, created_at)
 mdt_cases(id, clinician_id, specialty, query_type, urgency, title, summary, status, responder_id, created_at)
 mdt_responses(id, case_id, panel_member_id, body, created_at)
+case_images(id, case_id, storage_path, consent_confirmed bool, exif_stripped bool, ai_identifiable_flag bool, uploaded_by, created_at)  -- encrypted bucket, UK/EU
 mdt_sessions(id, date, agenda, recording_url, consented, published, created_at)
 guidelines / templates / sops / training(... + status, version, reviewer_id, signer_id, published_at)  -- governance pipeline
 audit_log(id, actor_id, action, entity, entity_id, at)
@@ -243,7 +245,7 @@ audit_log(id, actor_id, action, entity, entity_id, at)
 RLS: clinicians see only their own notes/cases; panel see cases routed to them; admin sees all. **No patient-identifiable data** in any table (patient_ref = clinician's own code).
 
 **Phase 4 — transcription** (Speechmatics + Recall.ai; token brokered server-side).
-**Phase 5 — MDT answering loop** (panel login → routed cases → responses persist → notify).
+**Phase 5 — MDT answering loop** (panel login → routed cases → responses persist → notify) **+ case image upload** (encrypted Supabase Storage bucket, EXIF strip on upload, AI identifiable-image pre-check, consent checkbox, access = submitter + routed panel member only).
 **Phase 6 — governance pipeline + admin console** (§8, §4).
 **Phase 7 — Training** (Bunny video embeds + CPD export).
 **Phase 8 — billing** (Stripe) + custom domain.
