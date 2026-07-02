@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinickly — guideline sample (Rosacea)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+<style>
+  .doc{max-width:820px;margin:0 auto}
+  .gbar{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);margin-bottom:18px}
+  .gbar .f small{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .gbar .f b{font-size:.86rem}
+  .gbar .sp{flex:1}
+  .toggle{display:inline-flex;background:var(--tint);border:1px solid var(--line);border-radius:30px;padding:3px}
+  .toggle button{border:none;background:none;font-family:var(--body);font-weight:600;font-size:.82rem;padding:7px 16px;border-radius:30px;color:var(--muted);cursor:pointer}
+  .toggle button.on{background:var(--brand);color:#fff}
+  .gsec{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);margin-bottom:16px}
+  .gsec h3{font-family:var(--body);font-size:1.05rem;font-weight:700;color:var(--brand-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .gsec h3::before{content:"";width:7px;height:18px;border-radius:3px;background:var(--brand)}
+  .gsec p{font-size:.92rem;color:var(--ink-2);line-height:1.6;margin-bottom:8px}
+  .gsec ul{margin:0 0 4px 2px;list-style:none}
+  .gsec li{font-size:.92rem;color:var(--ink-2);line-height:1.55;padding:4px 0 4px 22px;position:relative}
+  .gsec li::before{content:"";position:absolute;left:2px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  .gsec li b{color:var(--ink)}
+  .oneline{font-family:var(--display);font-size:1.3rem;line-height:1.4;color:var(--ink);font-weight:500}
+  .redflag h3::before{background:var(--alert)}
+  .redflag h3{color:var(--alert)}
+  .redflag li::before{background:var(--alert)}
+  .draftbar{background:var(--warn-soft);border:1px solid #EBD9AE;color:#7a5a12;border-radius:12px;padding:12px 16px;font-size:.82rem;display:flex;gap:10px;align-items:flex-start;margin-bottom:18px}
+  .draftbar svg{width:18px;height:18px;flex:0 0 auto;margin-top:1px}
+  .hide{display:none}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-info" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.1"/></g>
+  <g id="i-check" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 6.5"/></g>
+  <g id="i-book" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 1 6 18h14"/></g>
+</defs></svg>
+
+<main class="main" style="display:block">
+  <header class="topbar"><a href="index.html#guidelines" style="font-family:var(--mono);font-size:.78rem;color:var(--brand-deep)">← Guidelines</a><div class="spacer"></div><span class="pill"><span class="dot"></span> Sample content</span></header>
+  <div class="view">
+    <div class="doc">
+      <span class="kick">Clinical guidance</span>
+      <h2 class="h" style="font-size:2.4rem;margin:8px 0 4px">Rosacea</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"><span class="tag teal">Dermatology</span><span class="tag">Chronic skin condition</span></div>
+
+      <div class="draftbar"><svg viewBox="0 0 24 24"><use href="#i-info"/></svg><span><b>AI-drafted sample — not for clinical use until signed off.</b> This demonstrates the format + governance. Decision support, not a directive — the treating clinician decides. Always verify against the live source.</span></div>
+
+      <div class="gbar">
+        <div class="f"><small>Sources</small><b>NICE CKS · BAD</b></div>
+        <div class="f"><small>Version</small><b>Draft v1.0</b></div>
+        <div class="f"><small>Last reviewed</small><b>24 Jun 2026</b></div>
+        <div class="f"><small>Governance</small><b>AI-drafted → reviewed (Dr R. Kaur) → awaiting sign-off</b></div>
+        <div class="sp"></div>
+        <a class="btn ghost sm" href="https://cks.nice.org.uk/topics/rosacea/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg> Verify at source</a>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;margin-bottom:16px"><div class="toggle"><button id="tClin" class="on">Clinician view</button><button id="tPat">Patient view</button></div></div>
+
+      <!-- CLINICIAN VIEW -->
+      <div id="clin">
+        <div class="gsec"><p class="oneline">Chronic facial condition — central redness, flushing, papules/pustules and visible vessels. <b>No comedones</b> (distinguishes it from acne). Manage by subtype and trigger avoidance.</p></div>
+
+        <div class="gsec"><h3>Recognise the pattern</h3>
+          <p>Affects the central face (cheeks, nose, chin, forehead). Subtypes often overlap:</p>
+          <ul>
+            <li><b>Erythematotelangiectatic</b> — persistent redness, flushing, visible vessels.</li>
+            <li><b>Papulopustular</b> — inflammatory papules/pustules; often mistaken for acne, but <b>no comedones</b>.</li>
+            <li><b>Phymatous</b> — skin thickening (e.g. rhinophyma).</li>
+            <li><b>Ocular</b> — dry, gritty, irritated eyes and lid-margin inflammation (commonly missed).</li>
+          </ul>
+          <p><b>Common triggers:</b> sunlight, heat, alcohol, spicy food, hot drinks, stress.</p>
+        </div>
+
+        <div class="gsec"><h3>Assess &amp; rule out</h3>
+          <ul>
+            <li>No comedones → not acne vulgaris.</li>
+            <li>Consider differentials: perioral dermatitis, seborrhoeic dermatitis, lupus (malar rash), photodermatitis.</li>
+            <li>Always ask about <b>eye symptoms</b> — ocular rosacea is under-recognised.</li>
+          </ul>
+        </div>
+
+        <div class="gsec"><h3>Manage — general measures (everyone)</h3>
+          <ul>
+            <li>Identify and avoid triggers.</li>
+            <li>Daily broad-spectrum <b>SPF 30+</b>.</li>
+            <li>Gentle, non-soap cleanser; fragrance-free moisturiser.</li>
+          </ul>
+        </div>
+
+        <div class="gsec"><h3>Manage — by presentation</h3>
+          <ul>
+            <li><b>Papulopustular:</b> first-line topical — ivermectin or metronidazole (or azelaic acid). Moderate–severe/refractory — add an oral option (e.g. low-dose doxycycline). Confirm within your scope/formulary.</li>
+            <li><b>Persistent redness/flushing:</b> topical brimonidine can reduce redness short-term; prioritise trigger control.</li>
+            <li><b>Phymatous:</b> refer to dermatology (may need procedural treatment).</li>
+            <li><b>Ocular:</b> lid hygiene + warm compresses + ocular lubricants; refer optometry/ophthalmology if not settling or vision affected.</li>
+          </ul>
+        </div>
+
+        <div class="gsec"><h3>Review &amp; expectations</h3>
+          <ul>
+            <li>Review at <b>6–8 weeks</b>.</li>
+            <li>Set expectations: rosacea is <b>controlled, not cured</b>; topicals take several weeks to work.</li>
+          </ul>
+        </div>
+
+        <div class="gsec redflag"><h3>Refer / escalate</h3>
+          <ul>
+            <li>Ocular involvement affecting vision.</li>
+            <li>Phymatous change.</li>
+            <li>Diagnostic uncertainty, or not responding to first-line.</li>
+          </ul>
+          <p style="margin-top:6px"><b>Safety-net:</b> advise the patient to seek prompt review for worsening eye symptoms or any change in vision.</p>
+        </div>
+      </div>
+
+      <!-- PATIENT VIEW -->
+      <div id="pat" class="hide">
+        <div class="gsec"><p class="oneline">Rosacea is a common, long-term skin condition that mainly affects the face. It causes redness, flushing and sometimes small bumps — it's <b>not</b> caused by poor hygiene, and it isn't acne.</p></div>
+        <div class="gsec"><h3>What can trigger it</h3><p>Common triggers are sun, heat, alcohol, spicy food, hot drinks and stress — though everyone's are slightly different. Noticing yours is a big part of managing it.</p></div>
+        <div class="gsec"><h3>What helps day to day</h3>
+          <ul>
+            <li>Wear sunscreen every day (SPF 30 or higher).</li>
+            <li>Use a gentle, fragrance-free cleanser and moisturiser.</li>
+            <li>Try to spot and avoid your personal triggers.</li>
+          </ul>
+        </div>
+        <div class="gsec"><h3>Treatments</h3><p>Depending on your type of rosacea, your clinician may prescribe a cream — and sometimes tablets for a while. Treatments <b>control</b> rosacea rather than cure it, and creams can take a few weeks to start working.</p></div>
+        <div class="gsec"><h3>Your eyes</h3><p>Rosacea can affect the eyes, making them dry, gritty or irritated. Please tell your clinician if you notice this.</p></div>
+        <div class="gsec redflag"><h3>Get seen sooner if…</h3><p>your eyes become painful or your vision changes — seek advice promptly.</p></div>
+      </div>
+
+      <div class="disc" style="margin-top:8px">Decision support only. AI-drafted and clinician-reviewed; the treating clinician remains responsible for the decision. Verify against the current source before acting.</div>
+    </div>
+  </div>
+</main>
+
+<script>
+const c=document.getElementById('clin'),p=document.getElementById('pat'),bc=document.getElementById('tClin'),bp=document.getElementById('tPat');
+bc.onclick=()=>{c.classList.remove('hide');p.classList.add('hide');bc.classList.add('on');bp.classList.remove('on')};
+bp.onclick=()=>{p.classList.remove('hide');c.classList.add('hide');bp.classList.add('on');bc.classList.remove('on')};
+</script>
+</body>
+</html>
