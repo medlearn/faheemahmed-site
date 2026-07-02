@@ -9,7 +9,7 @@
 ## 1. What Clinickly Co-pilot is (plain English)
 A software tool for **independent prescribers and private clinics** (pharmacists, nurses, and other prescribers), with two parts:
 1. **AI co-pilot** — during/around a consultation it transcribes, **drafts a structured clinical note** (a documentation aid), and **surfaces the relevant clinical guidance** for the clinician to read and apply. It does **not** diagnose, prescribe, or give patient-specific instructions.
-2. **Human MDT** — an expert panel (GP, psychiatrist, dermatologist, chair) the clinician can submit **anonymised** cases to for **advisory** opinions, and meet with.
+2. **Human MDT** — an expert panel (GP, psychiatrist, dermatologist, chair) the clinician submits **anonymised** cases to for **teaching, training, peer discussion and CPD** (case-based education), and meets with. It is an **educational/reflective** activity — not a clinical advisory service on live patients.
 
 **The golden rule, built into the product:** *the tool supports the clinician's judgement; it never decides.* Every note and prompt is reviewed and signed by the treating clinician, who **remains the decision-maker and remains accountable.**
 
@@ -35,7 +35,9 @@ For the pilot, Clinickly is an **anonymised assistant, not the patient record.**
 
 **3.3 Guidance + documentation — the clinician decides.** The tool **offers clinical guidance/reference** and **drafts documentation**; the clinician **reads, applies, edits and signs**. It does not diagnose, prescribe, or issue patient-specific instructions. **Accountability stays with the treating clinician.** Every action is audit-logged. *(We are deliberately positioning Clinickly as a guidance/reference + documentation tool, not patient-specific decision-support software — see §7.)*
 
-**3.4 The MDT is advisory only.** Panel members give **advisory peer opinions on anonymised cases** — this is **not** a transfer of clinical responsibility to them. We need panel agreements covering advisory scope, indemnity, remuneration and confidentiality.
+**3.4 The MDT is an anonymised educational / CPD activity.** The MDT exists for **teaching, training, peer discussion and CPD/reflection**, using **anonymised cases only** (no identifiers). It is **case-based education** — **not** a clinical advisory service on live patients, and not patient care. Panel input is **educational/reflective**, **not** a transfer of clinical responsibility; the treating clinician remains solely responsible for any decision about their own patient. We need panel agreements covering educational scope, indemnity, remuneration and confidentiality.
+
+*(This educational framing further supports the position in §7 that Clinickly is not a medical device.)*
 
 **3.5 AI use.** AI drafts content and notes; **a human verifies before anything is relied on or published.** API keys are server-side. No real patient data during the pilot.
 
