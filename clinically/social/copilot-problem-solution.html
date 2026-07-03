@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Clinickly — problem/solution UI segments (32s timeline)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#061715}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:#fff}
+.stage{position:relative;width:540px;height:960px;overflow:hidden;
+  background:linear-gradient(160deg,#0C2C2A 0%,#0e615b 100%);isolation:isolate}
+.stage::before{content:"";position:absolute;left:-20%;top:-12%;width:90%;height:46%;
+  background:radial-gradient(circle at 50% 50%,rgba(127,233,223,.16),transparent 62%);z-index:0}
+.stage::after{content:"";position:absolute;right:-24%;bottom:-10%;width:90%;height:44%;
+  background:radial-gradient(circle at 50% 50%,rgba(106,75,240,.14),transparent 64%);z-index:0}
+.serif{font-family:"Bodoni Moda",serif;font-weight:700;letter-spacing:-.015em;line-height:1.08}
+.mint{color:#7FE9DF}
+.word{position:absolute;top:34px;left:0;right:0;text-align:center;z-index:6;
+  font-family:"Bodoni Moda",serif;font-weight:700;font-size:23px;opacity:0;
+  animation:fadeIn .5s .3s both}
+.word .cp{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;opacity:.6;margin-left:.6em}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:110px 44px 130px;gap:26px;opacity:0;z-index:2;
+  animation:sceneIn .6s var(--in) both, fadeOut .5s var(--out) forwards}
+.el{opacity:0;animation:elIn .6s var(--d) both}
+.chip{display:inline-flex;align-items:center;gap:9px;font-family:"IBM Plex Mono",monospace;
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#08201E;font-weight:500;
+  background:#7FE9DF;padding:10px 20px;border-radius:100px}
+.chip.v{background:#A78BFF}
+.head{font-size:40px;text-align:center}
+.card{width:100%;background:rgba(6,26,24,.6);border:1.5px solid rgba(127,233,223,.32);
+  border-radius:18px;padding:24px 24px}
+.chead{display:flex;align-items:center;gap:9px;margin-bottom:16px}
+.cdot{width:9px;height:9px;border-radius:50%;background:#7FE9DF;flex:none}
+.ccap{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:#9FC9C4;letter-spacing:.14em;text-transform:uppercase}
+.row{display:flex;gap:14px;margin-bottom:15px}
+.row b{flex:none;width:30px;height:30px;border-radius:9px;background:rgba(127,233,223,.16);
+  border:1px solid rgba(127,233,223,.4);color:#7FE9DF;font-family:"IBM Plex Mono",monospace;
+  font-size:15px;display:flex;align-items:center;justify-content:center}
+.row p{font-size:16.5px;line-height:1.45;color:#DCEFEC;padding-top:3px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:#7FE9DF;color:#08201E;
+  font-weight:700;font-size:15px;padding:10px 18px;border-radius:100px;margin-top:4px}
+.nl{stroke:#7FE9DF;stroke-width:1.8;stroke-dasharray:170;stroke-dashoffset:170;opacity:.7;
+  animation:dash 1.4s var(--d) both}
+.nsat{opacity:0;animation:elIn .7s var(--d) both}
+.pulse{fill:none;stroke:#7FE9DF;stroke-width:1.5;transform-box:fill-box;transform-origin:center;
+  opacity:0;animation:pulse 2.4s ease-out infinite}
+.ntxt{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:12.5px;fill:#08201E}
+.ntxt.s{fill:#EAFBF9;font-weight:500;font-size:11.5px}
+.msg{display:flex;gap:12px;width:100%}
+.av{flex:none;width:38px;height:38px;border-radius:50%;background:#0E8C84;
+  display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700}
+.msg .txt{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+  border-radius:14px;padding:12px 16px;font-size:16px;line-height:1.45}
+.msg .who{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:#7FE9DF;margin-bottom:4px}
+.s3 .l1,.s3 .l2{font-size:33px}
+.s3 .l3{font-size:47px;margin-top:10px}
+.uline{height:9px;width:130px;background:#6A4BF0;border-radius:5px;margin:16px auto 8px;
+  transform:scaleX(0);transform-origin:center;animation:grow .7s var(--d) both}
+.s3 .brand{font-size:26px;margin-top:28px}
+.s3 .url{font-family:"IBM Plex Mono",monospace;color:#7FE9DF;font-size:16px;margin-top:8px}
+@keyframes sceneIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0}}
+@keyframes elIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes dash{from{stroke-dashoffset:170}to{stroke-dashoffset:0}}
+@keyframes pulse{0%{transform:scale(.7);opacity:.55}100%{transform:scale(1.7);opacity:0}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="word">Clinic<span class="mint">kly</span><span class="cp">CO&#8209;PILOT</span></div>
+
+  <!-- SEG 1 · 0-12s · solution 1: the co-pilot writes -->
+  <div class="scene" style="--in:.2s;--out:11.5s">
+    <div class="el chip" style="--d:.8s">Solution 01 — the co&#8209;pilot</div>
+    <div class="el serif head" style="--d:1.4s">It writes the<br>notes <span class="mint">for you.</span></div>
+    <div class="el card" style="--d:3s">
+      <div class="chead"><span class="cdot"></span><span class="ccap">Consultation note — draft</span></div>
+      <div class="el row" style="--d:4.2s"><b>S</b><p>Itchy rash, 3 months. Cream didn't help.</p></div>
+      <div class="el row" style="--d:6s"><b>A</b><p>?Psoriasis — for review.</p></div>
+      <div class="el row" style="--d:7.8s"><b>P</b><p>Check guidance. Consider referral.</p></div>
+      <div class="el badge" style="--d:9.6s">&#10003; Draft ready — you review &amp; sign</div>
+    </div>
+  </div>
+
+  <!-- SEG 2 · 12-24s · solution 2: the MDT team -->
+  <div class="scene" style="--in:12.2s;--out:23.5s">
+    <div class="el chip v" style="--d:12.8s">Solution 02 — the MDT team</div>
+    <div class="el serif head" style="--d:13.4s">A team for the<br><span class="mint">hard cases.</span></div>
+    <svg class="el" style="--d:15s;width:82%" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+      <line class="nl" style="--d:15.6s" x1="150" y1="115" x2="55" y2="55"/>
+      <line class="nl" style="--d:16s" x1="150" y1="115" x2="248" y2="63"/>
+      <line class="nl" style="--d:16.4s" x1="150" y1="115" x2="66" y2="180"/>
+      <line class="nl" style="--d:16.8s" x1="150" y1="115" x2="240" y2="178"/>
+      <circle class="pulse" cx="150" cy="115" r="32"/>
+      <circle cx="150" cy="115" r="32" fill="#7FE9DF"/>
+      <text class="ntxt" x="150" y="120" text-anchor="middle">You</text>
+      <g class="nsat" style="--d:16.4s"><circle cx="55" cy="55" r="22" fill="#0E8C84"/><text class="ntxt s" x="55" y="59" text-anchor="middle">GP</text></g>
+      <g class="nsat" style="--d:16.8s"><circle cx="248" cy="63" r="22" fill="#0E8C84"/><text class="ntxt s" x="248" y="67" text-anchor="middle">Psych</text></g>
+      <g class="nsat" style="--d:17.2s"><circle cx="66" cy="180" r="22" fill="#0E8C84"/><text class="ntxt s" x="66" y="184" text-anchor="middle">Derm</text></g>
+      <g class="nsat" style="--d:17.6s"><circle cx="240" cy="178" r="22" fill="#6A4BF0"/><text class="ntxt s" x="240" y="182" text-anchor="middle">+</text></g>
+    </svg>
+    <div class="el msg" style="--d:19.5s">
+      <div class="av">DM</div>
+      <div class="txt"><span class="who">Dermatology</span>Looks like psoriasis — check nails and scalp too.</div>
+    </div>
+  </div>
+
+  <!-- SEG 3 · 24-32s · close -->
+  <div class="scene s3" style="--in:24.2s;--out:999s;gap:8px">
+    <div class="el serif l1" style="--d:24.7s">AI does the admin.</div>
+    <div class="el serif l2" style="--d:26.3s">The MDT for the difficult.</div>
+    <div class="el serif l3 mint" style="--d:27.9s">You make the call.</div>
+    <div class="uline" style="--d:29.3s"></div>
+    <div class="el serif brand" style="--d:29.9s">Clinic<span class="mint">kly</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.6;margin-left:.6em">CO&#8209;PILOT</span></div>
+    <div class="el url" style="--d:30.3s">clinickly.com</div>
+  </div>
+</div>
+</body>
+</html>
