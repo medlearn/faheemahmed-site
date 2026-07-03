@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinickly Co-pilot — vertical explainer (48s)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#061715}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:#fff}
+
+/* ---- stage: 540x960 css px, captured at 2x = 1080x1920 ---- */
+.stage{position:relative;width:540px;height:960px;overflow:hidden;
+  background:linear-gradient(160deg,#0C2C2A 0%,#0e615b 100%);isolation:isolate}
+.stage::before{content:"";position:absolute;left:-20%;top:-12%;width:90%;height:46%;
+  background:radial-gradient(circle at 50% 50%,rgba(127,233,223,.16),transparent 62%);z-index:0}
+.stage::after{content:"";position:absolute;right:-24%;bottom:-10%;width:90%;height:44%;
+  background:radial-gradient(circle at 50% 50%,rgba(106,75,240,.14),transparent 64%);z-index:0}
+
+/* ---- shared type ---- */
+.kick{font-family:"IBM Plex Mono",monospace;letter-spacing:.26em;color:#7FE9DF;font-size:13px;text-transform:uppercase}
+.serif{font-family:"Bodoni Moda",serif;font-weight:700;letter-spacing:-.015em;line-height:1.06}
+.mint{color:#7FE9DF}
+.violet{color:#A78BFF}
+.mono{font-family:"IBM Plex Mono",monospace}
+
+/* ---- persistent wordmark (scenes 3-8) ---- */
+.word{position:absolute;top:30px;left:0;right:0;text-align:center;z-index:6;
+  font-family:"Bodoni Moda",serif;font-weight:700;font-size:22px;opacity:0;
+  animation:fadeIn .5s var(--in) both, fadeOut .4s var(--out) forwards}
+.word .cp{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;opacity:.6;margin-left:.6em}
+
+/* ---- scene scaffolding ---- */
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  padding:96px 44px 120px;opacity:0;z-index:2;
+  animation:sceneIn .55s var(--in) both, fadeOut .45s var(--out) forwards}
+.el{opacity:0;animation:elIn .5s var(--d) both}
+.s3,.s4,.s5,.s7{justify-content:center;padding-bottom:300px}
+.caption{position:absolute;left:40px;right:40px;bottom:150px;text-align:center}
+.caption .cap{font-size:25px;font-weight:600;line-height:1.35;color:#EAFBF9}
+.caption .kick{display:block;margin-bottom:12px;font-size:11.5px}
+
+/* ---- cards / UI chrome ---- */
+.card{width:100%;background:rgba(6,26,24,.55);border:1.5px solid rgba(127,233,223,.30);
+  border-radius:16px;padding:20px 22px;backdrop-filter:blur(2px)}
+.chead{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.cdot{width:8px;height:8px;border-radius:50%;background:#7FE9DF;flex:none}
+.cdot.rec{background:#FF6B6B}
+.ccap{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#9FC9C4;letter-spacing:.14em;text-transform:uppercase}
+
+/* ================= S1 — HOOK (0-4s) ================= */
+.s1{justify-content:center;text-align:center;gap:22px}
+.s1 .head{font-size:44px}
+.s1 .sub{color:#B7DAD6;font-size:19px}
+
+/* ================= S2 — TWO PILLARS (4-9s) ================= */
+.s2{justify-content:center;text-align:center;gap:18px}
+.s2 .brand{font-size:46px}
+.s2 .sub{color:#CDE9E6;font-size:19px;margin-bottom:14px}
+.pillar{width:100%;text-align:left;display:flex;gap:16px;align-items:center;
+  background:rgba(6,26,24,.5);border:1.5px solid rgba(127,233,223,.3);border-radius:16px;padding:20px 22px}
+.pillar .num{font-family:"IBM Plex Mono",monospace;font-size:26px;color:#7FE9DF;flex:none}
+.pillar h3{font-family:"Bodoni Moda",serif;font-size:22px;font-weight:700;margin-bottom:3px}
+.pillar p{font-size:14px;color:#B7DAD6}
+.pillar.p2{border-color:rgba(106,75,240,.55)}
+.pillar.p2 .num{color:#A78BFF}
+
+/* ================= S3 — LISTENING (9-15s) ================= */
+.wave{display:flex;align-items:center;gap:5px;height:30px;margin:2px 0 14px}
+.wave i{width:5px;border-radius:3px;background:#7FE9DF;height:8px;
+  animation:wv 1.1s ease-in-out infinite}
+.wave i:nth-child(2){animation-delay:.12s}.wave i:nth-child(3){animation-delay:.24s}
+.wave i:nth-child(4){animation-delay:.36s}.wave i:nth-child(5){animation-delay:.48s}
+.wave i:nth-child(6){animation-delay:.6s}.wave i:nth-child(7){animation-delay:.72s}
+.bub{max-width:88%;padding:11px 15px;border-radius:13px;font-size:15px;line-height:1.4;margin-bottom:11px}
+.bub .who{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;opacity:.65;margin-bottom:4px}
+.bub.dr{background:rgba(127,233,223,.14);border:1px solid rgba(127,233,223,.3);align-self:flex-start}
+.bub.pt{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);align-self:flex-end}
+.s3 .card{display:flex;flex-direction:column}
+
+/* ================= S4 — SOAP NOTE (15-21s) ================= */
+.stack{position:relative;width:100%}
+.letter{position:absolute;left:14px;right:-14px;top:38px;height:100%;
+  background:rgba(9,34,31,.9);border:1.5px solid rgba(127,233,223,.2);border-radius:16px;z-index:-1;
+  display:flex;align-items:flex-end;justify-content:flex-end;padding:9px 18px}
+.letter .ccap{color:#7FE9DF}
+.soap{display:flex;gap:13px;margin-bottom:13px}
+.soap b{flex:none;width:26px;height:26px;border-radius:8px;background:rgba(127,233,223,.16);
+  border:1px solid rgba(127,233,223,.4);color:#7FE9DF;font-family:"IBM Plex Mono",monospace;
+  font-size:13px;display:flex;align-items:center;justify-content:center}
+.soap p{font-size:13.5px;line-height:1.45;color:#DCEFEC;padding-top:3px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:#7FE9DF;color:#08201E;
+  font-weight:700;font-size:13px;padding:8px 16px;border-radius:100px;margin-top:6px}
+
+/* ================= S5 — GUIDELINE (21-26s) ================= */
+.gl{font-size:13.5px;line-height:1.5;color:#C9E6E2;margin-bottom:10px}
+.gl.hi{position:relative;background:rgba(106,75,240,.16);border-left:3px solid #6A4BF0;
+  border-radius:0 9px 9px 0;padding:9px 12px;color:#EFEAFF}
+.foot{font-size:12px;color:#9FC9C4;font-style:italic;margin-top:8px}
+
+/* ================= S6 — TRANSITION (26-30s) ================= */
+.s6{justify-content:center;gap:26px}
+.s6 .card{width:88%}
+.flag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,176,32,.16);
+  border:1px solid rgba(255,176,32,.6);color:#FFD27A;font-weight:600;font-size:13px;
+  padding:7px 14px;border-radius:100px;margin-top:10px}
+.s6 .big{font-size:33px;text-align:center}
+.case-lines .ln{height:8px;border-radius:4px;background:rgba(255,255,255,.18);margin-bottom:9px}
+
+/* ================= S7 — MDT NETWORK (30-36s) ================= */
+.chip{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;
+  font-size:11px;letter-spacing:.1em;color:#CDE9E6;background:rgba(6,26,24,.6);
+  border:1px solid rgba(127,233,223,.35);padding:8px 15px;border-radius:100px}
+.chip .cdot{width:7px;height:7px}
+.net{width:88%;margin-top:26px}
+.nl{stroke:#7FE9DF;stroke-width:1.7;stroke-dasharray:170;stroke-dashoffset:170;opacity:.7;
+  animation:dash .9s var(--d) both}
+.nsat{opacity:0;animation:elIn .5s var(--d) both}
+.pulse{fill:none;stroke:#7FE9DF;stroke-width:1.5;transform-box:fill-box;transform-origin:center;
+  opacity:0;animation:pulse 2.2s ease-out infinite}
+.ntxt{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:12px;fill:#08201E}
+.ntxt.s{fill:#EAFBF9;font-weight:500;font-size:11px}
+
+/* ================= S8 — PANEL CHAT (36-42s) ================= */
+.msg{display:flex;gap:11px;width:100%;margin-bottom:13px}
+.av{flex:none;width:34px;height:34px;border-radius:50%;background:#0E8C84;
+  display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700}
+.msg .txt{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  border-radius:13px;padding:10px 14px;font-size:14px;line-height:1.4}
+.msg .who{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:#7FE9DF;margin-bottom:3px}
+.summary{width:100%;background:rgba(106,75,240,.16);border:1.5px solid rgba(106,75,240,.6);
+  border-radius:14px;padding:15px 18px;margin-top:4px}
+.summary .ccap{color:#C9B8FF}
+.summary p{font-size:13.5px;line-height:1.45;color:#EFEAFF;margin-top:6px}
+
+/* ================= S9 — END CARD (42-48s) ================= */
+.s9{justify-content:center;text-align:center;gap:14px}
+.s9 .l1,.s9 .l2{font-size:31px}
+.s9 .l3{font-size:44px;margin-top:8px}
+.uline{height:9px;width:120px;background:#6A4BF0;border-radius:5px;margin:14px auto 8px;
+  transform:scaleX(0);transform-origin:center;animation:grow .6s var(--d) both}
+.s9 .brand{font-size:24px;margin-top:26px}
+.s9 .url{font-family:"IBM Plex Mono",monospace;color:#7FE9DF;font-size:15px;margin-top:6px}
+
+/* ---- keyframes ---- */
+@keyframes sceneIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0}}
+@keyframes elIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes wv{0%,100%{height:8px}50%{height:26px}}
+@keyframes dash{from{stroke-dashoffset:170}to{stroke-dashoffset:0}}
+@keyframes pulse{0%{transform:scale(.7);opacity:.55}100%{transform:scale(1.7);opacity:0}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <!-- persistent wordmark during product scenes -->
+  <div class="word" style="--in:9s;--out:41.6s">Clinic<span class="mint">kly</span><span class="cp">CO&#8209;PILOT</span></div>
+
+  <!-- S1 · 0-4s · hook -->
+  <div class="scene s1" style="--in:.2s;--out:3.6s">
+    <div class="el kick" style="--d:.4s">clinickly co&#8209;pilot</div>
+    <div class="el serif head" style="--d:.7s">Clinicians lose<br><span class="mint">hours every day</span><br>to paperwork.</div>
+    <div class="el sub" style="--d:1.5s">There's a better way to work.</div>
+  </div>
+
+  <!-- S2 · 4-9s · the two pillars -->
+  <div class="scene s2" style="--in:4.1s;--out:8.6s">
+    <div class="el serif brand" style="--d:4.3s">Clinic<span class="mint">kly</span></div>
+    <div class="el sub" style="--d:4.6s">A co&#8209;pilot for clinicians. Two pillars.</div>
+    <div class="el pillar" style="--d:5.2s">
+      <div class="num">01</div>
+      <div><h3>AI for the everyday</h3><p>Notes, letters and guidance — drafted for you.</p></div>
+    </div>
+    <div class="el pillar p2" style="--d:5.9s">
+      <div class="num">02</div>
+      <div><h3>The MDT for the difficult</h3><p>Real specialists discuss the hard, anonymised cases.</p></div>
+    </div>
+  </div>
+
+  <!-- S3 · 9-15s · pillar 1: listening -->
+  <div class="scene s3" style="--in:9.1s;--out:14.6s">
+    <div class="el card" style="--d:9.4s">
+      <div class="chead"><span class="cdot rec"></span><span class="ccap">Consultation — live</span></div>
+      <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="el bub dr" style="--d:10.2s"><span class="who">Clinician</span>So tell me about this rash.</div>
+      <div class="el bub pt" style="--d:11.2s"><span class="who">Patient</span>It's been three months now — really itchy.</div>
+      <div class="el bub pt" style="--d:12.3s"><span class="who">Patient</span>The cream I was given didn't help.</div>
+    </div>
+    <div class="caption">
+      <span class="kick el" style="--d:9.7s">pillar one — the co&#8209;pilot</span>
+      <div class="cap el" style="--d:9.9s">It listens during the consultation&hellip;</div>
+    </div>
+  </div>
+
+  <!-- S4 · 15-21s · pillar 1: the note drafts itself -->
+  <div class="scene s4" style="--in:15.1s;--out:20.6s">
+    <div class="el stack" style="--d:15.4s">
+      <div class="el letter" style="--d:19s"><span class="ccap">&#10003; referral letter — drafted</span></div>
+      <div class="card">
+        <div class="chead"><span class="cdot"></span><span class="ccap">Consultation note — draft</span></div>
+        <div class="el soap" style="--d:15.9s"><b>S</b><p>Itchy rash, left forearm, 3 months. Topical steroid tried — minimal response.</p></div>
+        <div class="el soap" style="--d:16.7s"><b>O</b><p>Well&#8209;demarcated erythematous plaques with scale.</p></div>
+        <div class="el soap" style="--d:17.5s"><b>A</b><p>?Psoriasis vs chronic eczema — for review.</p></div>
+        <div class="el soap" style="--d:18.3s"><b>P</b><p>Photograph &amp; document. Check guidance. Consider referral.</p></div>
+        <div class="el badge" style="--d:19.7s">&#10003; Draft ready — review &amp; edit</div>
+      </div>
+    </div>
+    <div class="caption">
+      <span class="kick el" style="--d:15.5s">pillar one — the co&#8209;pilot</span>
+      <div class="cap el" style="--d:15.7s">&hellip;and drafts the notes and letters<br>before you've finished.</div>
+    </div>
+  </div>
+
+  <!-- S5 · 21-26s · pillar 1: guidance surfaced -->
+  <div class="scene s5" style="--in:21.1s;--out:25.6s">
+    <div class="el card" style="--d:21.3s">
+      <div class="chead"><span class="cdot"></span><span class="ccap">Guideline reference — psoriasis (adult)</span></div>
+      <div class="el gl" style="--d:21.8s">Assess severity and impact; check nails and scalp.</div>
+      <div class="el gl hi" style="--d:22.5s">First&#8209;line: potent topical corticosteroid <em>plus</em> vitamin&nbsp;D analogue.</div>
+      <div class="el gl" style="--d:23.2s">Review at 4 weeks; escalate or refer if inadequate response.</div>
+      <div class="el foot" style="--d:23.9s">Surfaced for reference — the decision stays yours.</div>
+    </div>
+    <div class="caption">
+      <span class="kick el" style="--d:21.5s">pillar one — the co&#8209;pilot</span>
+      <div class="cap el" style="--d:21.7s">Relevant guidance, surfaced<br>at the right moment.</div>
+    </div>
+  </div>
+
+  <!-- S6 · 26-30s · transition: the difficult case -->
+  <div class="scene s6" style="--in:26.1s;--out:29.6s">
+    <div class="el card" style="--d:26.3s">
+      <div class="chead"><span class="cdot" style="background:#FFB020"></span><span class="ccap">Case review</span></div>
+      <div class="case-lines">
+        <div class="ln" style="width:92%"></div>
+        <div class="ln" style="width:74%"></div>
+        <div class="ln" style="width:58%"></div>
+      </div>
+      <div class="el flag" style="--d:27s">&#9873; Complex — poor response to treatment</div>
+    </div>
+    <div class="el serif big" style="--d:27.6s">But some cases need<br><span class="violet">more than AI.</span></div>
+  </div>
+
+  <!-- S7 · 30-36s · pillar 2: the MDT network -->
+  <div class="scene s7" style="--in:30.1s;--out:35.6s">
+    <div class="el chip" style="--d:30.5s"><span class="cdot"></span>anonymised case — no patient identifiers</div>
+    <svg class="net el" style="--d:30.8s" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+      <line class="nl" style="--d:31.2s" x1="150" y1="115" x2="55" y2="55"/>
+      <line class="nl" style="--d:31.4s" x1="150" y1="115" x2="248" y2="63"/>
+      <line class="nl" style="--d:31.6s" x1="150" y1="115" x2="66" y2="180"/>
+      <line class="nl" style="--d:31.8s" x1="150" y1="115" x2="240" y2="178"/>
+      <circle class="pulse" cx="150" cy="115" r="32"/>
+      <circle cx="150" cy="115" r="32" fill="#7FE9DF"/>
+      <text class="ntxt" x="150" y="120" text-anchor="middle">You</text>
+      <g class="nsat" style="--d:31.6s"><circle cx="55" cy="55" r="22" fill="#0E8C84"/><text class="ntxt s" x="55" y="59" text-anchor="middle">GP</text></g>
+      <g class="nsat" style="--d:31.8s"><circle cx="248" cy="63" r="22" fill="#0E8C84"/><text class="ntxt s" x="248" y="67" text-anchor="middle">Psych</text></g>
+      <g class="nsat" style="--d:32s"><circle cx="66" cy="180" r="22" fill="#0E8C84"/><text class="ntxt s" x="66" y="184" text-anchor="middle">Derm</text></g>
+      <g class="nsat" style="--d:32.2s"><circle cx="240" cy="178" r="22" fill="#6A4BF0"/><text class="ntxt s" x="240" y="182" text-anchor="middle">+</text></g>
+    </svg>
+    <div class="caption">
+      <span class="kick el" style="--d:30.9s">pillar two — the mdt</span>
+      <div class="cap el" style="--d:31.1s">Difficult cases go to a<br>real specialist panel.</div>
+    </div>
+  </div>
+
+  <!-- S8 · 36-42s · pillar 2: the panel discusses -->
+  <div class="scene s8" style="--in:36.1s;--out:41.6s">
+    <div class="el msg" style="--d:36.5s">
+      <div class="av">DM</div>
+      <div class="txt"><span class="who">Dermatology</span>Pattern fits psoriasis — worth checking nails and scalp too.</div>
+    </div>
+    <div class="el msg" style="--d:37.7s">
+      <div class="av">GP</div>
+      <div class="txt"><span class="who">General practice</span>Agree. I'd only biopsy if it looks atypical at review.</div>
+    </div>
+    <div class="el msg" style="--d:38.9s">
+      <div class="av" style="background:#6A4BF0">PS</div>
+      <div class="txt"><span class="who">Psychiatry</span>Ask about sleep and mood — chronic itch affects both.</div>
+    </div>
+    <div class="el summary" style="--d:40.2s">
+      <span class="ccap">Panel summary</span>
+      <p>Consensus captured &amp; shared with the whole team — everyone learns from every case.</p>
+    </div>
+    <div class="caption">
+      <span class="kick el" style="--d:36.3s">pillar two — the mdt</span>
+      <div class="cap el" style="--d:40.6s">Specialists discuss. Everyone learns.</div>
+    </div>
+  </div>
+
+  <!-- S9 · 42-48s · end card -->
+  <div class="scene s9" style="--in:42.1s;--out:999s">
+    <div class="el serif l1" style="--d:42.4s">AI does the admin.</div>
+    <div class="el serif l2" style="--d:43.1s">The MDT for the difficult.</div>
+    <div class="el serif l3 mint" style="--d:43.9s">You make the call.</div>
+    <div class="uline" style="--d:44.7s"></div>
+    <div class="el serif brand" style="--d:45.3s">Clinic<span class="mint">kly</span><span class="cp" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.6;margin-left:.6em">CO&#8209;PILOT</span></div>
+    <div class="el url" style="--d:45.7s">clinickly.com</div>
+  </div>
+
+</div>
+</body>
+</html>
