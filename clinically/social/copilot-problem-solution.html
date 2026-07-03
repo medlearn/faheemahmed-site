@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<title>Clinickly — problem/solution v2 (46s timeline)</title>
+<title>Clinickly — problem/solution v3 (49s timeline)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -14,83 +14,54 @@ body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:#fff}
   background:radial-gradient(circle at 50% 50%,rgba(127,233,223,.16),transparent 62%);z-index:0}
 .stage::after{content:"";position:absolute;right:-24%;bottom:-10%;width:90%;height:44%;
   background:radial-gradient(circle at 50% 50%,rgba(106,75,240,.14),transparent 64%);z-index:0}
-/* problem-mode dim overlays (same brand bg, darker + amber cast) */
 .dim{position:absolute;inset:0;z-index:1;opacity:0;
   background:radial-gradient(circle at 50% 18%,rgba(255,176,32,.10),transparent 60%),rgba(4,16,15,.58)}
-.dim1{animation:fadeIn .6s .0s both, fadeOut .6s 7.4s forwards}
-.dim2{animation:fadeIn .6s 19s both, fadeOut .6s 26.4s forwards}
+.dim1{animation:fadeIn .6s 0s both, fadeOut .6s 8.4s forwards}
+.dim2{animation:fadeIn .6s 20s both, fadeOut .6s 28.4s forwards}
 .serif{font-family:"Bodoni Moda",serif;font-weight:700;letter-spacing:-.015em;line-height:1.08}
 .mint{color:#7FE9DF}
 .amber{color:#FFD27A}
-.word{position:absolute;top:34px;left:0;right:0;text-align:center;z-index:6;
-  font-family:"Bodoni Moda",serif;font-weight:700;font-size:23px;opacity:0;
-  animation:fadeIn .5s .3s both, fadeOut .5s 37.6s forwards}
-.word .cp{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;opacity:.6;margin-left:.6em}
 .scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;padding:110px 44px 130px;gap:24px;opacity:0;z-index:2;
+  justify-content:center;padding:90px 46px 120px;gap:22px;opacity:0;z-index:2;
   animation:sceneIn .6s var(--in) both, fadeOut .5s var(--out) forwards}
-.el{opacity:0;animation:elIn .6s var(--d) both}
+.el{opacity:0;animation:elIn .55s var(--d) both}
 .chip{display:inline-flex;align-items:center;gap:9px;font-family:"IBM Plex Mono",monospace;
-  font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
-  padding:11px 20px;border-radius:100px}
+  font-size:13.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  padding:11px 21px;border-radius:100px}
 .chip.p{color:#FFD27A;background:rgba(6,23,21,.85);border:1.5px solid rgba(255,176,32,.65)}
 .chip.p .dot{width:9px;height:9px;border-radius:50%;background:#FFB020}
 .chip.s{color:#08201E;background:#7FE9DF}
-.head{font-size:41px;text-align:center}
-.card{width:100%;background:rgba(6,26,24,.6);border:1.5px solid rgba(127,233,223,.32);
-  border-radius:18px;padding:24px 24px}
-.card.pcard{border-color:rgba(255,176,32,.4)}
-.chead{display:flex;align-items:center;gap:9px;margin-bottom:16px}
-.cdot{width:9px;height:9px;border-radius:50%;background:#7FE9DF;flex:none}
-.cdot.a{background:#FFB020}
-.ccap{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:#9FC9C4;letter-spacing:.14em;text-transform:uppercase}
-.row{display:flex;gap:14px;margin-bottom:15px}
-.row b{flex:none;width:30px;height:30px;border-radius:9px;background:rgba(127,233,223,.16);
-  border:1px solid rgba(127,233,223,.4);color:#7FE9DF;font-family:"IBM Plex Mono",monospace;
-  font-size:15px;display:flex;align-items:center;justify-content:center}
-.row p{font-size:16.5px;line-height:1.45;color:#DCEFEC;padding-top:3px}
-.badge{display:inline-flex;align-items:center;gap:7px;background:#7FE9DF;color:#08201E;
-  font-weight:700;font-size:15px;padding:10px 18px;border-radius:100px;margin-top:4px}
-/* problem 1 — the pile */
-.pile{width:86%;display:flex;flex-direction:column-reverse;align-items:center;gap:7px}
-.doc{height:36px;border-radius:9px;background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,176,32,.35);display:flex;align-items:center;padding:0 16px;
-  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;color:#D8C9A8;text-transform:uppercase}
-.late{font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.12em;color:#FFD27A}
-/* problem 2 — the stuck case */
-.ln{height:9px;border-radius:5px;background:rgba(255,255,255,.16);margin-bottom:10px}
-.flag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,176,32,.16);
-  border:1px solid rgba(255,176,32,.6);color:#FFD27A;font-weight:600;font-size:14.5px;
-  padding:9px 16px;border-radius:100px;margin-top:8px}
-.stuck{font-family:"IBM Plex Mono",monospace;font-size:13px;color:#C9BDA0;margin-top:14px}
-/* MDT */
-.nl{stroke:#7FE9DF;stroke-width:1.8;stroke-dasharray:170;stroke-dashoffset:170;opacity:.7;
-  animation:dash 1.3s var(--d) both}
-.nsat{opacity:0;animation:elIn .7s var(--d) both}
-.pulse{fill:none;stroke:#7FE9DF;stroke-width:1.5;transform-box:fill-box;transform-origin:center;
-  opacity:0;animation:pulse 2.4s ease-out infinite}
-.ntxt{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:12.5px;fill:#08201E}
-.ntxt.s{fill:#EAFBF9;font-weight:500;font-size:11.5px}
-.msg{display:flex;gap:12px;width:100%}
-.av{flex:none;width:38px;height:38px;border-radius:50%;background:#0E8C84;
-  display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700}
-.msg .txt{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
-  border-radius:14px;padding:12px 16px;font-size:16px;line-height:1.45}
-.msg .who{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;
-  text-transform:uppercase;color:#7FE9DF;margin-bottom:4px}
-/* close */
-.s5 .l1,.s5 .l2{font-size:33px}
-.s5 .l3{font-size:47px;margin-top:10px}
-.uline{height:9px;width:130px;background:#6A4BF0;border-radius:5px;margin:16px auto 8px;
+.chip.h{color:#EFEAFF;background:rgba(106,75,240,.3);border:1.5px solid rgba(106,75,240,.75)}
+.head{font-size:42px;text-align:center}
+/* checklists */
+.list{display:flex;flex-direction:column;gap:14px;width:100%;max-width:420px;margin-top:6px}
+.xrow{display:flex;align-items:center;gap:14px;background:rgba(6,26,24,.55);
+  border:1.5px solid rgba(255,176,32,.35);border-radius:14px;padding:14px 18px}
+.xrow .mk{flex:none;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;
+  justify-content:center;font-weight:700;font-size:16px;background:rgba(255,176,32,.16);
+  border:1px solid rgba(255,176,32,.55);color:#FFD27A}
+.xrow p{font-size:18.5px;font-weight:600;color:#F3E9D4}
+.crow{display:flex;align-items:center;gap:14px;background:rgba(6,26,24,.55);
+  border:1.5px solid rgba(127,233,223,.35);border-radius:14px;padding:14px 18px}
+.crow .mk{flex:none;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;
+  justify-content:center;font-weight:700;font-size:16px;background:rgba(127,233,223,.16);
+  border:1px solid rgba(127,233,223,.55);color:#7FE9DF}
+.crow p{font-size:18.5px;font-weight:600;color:#E4F6F3}
+/* solution splash */
+.splash .brand{font-size:66px}
+.splash .sub{font-size:20px;color:#CDE9E6}
+.uline{height:9px;width:150px;background:#6A4BF0;border-radius:5px;margin:6px auto 0;
   transform:scaleX(0);transform-origin:center;animation:grow .7s var(--d) both}
-.s5 .brand{font-size:26px;margin-top:28px}
-.s5 .url{font-family:"IBM Plex Mono",monospace;color:#7FE9DF;font-size:16px;margin-top:8px}
+/* close */
+.s7 .l1,.s7 .l2{font-size:33px}
+.s7 .l3{font-size:47px;margin-top:10px}
+.s7 .uline{margin:16px auto 8px;width:130px}
+.s7 .brand{font-size:26px;margin-top:28px}
+.s7 .url{font-family:"IBM Plex Mono",monospace;color:#7FE9DF;font-size:16px;margin-top:8px}
 @keyframes sceneIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes fadeOut{from{opacity:1}to{opacity:0}}
 @keyframes elIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@keyframes dash{from{stroke-dashoffset:170}to{stroke-dashoffset:0}}
-@keyframes pulse{0%{transform:scale(.7);opacity:.55}100%{transform:scale(1.7);opacity:0}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 </style>
 </head>
@@ -98,80 +69,78 @@ body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:#fff}
 <div class="stage">
   <div class="dim dim1"></div>
   <div class="dim dim2"></div>
-  <div class="word">Clinic<span class="mint">kly</span><span class="cp">CO&#8209;PILOT</span></div>
 
-  <!-- P1 · 0-8s · problem 1: the paperwork -->
-  <div class="scene" style="--in:.2s;--out:7.5s">
-    <div class="el chip p" style="--d:.7s"><span class="dot"></span>Problem 01</div>
-    <div class="el serif head" style="--d:1.3s">Buried in<br><span class="amber">paperwork.</span></div>
-    <div class="el pile" style="--d:2.4s">
-      <div class="el doc" style="--d:2.6s;width:100%">Consultation notes</div>
-      <div class="el doc" style="--d:3.4s;width:92%">Referral letter</div>
-      <div class="el doc" style="--d:4.2s;width:96%">Clinic letter</div>
-      <div class="el doc" style="--d:5.0s;width:88%">Med review</div>
-      <div class="el doc" style="--d:5.8s;width:94%">More notes&hellip;</div>
-    </div>
-    <div class="el late" style="--d:6.5s">18:47 — still writing</div>
-  </div>
-
-  <!-- S1 · 8-19s · solved by Clinickly: the co-pilot -->
-  <div class="scene" style="--in:8.1s;--out:18.5s">
-    <div class="el chip s" style="--d:8.7s">&#10003; Solved by Clinickly</div>
-    <div class="el serif head" style="--d:9.3s">The co&#8209;pilot<br>writes it <span class="mint">for you.</span></div>
-    <div class="el card" style="--d:10.6s">
-      <div class="chead"><span class="cdot"></span><span class="ccap">Consultation note — draft</span></div>
-      <div class="el row" style="--d:11.6s"><b>S</b><p>Itchy rash, 3 months. Cream didn't help.</p></div>
-      <div class="el row" style="--d:13.1s"><b>A</b><p>?Psoriasis — for review.</p></div>
-      <div class="el row" style="--d:14.6s"><b>P</b><p>Check guidance. Consider referral.</p></div>
-      <div class="el badge" style="--d:16.2s">&#10003; You just review &amp; sign</div>
+  <!-- 1 · PROBLEM 01 · 0-9s -->
+  <div class="scene" style="--in:.2s;--out:8.5s">
+    <div class="el chip p" style="--d:.6s"><span class="dot"></span>Problem 01</div>
+    <div class="el serif head" style="--d:1.1s">Drowning<br>in <span class="amber">admin.</span></div>
+    <div class="list">
+      <div class="el xrow" style="--d:2.4s"><span class="mk">&#10007;</span><p>Notes &amp; letters to write</p></div>
+      <div class="el xrow" style="--d:3.3s"><span class="mk">&#10007;</span><p>Audits, SOPs &amp; governance</p></div>
+      <div class="el xrow" style="--d:4.2s"><span class="mk">&#10007;</span><p>Endless paperwork</p></div>
+      <div class="el xrow" style="--d:5.1s"><span class="mk">&#10007;</span><p>Out&#8209;of&#8209;date guidelines</p></div>
     </div>
   </div>
 
-  <!-- P2 · 19-27s · problem 2: alone with the hard cases -->
-  <div class="scene" style="--in:19.1s;--out:26.5s">
-    <div class="el chip p" style="--d:19.7s"><span class="dot"></span>Problem 02</div>
-    <div class="el serif head" style="--d:20.3s">Alone with the<br><span class="amber">hard cases.</span></div>
-    <div class="el card pcard" style="--d:21.6s">
-      <div class="chead"><span class="cdot a"></span><span class="ccap">Case review</span></div>
-      <div class="ln" style="width:92%"></div>
-      <div class="ln" style="width:74%"></div>
-      <div class="ln" style="width:58%"></div>
-      <div class="el flag" style="--d:23.2s">&#9873; Not responding to treatment</div>
-      <div class="el stuck" style="--d:24.4s">guidelines checked &#10003; &mdash; still unclear</div>
+  <!-- 2 · SOLUTION splash · 9-13s -->
+  <div class="scene splash" style="--in:9s;--out:12.6s;gap:16px">
+    <div class="el chip s" style="--d:9.4s">The solution</div>
+    <div class="el serif brand" style="--d:9.8s">Clinic<span class="mint">kly</span></div>
+    <div class="uline" style="--d:10.4s"></div>
+    <div class="el sub" style="--d:10.9s">A co&#8209;pilot for clinicians.</div>
+  </div>
+
+  <!-- 3 · HOW · 13-20s -->
+  <div class="scene" style="--in:13s;--out:19.6s">
+    <div class="el chip h" style="--d:13.4s">How it works</div>
+    <div class="el serif head" style="--d:13.9s">It listens<br>&amp; <span class="mint">writes.</span></div>
+    <div class="list">
+      <div class="el crow" style="--d:14.9s"><span class="mk">&#10003;</span><p>Listens to the consultation</p></div>
+      <div class="el crow" style="--d:15.9s"><span class="mk">&#10003;</span><p>Drafts notes &amp; letters</p></div>
+      <div class="el crow" style="--d:16.9s"><span class="mk">&#10003;</span><p>Surfaces current guidance</p></div>
+      <div class="el crow" style="--d:17.9s"><span class="mk">&#10003;</span><p>You just review &amp; sign</p></div>
     </div>
   </div>
 
-  <!-- S2 · 27-38s · solved by Clinickly: the MDT -->
-  <div class="scene" style="--in:27.1s;--out:37.5s">
-    <div class="el chip s" style="--d:27.7s">&#10003; Solved by Clinickly</div>
-    <div class="el serif head" style="--d:28.3s">A specialist team<br><span class="mint">behind you.</span></div>
-    <svg class="el" style="--d:29.6s;width:78%" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
-      <line class="nl" style="--d:30.2s" x1="150" y1="115" x2="55" y2="55"/>
-      <line class="nl" style="--d:30.6s" x1="150" y1="115" x2="248" y2="63"/>
-      <line class="nl" style="--d:31s" x1="150" y1="115" x2="66" y2="180"/>
-      <line class="nl" style="--d:31.4s" x1="150" y1="115" x2="240" y2="178"/>
-      <circle class="pulse" cx="150" cy="115" r="32"/>
-      <circle cx="150" cy="115" r="32" fill="#7FE9DF"/>
-      <text class="ntxt" x="150" y="120" text-anchor="middle">You</text>
-      <g class="nsat" style="--d:31s"><circle cx="55" cy="55" r="22" fill="#0E8C84"/><text class="ntxt s" x="55" y="59" text-anchor="middle">GP</text></g>
-      <g class="nsat" style="--d:31.4s"><circle cx="248" cy="63" r="22" fill="#0E8C84"/><text class="ntxt s" x="248" y="67" text-anchor="middle">Psych</text></g>
-      <g class="nsat" style="--d:31.8s"><circle cx="66" cy="180" r="22" fill="#0E8C84"/><text class="ntxt s" x="66" y="184" text-anchor="middle">Derm</text></g>
-      <g class="nsat" style="--d:32.2s"><circle cx="240" cy="178" r="22" fill="#6A4BF0"/><text class="ntxt s" x="240" y="182" text-anchor="middle">+</text></g>
-    </svg>
-    <div class="el msg" style="--d:33.6s">
-      <div class="av">DM</div>
-      <div class="txt"><span class="who">Dermatology</span>Looks like psoriasis — check nails and scalp too.</div>
+  <!-- 4 · PROBLEM 02 · 20-29s -->
+  <div class="scene" style="--in:20.1s;--out:28.5s">
+    <div class="el chip p" style="--d:20.5s"><span class="dot"></span>Problem 02</div>
+    <div class="el serif head" style="--d:21s">The difficult case.<br><span class="amber">You're alone.</span></div>
+    <div class="list">
+      <div class="el xrow" style="--d:22.3s"><span class="mk">&#10007;</span><p>No MDT to turn to</p></div>
+      <div class="el xrow" style="--d:23.2s"><span class="mk">&#10007;</span><p>No specialist advice</p></div>
+      <div class="el xrow" style="--d:24.1s"><span class="mk">&#10007;</span><p>No reflection on your practice</p></div>
     </div>
   </div>
 
-  <!-- CLOSE · 38-46s -->
-  <div class="scene s5" style="--in:38.1s;--out:999s;gap:8px">
-    <div class="el serif l1" style="--d:38.6s">AI does the admin.</div>
-    <div class="el serif l2" style="--d:40.1s">The MDT for the difficult.</div>
-    <div class="el serif l3 mint" style="--d:41.6s">You make the call.</div>
-    <div class="uline" style="--d:43s"></div>
-    <div class="el serif brand" style="--d:43.7s">Clinic<span class="mint">kly</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.6;margin-left:.6em">CO&#8209;PILOT</span></div>
-    <div class="el url" style="--d:44.1s">clinickly.com</div>
+  <!-- 5 · SOLUTION splash · 29-33s -->
+  <div class="scene splash" style="--in:29s;--out:32.6s;gap:16px">
+    <div class="el chip s" style="--d:29.4s">The solution</div>
+    <div class="el serif brand" style="--d:29.8s">Clinic<span class="mint">kly</span></div>
+    <div class="uline" style="--d:30.4s"></div>
+    <div class="el sub" style="--d:30.9s">Your MDT, built in.</div>
+  </div>
+
+  <!-- 6 · HOW · 33-41s -->
+  <div class="scene" style="--in:33s;--out:40.6s">
+    <div class="el chip h" style="--d:33.4s">How it works</div>
+    <div class="el serif head" style="--d:33.9s">A specialist team<br><span class="mint">behind you.</span></div>
+    <div class="list">
+      <div class="el crow" style="--d:34.9s"><span class="mk">&#10003;</span><p>Share the case — anonymised</p></div>
+      <div class="el crow" style="--d:35.9s"><span class="mk">&#10003;</span><p>Specialists discuss it together</p></div>
+      <div class="el crow" style="--d:36.9s"><span class="mk">&#10003;</span><p>Their thinking comes back to you</p></div>
+      <div class="el crow" style="--d:37.9s"><span class="mk">&#10003;</span><p>Reflect &amp; learn from every case</p></div>
+    </div>
+  </div>
+
+  <!-- 7 · CLOSE · 41-49s -->
+  <div class="scene s7" style="--in:41.1s;--out:999s;gap:8px">
+    <div class="el serif l1" style="--d:41.6s">AI does the admin.</div>
+    <div class="el serif l2" style="--d:43.1s">The MDT for the difficult.</div>
+    <div class="el serif l3 mint" style="--d:44.6s">You make the call.</div>
+    <div class="uline" style="--d:46s"></div>
+    <div class="el serif brand" style="--d:46.7s">Clinic<span class="mint">kly</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.6;margin-left:.6em">CO&#8209;PILOT</span></div>
+    <div class="el url" style="--d:47.1s">clinickly.com</div>
   </div>
 </div>
 </body>
