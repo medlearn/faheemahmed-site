@@ -104,4 +104,21 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 ---
 
+## A6. Regulatory standards (upload store) — ✅ clean; 🛑 currency/versioning
+
+**Good**
+- ✅ **The store that powers the SOP gap-check** (§5.7) — GPhC/CQC/MHRA/NHS as "Reference · used for AI gap-checks on SOPs." Joined up with the SOP model.
+- ✅ Right four sources; Upload to add more; LOADED status.
+
+**🛑 Currency (main flag)**
+- "LOADED" shows **no version/date**. Standards change constantly — **MHRA Drug Safety Updates = monthly**, CQC framework changed, GPhC updates. A stale standard → AI gives **false compliance assurance**. Add **version + "last updated" + staleness flag** per standard; MHRA likely needs a **feed/refresh**, not one-off upload.
+
+**❓ Confirm**
+- Does "LOADED" = **actually ingested for RAG** (parsed→chunked→embedded, retrievable) or just a stored file? Gap-check only works if genuinely searchable.
+- The consumer (SOP "Build with AI" gap-check) **isn't built yet** (§7) — standards ready, but the thing using them is pending. Dependency.
+
+**Lower copyright risk** — internal reference (standards you must comply with, to check your own SOPs), not republished to users. Safer than the clinician-facing guidelines library. Keep authoritative/current.
+
+---
+
 *(screens added as we review them)*
