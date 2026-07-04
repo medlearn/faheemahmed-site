@@ -83,6 +83,8 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 **Confirm (softened from bug)** — "0 open cases (auto-pulled)": earlier 0-vs-1 flag is likely a **timing** thing (C-237 got answered between screenshots), so 0 is probably correct now. Still confirm counts are **live + consistent** across screens.
 
+**Teaching-slot free text = OK (Faheem asked).** Rule: dropdown where text **drives tagging/routing/data**; **free text fine for open-ended human labels not analysed.** Teaching topic is an admin-set agenda *label* (open-ended, not routed, not analysed) → free text correct. **Add guardrail:** "General teaching topic — no patient identifiers" hint + light PII check on save (it's human-typed).
+
 ---
 
 *(screens added as we review them)*
