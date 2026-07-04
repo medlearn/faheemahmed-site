@@ -75,4 +75,14 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 ---
 
+## A4. MDT schedule — ✅ strong (resolves the auto-advance question)
+
+- ✅ **Auto-advancing date, correctly computed** — rule "Last Tuesday monthly · 19:00–20:30 · Virtual", next session **28 Jul 2026** = genuinely the last Tuesday of July 2026 (4 Jul is a Sat → Tuesdays 7/14/21/28). **Calculated from the rule, not hardcoded** (resolves §5.1; confirms dashboard/overview dates were real).
+- ✅ **Auto-built agenda** — teaching slot (Chair-set) · case discussion (auto-pulled) · open reflection.
+- ✅ **Controls + override** — Edit schedule / Set teaching slot; footer: "override applies to next session only and is audit-logged." Auto-advance + one-off override + audit. Correct.
+
+**Confirm (softened from bug)** — "0 open cases (auto-pulled)": earlier 0-vs-1 flag is likely a **timing** thing (C-237 got answered between screenshots), so 0 is probably correct now. Still confirm counts are **live + consistent** across screens.
+
+---
+
 *(screens added as we review them)*
