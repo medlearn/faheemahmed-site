@@ -91,6 +91,21 @@ Transcript was only: *"4-day history of cough, cold and headache. No allergies."
 
 ---
 
+## 4. Saved records — ⚠️ page is scheduled for deletion + reintroduces deferred patient feature
+
+**🛑 Remove the page (spec §5.5).** "Saved records" was already cut from scope — merged into **Clinical notes** (notes) + **My cases** (cases). It duplicates both. Developer built a page we'd flagged to delete.
+
+**🛑 Remove "Release to patient" / "Shared with patient" (deferred).** This is the **patient-facing sharing feature deferred to a later phase** (§5.12 patient portal deferred; §5.5 remove "Release to patient"). It carries its own regulatory weight (consent, right of access, what-patients-see governance). Must come out for the pilot — it's the main risk on this screen.
+
+**Useful truths this screen surfaced (keep the signal, drop the page):**
+- ✅ **DB persistence is real** — "2 in DB" proves notes persist to Postgres across sessions/devices (real backend). → **Fold the "in DB" badge into the Clinical notes page**, don't keep a separate screen.
+- ⚠️ **"MDT cases — 0 in DB" reconfirms the Pillar-2 gap.** Note screen claimed "MDT case created" but that was **local-only**; DB shows **zero** cases → **case creation isn't persisting.** Ties to §5.4 answering-loop build (still the key gap).
+- ⚠️ **Inconsistent age bands** — J.M. "30–39" (agreed band ✅) vs J.P. "30–34" (different scheme). Confirms age range must be the **one standardised dropdown** (already logged); two schemes currently in the data.
+
+**Positive — note-writing style is safe here:** both snippets are well-hedged (*"unclear aetiology… warrants further characterisation"*, *"partial response… **not a diagnostic statement**"*). Shows the model writes safely when not fed scenario context → reinforces that §3's problem was **scenario injection**, not the writing.
+
+---
+
 ## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
 
 The safety model behind the §3 fix. Acceptance criteria for the developer:
