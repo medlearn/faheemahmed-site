@@ -212,6 +212,8 @@ Opening a card resolves nearly every §5 "confirm behind Open" question — buil
 
 **Nice-to-have:** tag/topic filters (like Guidelines source tabs) once the library grows — currently search-only.
 
+**Nav badge "My cases · 1" — confirm it's a notification, not a total.** A nav count badge should mean **"N items need your attention"** (new/unread panel responses) and **clear when opened** — not the total number of cases (that's permanent noise). Confirm the "1" = unread answered cases and clears after viewing C-236; if it's total-count, change to unread-count. (Ties to Dashboard "1 new" notification logic — keep them consistent.)
+
 ---
 
 ## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
