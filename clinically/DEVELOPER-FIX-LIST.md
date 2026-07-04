@@ -37,7 +37,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **SOP "Build with AI" flow** (§7). Questions → AI draft → editable → compliance-check vs uploaded standards → sign-off → stored in the clinic's own (tenant-isolated) library.
 - [ ] **Training module content + reflection capture** (§8). Modules are empty toggles; add real content + a "what will you change?" reflection.
 - [ ] **CPD / revalidation log + PDF export** (§8). The actual record behind the tiles — auto-populated from modules + MDT participation; exports as a reflective-account portfolio.
-- [ ] **Session library: real Bunny video + consent/sign-off gate** (§11).
+- [ ] **Session library: real Bunny video + consent/sign-off gate** (§11, §5.10). Playback = **embedded Bunny Stream, signed/tokenised URLs, access-controlled + audited, no downloads.** Recordings go **record → private holding → human PII review (spoken names / shared screens / faces) → redact → consent+anonymisation confirm → governance sign-off → publish.** The "governance-signed" line must be a real gate. Prefer audio/transcript/slides for sensitive content.
 
 ## P3 — Tidy-ups & UX
 - [ ] **Delete the "Saved records" page** (§4) — merged into Clinical notes / My cases.

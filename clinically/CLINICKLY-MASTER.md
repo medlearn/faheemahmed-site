@@ -217,6 +217,9 @@ Front page of Pillar 2 — panel, next session + agenda, how it works, links to 
 
 ### 5.10 Session library
 Searchable recorded MDT sessions. **Consent + anonymisation required**; governance-signed before publishing; **tagged** for search; a session can be **promoted into a Training module** (Bunny video).
+- **Playback = embedded, gated — never downloads.** Bunny Stream player embedded in-page; **signed/tokenised URLs** (plays only for a logged-in user; link can't be shared/scraped); **access-controlled + audited** (log who watched what); UK/EU encrypted storage.
+- **Recordings MUST be reviewed before publishing (highest PII risk in the product).** Video leaks PII in ways you can't auto-strip — **spoken names**, **shared screens** (EHR/patient lists/letters), **faces/badges/reflections.** Pipeline: **record → PRIVATE holding area (admin/governance only)** → **human review** (watch/listen for PII) → **redact** (trim/mute/blur) → **confirm consent + anonymisation** → **governance sign-off (clinical lead)** → **publish (embedded, signed URL).** The "governance-signed before publishing" gate must be a **real review+sign step**, not a label.
+- **Safer by design:** cases are already anonymised pre-session (recording review = second safety net); prefer **audio-only / transcript / slides+voiceover** for sensitive content (no faces needed, same teaching value).
 
 ### 5.11 Ask Clinickly (AI chat)
 Ask a clinical question → **guideline-backed answer**. **Grounded in the same restricted official sources** (not AI memory); **cites source + "verify at source"**; framed as **"decision support, not a decision"**; logged/audited; also answers "how do I use Clinickly?".
