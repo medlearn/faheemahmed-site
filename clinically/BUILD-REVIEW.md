@@ -168,6 +168,16 @@ The safety model behind the §3 fix. Acceptance criteria for the developer:
 
 **Lower-priority (§5.7 direction):** eventually **split** — note templates live *next to note-writing*; SOPs get their *own admin area*. Combined browse library OK for now.
 
+**🛑 BUILD GAP — SOP "Build with AI" flow is missing (the whole middle).** Current "Open" shows only a **blank skeleton** (Step 1) + "copy to my system" copies the blank (Step 6). Steps 2–5 aren't built. **Build the guided flow:**
+1. **Pick SOP** → "Build with AI".
+2. **Structured clinic questions** (name · named lead · deputy · LA contact · referral route · scope).
+3. **AI generates the full SOP** from template + answers — **editable in Clinickly** (this IS "add it in Clinickly AI").
+4. **AI compliance-check** vs uploaded CQC/GPhC/MHRA/NHS standards → flags gaps (cites the standard).
+5. **Sign-off** (clinic lead / Governance MDT premium) → **stored + versioned in the clinic's Clinickly SOP library** (+ audit trail).
+6. **"Copy to my system" = optional export**, not the generation step.
+
+**Storage distinction (clarify in UI):** **SOPs are generated + STORED + versioned INSIDE Clinickly** (that's the "stands up to inspection" value = the governed library + audit trail). **Notes** get copied **OUT** to the clinic's EHR (Clinickly isn't the patient record). The shared "copy to my system" button blurs this — SOP modal should lead with **"Build with AI"/"Open in builder"**, with export as secondary.
+
 ---
 
 ## Cross-cutting decision — note-template governance (locked)
