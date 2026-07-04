@@ -40,8 +40,16 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 **⚠️ Positioning — decision support is patient-specific**
 - Cards say *"…in **this patient**…"* and *"consider whether **current ADHD** dosing should be reviewed"* → **patient-specific decision support** (CDSS / medical-device territory), at odds with the agreed "surface guidance, don't instruct on this patient" positioning. Decision needed (the fork).
 
+**Data provenance (Faheem's question — where did J.M./age/reason/template come from?)**
+- Patient info (J.M., age range, reason) = **canned sample data pre-filled by the "Demo scenario"** — nobody typed it; it's baked into the demo.
+- Template in use = **auto-selected from the Encounter type** (correct system behaviour ✅).
+- **Root cause of the safety issue:** the Demo scenario **injects hidden context into the AI note** (the ADHD/stimulant content came from the ADHD scenario, not the cough transcript). It's doing too much.
+  - **Fix 1:** note drafts **only from the actual transcript** — never scenario context.
+  - **Fix 2:** demo scenario should pre-fill **visible input fields only** — nothing hidden into the AI.
+  - **Fix 3:** in **real use, remove the demo scenario** — clinician enters the anonymised context themselves (or pulls from booking).
+
 **🐛 Fix / ❓ confirm**
-- 🐛 **Tag/content mismatch:** Clinical area = Autism, scenario = ADHD, content = cough/cold — tags should follow actual content (this caused the Dashboard note mismatch).
+- 🐛 **Tag/content mismatch:** Clinical area = Autism, scenario = ADHD, content = cough/cold — tags should follow actual content (also caused the Dashboard note mismatch).
 - ❓ **SNOMED/ICD codes** (J00, R05.9…) look AI-generated — confirm validated against a terminology server, not AI-guessed.
 
 ---
