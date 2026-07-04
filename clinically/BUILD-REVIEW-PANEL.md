@@ -34,6 +34,28 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 - ✅/❓ **Loop round-trips end-to-end (in-session) — confirmed by live test.** Faheem submitted C-237 as clinician → answered "yes" as panel → shows **Answered on BOTH sides** (clinician "My cases" + panel "assigned"), same timestamp/attribution + advisory caveat. The mechanism functions.
   - **BUT not yet proven: true server-side persistence + cross-user notification.** Submit + answer happened in the **same browser** → could be local/session state (earlier DB = 0 cases). **Acceptance test:** submit as clinician on one device/login → answer as panel on a *different* device/login → confirm it appears **and** the clinician is **notified**. Until that passes, treat the loop as local-state, not DB-wired.
 
+## P2. Governance review (content sign-off) — ✅ **KEYSTONE SCREEN, excellent**
+
+The verification workflow underpinning the entire "governed/defensible content" value prop. `guideline-review.html` realised in-portal.
+
+**Working / matches spec (strong)**
+- ✅ **Side-by-side recommendation ⟷ exact source passage** — each AI-drafted line next to the literal cited text (e.g. "no single mandated first-line" ⟷ CKS "consider topical ivermectin, metronidazole, or azelaic acid"). Per-statement verification.
+- ✅ **Hard gate** — "0 of 6 verified", "Sign review" **disabled** until all ticked; "Nothing publishes until every item is confirmed."
+- ✅ **"Flag / request change" per item** (bounce a bad line back).
+- ✅ **Real governance state + named reviewer** (DRAFT V0.1 · AWAITING REVIEW SIGN-OFF · Dr A. Demo).
+- ✅ **Honest prototype note** — source passages "illustrative… in the live product they are the actual retrieved text from the cited source" (= where RAG/grounding plugs in).
+- ✅ **Content honours §5.6** — "no single mandated first-line" (no invented preference); "Doses and cautions from the BNF, not this summary" (defers doses, doesn't reproduce BNF).
+
+**💡 Shrinks the §6 per-statement-citation gap**
+- The per-statement **source mapping already exists** (used here at review time). Fix isn't "build citations" — it's **"carry this mapping through to the published clinician page as inline chips."** Smaller job.
+
+**🛑 Flag — content-review routing to wrong panel (mirrors case-routing bug)**
+- A **clinical** guideline (Rosacea/dermatology) is in the **Governance/ethics Chair's** queue. Per §4B: **clinical content accuracy → Clinical MDT** (the dermatologist, Dr R. Kaur); **Governance MDT → SOPs/policies/regulatory.** Route content-review by content type.
+
+**❓ Confirm**
+- Gate interaction wired (tick → 6/6 → button enables; flag sends back).
+- **Second step exists** — "Sign review → send for **publish sign-off**" implies a final publish gate (clinical lead/admin). Verify in admin console.
+
 ---
 
 *(screens added as we review them)*

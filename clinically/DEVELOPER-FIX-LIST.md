@@ -28,8 +28,8 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Tags & routing must follow actual content** (§1/§2/§3/§10). ADHD note tagged Autism; ADHD case routed to Dermatology; dashboard note title ≠ body. Same root cause as P0 (scenario injection + tag logic).
 - [ ] **Remove the demo scenario from the real product** (§2). Real inputs only; never inject hidden context into the AI.
 - [ ] **Age range → one standardised dropdown** (§2) with agreed bands. Two schemes currently in the data (30–39 vs 30–34).
-- [ ] **Per-statement citations** (§6). Each recommendation carries its own inline citation chip — not just a document-level "Sources" bar.
-- [ ] **Fix MDT case routing** (Panel §P1). Cases must route to the panel member matching the case's **specialty tag** (Appendix B) — currently a Governance Chair is assigned clinical psychiatry/derm cases. Clinical → Clinical MDT; governance → Governance MDT (§4B). Depends on the tag fix above.
+- [ ] **Surface per-statement citations on the published page** (§6, Panel §P2). The per-statement source mapping **already exists** (used in Governance review) — carry it through to the published clinician page as inline chips, not just a document-level "Sources" bar. Smaller than "build from scratch".
+- [ ] **Fix routing — cases AND content — by type/specialty** (Panel §P1/§P2). (a) Cases route to the panel member matching the **specialty tag** (Appendix B) — currently a Governance Chair gets clinical psych/derm cases. (b) **Content review** routes by content type: clinical guideline → **Clinical MDT** specialist (a derm guideline → dermatologist); SOP/policy → **Governance MDT** (§4B). Depends on the tag fix above.
 
 ## P2 — Build gaps (specced, not built)
 - [ ] **Prove the MDT loop is DB-wired, not local** (§4/§10, Panel §P1). Loop round-trips **in one browser** (confirmed by live test) but that may be local/session state (earlier DB = 0). **Acceptance test:** submit as clinician on one device/login → answer as panel on a *different* device/login → it appears + **notifies** the clinician. Must persist server-side.
