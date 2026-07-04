@@ -41,4 +41,22 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 ---
 
+## A2. Governance sign-off (detail + recently published) — ✅ strong; 🛑 who may sign clinical content
+
+**Excellent**
+- ✅ **Named, dated, versioned sign-off** — "Consent SOP v2 · **signed by Faheem Ahmed** · 4 Jul 2026 18:53 · live in the clinician library"; NG87 on **v3**. Real audit trail.
+- ✅ **Full published provenance** + footer: "Every step audit-logged (AI draft, reviewer, signer, when). Signing is a named, dated clinical-lead action — nothing reaches clinicians without it."
+- ✅ **Routing labels correct HERE** — Rosacea → Dermatology, deteriorating patient → General practice (softens A1 routing worry: inconsistent across screens, not simply broken).
+
+**Softens A1 separation-of-duties**
+- Published items **signed by Faheem Ahmed** ≠ the panel reviewers (Okafor/Bright/Demo) → reviewer ≠ signer *happening in practice*. Still **enforce in code**.
+
+**🛑 New — signer qualification must match content type**
+- "NICE NG87 (ADHD) — signed by Faheem Ahmed" = **clinical** guidance. If the signer is founder/admin but **not a registered clinician**, they shouldn't *clinically* sign clinical content. **Rule:** clinical content → **clinically-qualified lead** signs; governance/admin content (SOPs/policies) → admin/governance lead OK. System should check signer role/qualification vs content type (ties to risk-tiering §8).
+
+**🐛 Minor — state consistency across admin screens**
+- Overview showed Consent/NG87/ADHD as "awaiting sign-off"; here they're "published" (likely signed between screenshots — OK). But Rosacea = "reviewed by Dr A. Demo" (overview) vs "Awaiting MDT review (Dermatology)" (here). Confirm both admin screens read the **same underlying state**.
+
+---
+
 *(screens added as we review them)*
