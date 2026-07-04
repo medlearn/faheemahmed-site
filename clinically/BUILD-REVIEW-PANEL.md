@@ -61,6 +61,7 @@ The verification workflow underpinning the entire "governed/defensible content" 
 **❓ Confirm**
 - Gate interaction wired (tick → 6/6 → button enables; flag sends back).
 - **Second step exists** — "Sign review → send for **publish sign-off**" implies a final publish gate (clinical lead/admin). Verify in admin console.
+- **Badge granularity is correct, not a bug** — nav "Governance review · 4" = **4 content items** in queue; "0 of 6 recommendations" = **6 lines within one item** (Rosacea). Different levels (queue vs within-doc). Confirm the **4 decrements** as items are signed off + clears at 0 (same unread-count rule as the "My cases" badge).
 
 ---
 
