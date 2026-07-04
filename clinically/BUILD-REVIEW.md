@@ -124,6 +124,17 @@ Transcript was only: *"4-day history of cough, cold and headache. No allergies."
 - Is **"GOVERNED"** a *real state* (signed via §8 pipeline, named signer + version) or a static label?
 - Do **"Updated" dates track the actual source** (§8 change-detection/fast-follow) or are they manual? (If NICE updates NG87, does the card flag stale?)
 
+## 6. Guideline detail (Rosacea) — ✅ **exemplary; model for the whole library**
+
+Opening a card resolves nearly every §5 "confirm behind Open" question — built dead-on to spec.
+- ✅ **Real governance state + named reviewer + live pipeline position** — *"AI-drafted → reviewed (Dr R. Kaur) → awaiting sign-off"*, Version Draft v1.0, Last reviewed 24 Jun, Sources NICE CKS · BAD. → **"GOVERNED" is a real state, not a static badge** (answers §5).
+- ✅ **"Decision support, not a directive — the treating clinician decides"** banner (positioning locked).
+- ✅ **Clinician View / Patient View toggle** (dual-audience) + **"Verify at source"** button.
+- ✅ **Hardest §5.6 rules honoured inline:** *"no single mandated first-line; verify the current options at source"* (don't invent a preference) **and** *"Doses, cautions, interactions and monitoring come from the BNF — never from this summary"* (approach/dose split; the page **refuses to reproduce BNF** → directly mitigates the §5 copyright risk: own wording + cite + link).
+- ✅ Clinically sound (no-comedones→not-acne, sensible differentials, ocular-rosacea prompt, ophthalmology safety-net).
+
+**❓ The ONE gap to verify — per-statement citations.** §5.6 non-negotiable = every recommendation carries its **own** citation, *"not just a generic sources bar."* Screen shows a **document-level** "SOURCES: NICE CKS · BAD" block + clean prose bullets **without a per-line citation chip.** Reference `guideline-sample.html` had a `.ref` chip per statement. **Confirm each recommendation carries its own inline citation; if only the top bar, add per-statement refs** (that's the defensibility core — "which source said *this exact line*").
+
 ---
 
 ## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
