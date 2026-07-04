@@ -174,6 +174,29 @@ Opening a card resolves nearly every §5 "confirm behind Open" question — buil
 
 ---
 
+## 10. My MDT cases (submit + answering loop) — ✅ great structure; 🛑 anonymisation failed
+
+**Working / matches spec**
+- ✅ **All 3 dropdowns match spec exactly** — Specialty (Appendix B), Query type (Appendix C, all 10), Urgency (routine/soon/urgent).
+- ✅ **Consent gating** — "no patient-identifiable information" checkbox required; Submit disabled until ticked.
+- ✅ **Answering loop renders end-to-end** — case → "Answered" → **panel response w/ named attribution + timestamp** (Dr A. Demo). C-236 consistent with Dashboard feed.
+- ✅ **Advisory caveat present (resolves §9 flag)** — *"Teaching/discussion points — advisory only. The treating clinician remains responsible"* + footer. Positioning locked.
+
+**🛑 CRITICAL — the "anonymised" case contains an identifier ("J.M.")**
+- Case summary reads **"J.M., age 30–39…"** while the banner + text claim *"no identifiers"* and the clinician ticked the "no PII" box. **Initials ARE an identifier.** → the **AI auto-anonymiser failed** to strip the patient reference when the note became a case, and the "flag identifiers before submit" check didn't catch it. Makes the **consent tick a false attestation** — an info-governance/ICO hole.
+- **Fix:** strip/blank initials + patient refs on note→case; the pre-submit identifier check must catch initials like "J.M.".
+
+**🛑 §3 fabrication propagates into the MDT**
+- The case summary **is** the fabricated §3 cough-note (invented ADHD/appetite/stimulant content) — now the material the panel "teaches" on. Fixing §3 (draft-from-transcript-only) fixes this downstream; shows how far a fabrication travels once in the record.
+
+**🐛 Wrong specialty routing**
+- Title "Stable adult ADHD on stimulant — monitoring query" tagged **DERMATOLOGY** (should be Psychiatry or Pharmacy). Same tag/content mismatch pattern — routing tag doesn't follow content.
+
+**❓ Confirm persistence**
+- Response body = "vvknkn…" (manual test keystroke). Confirm the answered case + response **persist server-side and notify the submitter** (earlier Saved records = 0 MDT cases in DB). Is this DB or local/seeded?
+
+---
+
 ## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
 
 The safety model behind the §3 fix. Acceptance criteria for the developer:
