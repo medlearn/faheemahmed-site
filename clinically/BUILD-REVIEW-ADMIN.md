@@ -149,4 +149,24 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 ---
 
+## A8. Reports & audit — ✅ audit trail = defensibility backbone; wire reports + harden log
+
+**Excellent**
+- ✅ **Real, comprehensive audit trail** — WHEN/ACTOR/ACTION/ITEM, newest first, covers "AI drafts, reviews, sign-offs, publishes, responses, roster + schedule changes." Shows "Signed off & published · Consent SOP v2 · Faheem Ahmed · timestamp." Exactly what an inspector wants.
+- ✅ **Logs live** — test "xxxx" shows Created draft → Sent to MDT review at 17:06. Audit capture works real-time.
+- ✅ Reporting charts from taxonomies (Consultations by clinical area [A]; MDT questions by type [C]); honestly labelled.
+
+**🛑 Charts empty despite activity elsewhere**
+- "No consultations recorded yet" / "No MDT cases submitted yet" — but dashboard showed a consultation/note and cases C-236/237 existed. Reports **not reading the same data** → wire analytics to real consultation/case data (persistence/consistency theme).
+
+**❓ Specced but not seen here**
+- **Search-gap analytics** ("top missed searches → add to authoring backlog") — the demand-signal report. Add.
+- **CPD reporting** — header says "CPD" but not shown; §5.8 team-training completion = inspection evidence. Confirm exists.
+
+**🛑 Audit trail must be**
+- **Immutable / append-only** (tamper-evident) — an editable/deletable log isn't an audit log. Confirm.
+- **Exportable** (PDF/CSV) for inspection/records. Add.
+
+---
+
 *(screens added as we review them)*
