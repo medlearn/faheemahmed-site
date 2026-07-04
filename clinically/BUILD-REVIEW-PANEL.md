@@ -63,6 +63,19 @@ The verification workflow underpinning the entire "governed/defensible content" 
 - **Second step exists** — "Sign review → send for **publish sign-off**" implies a final publish gate (clinical lead/admin). Verify in admin console.
 - **Badge granularity is correct, not a bug** — nav "Governance review · 4" = **4 content items** in queue; "0 of 6 recommendations" = **6 lines within one item** (Rosacea). Different levels (queue vs within-doc). Confirm the **4 decrements** as items are signed off + clears at 0 (same unread-count rule as the "My cases" badge).
 
+## P3. Governance review queue (list view) — ✅ resolves two open questions
+
+**Reconciles the badge:** queue = **content items** to review — a note template, 2 training modules (+ the Rosacea guideline draft) = the **4**. (Only 3 visible here; confirm count always matches visible list.)
+
+**Resolves earlier open questions — both positive**
+- ✅ **Training modules DO go through governance** (resolves §8 flag) — "review before it goes to clinicians", "awaiting MDT review (Dr S. Mehta)". Pipeline is **universal** (templates + training + guidelines), per §8.
+- ✅ **Two-step sign-off confirmed** — header: **"PANEL REVIEWS · CLINICAL LEAD SIGNS OFF."** Panel verifies → clinical lead publishes. (Final gate lives in admin console.)
+
+**Good**
+- ✅ One pipeline for all content types; per-item context ("new history prompts added — confirm clinically sound"); item 3 shows a **named assignee** (Dr S. Mehta) → per-reviewer routing exists for some items.
+
+**🛑 Same routing flag** — Governance/ethics Chair's queue is full of **clinical** content (derm note template, derm training module). §4B: clinical accuracy → Clinical MDT specialist (dermatologist), not the chair. Item 3's named assignee is the right pattern → **assign every clinical item to the right specialist**, don't funnel all to the chair. (Confirm whether chair-sees-all is intentional oversight.)
+
 ---
 
 *(screens added as we review them)*
