@@ -59,4 +59,14 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 
 ---
 
+## Cross-cutting decision — note-template governance (locked)
+
+**Note templates are central + standard — the SAME for every clinic.** Created by Clinickly → **MDT-reviewed → signed off → published to all** (governance pipeline, from the admin console). **No per-clinic customisation of note templates** — that would fragment documentation ("the structure melts"). Consistency across clinics is the point.
+
+**Don't confuse with SOPs:** SOPs *are* clinic-specific by design (each clinic's own policies, named leads) — those vary. Note templates don't.
+
+- Developer: note-template library is a **read-only, centrally-published** set for clinicians; editing/authoring lives in the **admin/governance console** only, gated behind MDT sign-off.
+
+---
+
 *(more screens added as we review them)*
