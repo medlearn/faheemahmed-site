@@ -36,6 +36,9 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 **❓ Reconcile counts**
 - Admin "0 Open MDT cases" vs panel "1 Awaiting your response" (C-237). One open case should show here. Different definitions or persistence/counting gap — reconcile.
 
+**🐛 Cosmetic — "Panel members" tile subtitle overflows**
+- Subtitle "Chair · General · Psychiatry · Dermatology" is too long → squished/clipped vs other tiles' short subtitles ("across clinics", "governance"). **Fix:** short label like **"across 4 specialties"** (match other tiles); full specialty list on hover/tooltip or the Panel-management page.
+
 ---
 
 *(screens added as we review them)*
