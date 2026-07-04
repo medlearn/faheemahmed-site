@@ -119,6 +119,7 @@ Home/overview. Shows next-MDT banner, headline numbers, quick actions, recent no
   - *Follow-up/med review* → lighter (interval history, response, obs, plan).
   - Template also **flags gaps** ("no drug history captured") — a completeness/safety prompt.
 - **Consultation type** = two required dropdowns (Appendix A), replacing the demo "Scenario" picker; auto-selects the template + MDT routing.
+- **Real Consultation inputs (no demo scenario):** Clinical area (dropdown) · Encounter type (dropdown) · **Age range (dropdown — bands: 0–17 · 18–29 · 30–39 · 40–49 · 50–59 · 60–69 · 70+)** · Patient reference (free text — clinician's own code) · Reason for encounter (free text — context only). **You tag on the dropdowns; free text (reason, patient ref) is never analysed.** **Remove the "Demo scenario" from the real product** (at most a hidden demo-mode toggle — never in the clinician workflow; and it must NOT inject content into the note).
 - **Codes, transcription, guidance** — see §7 (all need real integrations).
 
 ### 5.3 Clinical notes
