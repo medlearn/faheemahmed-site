@@ -195,7 +195,10 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
 
 ### 5.7 Templates & SOPs → **split**
 - **Note templates** (move next to note-writing): the SOAP+history skeletons the AI fills. **Central + STANDARD — the SAME for every clinic** (Clinickly-created → MDT-reviewed → signed off → published to all). **No per-clinic customisation of note templates** (that would fragment documentation — "the structure melts"). New ones/changes go through the governance pipeline centrally. *(Contrast with SOPs below, which ARE clinic-specific by design — don't confuse the two.)*
-- **SOPs / policies / governance docs** (own admin area): Clinickly provides **starter templates** → AI helps populate → **AI checks against uploaded GPhC/CQC/MHRA/NHS standards** → **clinic lead signs off (standard)** / **MDT review (premium)** → versioned/audited. **"Request an SOP"** button.
+- **SOPs / policies / governance docs** (own admin area): **hybrid model** — Clinickly provides **governed starter templates** → **AI helps the clinic populate** their specifics (named leads, processes, premises) → **AI checks the finished SOP against uploaded GPhC/CQC/MHRA/NHS standards** (gap-check, cites what it checked) → **clinic lead signs off (standard)** / **Governance MDT review (premium — the §4B admin/regulatory panel)** → versioned/audited. **"Request an SOP"** button → authoring backlog.
+  - **Why starter + AI, not a finished handout:** an SOP must be true to the *actual* clinic (its real leads/processes) — a generic un-adapted SOP is an inspection liability. So the clinic makes it their own, with AI help + auto compliance-check.
+  - **"Our AI" = grounded, not fine-tuned:** Claude API **RAG-grounded on** our SOP templates + the uploaded regulatory standards (checks against *real* standards, cites them) — not a bespoke trained model.
+  - **Contrast:** SOPs are **clinic-specific by design** (meant to differ); **note templates are standard/central/same-for-all** (must not fork). Don't apply the note-template no-customise rule to SOPs.
 - **Patient-leaflet builder:** keep — it generates a document the clinician shares their own way (Version A).
 - Taxonomy: Appendix D.
 
