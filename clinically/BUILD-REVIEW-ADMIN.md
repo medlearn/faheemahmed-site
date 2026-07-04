@@ -62,4 +62,17 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 ---
 
+## A3. Panel management — ✅ basics work; 🛑 "Add member" far too thin for a vetted panel
+
+**Working**
+- ✅ Member list + ACTIVE status + Add/Deactivate; routing-specialty dropdown matches Appendix B (incl. Pharmacy — available even though no pharmacist yet).
+- ✅ **Case assignment override** — manual-assign a case to a member; footer: "the chair still sees everything… clearing returns to automatic specialty routing… audit-logged." *(Explains why chair got all cases = intentional oversight. But cases must still auto-route to the specialist — routing fix.)*
+
+**🛑 "Add member" form too thin (Faheem) — needs a full credentialing record**
+- Current form = **Name · Role · Routing specialty** only. §4B vetted pool needs a proper credentialing file, all in one place: **professional registration/PIN (verify against register) · CV upload · photo · signed contract + terms (fee/confidentiality/data-processing) · DBS · indemnity/insurance · verified qualification tags (gate claimable tasks) · active/inactive.** This record **is** the vetting gate.
+
+**🐛 Count reconciliation (again)** — "No open cases — every submitted case has been answered" vs panel side "1 Awaiting your response" (C-237). Reconcile.
+
+---
+
 *(screens added as we review them)*

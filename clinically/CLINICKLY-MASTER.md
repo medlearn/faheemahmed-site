@@ -69,6 +69,8 @@ A web app with **two pillars**:
 
 **Admin / Governance console — the "engine room"** (clinicians never see it):
 - **Panel management** — add/remove MDT members, set specialties, manage logins (members recruited via a panel-interest / recruitment form).
+  - **⭐ Member record = a full credentialing file (all in one place), not just name+specialty.** Fields: **name · professional registration/PIN (GMC/GPhC/NMC — verify against the register) · role + routing specialty · CV (upload) · photo · signed contract + terms (fee acceptance, confidentiality/data-processing) · DBS check · indemnity/insurance confirmation · verified qualification tags (§4B — gate what tasks they can claim) · active/inactive.** This record **is the vetting gate** that makes the §4B "closed, vetted marketplace" defensible. *(Build gap: current "Add member" form only captures name/role/routing specialty.)*
+  - **Case assignment override** exists (manual-assign a case to a member; chair sees everything; clearing returns to auto specialty routing; audit-logged) — keep, but cases must **also** auto-route to the matching specialist (routing fix).
 - **MDT scheduling** — recurring session rule + dates (auto-advance + override); agenda auto-pulls submitted cases + a teaching slot.
 - **Governance sign-off queues** — review & sign off guidelines, SOPs, note templates, training (the §8 pipeline).
 - **Content libraries** — create/edit/publish all clinical content; handle "Request an SOP/template".

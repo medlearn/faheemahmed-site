@@ -195,6 +195,10 @@ Opening a card resolves nearly every §5 "confirm behind Open" question — buil
 **❓ Confirm persistence**
 - Response body = "vvknkn…" (manual test keystroke). Confirm the answered case + response **persist server-side and notify the submitter** (earlier Saved records = 0 MDT cases in DB). Is this DB or local/seeded?
 
+**🛑 Missing image upload + AI PII check (Faheem — specced §5.4, NOT built)**
+- Case submission has **no photo upload** — but §5.4 requires **1–5 clinical photos** (essential for **dermatology**, which is a routing specialty) with: **AI pre-check flagging identifiable images** (faces/tattoos/jewellery/background) before submit · **auto-strip EXIF** (GPS/timestamps) · **consent checkbox** · encrypted UK/EU storage, access limited to submitter + routed panel member, audited, deletable.
+- Ties to the anonymisation theme: **the AI must catch identifiers in images too, not just text** (photo is the highest PII risk — a face/name-band in shot). Build this.
+
 ---
 
 ## 11. Session library — ✅ clean, correctly framed
