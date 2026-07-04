@@ -139,6 +139,21 @@ Opening a card resolves nearly every §5 "confirm behind Open" question — buil
 
 ---
 
+## 8. Training — ✅ strong; confirm content + governance behind the cards
+
+**Working / matches spec**
+- ✅ **Metrics are real/computed** — 3/6 complete, CPD minutes = sum of completed durations (45+30+60 = **135**, ≈2.3h). Dynamic, not hardcoded (like the Dashboard fix).
+- ✅ **CPD-as-by-product** — "Auto-logged for revalidation · reflective record ready"; *"Reflective practice & revalidation — turning MDT discussions into CPD evidence"* module embodies §5.8.
+- ✅ **Category taxonomy** CORE/SPECIALTY/SAFETY/PROFESSIONAL (colour-coded) + durations; progress bars; complete/incomplete toggle.
+- ✅ **Product-aligned topics** (documentation-for-inspection, independent prescribing, deteriorating patient).
+
+**❓/⚠️ Confirm with developer**
+1. **Content + reflection behind "Mark complete"?** Cards look like a **toggle** with no visible lesson. Real CPD needs (a) actual content (video/reading) + (b) a **reflective-note capture** ("what will you do differently?"). Self-ticking complete ≠ appraiser-acceptable CPD. Does "Mark complete" open a module + capture reflection, or just flip state?
+2. **Soften the revalidation claim (positioning).** *"Auto-logged for revalidation"* risks implying guaranteed credit — the **appraiser/regulator decides**, and CPD must be reflective. Reframe: **"Generates CPD evidence, ready for your portfolio/appraisal."**
+3. **Clinical training content = same governance as Guidelines.** Modules making clinical claims (Rosacea first-line, ADHD titration) must be **cited · governance-signed · "verify at source" · no-reproduce-BNF/NICE** — guidance content by another name. Confirm training modules go through the §8 pipeline (§5.8).
+
+---
+
 ## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
 
 The safety model behind the §3 fix. Acceptance criteria for the developer:
