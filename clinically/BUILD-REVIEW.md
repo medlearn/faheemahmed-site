@@ -197,6 +197,23 @@ Opening a card resolves nearly every §5 "confirm behind Open" question — buil
 
 ---
 
+## 11. Session library — ✅ clean, correctly framed
+
+**Working / matches spec**
+- ✅ **Governance framing nailed** — footer: "Recordings require consent and anonymisation and are governance-signed before publishing"; honest "playback illustrative in this prototype."
+- ✅ **Consistent with the panel** — presenters = Bright/Kaur/Mehta/Okafor (same roster as §9). Ecosystem coheres.
+- ✅ **Dates follow the MDT cycle** (monthly, descending, tied to live schedule).
+- ✅ **Searchable + tagged**; on-brand titles mapping to guideline/training topics.
+
+**Real-build notes (not bugs — still to build)**
+1. **No actual video** — needs **Bunny-hosted recording + player** behind the play button.
+2. **Consent + governance must be a real mechanism, not a footer** — recording a live MDT + publishing is sensitive: **capture consent per recording**, **anonymisation check on the recording itself** (spoken identifiers / shared-screen leaks), **sign-off gate before it appears.** Confirm the gate exists (same pipeline).
+3. **"Promote session → Training module"** (§5.10) admin action not visible (admin-side; low priority).
+
+**Nice-to-have:** tag/topic filters (like Guidelines source tabs) once the library grows — currently search-only.
+
+---
+
 ## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
 
 The safety model behind the §3 fix. Acceptance criteria for the developer:
