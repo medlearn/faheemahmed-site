@@ -199,6 +199,7 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
   - **Why starter + AI, not a finished handout:** an SOP must be true to the *actual* clinic (its real leads/processes) — a generic un-adapted SOP is an inspection liability. So the clinic makes it their own, with AI help + auto compliance-check.
   - **"Our AI" = grounded, not fine-tuned:** Claude API **RAG-grounded on** our SOP templates + the uploaded regulatory standards (checks against *real* standards, cites them) — not a bespoke trained model.
   - **Contrast:** SOPs are **clinic-specific by design** (meant to differ); **note templates are standard/central/same-for-all** (must not fork). Don't apply the note-template no-customise rule to SOPs.
+  - **Storage = per-clinic + tenant-isolated:** a finished SOP is stored in **that clinic's own private SOP library** (RLS on `clinic_id`) — visible only to them; Clinic B never sees Clinic A's SOPs. Clinickly provides the *starter + AI*; the populated/signed SOP **belongs to the clinic.** (Vs note templates = one central shared set for everyone.)
 - **Patient-leaflet builder:** keep — it generates a document the clinician shares their own way (Version A).
 - Taxonomy: Appendix D.
 
