@@ -59,6 +59,38 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 
 ---
 
+## 3. Clinical notes — the AI-drafted note ⚠️ **TOP-PRIORITY SAFETY FIX**
+
+**Working / matches spec (strong UX)**
+- ✅ "Live AI" tag, "Demo signature only — not a clinical sign-off" banner, Signed status.
+- ✅ Locked-on-sign + **addenda-not-edits** model ("Signed demo note — locked. Later changes recorded as addenda").
+- ✅ Codes rendered as chips; **Copy SOAP / Create MDT case / Add addendum** actions; **Activity (local only)** audit trail (draft → signed → MDT case created).
+
+**🛑 #1 SAFETY — the note fabricates most of its content**
+Transcript was only: *"4-day history of cough, cold and headache. No allergies."* Of ~15 note lines, **only 3 are real** (cough/cold/headache · no allergies · viral-URTI management). The rest are **invented**:
+- *"Reports improved focus on stimulant medication"* · *"Mild appetite reduction"* · *"No cardiovascular symptoms today"* — invented history.
+- 🚨 *"Last recorded blood pressure and pulse within normal range"* — **INVENTED VITAL SIGNS.** Signing this = attesting to observations never taken. Worst single line.
+- *"Currently stable on stimulant medication for ADHD"*, *"ADHD — stable on current stimulant therapy"*, *"Continue ADHD medication / shared-care monitoring"* — invented Dx + plan.
+- **Root cause:** the AI drafted an **ADHD stimulant-med-review note** (hence the title + all the BP/pulse/CVS/appetite/shared-care lines = the stimulant-monitoring checklist) and bolted the cough transcript on top. The **demo scenario is injecting hidden ADHD context into `/api/notes`.**
+
+**🐛 Three-way title/tag/content mismatch**
+- Title = *ADHD medication review* (from scenario) · Tags = *Autism (ASD)* + *New/initial assessment* (from dropdowns) · Content = cough + ADHD mixed. All three disagree.
+
+**🐛 Codes are AI-guessed, not validated (confirmed)**
+- `R05.9 — Fever, unspecified` → **wrong label.** R05 = *Cough*; fever unspecified = **R50.9**.
+- `R06.02 — Cough` → **wrong.** R06.02 = US ICD-10-CM *shortness of breath*; also wrong code system (US not UK).
+- `F90.9 — ADHD` → shouldn't be present (no ADHD this encounter).
+- No terminology server would mislabel these → confirms codes are model-generated, not validated.
+
+**Fix (developer — priority order)**
+1. **Draft from the transcript + structured tags ONLY.** `/api/notes` must never see the demo scenario's hidden narrative. *(This single fix removes ~80% of the fabrication.)*
+2. **No invented objective data, ever** — if vitals/exam weren't dictated, the note must not state them. **Blank > fabricated.**
+3. **Validate every code** against SNOMED/ICD terminology server; reject unmappable codes. No free-guessed codes.
+4. **Title + tags follow actual content**, not the scenario (also fixes the Dashboard note mismatch, §1).
+5. **Remove the demo scenario in real use** (already logged, §2).
+
+---
+
 ## Cross-cutting decision — note-template governance (locked)
 
 **Note templates are central + standard — the SAME for every clinic.** Created by Clinickly → **MDT-reviewed → signed off → published to all** (governance pipeline, from the admin console). **No per-clinic customisation of note templates** — that would fragment documentation ("the structure melts"). Consistency across clinics is the point.
