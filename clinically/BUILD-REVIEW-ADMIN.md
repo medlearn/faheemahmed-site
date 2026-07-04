@@ -119,6 +119,8 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 **Lower copyright risk** — internal reference (standards you must comply with, to check your own SOPs), not republished to users. Safer than the clinician-facing guidelines library. Keep authoritative/current.
 
+**Who uploads (Faheem asked) — CENTRAL, not per-clinic.** Uploaded/maintained by **Clinickly admin/governance lead** (Governance MDT — ex-inspectors — natural owner/validator). **Restrict Upload to the central admin/governance role** (not clinic users/clinicians). Rationale = same as note templates: national standards → one authoritative current set for all clinics (per-clinic upload = fragmentation + duplicated maintenance). **Assign a named currency owner + review cadence** (MHRA monthly) or standards silently rot.
+
 ---
 
 *(screens added as we review them)*
