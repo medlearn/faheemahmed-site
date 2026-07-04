@@ -23,6 +23,8 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Validate all codes** against a SNOMED/ICD terminology server (§3). Currently AI-guessed + mislabelled (e.g. cough code labelled "Fever"). Reject unmappable codes.
 - [ ] **Note sign-off = draft → review → attest → sign** (§3). Editable draft; attestation tick ("I have read this and confirm it's accurate") is the only hard gate; then lock + addenda-not-edits.
 - [ ] **Content licensing** (§5). Don't reproduce BNF/NICE text — write our own summaries that **cite + link** ("verify at source"). **BNF = link-out only** until the licence is bought.
+- [ ] **Source passages need a real deep link** (Panel §P2). In Governance review, each "source passage" must link to the exact cited location so the reviewer confirms the quote is *real* — without it, "Matches source" checks AI against AI (the quote itself could be hallucinated). Store retrieved text + URL + date (audit snapshot); ideally gate the tick on opening the link.
+- [ ] **Enforce separation of duties** (Admin §A1). The person who **reviewed** an item cannot be the one who does its final **sign-off** (currently Dr Okafor reviews *and* signs the Consent SOP). Reviewer ≠ signer.
 - [ ] **Governance review — link every source passage** (Panel §P2). The "Matches source" check currently compares the recommendation to an **unlinked quote** → checking AI against AI; the quote could be hallucinated. Each passage needs a **deep link to the exact cited section**; gate the tick on opening it; **snapshot retrieved text + URL + date** for audit. Without this the whole verification gate is theatre.
 
 ## P1 — Correctness bugs

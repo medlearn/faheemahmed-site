@@ -17,6 +17,25 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 - **Note templates** — central/standard authoring (no per-clinic fork); **SOPs** — per-clinic, tenant-isolated.
 - **Billing** — later (Stripe), incl. premium MDT-review add-on.
 
+## A1. Admin Overview (engine room) — ✅ confirms two-step sign-off; 🛑 separation of duties
+
+**Resolves the big open question**
+- ✅ **Two-step sign-off is real end-to-end.** Governance sign-off queue shows items **already panel-reviewed** (by Dr Demo / Bright / Okafor) now awaiting **admin/clinical-lead "Sign off"** = the final publish gate. Full pipeline: AI draft → panel review (Portal 2) → admin/clinical-lead sign-off (Portal 3) → published/versioned. Footer states it: "AI-drafted → MDT-reviewed → human-signed → versioned."
+
+**Strengths**
+- ✅ **Content libraries with governed counts** — Guidelines (8 pub · 2 review), SOPs (8 · 3 pipeline), Training (6 · 2 review), **Regulatory standards (GPhC·CQC·MHRA·NHS)** = the uploaded standards the SOP-checker validates against.
+- ✅ **"Reviewed by [named person]"** on each item = audit trail before signer signs.
+- ✅ Healthy pipeline (items at review stage AND sign-off stage).
+
+**🛑 Separation of duties (new, important)**
+- "Consent & confidentiality SOP v2 — reviewed by Dr A. Okafor", and the final **Sign off** is done by admin/clinical-lead = **also Dr Okafor.** Same person reviews + signs → defeats the two-step gate. **Fix: enforce reviewer ≠ signer** (inspectors check "who checked whose work").
+
+**🛑 Routing inconsistent (same theme)**
+- NG87 ADHD → Dr Bright (psychiatry) ✅; Consent SOP → Dr Okafor (governance) ✅; **NICE CKS Rosacea → Dr A. Demo (governance) ❌ should be Dr Kaur (dermatology).** Routing works for some items, not all → logic needs fixing, not absent.
+
+**❓ Reconcile counts**
+- Admin "0 Open MDT cases" vs panel "1 Awaiting your response" (C-237). One open case should show here. Different definitions or persistence/counting gap — reconcile.
+
 ---
 
 *(screens added as we review them)*
