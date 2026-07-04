@@ -123,4 +123,24 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 ---
 
+## A7. Users & clinics (roles/permissions) — ✅ roles work; 🛑 tenancy model conflated
+
+**Good**
+- ✅ Three roles assigned (CLINICIAN/MDT/ADMIN badges, §4); roles+specialties shown; Invite user present.
+- ✅ Faheem = "Admin · Clinical lead" (signer identified).
+
+**🛑 Tenancy conflation (architecture)** — everyone (incl. MDT panel) listed under "Clinickly Demo Clinic". Not everyone belongs to a clinic:
+- **Clinicians** → clinic-scoped ✅.
+- **MDT panel** → **central/platform** (serve all clinics: answer anonymised cases from any clinic, govern central content) — should NOT be a member of one clinic.
+- **Clinickly admin (Faheem)** → **platform super-admin**, not a clinic user.
+- Model needs two tiers: **clinic-scoped** (clinicians, clinic admins) vs **platform-scoped** (MDT panel, Clinickly super-admin). One-bucket breaks at clinic #2.
+
+**🛑 Tenant isolation not demonstrated** — only one clinic, so can't see RLS `clinic_id` walls. Confirm multi-clinic: clinic admin sees ONLY their clinic; super-admin sees across; panel sits above clinics.
+
+**Confirms**
+- Faheem "Admin · Clinical lead": if signing **clinical** content but not a registered clinician → A2 qualification gap. Clarify **clinic-admin vs platform-admin** (he's platform).
+- RBAC **enforcement** — confirm area-locking via **RLS** (not just UI hiding): clinician can't reach admin; MDT can't see other clinics' data.
+
+---
+
 *(screens added as we review them)*
