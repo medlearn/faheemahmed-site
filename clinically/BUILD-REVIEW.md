@@ -91,6 +91,16 @@ Transcript was only: *"4-day history of cough, cold and headache. No allergies."
 
 ---
 
+## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
+
+The safety model behind the §3 fix. Acceptance criteria for the developer:
+1. **Draft-only from what was said** — AI note contains only transcript/typed content + structured tags. Never scenario context, never memory.
+2. **Flag gaps, never fill them** — missing expected data (esp. **vitals/objective/exam**) shows a **soft ⚠️ flag** ("No vitals recorded — add if taken"), **never an invented value**. Blank/flagged > fabricated. *(This is the direct fix for the invented "BP within normal range.")*
+3. **No step-by-step / no forced fields** — clinician just talks; tool auto-populates + prompts. Flags are nudges, not blockers.
+4. **Attestation sign-off = the only hard gate** — note stays an editable **DRAFT** until the clinician signs with a tick: *"I have read this note and confirm it is an accurate record of this consultation."* Then lock (→ addenda-not-edits, already built).
+
+---
+
 ## Cross-cutting decision — note-template governance (locked)
 
 **Note templates are central + standard — the SAME for every clinic.** Created by Clinickly → **MDT-reviewed → signed off → published to all** (governance pipeline, from the admin console). **No per-clinic customisation of note templates** — that would fragment documentation ("the structure melts"). Consistency across clinics is the point.

@@ -144,6 +144,7 @@ Home/overview. Shows next-MDT banner, headline numbers, quick actions, recent no
 3 columns: **Live transcription → AI-drafted SOAP note → Relevant guidance.** *(The third column surfaces guidance for the clinician to apply — reference, not patient-specific directives; see §3.)*
 - **Input is flexible:** transcribe live, type/paste, or a mix → AI drafts → editable. Not transcription-only.
 - **Standardised output** governed by the chosen **note template**; content reflects only what was said; clinician reviews & signs.
+- **⭐ Never fabricate to fill a gap (safety-critical).** The note may contain **only what was actually said/typed.** If something expected is absent (esp. **objective data / vital signs / examination**), the note shows a **soft ⚠️ flag** ("No vital signs recorded — add if taken"), it **never invents a value** ("BP within normal range"). **Blank or flagged > fabricated.** The tool prompts; the clinician decides — no step-by-step forms, no forced fields.
 - **Note template = SOAP frame + clinical history structure *inside* Subjective**, scaled by consultation type:
   - *New/initial assessment* → PC · HPC · PMH · DH · FH · SH · Menstrual (if relevant) · ROS → Exam (Objective) · Impression (Assessment) · Plan.
   - *Follow-up/med review* → lighter (interval history, response, obs, plan).
@@ -155,6 +156,7 @@ Home/overview. Shows next-MDT banner, headline numbers, quick actions, recent no
 ### 5.3 Clinical notes
 Record-keeping hub — store, edit, **sign**, search, turn into MDT case; holds the audit trail.
 - **Version A:** notes drafted here, **copied/exported** to the clinician's own system. Each note carries a **clinician-controlled patient reference**.
+- **⭐ Draft → review → attest → sign (the human-in-the-loop gate).** Every AI note is a **DRAFT** first — fully editable. Missing-info shows as **soft ⚠️ flags** (prompt, not a blocker; clinician may still sign with gaps if clinically correct). Nothing becomes the record until the clinician **actively signs with an attestation tick**: *"I have read this note and confirm it is an accurate record of this consultation."* The attestation tick is the **only hard gate**. (This is what makes the tool defensible: no record exists without a named human reading and confirming it.)
 - **Sign = lock:** once signed, immutable + timestamped; later changes = **addendum**, not overwrite.
 - **Search = filters + keyword:** filter by taxonomy tags (Clinical area × Encounter type), status, date, patient reference; plus keyword search inside notes.
 - One-click **export** now → integration later (removes double-entry).
