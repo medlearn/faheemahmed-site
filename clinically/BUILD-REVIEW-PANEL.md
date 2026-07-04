@@ -84,6 +84,20 @@ Panel member's session schedule (upcoming + recorded). Consistent, nothing broke
 - **Real-build (same as §11):** needs actual **Bunny video** behind play buttons + the consent/governance-signed line as a **real gate**, not footer text. No new issue.
 - Overlaps clinician Session library but OK — different audiences (panel = schedule; clinician = searchable recorded library).
 
+## P5. Panel directory — ✅ clean, consistent
+
+Read-only roster; management lives in admin console (correct separation).
+- ✅ Same 4 members as §9, specialties match Appendix B, all ACTIVE.
+- ✅ Footer: membership/specialties/logins managed in admin; recruited via panel-interest form.
+- ✅ Dr Okafor = "Chair / Clinical lead" → embodies the "clinical lead signs off" step.
+
+**Forward-looking (mostly §4B)**
+- **Two-panel split not shown** — one combined list; eventually show Clinical MDT vs Governance MDT membership. Low priority.
+- **Verified qualification tags missing** — §4B claim-a-task needs verified tags per member (gate what they claim); directory shows specialty only. Add to directory/profile.
+- **Chair wears many hats** — Okafor = governance chair + clinical lead + (bug) receiving clinical cases. Fine for pilot; note clinical-lead vs governance-chair may be different people at scale.
+
+**💡 Insight on the routing bug** — panel has only 4 specialties, **no pharmacist**. An ADHD/stimulant query wants Psychiatry *or Pharmacy* → with no pharmacist, defaults to Chair. Growing the panel (pharmacy, weight mgmt — Appendix B) improves routing, **but the routing logic still needs fixing** so cases go to the right *existing* specialty, not the chair.
+
 ---
 
 *(screens added as we review them)*
