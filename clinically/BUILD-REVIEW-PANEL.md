@@ -46,6 +46,12 @@ The verification workflow underpinning the entire "governed/defensible content" 
 - ✅ **Honest prototype note** — source passages "illustrative… in the live product they are the actual retrieved text from the cited source" (= where RAG/grounding plugs in).
 - ✅ **Content honours §5.6** — "no single mandated first-line" (no invented preference); "Doses and cautions from the BNF, not this summary" (defers doses, doesn't reproduce BNF).
 
+**🛑 P0 — source passages have NO LINK (Faheem's catch: "you're checking AI against AI")**
+- The reviewer compares the recommendation to a **quoted "source passage"** — but **nothing proves the quote itself is real.** If the AI generated both the recommendation *and* the passage, "Matches source" checks **one AI claim against another** → the quote could be **hallucinated**. Reading it verifies nothing about provenance. **The gate is theatre without a link.**
+- **Fix:** every source passage carries a **deep link to the exact cited location** (specific section/anchor, not the homepage). Reviewer **clicks through → confirms the quote is real, current, in context → then** ticks "Matches source." Ideally **gate the tick on opening the link** (can't rubber-stamp).
+- **Snapshot for audit:** on retrieval, store **retrieved text + source URL + retrieval date** (hash/snapshot) → audit trail ("verified against *this* text at *this* URL on *this* date") + powers "what did guidance say at the time."
+- Concept already exists — the published Rosacea page has "Verify at source" (§6); needs to be **on every passage here**, as a real deep link.
+
 **💡 Shrinks the §6 per-statement-citation gap**
 - The per-statement **source mapping already exists** (used here at review time). Fix isn't "build citations" — it's **"carry this mapping through to the published clinician page as inline chips."** Smaller job.
 

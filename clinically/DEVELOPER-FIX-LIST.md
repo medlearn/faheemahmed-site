@@ -23,6 +23,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Validate all codes** against a SNOMED/ICD terminology server (§3). Currently AI-guessed + mislabelled (e.g. cough code labelled "Fever"). Reject unmappable codes.
 - [ ] **Note sign-off = draft → review → attest → sign** (§3). Editable draft; attestation tick ("I have read this and confirm it's accurate") is the only hard gate; then lock + addenda-not-edits.
 - [ ] **Content licensing** (§5). Don't reproduce BNF/NICE text — write our own summaries that **cite + link** ("verify at source"). **BNF = link-out only** until the licence is bought.
+- [ ] **Governance review — link every source passage** (Panel §P2). The "Matches source" check currently compares the recommendation to an **unlinked quote** → checking AI against AI; the quote could be hallucinated. Each passage needs a **deep link to the exact cited section**; gate the tick on opening it; **snapshot retrieved text + URL + date** for audit. Without this the whole verification gate is theatre.
 
 ## P1 — Correctness bugs
 - [ ] **Tags & routing must follow actual content** (§1/§2/§3/§10). ADHD note tagged Autism; ADHD case routed to Dermatology; dashboard note title ≠ body. Same root cause as P0 (scenario injection + tag logic).
