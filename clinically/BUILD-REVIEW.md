@@ -149,6 +149,27 @@ The safety model behind the §3 fix. Acceptance criteria for the developer:
 
 ---
 
+## 7. Templates & SOPs — ✅ strong; 🛑 one governance contradiction
+
+**Working / matches spec**
+- ✅ Category tabs (Note template / SOP / Governance / Patient-facing) = taxonomy.
+- ✅ Guardrails present: **"MDT-validated"**, **"Draft only — clinician review required"**, *"clinical impression — not a definitive diagnosis"*, governance-pipeline footer.
+- ✅ Sensible set: consent & confidentiality, **safeguarding with named leads**, private prescribing, governance pack, patient leaflet.
+- ✅ **Patient-facing leaflet builder is OK** — it's a *document the clinician fills + hands over*, **not** the deferred patient *portal/login/release*. Keep it. *(Line to hold: patient-facing content templates OK; patient portal deferred.)*
+
+**🛑 Governance contradiction — "your clinic may customise" on NOTE TEMPLATES**
+- Both modals reuse one footer: *"Clinickly provides the skeleton; your clinic may customise it."* Correct for **SOPs/leaflets**; **breaks the §5.7 lock for note templates** (central/standard/SAME-for-all, **no per-clinic customisation**).
+- **Fix — split the footer by type:**
+  - **Note template:** *"Standard across all clinics · MDT-validated · centrally governed. Not customisable per clinic — keeps documentation consistent."*
+  - **SOP / leaflet:** *"Your clinic customises → changes go through governance sign-off."* (current wording, correct here).
+
+**"Use — copy to my system" — clarified (Version A)**
+- Copies the **governed skeleton OUT** to the clinician's own EHR/docs (clipboard/export); does **not** populate inside Clinickly. Then by type: **note templates auto-fill in a consultation** (encounter type → auto-select → AI drafts from transcript; the library just previews/copies the blank); **SOPs/leaflets are shells the clinic completes + governs.**
+
+**Lower-priority (§5.7 direction):** eventually **split** — note templates live *next to note-writing*; SOPs get their *own admin area*. Combined browse library OK for now.
+
+---
+
 ## Cross-cutting decision — note-template governance (locked)
 
 **Note templates are central + standard — the SAME for every clinic.** Created by Clinickly → **MDT-reviewed → signed off → published to all** (governance pipeline, from the admin console). **No per-clinic customisation of note templates** — that would fragment documentation ("the structure melts"). Consistency across clinics is the point.
