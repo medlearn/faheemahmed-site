@@ -141,6 +141,12 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 - Faheem "Admin · Clinical lead": if signing **clinical** content but not a registered clinician → A2 qualification gap. Clarify **clinic-admin vs platform-admin** (he's platform).
 - RBAC **enforcement** — confirm area-locking via **RLS** (not just UI hiding): clinician can't reach admin; MDT can't see other clinics' data.
 
+**Login provisioning model (Faheem asked) — differs by role:**
+- **Clinicians:** clinic onboarded → clinic admin clicks **Invite user** → email invite → set password → auto-scoped to that clinic.
+- **MDT panel:** apply (panel-interest form) → **credential (PIN/CV/contract/DBS verified, §A3)** → THEN Clinickly provisions login. **Vetting gates the login** — login is the *last* step, never before vetting. ("logins provisioned separately.")
+- **Admins:** clinic-admin at clinic onboarding; Clinickly super-admin = internal/platform.
+- **Tech:** Supabase Auth (email/password or magic-link) + **MFA (expected — governance content + anonymised cases)**; role+clinic(+specialty/tags) set **at invite** so RLS scoping is correct from first login; **Deactivate** = offboarding (revoke + audit).
+
 ---
 
 *(screens added as we review them)*
