@@ -106,6 +106,26 @@ Transcript was only: *"4-day history of cough, cold and headache. No allergies."
 
 ---
 
+## 5. Guidelines (library index) — ✅ strong; ⚠️ copyright/licensing is the gating issue
+
+**Working / matches spec (best screen so far)**
+- ✅ **Source references are real + correctly numbered** — NICE NG87 (ADHD), NG109 (lower UTI), NG112 (recurrent UTI), CKS Rosacea, GPhC Standards, GMC Good Medical Practice (correctly 2024), MHRA valproate. Not invented → real credibility.
+- ✅ **Governance metadata on every card** — source · code · **GOVERNED** badge · "Updated YYYY-MM" (matches §5.6).
+- ✅ **Source filter tabs** All/NICE/GPHC/GMC/BNF/MHRA (taxonomy).
+- ✅ **Approach/dose split correct** — NICE = approach; **BNF Lisdexamfetamine monograph** = dosing/monitoring (HR/BP). Matches §5.6 "doses from BNF."
+
+**🛑 Copyright / licensing — the gating issue**
+- Cards reference **NICE / BNF / GMC / GPhC / MHRA** — not free to reproduce. **BNF is licensed/commercial (Pharmaceutical Press)** — the Lisdexamfetamine monograph **cannot reproduce BNF text without a licence** (§7 lists BNF as the licensed *target* integration). NICE has reuse terms; GMC/GPhC standards are their copyright.
+- **Safe model (= §7):** library = **our own governed summaries that CITE + LINK to source** (+ "verify at source"), **not copies of source text**. Reference "NICE NG87 says X" + link out = fine; reproducing their text = not. **Get the BNF licence before the monograph ships.**
+
+**❓ Confirm behind "Open" (does detail page hit the `guideline-sample.html` bar?)**
+- Per-statement citations (each claim → its source), not just a card badge?
+- "Verify at source" link + **dual-audience** (clinician/patient view)?
+- Is **"GOVERNED"** a *real state* (signed via §8 pipeline, named signer + version) or a static label?
+- Do **"Updated" dates track the actual source** (§8 change-detection/fast-follow) or are they manual? (If NICE updates NG87, does the card flag stale?)
+
+---
+
 ## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
 
 The safety model behind the §3 fix. Acceptance criteria for the developer:
