@@ -271,6 +271,19 @@ Keeps all clinical content current + safe. **Reuses the MDT/roles/DB machinery.*
 5. **Every step audit-logged** (AI draft, reviewer, signer, when).
 
 - Run from the **Admin/Governance console**. Benefits: always-current + human-governed + defensible + strengthens clinical safety (DCB0129) + a trust story.
+
+**⭐ Separation of duties — RISK-TIERED (rigour where it counts, cheap elsewhere):**
+- **Rule:** the **reviewer ≠ the signer** — the person who reviewed an item cannot also do its final sign-off. Enforce in code (block same user_id as reviewer + signer). *(Inspectors check "who checked whose work"; self-signed content fails.)*
+- **But don't apply full two-person to everything — tier by risk to control cost:**
+
+| Tier | Examples | Sign-off requirement |
+|---|---|---|
+| **High** | Clinical guidance touching prescribing/diagnosis/safety; regulated SOPs (safeguarding, consent, controlled drugs, prescribing) | **Full two-person: reviewer ≠ independent clinical-lead signer.** |
+| **Medium** | New note template, non-safety guideline section, training module | **Single qualified reviewer + sign-off** (reviewer ≠ signer still preferred). |
+| **Low** | Typo, formatting, minor wording tweak, metadata | **Light-touch: single reviewer, or auto-approve + post-hoc audit.** Don't spend two experts on a comma. |
+
+- **Why tiered:** AI drafts + humans verify (minutes) + write-once-publish-to-all-clinics (§4B) already keep cost low; risk-tiering means you only pay for full independence where a mistake actually matters. The cost of a governance failure (harm, CQC finding, lost clinics) far exceeds the review — so full separation on high-risk items is cheap insurance.
+- Each item carries a **risk tier** (set at draft, adjustable by admin) that drives which sign-off path it follows.
 - **Fast-follow (not day-one):** AI **auto change-detection** (watches sources, flags "NG87 changed"). **Launch interim:** manual **"review due"** schedule (~3-monthly).
 
 ---
