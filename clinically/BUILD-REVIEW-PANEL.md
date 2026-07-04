@@ -14,4 +14,25 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 ---
 
+## P1. My assigned cases (panel inbox + write response) — ✅ loop exists both ends; 🛑 routing broken
+
+**Working / matches spec**
+- ✅ **The answering loop has a real UI both ends** — assigned cases → **Write response** → Save → shows "Answered" back to clinician. Core Pillar-2 mechanism is built as a UI.
+- ✅ **Response framing is best-in-class** — textarea placeholder: *"Teaching/discussion points for the submitting clinician — cite the guidance to verify against; no patient-specific directives, no doses"* + advisory footer. Actively steers panel away from patient-specific instructions. Keep exactly.
+- ✅ **Panel dashboard tiles** — Awaiting your response (this cycle) · Answered (last 3 months) · **Content to review · governance** (the governance sign-off queue surfacing).
+- ✅ **Logged-in panel role shown** (top-right: "Panel: Governance/ethics (Chair)").
+- ✅ Awaiting vs Answered states both render.
+
+**🛑 Routing is broken (headline)**
+- Logged in as **Governance/ethics Chair**, yet assigned **C-237 (Psychiatry/mental health)** and **C-236 (Dermatology)** — clinical cases a governance Chair should not answer. Routing-by-specialty (Appendix B) isn't working; looks like everything funnels to the Chair.
+- Same mismatch as §10 from the other side: C-236 mis-tagged Dermatology (actually ADHD/psychiatry) **and** assigned to the wrong recipient.
+- Per §4B two-panel model: a **Governance MDT** member shouldn't receive **clinical** cases at all. Clinical cases → Clinical MDT; governance/SOP → Governance MDT.
+
+**Other**
+- 🛑 **Anonymisation leak recurs** — C-236 still shows "J.M." to the panel member (ties to BUILD-REVIEW §10 anonymiser fix).
+- 🐛 **Test junk data** — "hadche", "33 year old has head Q: what is the ans", "vvknkn…" response (manual keystrokes; prototype seed).
+- ❓ **Persistence/notification** — C-237 (submitted 4 Jul) appeared awaiting → create→route works in session. Confirm **Save response persists to DB + notifies the submitting clinician** (earlier DB = 0 cases).
+
+---
+
 *(screens added as we review them)*

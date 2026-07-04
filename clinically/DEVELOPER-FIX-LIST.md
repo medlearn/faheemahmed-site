@@ -29,6 +29,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Remove the demo scenario from the real product** (§2). Real inputs only; never inject hidden context into the AI.
 - [ ] **Age range → one standardised dropdown** (§2) with agreed bands. Two schemes currently in the data (30–39 vs 30–34).
 - [ ] **Per-statement citations** (§6). Each recommendation carries its own inline citation chip — not just a document-level "Sources" bar.
+- [ ] **Fix MDT case routing** (Panel §P1). Cases must route to the panel member matching the case's **specialty tag** (Appendix B) — currently a Governance Chair is assigned clinical psychiatry/derm cases. Clinical → Clinical MDT; governance → Governance MDT (§4B). Depends on the tag fix above.
 
 ## P2 — Build gaps (specced, not built)
 - [ ] **Wire the MDT answering loop to the DB** (§4/§10). Cases + responses must persist server-side and notify the submitter (currently 0 in DB; responses local/seeded).
