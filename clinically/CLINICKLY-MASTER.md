@@ -182,6 +182,7 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
 - **Governance metadata shown on every entry:** sources · version · last-reviewed · review state (drafted → reviewed → signed) · "verify at source" link · "decision support, not a directive."
 - *Reference format proven in the working sample: `clinically/app/guideline-sample.html` (Rosacea).*
 - **Per-statement citations are mandatory (build gap found):** a single document-level "Sources" bar is **not enough** — **every recommendation carries its own inline citation chip** (which source backs *this line*). That's the defensibility core.
+- **Library card = one fixed template for every entry** (consistency is the point): `[source·code] [state badge]` · title · one-line description · `Updated YYYY-MM` · `Open`. Variations live *inside* the template, not in its shape: **source-tag colour** (NICE/GPhC/GMC/BNF/MHRA); **state badge reflects the real pipeline state** — `GOVERNED` (signed/live) · `IN REVIEW` · `DRAFT` · **`NEEDS UPDATE`** (stale — source changed, from §8 change-detection); and **"Open" behaviour** — NICE/CKS/society open **our governed page** (Rosacea layout), **BNF opens OUT to the BNF** (link, not our content). Grid: 3-up desktop / 1-up mobile; search + source-filter tabs on top.
 
 **Content strategy — which guidance to author + how sources are handled:**
 - **We do NOT replicate NICE or the BNF.** Your library is a **governed one-page synthesis that points to the source**, not a copy of it.
