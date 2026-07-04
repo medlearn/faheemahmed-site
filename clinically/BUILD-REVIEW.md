@@ -147,10 +147,13 @@ Opening a card resolves nearly every §5 "confirm behind Open" question — buil
 - ✅ **Category taxonomy** CORE/SPECIALTY/SAFETY/PROFESSIONAL (colour-coded) + durations; progress bars; complete/incomplete toggle.
 - ✅ **Product-aligned topics** (documentation-for-inspection, independent prescribing, deteriorating patient).
 
-**❓/⚠️ Confirm with developer**
-1. **Content + reflection behind "Mark complete"?** Cards look like a **toggle** with no visible lesson. Real CPD needs (a) actual content (video/reading) + (b) a **reflective-note capture** ("what will you do differently?"). Self-ticking complete ≠ appraiser-acceptable CPD. Does "Mark complete" open a module + capture reflection, or just flip state?
-2. **Soften the revalidation claim (positioning).** *"Auto-logged for revalidation"* risks implying guaranteed credit — the **appraiser/regulator decides**, and CPD must be reflective. Reframe: **"Generates CPD evidence, ready for your portfolio/appraisal."**
-3. **Clinical training content = same governance as Guidelines.** Modules making clinical claims (Rosacea first-line, ADHD titration) must be **cited · governance-signed · "verify at source" · no-reproduce-BNF/NICE** — guidance content by another name. Confirm training modules go through the §8 pipeline (§5.8).
+**🛑 CONFIRMED BUILD GAPS (Faheem verified)**
+1. **Nothing behind the module cards.** "Mark complete" just flips state — **no lesson content, no reflection capture.** Build per §5.8: each module opens **embedded content** (Bunny video + text + optional quiz) → completion **logs CPD + prompts a reflection** ("what will you do differently?"). Self-ticking ≠ appraiser-acceptable CPD.
+2. **The CPD / revalidation log doesn't exist** — the tiles ("135 min · reflective record ready") summarise a record that isn't being created. **Build the actual CPD log** (§5.8): one accumulating record per clinician — per entry: date · activity · domain · time · **reflection** · evidence link. **Auto-populates from** (a) completed modules + reflection, (b) **MDT participation** (each case = a reflective learning event → the "MDT → CPD by-product"). **Must export as a reflective-account PDF portfolio** (GPhC/GMC/NMC shared core) — *that export is the product.* Lives as its own **"CPD / Revalidation log"** area; the Training tiles are its summary and should link into it.
+
+**❓/⚠️ Also confirm**
+- **Soften the revalidation claim (positioning).** *"Auto-logged for revalidation"* risks implying guaranteed credit — the **appraiser/regulator decides**, and CPD must be reflective. Reframe: **"Generates CPD evidence, ready for your portfolio/appraisal."**
+- **Clinical training content = same governance as Guidelines.** Modules making clinical claims (Rosacea first-line, ADHD titration) must be **cited · governance-signed · "verify at source" · no-reproduce-BNF/NICE** — guidance content by another name. Confirm training modules go through the §8 pipeline (§5.8).
 
 ---
 
