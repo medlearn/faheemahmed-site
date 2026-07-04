@@ -57,6 +57,9 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 **🐛 Minor — state consistency across admin screens**
 - Overview showed Consent/NG87/ADHD as "awaiting sign-off"; here they're "published" (likely signed between screenshots — OK). But Rosacea = "reviewed by Dr A. Demo" (overview) vs "Awaiting MDT review (Dermatology)" (here). Confirm both admin screens read the **same underlying state**.
 
+**🐛 UX — "Recently published" reads as dead/confusing (Faheem flagged)**
+- Two sections look identical (same card style) but top = actionable queue, bottom = **read-only history**. Nothing clickable in "Recently published" → feels like it "came from nowhere." **Fix:** make the history visually distinct (greyed/lighter, clear "History / audit log" heading) and make each item **clickable to VIEW the published version** (read-only) so it isn't dead. Clarify the flow: sign off in queue → item moves to "Recently published." (Some published items are seeded demo data → reinforces the confusion.)
+
 ---
 
 *(screens added as we review them)*
