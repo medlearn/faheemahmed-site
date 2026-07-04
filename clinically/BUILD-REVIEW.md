@@ -133,7 +133,9 @@ Opening a card resolves nearly every §5 "confirm behind Open" question — buil
 - ✅ **Hardest §5.6 rules honoured inline:** *"no single mandated first-line; verify the current options at source"* (don't invent a preference) **and** *"Doses, cautions, interactions and monitoring come from the BNF — never from this summary"* (approach/dose split; the page **refuses to reproduce BNF** → directly mitigates the §5 copyright risk: own wording + cite + link).
 - ✅ Clinically sound (no-comedones→not-acne, sensible differentials, ocular-rosacea prompt, ophthalmology safety-net).
 
-**❓ The ONE gap to verify — per-statement citations.** §5.6 non-negotiable = every recommendation carries its **own** citation, *"not just a generic sources bar."* Screen shows a **document-level** "SOURCES: NICE CKS · BAD" block + clean prose bullets **without a per-line citation chip.** Reference `guideline-sample.html` had a `.ref` chip per statement. **Confirm each recommendation carries its own inline citation; if only the top bar, add per-statement refs** (that's the defensibility core — "which source said *this exact line*").
+**🐛 CONFIRMED gap — per-statement citations missing.** Faheem confirmed: **only one document-level source at the top**, no per-line chips. §5.6 non-negotiable = every recommendation carries its **own** inline citation. **Fix: add a citation chip to every statement** (like `guideline-sample.html`'s `.ref` chips) — "which source said *this exact line*" is the defensibility core.
+
+**Content strategy (decided — now in §5.6):** we do **not** replicate NICE/BNF. NICE/CKS/society = own summary + cite + link; **BNF = link/integrate only, never reproduce** (sidesteps licensing until BNF licence bought). Author **by data** (search-gaps, commonest cases, clinic scope, high-freq + high-risk). Starter set of ~12 defined. Authoring pipeline: signal → AI draft (per-statement cited, doses→BNF) → Clinical MDT review → lead sign-off → Published vX → §8 change-detection.
 
 ---
 
