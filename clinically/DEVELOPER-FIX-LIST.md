@@ -32,7 +32,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Fix MDT case routing** (Panel §P1). Cases must route to the panel member matching the case's **specialty tag** (Appendix B) — currently a Governance Chair is assigned clinical psychiatry/derm cases. Clinical → Clinical MDT; governance → Governance MDT (§4B). Depends on the tag fix above.
 
 ## P2 — Build gaps (specced, not built)
-- [ ] **Wire the MDT answering loop to the DB** (§4/§10). Cases + responses must persist server-side and notify the submitter (currently 0 in DB; responses local/seeded).
+- [ ] **Prove the MDT loop is DB-wired, not local** (§4/§10, Panel §P1). Loop round-trips **in one browser** (confirmed by live test) but that may be local/session state (earlier DB = 0). **Acceptance test:** submit as clinician on one device/login → answer as panel on a *different* device/login → it appears + **notifies** the clinician. Must persist server-side.
 - [ ] **SOP "Build with AI" flow** (§7). Questions → AI draft → editable → compliance-check vs uploaded standards → sign-off → stored in the clinic's own (tenant-isolated) library.
 - [ ] **Training module content + reflection capture** (§8). Modules are empty toggles; add real content + a "what will you change?" reflection.
 - [ ] **CPD / revalidation log + PDF export** (§8). The actual record behind the tiles — auto-populated from modules + MDT participation; exports as a reflective-account portfolio.

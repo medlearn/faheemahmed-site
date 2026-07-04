@@ -31,7 +31,8 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 **Other**
 - 🛑 **Anonymisation leak recurs** — C-236 still shows "J.M." to the panel member (ties to BUILD-REVIEW §10 anonymiser fix).
 - 🐛 **Test junk data** — "hadche", "33 year old has head Q: what is the ans", "vvknkn…" response (manual keystrokes; prototype seed).
-- ❓ **Persistence/notification** — C-237 (submitted 4 Jul) appeared awaiting → create→route works in session. Confirm **Save response persists to DB + notifies the submitting clinician** (earlier DB = 0 cases).
+- ✅/❓ **Loop round-trips end-to-end (in-session) — confirmed by live test.** Faheem submitted C-237 as clinician → answered "yes" as panel → shows **Answered on BOTH sides** (clinician "My cases" + panel "assigned"), same timestamp/attribution + advisory caveat. The mechanism functions.
+  - **BUT not yet proven: true server-side persistence + cross-user notification.** Submit + answer happened in the **same browser** → could be local/session state (earlier DB = 0 cases). **Acceptance test:** submit as clinician on one device/login → answer as panel on a *different* device/login → confirm it appears **and** the clinician is **notified**. Until that passes, treat the loop as local-state, not DB-wired.
 
 ---
 
