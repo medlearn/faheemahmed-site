@@ -151,7 +151,7 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
 - *Reference format proven in the working sample: `clinically/app/guideline-sample.html` (Rosacea).*
 
 ### 5.7 Templates & SOPs → **split**
-- **Note templates** (move next to note-writing): the SOAP+history skeletons the AI fills. **Clinickly provides them, MDT-validated**; clinics may customise; new ones requested → governed.
+- **Note templates** (move next to note-writing): the SOAP+history skeletons the AI fills. **Central + STANDARD — the SAME for every clinic** (Clinickly-created → MDT-reviewed → signed off → published to all). **No per-clinic customisation of note templates** (that would fragment documentation — "the structure melts"). New ones/changes go through the governance pipeline centrally. *(Contrast with SOPs below, which ARE clinic-specific by design — don't confuse the two.)*
 - **SOPs / policies / governance docs** (own admin area): Clinickly provides **starter templates** → AI helps populate → **AI checks against uploaded GPhC/CQC/MHRA/NHS standards** → **clinic lead signs off (standard)** / **MDT review (premium)** → versioned/audited. **"Request an SOP"** button.
 - **Patient-leaflet builder:** keep — it generates a document the clinician shares their own way (Version A).
 - Taxonomy: Appendix D.
