@@ -157,6 +157,23 @@ Opening a card resolves nearly every §5 "confirm behind Open" question — buil
 
 ---
 
+## 9. MDT overview (Pillar 2 front page) — ✅ strong, correctly framed
+
+**Working / matches spec**
+- ✅ **Positioning locked-in** — "Anonymised case-based teaching, discussion & CPD"; "reflective material — useful for revalidation"; "with consent and anonymisation." Educational/CPD, not a clinical-advice service (§5.9).
+- ✅ **Auto-advancing cycle** — "Monthly MDT — July cycle · 28 Jul 2026," consistent with Dashboard.
+- ✅ **Panel matches routing taxonomy** (Appendix B): Chair/governance, GP, psychiatrist, dermatologist.
+- ✅ **Agenda auto-pulls** submitted cases (scheduling logic).
+- ✅ **Internal consistency win** — Dr R. Kaur (dermatologist) here = the reviewer named on the Rosacea guideline. Panel ↔ governance pipeline joined up in demo data.
+
+**Flags**
+1. **Advertises the loop that isn't wired.** "Asynchronous case input → documented response from the relevant panel member" = the loop that shows **0 in DB**. This is the shopfront; the submit→route→respond→persist→notify engine is still the gap (§5.4).
+2. **Two-panel model (§4B) not reflected** — shows **one combined panel** with a governance chair. Eventually "The panel" should distinguish **Clinical MDT** from **Governance MDT** members (recent decision; low priority).
+3. **Confirm the case-response UI caveat** — responses must read as **teaching/discussion points, clinician stays responsible** (§5.4), not directives. Check on the response screen.
+4. **Minor:** empty shield card (right) looks unfinished — fill (governed/anonymised trust badge) or remove.
+
+---
+
 ## Cross-cutting decision — note workflow: draft → review → attest → sign (locked)
 
 The safety model behind the §3 fix. Acceptance criteria for the developer:
