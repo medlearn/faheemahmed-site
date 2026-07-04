@@ -64,7 +64,7 @@ A web app with **two pillars**:
 | Role | Works in |
 |---|---|
 | **Clinician** | The co-pilot (notes · cases · training) |
-| **MDT panel member** | Answers cases + does governance sign-offs |
+| **Panel member** | Claims tasks matched to their verified tags. **Two panels** (§4B): **Clinical MDT** (clinical content + case answers) · **Governance MDT** (SOPs/policies/regulatory). |
 | **Admin (+ Chair/clinical lead)** | The Admin / Governance console (below) |
 
 **Admin / Governance console — the "engine room"** (clinicians never see it):
@@ -101,6 +101,36 @@ A web app with **two pillars**:
 - **Back-end:** `/api/admin/panel`, `/api/admin/schedule`, `/api/admin/content` (CRUD + **publish/version**), `/api/admin/standards` (upload), `/api/admin/users`, `/api/admin/reports`, governance **sign-off** endpoints. **Data:** guidelines/templates/sops/training (+ version, reviewer_id, signer_id, published_at), schedules, users, clinics, audit_log. **Logic:** the **governance pipeline** (§8), AI change-detection (fast-follow), reporting queries.
 
 *Build order across portals: shared foundation → Clinician (core value) → MDT panel (answering loop) → Admin (governance). A minimal Admin ships with auth/DB; it grows into the full console. See §10.*
+
+---
+
+## 4B. Panel operating model (two panels · tag-routing · claim-a-task · fixed price)
+
+**Two panels, split by DOMAIN — not seniority. One item goes to ONE panel, never both.**
+
+| | **Clinical MDT** | **Governance MDT** |
+|---|---|---|
+| **Owns** | The **clinical** side — clinical guidance content, teaching/CPD case answers | The **admin/regulatory** side — SOPs, policies, IG/IPC/UK-GDPR, CQC/GPhC/MHRA, safeguarding |
+| **Signs off** | Clinical guidance/content before publish | SOPs, policies, governance docs before publish |
+| **Members** | Specialist clinicians | Ex-inspectors, governance/quality leads (+ clinicians with relevant regulatory experience) |
+
+**How work is routed & taken (the "closed marketplace"):**
+1. **Admin/AI drafts** the item (SOP, guideline, template, case) and it is **tagged**: `clinical | admin` + `domain/specialty` + `complexity/risk` (low/med/high).
+2. The tag routes it to a **pool of eligible members only** — those whose **verified tags + experience** qualify them for that item. Members **claim** a task from their queue (pull model, like Uber/gig — but a **vetted, gated pool**, not open to anyone).
+3. Claimant reviews → signs off → **published vX**, audit-logged (name of reviewer/signer recorded).
+
+**Pricing — admin-set fixed bands, NO bidding.**
+- **Pricing is set by Admin, banded by task type × complexity** (low/med/high). Members see the fixed fee and choose to claim — like an **upfront fixed fare**, not an auction.
+- **Bidding was considered and rejected** for anything that gets signed off: open bidding drives price *down* → quality/accountability down, and "cheapest clinician who'll sign a safeguarding SOP" is indefensible to a regulator. *(Light bidding/first-come may be allowed later for non-sign-off bulk **authoring** only.)*
+
+**Cost-control principles (keep governance credible without committee bloat):**
+- **Route, don't chain** — one item → one owner → one sign-off gate.
+- **AI drafts, humans verify** — verifying against source is minutes; authoring is hours.
+- **Write once, publish to all** — central/standard content (§5.7) means one review covers every clinic; cost amortised, not repeated.
+- **Batch on a cycle** (sessional / paid-per-task), not people on standby.
+- **Tier by risk** — light-touch single reviewer for low-risk; full panel only for high-risk.
+
+**Build implications:** each content/task record carries `panel_type (clinical|governance)`, `domain`, `complexity`, `fee_band`, `claimed_by`, `reviewer_id`, `signer_id`. Member profiles carry **verified qualification tags** that gate which tasks they can see/claim. Task queues are **filtered to eligible members**. Fee bands live in an admin-editable table.
 
 ---
 
