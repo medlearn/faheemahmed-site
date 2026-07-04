@@ -87,4 +87,21 @@ Legend: **✅ confirmed** · **🐛 fix** · **🛑 safety/governance** · **❓
 
 ---
 
+## A5. Content libraries (authoring hub) — ✅ strong; reconciles routing; names the core AI build gap
+
+**Strong**
+- ✅ **"New item → Create draft"** (TYPE · TITLE · **REVIEW SPECIALTY dropdown** · SUMMARY) = entry point to the §8 pipeline. Review-specialty dropdown = **routing set at creation** (correct mechanism + correct control type).
+- ✅ **Footer states the model** — "AI-assisted… drafted from retrieved source text, per-statement citations. Nothing publishes until the MDT has verified it and the clinical lead signs off." Grounded generation + per-statement citations + two-step sign-off, at source.
+- ✅ **"Request an SOP/template" from clinics arrives here as drafts** — joined up. Pipeline shows states (IN REVIEW/PUBLISHED) + specialty + version.
+
+**💡 Reconciles the routing concern**
+- Pipeline shows **Rosacea → Dermatology**, **NG87 → Psychiatry** → the review-specialty **data is correct** on the content. The panel-side issue was **display** (chair-sees-everything), not the tag. Fix is narrower: ensure the **right specialist also sees it** (Dr Kaur), not only default to chair.
+
+**🛑 Core build gap named**
+- "Create draft" currently makes an **empty shell** you type into. The **AI drafting from retrieved source + per-statement citations** is "live product" = **not built.** This is the SAME central piece behind guideline citations (§6) and SOP "Build with AI" (§7): **grounded, cited AI generation.** Treat as one big build item across all content types.
+
+**Notes:** "xxxx" test item = prototype junk (but proves create→review works). TITLE/SUMMARY free text = fine (label + rationale, not analysed).
+
+---
+
 *(screens added as we review them)*
