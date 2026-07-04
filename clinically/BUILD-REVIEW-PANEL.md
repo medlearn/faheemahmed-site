@@ -76,6 +76,14 @@ The verification workflow underpinning the entire "governed/defensible content" 
 
 **🛑 Same routing flag** — Governance/ethics Chair's queue is full of **clinical** content (derm note template, derm training module). §4B: clinical accuracy → Clinical MDT specialist (dermatologist), not the chair. Item 3's named assignee is the right pattern → **assign every clinical item to the right specialist**, don't funnel all to the chair. (Confirm whether chair-sees-all is intentional oversight.)
 
+## P4. Sessions (panel schedule) — ✅ clean pass
+
+Panel member's session schedule (upcoming + recorded). Consistent, nothing broken.
+- ✅ Auto-advancing monthly cycle (July upcoming · June/May recorded) — matches clinician-side dates.
+- ✅ Upcoming vs Recorded states; governance/consent footer; correct positioning banner.
+- **Real-build (same as §11):** needs actual **Bunny video** behind play buttons + the consent/governance-signed line as a **real gate**, not footer text. No new issue.
+- Overlaps clinician Session library but OK — different audiences (panel = schedule; clinician = searchable recorded library).
+
 ---
 
 *(screens added as we review them)*
