@@ -39,8 +39,7 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 ### R2.5 Case submission — ✅ honest failure state (big improvement); ❓ persistence inconclusive
 - ✅ **Silent fake success is GONE** — round 1 claimed "MDT case created" while DB showed 0. Now: red **"NOT SENT TO THE PANEL — the submission did not reach the clinic server"** + **Retry submission**; case ID correctly unassigned ("C–…"). App knows whether persistence succeeded and says so. Honest failure = safety feature.
 - ✅ Anonymised summary held through submit (age band, no "FS").
-- ❓ **Why it failed — ask developer:** prototype-has-no-case-server (expected; error state working as designed) vs live backend bug. **Test: click Retry** — if it lands with a real C-number + Awaiting status, the loop is wired.
-- ⏳ "Wire MDT loop to DB" (P2) stays open — wiring clearly *attempted* (server call + failure detection exist), not yet verified working.
+- ❌ **CONFIRMED: case backend not working** — Retry gives the same "did not reach the clinic server" every time. Notes persist (notes API wired) but **cases never land**. Same gap as round 1 (0-in-DB), now surfaced honestly instead of faked. **The Pillar-2 case loop remains the single biggest outstanding build item.** Likely causes for dev: cases endpoint missing/erroring, Supabase RLS blocking insert, or wrong URL — notes API works, so compare against it.
 
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
