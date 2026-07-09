@@ -47,6 +47,13 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ **Content-review routing to specialist (evidence)** — NG87 (ADHD) "AI-drafted · reviewed by **Dr L. Bright**" (psychiatry) — round 1 had clinical content reviewed by governance chair. Content half of routing P1 looks fixed; case half (panel inbox) still to verify.
 - 🐛 **Test junk published as GOVERNED v1** — "R3 sign test" (summary "s"), "Impetigo first-line — cross-machine E2E" (summary "e2e") live in the library. Delete before demos. Also a process note: junk passed sign-off (deliberate testing, but pilot needs a no-test-data-in-production rule). ("Cross-machine E2E" name suggests dev is testing persistence across machines — good sign.)
 
+### R2.7 Rosacea detail page — ✅ **per-statement citations VERIFIED; licensing complete**; 🐛 duplicate section
+- ✅ **Per-statement citation chips IN (P1 verified)** — statements carry source+section chips: `NICE CKS Rosacea – Diagnosis / Ocular involvement / General measures / Management`. "Which source said this exact line" now on the published page (round 1: one document-level bar only).
+- ✅ **Licensing model complete** — doses line: "come from the BNF — never from this summary" + **`BNF (link-out)` chip**; with the library's "Open at BNF ↗" both halves verified (own cite+link summaries; BNF = pointer).
+- ✅ Governance block intact (NICE CKS · BAD · Draft v1.0 · reviewed Dr R. Kaur → awaiting sign-off) + clinician/patient toggle + verify-at-source.
+- 🐛 **"Management approach" renders TWICE** — first instance malformed (repeats Assess-&-rule-out bullets under the wrong heading + empty half-rendered box), then the correct full section. Section duplication/content bleed — fix rendering.
+- ⚠️ **Chip coverage ~70%, not universal** — e.g. "Consider differentials…" (a recommendation) has no chip. Agree the rule: every recommendation chips; descriptive lines may inherit section source.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
