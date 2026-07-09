@@ -68,6 +68,11 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
   2. **Clinic name typed free-text each time** (hence the typo) — pull from the **clinic profile**, don't retype.
 - ⏳ Click-throughs pending: "Build for my clinic" flow (questions → AI draft → edit → gap-check → sign) · note-template modal footer (must say standard/not customisable — round-1 §7 contradiction).
 
+### R2.10 SOP builder click-through — 🛑 output too thin (Faheem); DECISION: full best-practice by default
+- Builder form is right-minded (clinic name · named clinical lead · data/IG lead · premises · "how this process actually runs") and the grounding line is honest — but **"unfilled sections stay visibly unfinished" is the notes rule wrongly applied to SOPs**: minimal input → skeleton with empty headings → **inspection liability** ("kind of useless" — Faheem).
+- Template modal confirms the skeleton problem (Scope & competence `<conditions prescribed for>` etc.) and **retains the round-1 §7 footer contradiction** — "Your clinic customises this" is correct on SOPs, but note-template modals still need the standard/not-customisable wording (verify separately).
+- **DECISION (→ spec §5.7):** clinic FACTS never invented; process CONTENT always full best-practice default (pre-authored, MDT-validated); clinic DECISIONS default + `[CONFIRM: …]` flag; sign-off warns on unresolved placeholders; **output anatomy = real CQC policy** (version-control block · References · Scope · AIM→POLICY→PROCEDURE — exemplar: Faheem's C07f Prescribing Policy).
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
