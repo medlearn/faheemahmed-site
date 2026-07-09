@@ -92,6 +92,16 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ Library grows with the live schedule (June recorded 30 Jun; July upcoming) — not static seed data.
 - Unchanged knowns: Bunny playback = production ("illustrative in this prototype"); consent-capture flow behind "governance-signed" = verify at production; tag filters still nice-to-have.
 
+### R2.14 Panel portal — My assigned cases (as Dr Kaur) — ✅ **routing VERIFIED; backend works (R2.5 = regression)**
+- ✅ **Routing by specialty WORKING** — dermatologist sees dermatology-tagged cases only (round 1: all funnelled to Chair). Badge "3" = awaiting-response count (correct semantics).
+- 🔄 **R2.5 reframed: the case backend WORKS** — real IDs (C-236…C-243), submissions 6–8 Jul, status transitions, **persisted timestamped responses** (7 Jul). Full loop submit→route→respond→persist has been functioning. **Today's "did not reach the clinic server" = a recent regression or clinician-session-specific failure** — tell dev: "cases landed 6–8 Jul; submission fails 9 Jul — what changed?"
+- ✅ **Photos flow to panel** — "Clinical photos · consented · metadata stripped" provenance on the urgent rash case; URGENT tag renders.
+- ✅ **Structured responses** — "Agree with the documented triage & plan" chip + free text.
+- ✅ New cases (C-238–243) properly anonymised (age band, no initials).
+- 🆕 **"Available tasks" nav item** — looks like the §4B claim-a-task marketplace; review next.
+- 🐛 **Legacy data NOT retro-scrubbed** — old C-236 still shows **"J.M."** (created pre-fix) → panel can still see a pre-fix identifier. **One-off scrub of existing records needed** (+ legacy mis-tag: C-236 still labelled Dermatology). 
+- 🐛 Test junk cases ("Case-loop E2E one/two", "R3 notif case") → cleanup pile; response quality ("ok") needs the same nudge as reflections; case summaries still embed ⚠ prompt lines (known P3).
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
