@@ -54,6 +54,12 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - 🐛 **"Management approach" renders TWICE** — first instance malformed (repeats Assess-&-rule-out bullets under the wrong heading + empty half-rendered box), then the correct full section. Section duplication/content bleed — fix rendering.
 - ⚠️ **Chip coverage ~70%, not universal** — e.g. "Consider differentials…" (a recommendation) has no chip. Agree the rule: every recommendation chips; descriptive lines may inherit section source.
 
+### R2.8 NG112 detail (recurrent UTI) — two-tier library discovered; needs card signposting
+- **This is a POINTER/INDEX entry, not a full summary** — states "summarises what the guidance covers, not its full text"; sections = Scope / How to use / Keeping it current; no clinical content; no chips (nothing to cite). Consistent with the agreed don't-replicate-NICE strategy (full summaries for the starter set; pointers elsewhere) — **if intentional**.
+- ✅ Guardrails on-page are excellent: "read and apply, never a patient-specific directive"; doses-from-BNF; **"flag it if out of date → routed to the panel for review"**; **"version-tracked so you can evidence what guidance said at the time of your decision"** (core spec promise, stated).
+- 🐛 **UX: tiers are indistinguishable on the library cards** — clinicians click expecting Rosacea-depth and get a meta-page (Faheem's "why is this different?"). **Fix: badge the tier on the card** (`FULL SUMMARY` vs `INDEX → SOURCE`).
+- ❓ Confirm with dev: intentional tiering (which entries are full summaries — should match the ~12 starter set) vs never-authored.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
