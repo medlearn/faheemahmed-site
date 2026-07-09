@@ -40,7 +40,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 
 ## P2 — Build gaps (specced, not built)
 - [ ] **⭐ Grounded, cited AI content generation** (§6, §7, A5) — THE big one. "Create draft" is a shell; the AI drafting from *retrieved source text* with *per-statement citations* isn't built. Underpins guideline citations, the SOP builder, and content drafts. Treat as one core capability, not three gaps.
-- [ ] **Wire the MDT answering loop to the DB** (§4, §10, P1). Cases + responses persist server-side and notify the submitter (currently 0 in DB; responses local/seeded).
+- [ ] **Wire the MDT answering loop to the DB** (§4, §10, P1). **CONFIRMED STILL BROKEN at R2.5 (9 Jul):** case submission shows "NOT SENT TO THE PANEL — did not reach the clinic server"; Retry fails identically every time. Honest failure banner ✅ (fake success gone), but cases never persist. Notes API works — compare against it: cases endpoint deployed? Supabase RLS blocking insert? wrong URL? **The remaining Pillar-2 blocker.**
 - [ ] **SOP "Build with AI" flow** (§7). Questions → AI draft → editable → compliance-check vs uploaded standards → sign-off → stored in the clinic's own (tenant-isolated) library.
 - [x] **Case image upload** — **MOSTLY BUILT (R2.4):** photo upload (max 2 — spec said 1–5, OK for pilot) + crop-to-lesion guidance + EXIF/GPS strip on import + consent gate. **Remainder for production:** AI identifiable-image pre-check + encrypted UK/EU storage (verify at launch).
 - [ ] **Training content + reflection + CPD log + PDF export** (§8). Modules are empty toggles; build embedded content + reflection capture + the accumulating CPD/revalidation record (auto-fed from modules + MDT participation) that exports as a reflective-account portfolio.
