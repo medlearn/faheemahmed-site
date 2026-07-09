@@ -29,6 +29,13 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ "Sign the note" **disabled until ticked** (hard gate); lock + addenda-never-edit stated in the dialog ("the signed note is never edited").
 - Chain complete: draft → review → attest → sign → lock.
 
+### R2.4 Signed note → Create MDT case — ✅ **ANONYMISER P0 VERIFIED (text)**
+- ✅ **"FS" stripped** — note carries patient ref FS; generated case summary = "Age 0–17 — anonymised; no identifiers", no initials anywhere (round 1: "J.M." leaked). Note→case anonymisation working for text.
+- ✅ **Image upload built** (max 2; spec said 1–5 — OK for pilot): crop-to-lesion guidance, **EXIF/GPS stripped on import**, consent gate. ⏳ **AI identifiable-image check + encrypted storage = stated production integration** ("photos stay in this browser in the prototype") — verify at launch.
+- ✅ **Tags/title follow content** (P1 verified) — "Consultation note", tags = General & acute prescribing · New/initial assessment; case title auto-generated from tags, no patient info; sensible routing default (Pharmacy & prescribing).
+- ✅ "Key question for panel" now **required** with sharper prompt; consent checkbox still gates Submit; note shows **"NOT IN CLINIC RECORD"** badge (Version A clarity).
+- 🐛 P3: case summary embeds the ⚠ documentation-prompt lines verbatim ("No vital signs recorded — add if taken.;") — strip prompts from case export.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
