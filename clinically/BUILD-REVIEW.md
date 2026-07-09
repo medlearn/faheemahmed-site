@@ -16,6 +16,16 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - 🐛 **Duplicate audit entries** — Kazeem's "Signed off clinic SOP Private prescribing" logged twice (00:39 + 00:40). Double-log or double-sign allowed? Ask.
 - ⏳ P0 verification needs the note body — next: same cough-transcript test on Consultation/Clinical notes.
 
+### R2.2 Consultation — same cough-transcript test — ✅ **TOP TWO P0s VERIFIED FIXED**
+Same input as round 1: *"4-day history of cough, cold and headache. No allergies."*
+- ✅ **P0 transcript-only VERIFIED** — Subjective = cough · cold · headache · NKDA, **nothing else**. Zero ADHD/scenario content (round 1: 12 invented lines). UI states "THE NOTE IS DRAFTED FROM THIS — AND ONLY THIS."
+- ✅ **P0 no-invented-vitals VERIFIED** — Objective now: ⚠️ "No vital signs recorded — add if taken" + ⚠️ "No physical examination findings recorded" (round 1: fabricated "BP and pulse within normal range"). Plan flags "management plan not documented" / "no safety-netting recorded" instead of inventing. **Flag gaps, never fill = implemented.**
+- ✅ **Demo scenario removed; real inputs in** — Clinical area · Encounter type · **Age range dropdown with agreed bands (0–17)** · patient ref · reason "never analysed". ("Load demo consultation" remains as demo-mode affordance — acceptable.)
+- ✅ **Decision support repositioned to general + documentation prompts** (the device-risk fix) — "NICE/PHE guidance advises against routine antibiotics for uncomplicated viral URTI" (general, cited, medium-confidence, "requires clinician judgement"); no "in this patient" phrasing; footer "a documentation aid, not clinical instructions".
+- ✅ Assessment appropriately hedged inference ("likely viral aetiology", "consistent with").
+- ✅ **Attest & sign** button present — click through to verify attestation wording + lock (pending).
+- ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
+
 ---
 
 ## 1. Dashboard — ✅ strong

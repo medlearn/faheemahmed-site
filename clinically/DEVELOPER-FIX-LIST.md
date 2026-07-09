@@ -18,11 +18,11 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 ---
 
 ## P0 — Safety & governance (must fix first)
-- [ ] **Notes draft from the transcript ONLY** (§2/§3). Kill demo-scenario/context injection into `/api/notes`. Never invent content. *Also cleans up the fabricated MDT case (§10).*
-- [ ] **Never fabricate objective data / vitals** (§3). Not dictated → soft ⚠️ flag ("No vitals recorded"), never an invented value. Blank/flagged > fabricated.
+- [x] **Notes draft from the transcript ONLY** — **VERIFIED FIXED (R2.2, 9 Jul):** same cough-transcript test → Subjective contains only transcript content, zero scenario/ADHD leakage.
+- [x] **Never fabricate objective data / vitals** — **VERIFIED FIXED (R2.2):** Objective now shows ⚠️ "No vital signs recorded — add if taken" / "No physical examination findings recorded"; Plan flags gaps instead of inventing. Flag-not-fill implemented.
 - [ ] **Anonymiser strips identifiers — text AND images** (§10, P1). "J.M." leaked into an "anonymised" case; pre-submit identifier check must catch initials/patient-refs; image PII check for photos (faces/badges).
 - [ ] **Governance-review source passages need a real deep link** (P2). Each passage links to the exact cited location so the reviewer confirms the quote is *real* — without it, "Matches source" checks AI against AI (quote could be hallucinated). Store retrieved text + URL + date; ideally gate the tick on opening it.
-- [ ] **Validate all codes** against a SNOMED/ICD terminology server (§3). Currently AI-guessed + mislabelled (cough code labelled "Fever"). Reject unmappable.
+- [ ] **Validate all codes** against a SNOMED/ICD terminology server (§3). **STILL BROKEN at R2.2:** `R05.9` again labelled "Fever, unspecified" (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, not validation. J00/J06.9 correct.
 - [ ] **Note sign-off = draft → review → attest → sign** (§3). Editable draft; attestation tick is the only hard gate; then lock + addenda-not-edits.
 - [ ] **Content licensing** (§5). Don't reproduce BNF/NICE text — own summaries that **cite + link**; **BNF = link-out only** until licensed.
 - [ ] **Separation of duties — risk-tiered** (A1, §8). Reviewer ≠ signer (block same user_id). **High** (prescribing/safety, regulated SOPs) = full two-person; **Medium** = single reviewer + sign-off; **Low** (typo) = light-touch/auto-approve + audit.
@@ -30,8 +30,8 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 
 ## P1 — Correctness bugs
 - [ ] **Fix routing — cases AND content — by specialty/type** (§10, P1, P2, A1, A5). Route to the matching specialist (Appendix B); clinical → Clinical MDT, governance/SOP → Governance MDT. *Note: content review-specialty data is actually correct (A5); the bug is display defaulting everything to the Chair — ensure the right specialist also sees it.*
-- [ ] **Remove the demo scenario from the real product** (§2). Real inputs only; never inject hidden context into the AI.
-- [ ] **Age range → one standardised dropdown** (§2). Two schemes currently in data (30–39 vs 30–34).
+- [x] **Remove the demo scenario from the real product** — **VERIFIED (R2.2):** real inputs (area · encounter · age band · ref · reason "never analysed"); no hidden injection. "Load demo consultation" remains as demo-mode affordance (acceptable).
+- [x] **Age range → one standardised dropdown** — **VERIFIED (R2.2):** dropdown with agreed bands (0–17 shown).
 - [ ] **Tags / title / content follow actual content** (§1, §3). ADHD note tagged Autism; dashboard note title ≠ body.
 - [ ] **Surface per-statement citations on the published page** (§6, P2). The mapping already exists (used in governance review) — carry it through as inline chips.
 - [ ] **Two-tier tenancy + RLS isolation** (A7, §5.7). Clinic-scoped users (clinicians, clinic admins — see only their clinic) vs platform-scoped (MDT panel + Clinickly super-admin). Confirm with ≥2 clinics; enforce via RLS, not UI hiding.
