@@ -60,6 +60,14 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - 🐛 **UX: tiers are indistinguishable on the library cards** — clinicians click expecting Rosacea-depth and get a meta-page (Faheem's "why is this different?"). **Fix: badge the tier on the card** (`FULL SUMMARY` vs `INDEX → SOURCE`).
 - ❓ Confirm with dev: intentional tiering (which entries are full summaries — should match the ~12 starter set) vs never-authored.
 
+### R2.9 Templates & SOPs — ✅ SOP builder exists with correct governance split; 🐛 duplicate SOPs possible
+- ✅ **"Build for my clinic" on SOP cards** (§7 builder entry point) — and **NOT on note templates** (Open only) = the locked governance split implemented (SOPs clinic-customisable; note templates standard).
+- ✅ **"Your clinic's SOPs" section** evidences 4 spec requirements at once: per-clinic tenant scope ("visible only to your clinic") · **clinic-lead signing** (Kazeem) · **gap-checked vs GPhC, CQC, MHRA, NHS** (compliance check vs uploaded standards) · versioned (v1).
+- 🔍 **Dashboard duplicate-audit mystery SOLVED** — two literal copies of the same SOP exist (both v1; "RIverside Pharmacy Clinic" typo vs "Riverside pharmacy clinic"). Kazeem built + signed it twice; the audit was honest. Real bugs:
+  1. **No duplicate guard** — re-building an existing SOP should warn/update to **v2**, never a second v1.
+  2. **Clinic name typed free-text each time** (hence the typo) — pull from the **clinic profile**, don't retype.
+- ⏳ Click-throughs pending: "Build for my clinic" flow (questions → AI draft → edit → gap-check → sign) · note-template modal footer (must say standard/not customisable — round-1 §7 contradiction).
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
