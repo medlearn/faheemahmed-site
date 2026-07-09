@@ -24,6 +24,11 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ **Decision support repositioned to general + documentation prompts** (the device-risk fix) — "NICE/PHE guidance advises against routine antibiotics for uncomplicated viral URTI" (general, cited, medium-confidence, "requires clinician judgement"); no "in this patient" phrasing; footer "a documentation aid, not clinical instructions".
 - ✅ Assessment appropriately hedged inference ("likely viral aetiology", "consistent with").
 - ✅ **Attest & sign** button present — click through to verify attestation wording + lock (pending).
+### R2.3 Attest & sign dialog — ✅ **P0 attestation gate VERIFIED, word-perfect**
+- ✅ Attestation tick = exact spec wording: *"I have read this note and confirm it is an accurate record of this consultation."*
+- ✅ "Sign the note" **disabled until ticked** (hard gate); lock + addenda-never-edit stated in the dialog ("the signed note is never edited").
+- Chain complete: draft → review → attest → sign → lock.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
