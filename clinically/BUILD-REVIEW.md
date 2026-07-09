@@ -5,6 +5,19 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 
 ---
 
+## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
+
+### R2.1 Dashboard — strong signals, P0s not yet verifiable here
+- ✅ **Discrepancy flagging appears IN** — the §1/§3 smoking-gun note ("ADHD medication review" with cough content) now shows *"Discrepancy noted: case context indicates adult patient on ADHD shared-care review; transcript describes…"* → flags the context/transcript mismatch instead of silently blending. Right behaviour; verify at note level.
+- ✅ **Safe hedged language in new notes** — "consistent with X or Y", "clinician to confirm"; **"Not recorded"** shown for missing patient ref (blank > fabricated, applied).
+- ✅ Metrics live (5 consults · 5 notes signed · 2.6 hrs · **2 open MDT cases "awaiting panel"** — open cases now surface; was 0-in-DB).
+- ✅ **Second named signer visible** — "Kazeem" signs a *clinic* SOP; Faheem signs central content (clinic-lead model + separation-of-duties signal).
+- 🆕 "Ask Clinickly" in nav (§5.11) — review when reached.
+- 🐛 **Duplicate audit entries** — Kazeem's "Signed off clinic SOP Private prescribing" logged twice (00:39 + 00:40). Double-log or double-sign allowed? Ask.
+- ⏳ P0 verification needs the note body — next: same cough-transcript test on Consultation/Clinical notes.
+
+---
+
 ## 1. Dashboard — ✅ strong
 
 **Working / matches spec**
