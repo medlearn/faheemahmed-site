@@ -87,6 +87,11 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - 🐛 **Test accounts on the public roster** — "Dr P. Word" (password) + "Ep Och" (epoch), both "Dermatology". Delete before demos; reinforces the no-test-data-in-production rule (with R2.6 test guidelines).
 - Known: "asynchronous case input → documented response" still depends on the broken case backend (R2.5).
 
+### R2.13 Session library — ✅ clean pass; per-recording signer now on the card
+- ✅ **New "June MDT — full session recording"** shows provenance on-card: "signed off by Faheem Ahmed · governance-signed · 87 min" — per-recording named sign-off surfaced (round 1: footer claim only).
+- ✅ Library grows with the live schedule (June recorded 30 Jun; July upcoming) — not static seed data.
+- Unchanged knowns: Bunny playback = production ("illustrative in this prototype"); consent-capture flow behind "governance-signed" = verify at production; tag filters still nice-to-have.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
