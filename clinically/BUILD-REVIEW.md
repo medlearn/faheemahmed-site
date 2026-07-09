@@ -36,6 +36,12 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ "Key question for panel" now **required** with sharper prompt; consent checkbox still gates Submit; note shows **"NOT IN CLINIC RECORD"** badge (Version A clarity).
 - 🐛 P3: case summary embeds the ⚠ documentation-prompt lines verbatim ("No vital signs recorded — add if taken.;") — strip prompts from case export.
 
+### R2.5 Case submission — ✅ honest failure state (big improvement); ❓ persistence inconclusive
+- ✅ **Silent fake success is GONE** — round 1 claimed "MDT case created" while DB showed 0. Now: red **"NOT SENT TO THE PANEL — the submission did not reach the clinic server"** + **Retry submission**; case ID correctly unassigned ("C–…"). App knows whether persistence succeeded and says so. Honest failure = safety feature.
+- ✅ Anonymised summary held through submit (age band, no "FS").
+- ❓ **Why it failed — ask developer:** prototype-has-no-case-server (expected; error state working as designed) vs live backend bug. **Test: click Retry** — if it lands with a real C-number + Awaiting status, the loop is wired.
+- ⏳ "Wire MDT loop to DB" (P2) stays open — wiring clearly *attempted* (server call + failure detection exist), not yet verified working.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
