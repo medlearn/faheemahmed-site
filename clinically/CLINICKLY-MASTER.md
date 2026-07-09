@@ -77,7 +77,7 @@ A web app with **two pillars**:
 - **Regulatory standards** — upload GPhC/CQC/MHRA/NHS (reference + AI gap-check).
 - **Users, clinics & permissions** — accounts, roles, and **locking each role to its own area**.
 - **Reporting & audit** — consultation types, MDT query types, CPD completion, full audit trails.
-- **Search & content-gap analytics** — logs every Guidelines search + Ask-Clinickly query with **hit/miss**, result-opened, and **frequency**; surfaces **"Top missed searches"** (zero/weak result = content gap) with a one-click **"Add to authoring backlog"** → feeds the §8 authoring pipeline. Aggregate + tag-based, **no patient data / scrub free-text PII**. *(This is the demand signal behind §5.6 "author by data.")*
+- **Search & content-gap analytics** — logs every Guidelines search + Ask-Clinickly query with **hit/miss**, result-opened, and **frequency**; surfaces **"Top missed searches"** (zero/weak result = content gap) with a one-click **"Add to authoring backlog"** → feeds the §8 authoring pipeline. Aggregate + tag-based, **no patient data / scrub free-text PII**. *(This is the demand signal behind §5.6 "author by data.")* **Also log opens of `INDEX → SOURCE` pointer entries** — a frequently-opened pointer is the §5.6 promotion signal to author that topic as a full summary.
 - **Billing** — later (Stripe), incl. the premium MDT-review add-on.
 
 ---

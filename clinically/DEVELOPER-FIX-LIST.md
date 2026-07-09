@@ -46,7 +46,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Training content + reflection + CPD log + PDF export** (§8). Modules are empty toggles; build embedded content + reflection capture + the accumulating CPD/revalidation record (auto-fed from modules + MDT participation) that exports as a reflective-account portfolio.
 - [ ] **Panel member = full credentialing record** (A3, §4). Add: professional registration/PIN (verify against register), CV, photo, signed contract + terms, DBS, indemnity, verified qualification tags. One profile = the vetting gate.
 - [ ] **Session library: Bunny video + real consent/PII-review/sign-off gate** (§11, P4, §5.10). Embedded signed-URL playback (no downloads); recordings go record → private → human PII review → redact → consent/anonymise → sign-off → publish.
-- [ ] **Search-gap analytics + CPD reporting** (A8). "Top missed searches → add to authoring backlog"; team CPD/training completion (inspection evidence).
+- [ ] **Search-gap analytics + pointer-open tracking + CPD reporting** (A8, §4, R2.8 decision). **Not built at round 1 — the two-tier library depends on it.** Build in admin → Reports: (a) log every Guidelines search + Ask-Clinickly query with hit/miss + frequency → **"Top missed searches"** with one-click "Add to authoring backlog"; (b) **log opens of `INDEX → SOURCE` pointer entries** — a frequently-opened pointer is the promotion signal to author it as a full summary; (c) team CPD/training completion (inspection evidence). PII-safe (aggregate/tag-based, scrub free text).
 - [ ] **Audit trail: immutable/append-only + exportable** (A8). Tamper-evident; PDF/CSV export for inspection.
 
 ## P3 — Tidy-ups & UX
