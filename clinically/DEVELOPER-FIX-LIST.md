@@ -24,12 +24,12 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Governance-review source passages need a real deep link** (P2). Each passage links to the exact cited location so the reviewer confirms the quote is *real* — without it, "Matches source" checks AI against AI (quote could be hallucinated). Store retrieved text + URL + date; ideally gate the tick on opening it.
 - [ ] **Validate all codes** against a SNOMED/ICD terminology server (§3). **STILL BROKEN at R2.2:** `R05.9` again labelled "Fever, unspecified" (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, not validation. J00/J06.9 correct.
 - [x] **Note sign-off = draft → review → attest → sign** — **VERIFIED FIXED (R2.3):** "Attest & sign" dialog with the exact attestation tick ("I have read this note and confirm it is an accurate record of this consultation"), sign button disabled until ticked, lock + addenda-never-edit stated.
-- [ ] **Content licensing** (§5). Don't reproduce BNF/NICE text — own summaries that **cite + link**; **BNF = link-out only** until licensed.
+- [ ] **Content licensing** (§5). **BNF half VERIFIED (R2.6):** monograph card now "Open at BNF ↗" (link-out, not our content). Remainder: confirm own summaries cite+link (not reproduce) on the detail pages.
 - [ ] **Separation of duties — risk-tiered** (A1, §8). Reviewer ≠ signer (block same user_id). **High** (prescribing/safety, regulated SOPs) = full two-person; **Medium** = single reviewer + sign-off; **Low** (typo) = light-touch/auto-approve + audit.
 - [ ] **Signer qualification matches content type** (A2). Clinical content → **clinically-qualified lead** signs; governance/admin content → admin/governance lead OK. System checks role/registration vs content type.
 
 ## P1 — Correctness bugs
-- [ ] **Fix routing — cases AND content — by specialty/type** (§10, P1, P2, A1, A5). Route to the matching specialist (Appendix B); clinical → Clinical MDT, governance/SOP → Governance MDT. *Note: content review-specialty data is actually correct (A5); the bug is display defaulting everything to the Chair — ensure the right specialist also sees it.*
+- [ ] **Fix routing — cases AND content — by specialty/type**. **Content half looks FIXED (R2.6):** NG87 (ADHD) reviewed by Dr L. Bright (psychiatry). Remainder: verify case routing in the panel inbox (right specialist receives, not just Chair).
 - [x] **Remove the demo scenario from the real product** — **VERIFIED (R2.2):** real inputs (area · encounter · age band · ref · reason "never analysed"); no hidden injection. "Load demo consultation" remains as demo-mode affordance (acceptable).
 - [x] **Age range → one standardised dropdown** — **VERIFIED (R2.2):** dropdown with agreed bands (0–17 shown).
 - [x] **Tags / title / content follow actual content** — **VERIFIED (R2.4):** note titled "Consultation note", tags match selections/content; case title auto-generated from tags, no patient info.

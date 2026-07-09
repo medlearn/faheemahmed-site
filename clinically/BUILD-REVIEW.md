@@ -41,6 +41,12 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ Anonymised summary held through submit (age band, no "FS").
 - ❌ **CONFIRMED: case backend not working** — Retry gives the same "did not reach the clinic server" every time. Notes persist (notes API wired) but **cases never land**. Same gap as round 1 (0-in-DB), now surfaced honestly instead of faked. **The Pillar-2 case loop remains the single biggest outstanding build item.** Likely causes for dev: cases endpoint missing/erroring, Supabase RLS blocking insert, or wrong URL — notes API works, so compare against it.
 
+### R2.6 Guidelines library — ✅ BNF link-out + live state badges + specialist routing evidence
+- ✅ **BNF = link-out (licensing fix, BNF half VERIFIED)** — Lisdexamfetamine card button now **"Open at BNF ↗"** (external), not our content. (Own-summary cite+link still to verify on a detail page.)
+- ✅ **State badges live from the pipeline** — Rosacea update draft shows "draft · IN REVIEW", "check accuracy before it publishes", **no Open button** ("In the pipeline") → unpublished drafts unreadable in clinician library. Cards carry **versions** (NG87 v3). (NEEDS-UPDATE/stale badge still unseen.)
+- ✅ **Content-review routing to specialist (evidence)** — NG87 (ADHD) "AI-drafted · reviewed by **Dr L. Bright**" (psychiatry) — round 1 had clinical content reviewed by governance chair. Content half of routing P1 looks fixed; case half (panel inbox) still to verify.
+- 🐛 **Test junk published as GOVERNED v1** — "R3 sign test" (summary "s"), "Impetigo first-line — cross-machine E2E" (summary "e2e") live in the library. Delete before demos. Also a process note: junk passed sign-off (deliberate testing, but pilot needs a no-test-data-in-production rule). ("Cross-machine E2E" name suggests dev is testing persistence across machines — good sign.)
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
