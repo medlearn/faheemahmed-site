@@ -50,7 +50,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Audit trail: immutable/append-only + exportable** (A8). Tamper-evident; PDF/CSV export for inspection.
 
 ## P3 — Tidy-ups & UX
-- [ ] **Badge library-entry tiers on the cards** (R2.8). Full-summary entries (Rosacea) vs pointer/index entries (NG112) look identical until opened — add a card badge (`FULL SUMMARY` vs `INDEX → SOURCE`); confirm which entries are meant to be full (≈ the starter set).
+- [ ] **Library entry tiers — DECISION locked (spec §5.6), implement it** (R2.8). Two tiers with **mandatory card badges**: `FULL SUMMARY` (Rosacea layout) vs `INDEX → SOURCE` (interim placeholder, no own content). Pointer entries are stopgaps promoted by search demand. **Starter-set topics (incl. NG112 recurrent UTI) must be FULL summaries before launch.** List which current entries are which.
 - [ ] **Delete "Saved records" page** + **remove "Release to patient"** (deferred patient feature) (§4).
 - [ ] **Note-template footer**: "standard · not customisable per clinic"; keep "customise → governance" only for SOPs/leaflets (§7).
 - [ ] **Nav badges = unread-count that clears on open** (My cases §11; Governance review P2/P3) — not total-count.
