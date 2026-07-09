@@ -80,6 +80,13 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ **Wording softened as asked** — "Auto-logged for revalidation" → "CPD evidence for your portfolio · reflections included in export".
 - Refinements: **(1) portfolio PDF lacks clinician identity** — add name · profession · registration number · period covered (appraiser needs whose record); **(2) reflection quality** — junk one-liner accepted; add "what will you do differently?" prompt + gentle minimum; (3) Bunny embed = production (tracked).
 
+### R2.12 MDT overview — ✅ **two-panel split implemented**; pharmacist added; 🐛 test members on roster
+- ✅ **Clinical MDT vs Governance MDT** — implemented with correct remits ("clinical content + anonymised case answers" / "SOPs, policies and regulatory content"). §4B structural flag closed.
+- ✅ **Pharmacist added** — Dr N. Newman · Pharmacy & prescribing (closes the round-1 routing-target gap for medication queries).
+- ✅ Empty shield card removed; framing/cycle/agenda all hold.
+- 🐛 **Test accounts on the public roster** — "Dr P. Word" (password) + "Ep Och" (epoch), both "Dermatology". Delete before demos; reinforces the no-test-data-in-production rule (with R2.6 test guidelines).
+- Known: "asynchronous case input → documented response" still depends on the broken case backend (R2.5).
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---

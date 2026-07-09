@@ -60,6 +60,6 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **"Panel members" tile subtitle** overflows → "across 4 specialties" (A1).
 - [x] **Soften "Auto-logged for revalidation"** — **VERIFIED (R2.11):** now "CPD evidence for your portfolio · reflections included in export".
 - [x] **Govern clinical training modules** — **VERIFIED (R2.11 + R1 P3):** modules badge "MDT-governed content" and appear in the governance review queue.
-- [ ] **MDT overview**: fill/remove empty shield card; show two panels (clinical vs governance) (§9); verified tags in panel directory (P5).
+- [x] **MDT overview: shield card + two panels** — **VERIFIED FIXED (R2.12):** Clinical MDT vs Governance MDT shown with correct remits; shield card gone; pharmacist (Dr N. Newman) added. Remainders: **delete test members "Dr P. Word"/"Ep Och" from the roster**; verified qualification tags in the panel directory still to check (P5).
 - [ ] **Regulatory standards**: restrict Upload to central admin/governance; assign named currency owner + review cadence (A6).
 - [ ] **Teaching-slot free text**: add "general topic — no patient identifiers" hint + light PII check (A4). *(Free text itself is correct here.)*
