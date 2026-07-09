@@ -218,7 +218,14 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
 ### 5.8 Training
 Upskilling + CPD hub.
 - **Embedded learning:** video (host on **Bunny** — recommended) + text + optional quiz. Completion → logs CPD + prompts reflection. *(Keep v1 simple; quizzes/certs = Phase 2.)*
-- **CPD recording (standards-aligned):** *now* — structured record (what/date/hours/type + reflective account + standard link) → **export as CPD portfolio (PDF)** the clinician uploads to their body; works for **GPhC/GMC/NMC** (shared core). *Phase 2* — per-body exact formatting + any direct submission.
+- **⭐ CPD recording — GPhC-NATIVE record types (decision 9 Jul 2026; source: the real GPhC forms — planned/unplanned/peer-discussion/reflective-account, all sectors, in Faheem's ~/Downloads).** GPhC revalidation counts **RECORDS, not minutes** (minutes = old pre-2018 scheme; keep time as metadata only). Annual requirement: **6 records = 4 CPD (≥2 planned) + 1 peer discussion + 1 reflective account.** The log + export must produce **typed records matching the GPhC forms exactly**:
+  - **CPD planned learning:** Q1 what are you planning to learn (+relevance +effect on service users) · Q2 how · Q3 **example of how it benefited people using your services**.
+  - **CPD unplanned learning:** Q1 the unplanned event + what you learnt + how applied · Q2 **benefit example**.
+  - **Peer discussion:** Q1 **named peer** (name·role·organisation·contact; group = name one) · Q2 how it changed your practice for service users' benefit.
+  - **Reflective account:** how you met the **year's selected GPhC standards** — area of practice · typical service users · real examples.
+  - **Auto-mapping:** Training module → **planned learning** (Q1/Q2 pre-filled from module outline; Q3 = user reflection) · consultation/case learning → **unplanned learning** · **MDT case response → PEER DISCUSSION** (panel member = the named peer, with their standing consent to be named — Clinickly auto-generates the one peer-discussion record required annually; marketable: "your peer discussion, done") · reflective account scaffolded against the year's standards using the clinician's clinical-area tags.
+  - **Quality bar = the forms' own criteria** ("benefit to people using your services, with an example" recurs in every form). Reflection prompts mirror the criteria; **AI criteria pre-check before save** ("no concrete example of patient benefit yet") — same pattern as the SOP gap-check.
+  - **GMC/NMC:** different schemes — phase 2 (generic reflective export meanwhile). GPhC-native first (core market: pharmacist prescribers).
 - **Content:** Clinickly-produced (your own educational content) + **MDT session recordings → modules**, all governance-signed.
 - **Data-driven curriculum:** commonest MDT query types + decision-support flags → new modules.
 - **Team training (admin):** assign modules to staff + track completion (inspection evidence).
