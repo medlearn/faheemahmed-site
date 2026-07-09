@@ -73,6 +73,13 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - Template modal confirms the skeleton problem (Scope & competence `<conditions prescribed for>` etc.) and **retains the round-1 §7 footer contradiction** — "Your clinic customises this" is correct on SOPs, but note-template modals still need the standard/not-customisable wording (verify separately).
 - **DECISION (→ spec §5.7):** clinic FACTS never invented; process CONTENT always full best-practice default (pre-authored, MDT-validated); clinic DECISIONS default + `[CONFIRM: …]` flag; sign-off warns on unresolved placeholders; **output anatomy = real CQC policy** (version-control block · References · Scope · AIM→POLICY→PROCEDURE — exemplar: Faheem's C07f Prescribing Policy).
 
+### R2.11 Training — ✅ **BOTH round-1 gaps CLOSED (module content + CPD log/export)**
+- ✅ **Content behind cards** — module opens with "MDT-governed content" badge, covers-outline, guardrails ("approach-level teaching only… doses from the BNF"), and **reflective-account capture (CPD EVIDENCE) + Save** → "Completed · reflection saved". (Video = honest Bunny production integration; outline stands in.)
+- ✅ **CPD log EXISTS** — module completions (time/date/"reflective account recorded") + **auto-entries for MDT participation** (C-236/C-237, 15 min) = the MDT→CPD by-product, working.
+- ✅ **Export CPD portfolio EXISTS** — PDF "reflective record… structured for GPhC/GMC/NMC shared-core submission" with modules + reflections + MDT entries, honest prototype footer.
+- ✅ **Wording softened as asked** — "Auto-logged for revalidation" → "CPD evidence for your portfolio · reflections included in export".
+- Refinements: **(1) portfolio PDF lacks clinician identity** — add name · profession · registration number · period covered (appraiser needs whose record); **(2) reflection quality** — junk one-liner accepted; add "what will you do differently?" prompt + gentle minimum; (3) Bunny embed = production (tracked).
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---

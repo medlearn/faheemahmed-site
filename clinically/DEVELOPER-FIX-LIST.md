@@ -57,8 +57,8 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Nav badges = unread-count that clears on open** (My cases §11; Governance review P2/P3) — not total-count.
 - [ ] **"Recently published"** visually distinct from the actionable queue + clickable-to-view (A2).
 - [ ] **"Panel members" tile subtitle** overflows → "across 4 specialties" (A1).
-- [ ] **Soften "Auto-logged for revalidation"** → "CPD evidence for your portfolio" (§8).
-- [ ] **Govern clinical training modules** like guidelines — cited/signed (§8).
+- [x] **Soften "Auto-logged for revalidation"** — **VERIFIED (R2.11):** now "CPD evidence for your portfolio · reflections included in export".
+- [x] **Govern clinical training modules** — **VERIFIED (R2.11 + R1 P3):** modules badge "MDT-governed content" and appear in the governance review queue.
 - [ ] **MDT overview**: fill/remove empty shield card; show two panels (clinical vs governance) (§9); verified tags in panel directory (P5).
 - [ ] **Regulatory standards**: restrict Upload to central admin/governance; assign named currency owner + review cadence (A6).
 - [ ] **Teaching-slot free text**: add "general topic — no patient identifiers" hint + light PII check (A4). *(Free text itself is correct here.)*
