@@ -102,6 +102,11 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - 🐛 **Legacy data NOT retro-scrubbed** — old C-236 still shows **"J.M."** (created pre-fix) → panel can still see a pre-fix identifier. **One-off scrub of existing records needed** (+ legacy mis-tag: C-236 still labelled Dermatology). 
 - 🐛 Test junk cases ("Case-loop E2E one/two", "R3 notif case") → cleanup pile; response quality ("ok") needs the same nudge as reflections; case summaries still embed ⚠ prompt lines (known P3).
 
+### R2.15 Available tasks (claim-a-task marketplace) — ✅ §4B model implemented near-verbatim
+- ✅ All five locked rules stated as product copy: **"Fixed fees, set by the admin — no bidding"** · tag-gated visibility ("only see tasks your verified qualification tags make you eligible for") · claim → named reviewer + moves to their Governance queue · **"One item → one owner → one sign-off gate"** · **risk-tiered separation of duties** ("high-risk items still require an independent clinical-lead sign-off after your review").
+- Honest empty state explaining when tasks appear.
+- ⏳ Remaining check (needs data): admin sends an item into review → task appears **with its fee** → claim → lands in Governance review queue with name recorded; tag-gating filters correctly.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
