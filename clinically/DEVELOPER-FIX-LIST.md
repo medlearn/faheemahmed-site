@@ -29,6 +29,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Signer qualification matches content type** (A2). Clinical content → **clinically-qualified lead** signs; governance/admin content → admin/governance lead OK. System checks role/registration vs content type.
 
 ## P1 — Correctness bugs
+- [ ] **MDT schedule bug** (R2.17). Panel Sessions shows next = "August cycle · 15 Aug" on 9 Jul: July (28 Jul) missing from the list; clinician portal still says July 28 next (portals disagree); 15 Aug is a **Saturday** (rule = last Tuesday monthly → 25 Aug). Restore July; validate overrides against the recurrence rule (warn on off-rule dates); single schedule source for all portals.
 - [ ] **Retro-scrub legacy records** (R2.14). The anonymiser fix did not clean pre-fix data: old case C-236 **still shows "J.M."** to panel members (and keeps its mis-tag). One-off migration: strip identifiers + correct tags on all existing cases/notes created before the fix.
 - [x] **Fix routing — cases AND content — by specialty/type** — **VERIFIED FIXED (R2.6 + R2.14):** content reviewed by matching specialist (NG87→Dr Bright); dermatologist's inbox shows only dermatology-tagged cases; badge = awaiting-count. Remainder: legacy C-236 keeps its round-1 mis-tag (fix with the legacy scrub below).
 - [x] **Remove the demo scenario from the real product** — **VERIFIED (R2.2):** real inputs (area · encounter · age band · ref · reason "never analysed"); no hidden injection. "Load demo consultation" remains as demo-mode affordance (acceptable).

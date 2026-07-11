@@ -114,6 +114,11 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ Verification rigour uniform across content types — even the **note template** change is source-verified (history prompts ↔ CKS Assessment passage). Hard gate intact (0/3, disabled sign, named reviewer, per-item flag).
 - ✅ **Both click-checks PASSED (Faheem):** (1) the source link opens; (2) **the tick is ENFORCED-GATED** — "Matches source" is locked until that item's source has been opened (chip flips to "Source opened", then the tick unlocks; items 2/3 stay locked until their sources are opened). **Gold-standard implementation** — verification cannot be rubber-stamped. P0 closed at the highest bar.
 
+### R2.17 Panel Sessions — 🐛 scheduling bug (next session wrong, portals disagree)
+- 🐛 **Next session shows "August cycle · 15 Aug"** while today is 9 Jul: (1) **July (28 Jul) is missing** from the list entirely (June → August); (2) **portals disagree** — clinician dashboard says July 28 next, panel says Aug 15; (3) **15 Aug 2026 is a Saturday** — violates the last-Tuesday-monthly rule (should be 25 Aug).
+- Likely: dev tested the admin schedule **override** and a stray date consumed/hid July. Fixes: restore July as next; **override validates against the recurrence rule** (or warns "not a Tuesday"); both portals read the **same schedule source**.
+- Otherwise consistent (June/May recordings match clinician library; consent/governance footer intact).
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
