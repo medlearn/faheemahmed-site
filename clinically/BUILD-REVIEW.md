@@ -130,6 +130,15 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ Counts live and plausible (3 clinicians · 8 panel · 1 awaiting sign-off · 8 open cases) — round-1 reconcile issue resolved in spirit; spot-check tallies after test-data purge.
 - Footer consistent: "AI-drafted → MDT-reviewed → human-signed → versioned."
 
+### R2.20 Panel management — ✅ tags + credentialing structure + fee table BUILT; 🛑 credential gating missing
+- ✅ **Verified qualification tags BUILT** — per-member chips (kaur: dermatology/rosacea/acne; bright: psychiatry/adhd/risk-assessment; hale: governance/cqc/ig-gdpr/ipc; newman: pharmacy/prescribing). Test accounts have no tags (tag-gating would correctly starve them).
+- ✅ **Credentialing record structure BUILT** — per-member status chips: "Registration/PIN missing · Contract not signed · DBS pending · Indemnity pending" (4 of the specced fields tracked; CV/photo presumably under "Edit identity" — click-through to confirm).
+- 🛑 **Credential gating MISSING** — all members ACTIVE (reviewing + answering) with registration missing/DBS pending. Breaks "vetting gates access": incomplete credentials → cannot activate / claim / review. The chips exist; the enforcement doesn't.
+- ✅ **Fee-band table BUILT** — "ADMIN-SET · NO BIDDING", editable, audit-logged edits, footer gives the no-bidding rationale. Current fees (£25/60/120/45/90) = dev placeholders → Faheem to set real bands (anchored £150/hr per §4B).
+- ✅ Two-panel membership labelled per member (Clinical/Governance MDT); case assignment shows **urgency + waiting time** (URGENT·1d / SOON·5d).
+- 🔍 **Regression diagnostic:** the failed submissions appear in admin Case assignment **without IDs ("C-…", waiting 1d/2d)** — insert half-succeeds (admin-visible) but no server ID + never reaches panel. Pinpoints where the case-submission regression breaks.
+- 🐛 Test junk grows: case "ddd"; P. Word/Ep Och still active.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
