@@ -112,7 +112,7 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ **Content routing panel-side** — Dr Kaur sees dermatology content only (round 1: all with Chair). Both halves of routing confirmed.
 - ✅ **Claim/release integrated** — queue items show "claimed by you" + **Release** (unclaim); partially closes R2.15's marketplace check (claim → member's queue works; fee display still unverified).
 - ✅ Verification rigour uniform across content types — even the **note template** change is source-verified (history prompts ↔ CKS Assessment passage). Hard gate intact (0/3, disabled sign, named reviewer, per-item flag).
-- ⏳ Two click-checks: (1) does the link open the **real** NICE CKS page (not placeholder)? (2) is the tick **gated** on opening the link, or guidance-only (acceptable; gold = gated)?
+- ✅ **Both click-checks PASSED (Faheem):** (1) the source link opens; (2) **the tick is ENFORCED-GATED** — "Matches source" is locked until that item's source has been opened (chip flips to "Source opened", then the tick unlocks; items 2/3 stay locked until their sources are opened). **Gold-standard implementation** — verification cannot be rubber-stamped. P0 closed at the highest bar.
 
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
