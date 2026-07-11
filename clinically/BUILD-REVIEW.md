@@ -119,6 +119,10 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - Likely: dev tested the admin schedule **override** and a stray date consumed/hid July. Fixes: restore July as next; **override validates against the recurrence rule** (or warns "not a Tuesday"); both portals read the **same schedule source**.
 - Otherwise consistent (June/May recordings match clinician library; consent/governance footer intact).
 
+### R2.18 Panel directory — consistent; three known items confirmed still open
+- ✅ Roster matches MDT overview (incl. pharmacist); ACTIVE states; correct admin/recruitment footer; **subtle colour code** (purple = governance, blue = clinical).
+- Still open (all already listed): (1) flat list — apply the overview's **Clinical MDT / Governance MDT section headers** instead of colour-only; (2) **verified qualification tags still absent** — the field that gates Available-tasks eligibility isn't visible anywhere (part of the credentialing-record item); (3) test accounts ("Dr P. Word", "Ep Och") still on the roster.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
