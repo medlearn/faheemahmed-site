@@ -38,7 +38,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [x] **Surface per-statement citations on the published page** — **VERIFIED FIXED (R2.7):** statements carry source+section chips (NICE CKS Rosacea – Diagnosis/Management/etc). Remainder: chip coverage ~70% — agree rule that every *recommendation* gets a chip; fix the duplicated "Management approach" section (rendering bug).
 - [ ] **Two-tier tenancy + RLS isolation** (A7, §5.7). Clinic-scoped users (clinicians, clinic admins — see only their clinic) vs platform-scoped (MDT panel + Clinickly super-admin). Confirm with ≥2 clinics; enforce via RLS, not UI hiding.
 - [ ] **Wire reports to real data** (A8). "Consultations by clinical area" / "MDT questions by type" empty despite activity elsewhere — analytics not reading the same data.
-- [ ] **Reconcile case counts** (A1, A3, A8). "0 open cases" (admin) vs "1 awaiting" (panel) — different definitions or persistence gap.
+- [x] **Reconcile case counts** — **RESOLVED IN SPIRIT (R2.19):** all counts now live (3 clinicians · 8 panel · 8 open cases); round-1 0-vs-1 gone. Spot-check cross-portal tallies after test-data purge.
 
 ## P2 — Build gaps (specced, not built)
 - [ ] **Admin fee-band table (§4B remuneration model, locked 9 Jul)**. Admin-editable table of task-type × fee (starter bands in spec §4B, anchored to £150/hr × realistic time; indicative pending Faheem's final figures). Fee shows on each Available-tasks card; **record claim→sign-off duration per task** so bands can be reviewed quarterly against actual times. Sessional MDT payment (≈£225/90min) is outside the task system.
@@ -60,7 +60,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Note-template footer**: "standard · not customisable per clinic"; keep "customise → governance" only for SOPs/leaflets (§7).
 - [ ] **Nav badges = unread-count that clears on open** (My cases §11; Governance review P2/P3) — not total-count.
 - [ ] **"Recently published"** visually distinct from the actionable queue + clickable-to-view (A2).
-- [ ] **"Panel members" tile subtitle** overflows → "across 4 specialties" (A1).
+- [x] **"Panel members" tile subtitle** — **VERIFIED FIXED (R2.19):** now "across 5 specialties".
 - [x] **Soften "Auto-logged for revalidation"** — **VERIFIED (R2.11):** now "CPD evidence for your portfolio · reflections included in export".
 - [x] **Govern clinical training modules** — **VERIFIED (R2.11 + R1 P3):** modules badge "MDT-governed content" and appear in the governance review queue.
 - [x] **MDT overview: shield card + two panels** — **VERIFIED FIXED (R2.12):** Clinical MDT vs Governance MDT shown with correct remits; shield card gone; pharmacist (Dr N. Newman) added. Remainders: **delete test members "Dr P. Word"/"Ep Och" from the roster**; verified qualification tags in the panel directory still to check (P5).

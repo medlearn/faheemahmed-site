@@ -123,6 +123,13 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ Roster matches MDT overview (incl. pharmacist); ACTIVE states; correct admin/recruitment footer; **subtle colour code** (purple = governance, blue = clinical).
 - Still open (all already listed): (1) flat list — apply the overview's **Clinical MDT / Governance MDT section headers** instead of colour-only; (2) **verified qualification tags still absent** — the field that gates Available-tasks eligibility isn't visible anywhere (part of the credentialing-record item); (3) test accounts ("Dr P. Word", "Ep Och") still on the roster.
 
+### R2.19 Admin overview — ✅ sign-off sequenced (review-first enforced); tile fix landed
+- ✅ **Sign-off gated on completed panel review** — only the panel-reviewed item (note template v2, reviewed by Dr Kaur) exposes a "Sign off" button; IN-REVIEW items show "Awaiting MDT review" with **no sign button**. Round 1 allowed signing at any stage. Two-step order now enforced; reviewer (Kaur) ≠ signer (Faheem) in practice. ❓ remaining: is reviewer=signer **blocked in code**, or just avoided?
+- ✅ **"Panel members" tile subtitle FIXED** — now "across 5 specialties" (the exact suggested wording). P3 ticked.
+- 🆕 **Urgent-case escalation banner** ("NEEDS YOUR ATTENTION") — good; ❓ but the case shows **"C-…" with no ID** — same unassigned-ID pattern as the failed submission (R2.5). Is the banner surfacing a case that never fully persisted?
+- ✅ Counts live and plausible (3 clinicians · 8 panel · 1 awaiting sign-off · 8 open cases) — round-1 reconcile issue resolved in spirit; spot-check tallies after test-data purge.
+- Footer consistent: "AI-drafted → MDT-reviewed → human-signed → versioned."
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
