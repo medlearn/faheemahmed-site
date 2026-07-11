@@ -123,6 +123,22 @@ A web app with **two pillars**:
 3. Claimant reviews → signs off → **published vX**, audit-logged (name of reviewer/signer recorded).
 
 **Pricing — admin-set fixed bands, NO bidding.**
+
+**⭐ Panel remuneration model (locked 9 Jul 2026) — two halves:**
+1. **Fixed sessional cost** — the monthly MDT session is sessional, not a task: **£150/hr** (≈ **£225/member** per 90-min session). This is the retainer core: guarantees attendance + the teaching happens.
+2. **Fixed fee per deliverable** — everything outside the session is a claimable task priced at **(realistic time) × £150/hr**, the rate the panel already accepted.
+
+**Starter fee bands (indicative — Faheem confirms exact figures; admin-editable table):**
+| Deliverable | Time | Fee |
+|---|---|---|
+| MDT case response (async teaching answer) | 15–20 min | £40–50 |
+| Training module review | ~30 min | £75 |
+| SOP / policy review + sign-off | 30–45 min | £75–110 |
+| Guideline review (per-statement source check) | 45–60 min | £110–150 |
+| High-risk independent second sign-off | 20–30 min | £50–75 |
+| Monthly MDT session (sessional) | 90 min | £225 |
+
+**Rules that keep it working:** (a) **AI keeps tasks short — that's the economics**: members *verify*, never author; if a 30-min band keeps taking 90, the band or the draft quality is wrong — the platform's **claim→sign timestamps** say which; review bands quarterly against actual times. (b) **Small menu, no haggling** — fee shown on the task, take it or leave it (the "upfront fare"). (c) **Cost-of-goods**: a governed guideline ≈ £110–150 of expert time **once**, amortised across every clinic (write-once-publish-everywhere) — this number underpins Clinickly's own subscription pricing/margin.
 - **Pricing is set by Admin, banded by task type × complexity** (low/med/high). Members see the fixed fee and choose to claim — like an **upfront fixed fare**, not an auction.
 - **Bidding was considered and rejected** for anything that gets signed off: open bidding drives price *down* → quality/accountability down, and "cheapest clinician who'll sign a safeguarding SOP" is indefensible to a regulator. *(Light bidding/first-come may be allowed later for non-sign-off bulk **authoring** only.)*
 
