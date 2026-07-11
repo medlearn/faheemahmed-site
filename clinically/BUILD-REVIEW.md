@@ -107,6 +107,13 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - Honest empty state explaining when tasks appear.
 - ⏳ Remaining check (needs data): admin sends an item into review → task appears **with its fee** → claim → lands in Governance review queue with name recorded; tag-gating filters correctly.
 
+### R2.16 Governance review — ✅ **SOURCE-LINK P0 VERIFIED (Faheem's catch → product copy)**
+- ✅ **Every source passage carries "↗ Open the source to verify"** — and the instruction states the rationale verbatim: *"open the source link and confirm the passage is really there **(the quote alone is not evidence)**, then tick."* The AI-checking-AI flaw is now the workflow's stated rule.
+- ✅ **Content routing panel-side** — Dr Kaur sees dermatology content only (round 1: all with Chair). Both halves of routing confirmed.
+- ✅ **Claim/release integrated** — queue items show "claimed by you" + **Release** (unclaim); partially closes R2.15's marketplace check (claim → member's queue works; fee display still unverified).
+- ✅ Verification rigour uniform across content types — even the **note template** change is source-verified (history prompts ↔ CKS Assessment passage). Hard gate intact (0/3, disabled sign, named reviewer, per-item flag).
+- ⏳ Two click-checks: (1) does the link open the **real** NICE CKS page (not placeholder)? (2) is the tick **gated** on opening the link, or guidance-only (acceptable; gold = gated)?
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
