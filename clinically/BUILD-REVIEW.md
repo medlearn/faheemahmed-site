@@ -150,6 +150,10 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ **Claim attribution** ("claimed by Dr R. Kaur") — marketplace claiming wired through to the admin pipeline view.
 - ✅ "xxxx" test item cleaned; 🐛 "R3 sign test" + "Impetigo E2E" still PUBLISHED (purge half-done). Counts match Overview.
 
+### R2.23 Regulatory standards — ✅ A6 fixes verbatim; honest RAG-status disclosure
+- ✅ **Named currency owner + cadence** on every standard ("currency owner: Governance lead · review due ~3-monthly") and ✅ **"Upload restricted to central admin/governance"** — both round-1 A6 asks implemented.
+- 🔍 **Honest admission:** "REFERENCE ONLY — NOT YET RAG-INGESTED" + footer: gap-checks currently run on a **deterministic theme checklist**, not the uploaded documents' text (RAG ingestion = licensed-integration step). Consequences: (1) standards RAG-ingestion joins the **grounded-AI core P2**; (2) 🐛 labelling: clinic-facing "gap-checked vs GPhC/CQC/MHRA/NHS" oversells until RAG lands — say "checked against the compliance theme checklist" so claim matches mechanism.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
