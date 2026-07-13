@@ -54,6 +54,7 @@ Legend: **P0** safety/governance (block real use) · **P1** correctness bugs · 
 - [ ] **Audit trail: immutable/append-only + exportable** (A8). Tamper-evident; PDF/CSV export for inspection.
 
 ## P3 — Tidy-ups & UX
+- [ ] **Per-member workload on Panel management** (R2.20, Faheem). Show each panel member's **open-case count** (and ideally avg response time) in the Panel members list — without it, the Case-assignment "rebalance" override is used blind (you can't see who's overloaded before reassigning).
 - [ ] **Templates & SOPs page: add SEARCH + a visible "Request an SOP" button** (R2.10, §5.7). Currently 8 fixed cards + category tabs only — a clinic wanting an SOP not in the catalogue (e.g. chaperoning) has no way to search for it or request it. The request mechanism exists admin-side ("submissions arrive as drafts") — expose the front door. Requests feed the demand analytics above.
 - [ ] **Library entry tiers — DECISION locked (spec §5.6), implement it** (R2.8). Two tiers with **mandatory card badges**: `FULL SUMMARY` (Rosacea layout) vs `INDEX → SOURCE` (interim placeholder, no own content). Pointer entries are stopgaps promoted by search demand. **Starter-set topics (incl. NG112 recurrent UTI) must be FULL summaries before launch.** List which current entries are which.
 - [ ] **Delete "Saved records" page** + **remove "Release to patient"** (deferred patient feature) (§4).

@@ -138,6 +138,7 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ Two-panel membership labelled per member (Clinical/Governance MDT); case assignment shows **urgency + waiting time** (URGENT·1d / SOON·5d).
 - 🔍 **Regression diagnostic:** the failed submissions appear in admin Case assignment **without IDs ("C-…", waiting 1d/2d)** — insert half-succeeds (admin-visible) but no server ID + never reaches panel. Pinpoints where the case-submission regression breaks.
 - 🐛 Test junk grows: case "ddd"; P. Word/Ep Och still active.
+- ➕ **P3 added (Faheem):** per-member **open-case count** (+ avg response time) in the Panel members list — rebalancing via the override is currently blind without workload visibility.
 
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
