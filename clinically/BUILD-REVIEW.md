@@ -145,6 +145,11 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - 🔍 **Scheduling bug pinpointed (refines R2.17):** **admin schedule is CORRECT** (next = July · 28 Jul, last-Tuesday rule, auto-advancing) — the **panel Sessions page reads wrong/stale data** (showed Aug 15, dropped July). Fix = single schedule source for both portals.
 - ✅ Agenda auto-pulls 8 open cases — matches Overview tile (counts consistent).
 
+### R2.22 Admin Content libraries — ✅ risk tiers + claim attribution on the pipeline
+- ✅ **Risk tiers visible per item** ("high risk"/"low risk" chips on Rosacea, NG87, R3, Impetigo) — §8 risk-tiered decision landed on content; tier drives sign-off path.
+- ✅ **Claim attribution** ("claimed by Dr R. Kaur") — marketplace claiming wired through to the admin pipeline view.
+- ✅ "xxxx" test item cleaned; 🐛 "R3 sign test" + "Impetigo E2E" still PUBLISHED (purge half-done). Counts match Overview.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
