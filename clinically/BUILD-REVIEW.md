@@ -169,6 +169,12 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - Minor: "Not recorded — 5" tops the clinical-area chart (legacy pre-dropdown consultations) — tag/exclude in the retro-scrub.
 - 🛑 **Faheem's verdict: "really basic" — correct.** Round-1 bugs fixed ≠ a reporting suite. Current page = audit trail + two all-time counters. **Reports v2 added to P2**: date ranges/trends · per-clinician & per-clinic breakdowns · MDT service levels (time-to-answer, urgent SLA) · governance health (overdue reviews, throughput) · CPD compliance matrix · chart exports · one-click inspection pack (with Master Policy Index).
 
+### R2.26 Ask Clinickly (first review) — 🛑 **P0: breaks the product's positioning (device risk)**
+- 🛑 **Patient-specific diagnostic support, as built** — response titled "Differential Diagnosis Support"; solicits the patient's age/laterality/symptoms/duration/exam findings; "provide more clinical context so I can **refine this for you**." Software tailoring a diagnostic output to an individual patient = the function the product's positioning (and the **draft MHRA letter**: "expressly NOT intended to provide patient-specific diagnostic recommendations") explicitly disclaims. Disclaimers present but don't change function.
+- 🛑 **Zero citations — the only ungoverned AI surface in the product.** Answers from model memory; no source chips, no verify-at-source. Violates the product's own "from retrieved source text, never memory" rule.
+- **FIX — rescope to a guidance NAVIGATOR (P0):** answers only from the governed library + cited sources (with open-entry / verify-at-source links); stays GENERAL (frameworks, guidance summaries — never "for this patient"); **hands off** patient-specific questions → "submit an anonymised MDT case", documentation → co-pilot; logs question themes to demand analytics.
+- Minor: "LIVE MODEL" badge contradicts footer ("connect your API server-side to enable live replies"); clinical content itself sensible + red-flag-aware (malignant OE, mastoiditis, Ramsay Hunt, GCA).
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
