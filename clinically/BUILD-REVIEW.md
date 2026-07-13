@@ -154,6 +154,12 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - ✅ **Named currency owner + cadence** on every standard ("currency owner: Governance lead · review due ~3-monthly") and ✅ **"Upload restricted to central admin/governance"** — both round-1 A6 asks implemented.
 - 🔍 **Honest admission:** "REFERENCE ONLY — NOT YET RAG-INGESTED" + footer: gap-checks currently run on a **deterministic theme checklist**, not the uploaded documents' text (RAG ingestion = licensed-integration step). Consequences: (1) standards RAG-ingestion joins the **grounded-AI core P2**; (2) 🐛 labelling: clinic-facing "gap-checked vs GPhC/CQC/MHRA/NHS" oversells until RAG lands — say "checked against the compliance theme checklist" so claim matches mechanism.
 
+### R2.24 Users & clinics — 🛑 tenancy still conflated; 🛑 mystery self-registered accounts
+- 🛑 **Two mystery CLINICIAN accounts** — random-string names ("bksLQkfUfNDDhqBEmGMxn", "lfLDHKraqPRxXeBJW"), real **gmail** addresses, **no clinic attached**, full clinician role. Questions: (1) **is there open self-registration?** (clinician accounts must be clinic-admin-invite only); (2) **display name not enforced** — audit trail stamped "Signed by bksLQkf…" is worthless → require proper names; (3) unscoped users = the tenancy gap made live.
+- 🛑 **A7 tenancy conflation persists, now inconsistently** — some panel members filed under "Clinickly Demo Clinic", others (Newman/P.Word/Ep Och) have **no clinic**. Two-tier model (clinic-scoped vs platform-scoped) still unimplemented.
+- 🛑 **No clinics management** — page is "Users & clinics" but lists only users; no clinic entities, no way to add clinic #2 (needed to prove isolation).
+- ✅ Working: per-user emails, role badges, Deactivate, Invite user.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
