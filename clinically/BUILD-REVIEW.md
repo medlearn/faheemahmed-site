@@ -160,6 +160,14 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 - 🛑 **No clinics management** — page is "Users & clinics" but lists only users; no clinic entities, no way to add clinic #2 (needed to prove isolation).
 - ✅ Working: per-user emails, role badges, Deactivate, Invite user.
 
+### R2.25 Reports & audit — ✅ **all four A8 asks landed**; 🛑 patient refs leak into the audit trail
+- ✅ **Charts wired to real data** (consultations by area; MDT questions by type) — empty-charts bug gone.
+- ✅ **"Top missed searches — content gaps" BUILT** with "AGGREGATE · PII-SCRUBBED · NO PATIENT DATA" badge + honest empty state. (Pointer-open + SOP-demand tracking still to add.)
+- ✅ **Audit trail: "server-side log is append-only" + Export CSV** — immutability + exportability done. **Team CPD** section honest (roll-up awaits tenancy).
+- ✅ Audit rows prove the failure paths: **"Flagged NEEDS UPDATE"** (stale flag exists); **"Flagged back to draft — 'Passage r2 does not match the live source'"** (flag-back with recorded reason); recording-pipeline steps; fee-band claims; account provisioning; **"Updated clinic setting — schedule"** (evidence for the R2.17 schedule bug).
+- 🛑 **NEW P1 — patient refs in the central audit log:** entries read "Signed clinical note — ADHD — **patient N.R**" / "— **patient JS**". Clinician's private patient codes are written into the platform audit trail visible to central admin — breaks the anonymisation boundary (same family as the J.M. leak). **Audit item descriptions must carry the item type only, never patient refs.**
+- Minor: "Not recorded — 5" tops the clinical-area chart (legacy pre-dropdown consultations) — tag/exclude in the retro-scrub.
+
 - ❌ **P0 codes STILL NOT FIXED** — `R05.9` again labelled **"Fever, unspecified"** (R05 = cough; fever = R50.9). "AI-suggested — verify before use" badge added = caveat, **not validation**. J00/J06.9 correct. Terminology-server validation still outstanding.
 
 ---
