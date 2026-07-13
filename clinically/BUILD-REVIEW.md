@@ -162,7 +162,7 @@ Same input as round 1: *"4-day history of cough, cold and headache. No allergies
 
 ### R2.25 Reports & audit — ✅ **all four A8 asks landed**; 🛑 patient refs leak into the audit trail
 - ✅ **Charts wired to real data** (consultations by area; MDT questions by type) — empty-charts bug gone.
-- ✅ **"Top missed searches — content gaps" BUILT** with "AGGREGATE · PII-SCRUBBED · NO PATIENT DATA" badge + honest empty state. (Pointer-open + SOP-demand tracking still to add.)
+- 🟡 **"Top missed searches" box exists** (aggregate/PII-scrubbed, honest empty state) — but **logging UNVERIFIED** (box was empty; test: gibberish search → appears in report?). **Wider demand intelligence not built:** top successful searches / most-opened guidelines, pointer-entry opens, SOP demand, Ask-Clinickly themes. (Downgraded from ✅ — Faheem.)
 - ✅ **Audit trail: "server-side log is append-only" + Export CSV** — immutability + exportability done. **Team CPD** section honest (roll-up awaits tenancy).
 - ✅ Audit rows prove the failure paths: **"Flagged NEEDS UPDATE"** (stale flag exists); **"Flagged back to draft — 'Passage r2 does not match the live source'"** (flag-back with recorded reason); recording-pipeline steps; fee-band claims; account provisioning; **"Updated clinic setting — schedule"** (evidence for the R2.17 schedule bug).
 - 🛑 **NEW P1 — patient refs in the central audit log:** entries read "Signed clinical note — ADHD — **patient N.R**" / "— **patient JS**". Clinician's private patient codes are written into the platform audit trail visible to central admin — breaks the anonymisation boundary (same family as the J.M. leak). **Audit item descriptions must carry the item type only, never patient refs.**
