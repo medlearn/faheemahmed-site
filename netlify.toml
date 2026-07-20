@@ -6,6 +6,47 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# ── Block internal files from public access ─────────────────
+# A Netlify Drop publishes the whole folder, so source/docs/schema would
+# otherwise be readable by URL. `force = true` is required: without it
+# Netlify serves the existing static file and ignores the rule.
+# NOTE: /netlify/* (source) is blocked; /.netlify/functions/* (runtime) is not.
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/supabase/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.sql"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
 # Friendly short paths → the functions.
 [[redirects]]
   from = "/api/*"
