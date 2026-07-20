@@ -23,17 +23,12 @@
   status = 404
   force = true
 
-[[redirects]]
-  from = "/*.md"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/*.sql"
-  to = "/404.html"
-  status = 404
-  force = true
+# NOTE: Netlify only supports a TRAILING splat (`/dir/*`) — it does NOT
+# support extension globs like `/*.md`, which silently match nothing.
+# So *.md docs are PRUNED FROM THE DEPLOY FOLDER before dropping rather
+# than blocked here (they can't be wildcarded: they live under /clinically/
+# and /library/, which are both live pages). They remain in git on main.
+# Before each Drop:  find <deploy-folder> -name "*.md" -type f -delete
 
 [[redirects]]
   from = "/package.json"
