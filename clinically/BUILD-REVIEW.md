@@ -25,6 +25,12 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - ⏳ Last mile: click "Add to authoring backlog" → confirm a draft appears in Content libraries.
 - ⏳ Still missing (other demand signals): pointer-entry opens (INDEX→SOURCE promotion), SOP demand (builds + requests), top *successful* searches / most-opened guidelines, CPD team roll-up.
 
+### R3.3 Dashboard — ✅ case regression appears FIXED; 🐛 schedule bug spread
+- ✅ **Case submission regression looks FIXED** — activity shows **real IDs C-244…C-247** ("Submitted anonymised case", timestamped 21 Jul 07:57; batch suggests stuck cases recovered + IDs assigned). Round 2: same submissions showed "C-…" with no ID and never reached the panel. "6 Open MDT cases · awaiting panel" confirms flow. ⏳ Confirm C-247 lands in a panel inbox.
+- 🐛 **Schedule bug now on BOTH portals (worse).** Banner reads "August cycle · **15 Aug 2026**". Today ≈ 21 Jul → next should be **28 Jul** (last Tuesday of July; 28 Jul 2026 IS a Tuesday). **15 Aug 2026 is a Saturday** (August's last Tuesday = 25 Aug). Round 2: clinician view was correct, panel wrong; now both wrong — spread, not fixed.
+- 🐛 Test-data purge not done ("C-245 — ddd").
+- ✅ Note quality holding — hedged, differential phrasing ("consistent with acute otitis externa **or** acute otitis media"), "Not recorded" for missing patient ref.
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
