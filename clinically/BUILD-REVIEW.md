@@ -31,6 +31,14 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - 🐛 Test-data purge not done ("C-245 — ddd").
 - ✅ Note quality holding — hedged, differential phrasing ("consistent with acute otitis externa **or** acute otitis media"), "Not recorded" for missing patient ref.
 
+### R3.4 Consultation (headache+dyspnoea test) — ✅ codes look fixed; 🛑 **NEW P0: decision-support citations are WRONG**
+- ✅ **Codes correct** — `R51 — Headache`, `R06.0 — Dyspnoea` (both accurate ICD-10 + labels). Round 2's `R05.9 — "Fever"` was the same error class. ⏳ Re-run the original cough transcript to confirm that specific case.
+- ✅ **Transcript-only + gap-flagging exemplary** — 2 sentences in → **11 gap flags**, zero fabrication. Best line: ⚠️ *"Differential diagnosis cannot be narrowed without detailed history and examination"* (AI declining to over-conclude). Clinical inference sound (urgent assessment given 10+ days headache/dyspnoea at 15).
+- 🛑 **NEW P0 — decision-support cites WRONG guideline IDs (false authority).** Card cites **"NICE NG87 (Chest pain of recent onset)"** — **NG87 is ADHD**, and the product's OWN library contains "NICE NG87 (ADHD) — update v3"; chest pain = CG95. Also suspect: **"NICE NG07 (Child safeguarding)"** (NG7 = preventing excess weight gain; safeguarding = NG76) and **"NICE NG127 (Meningitis)"** (meningitis = NG240, prev CG102).
+  - **Root cause:** Ask Clinickly is now library-grounded, but the **consultation decision-support panel still generates citations from model memory** — the chat fix wasn't applied here. A wrong citation is worse than none: it manufactures false authority and contradicts the library on the same screen.
+  - **Fix:** decision-support cards must draw from (and link to) the governed library only — same grounding as Ask Clinickly; no free-generated guideline IDs.
+- ⚠️ **Positioning drift** — red card "Immediate vital signs and cardiorespiratory assessment **required**", reasoned from this patient's age/symptoms/duration. Defensible as safety-netting but firmer + more patient-specific than the agreed "general guidance + documentation prompts". Make it a deliberate decision, not drift.
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
