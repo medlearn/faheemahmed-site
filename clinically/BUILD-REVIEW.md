@@ -39,6 +39,11 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
   - **Fix:** decision-support cards must draw from (and link to) the governed library only — same grounding as Ask Clinickly; no free-generated guideline IDs.
 - ⚠️ **Positioning drift** — red card "Immediate vital signs and cardiorespiratory assessment **required**", reasoned from this patient's age/symptoms/duration. Defensible as safety-netting but firmer + more patient-specific than the agreed "general guidance + documentation prompts". Make it a deliberate decision, not drift.
 
+### R3.5 Signed note (headache+dyspnoea) — ✅ citation bug CONTAINED to advisory panel
+- ✅ **Wrong citations do NOT reach the note.** Signed record contains only transcript-derived content + gap flags; the bad guideline IDs (NG87-as-chest-pain etc.) live only in the decision-support side-panel. Blast radius limited to in-the-moment advice — the permanent/exportable record stays clean. (Still a P0 to fix.)
+- ✅ Codes correct in the saved record (R51/R06.0) + "verify before use" caveat; **all 11 gap flags persist through signing**; lock + addenda model + demo-signature warning intact; single clinical inference appropriately hedged.
+- Minor: "ACTIVITY (LOCAL ONLY)" on the note — confirm whether note activity should be server-side like the main audit trail.
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
