@@ -81,6 +81,14 @@ Faheem, round 3: *"Either we have it or we don't — the rest is dilution."* Two
 - 🐛 **Index: "Next review due" empty.** This is the column inspectors scan. Signing an SOP must set the next review date (corpus convention: **2-yearly**, or per policy type). Without it the index cannot evidence currency — the exact failure mode the product sells against.
 - Known/unchanged: catalogue still 8 starters (corpus seeding is our work, not his); "gap-checked vs GPhC, CQC, MHRA, NHS" still overstates until standards are RAG-ingested (R2.23).
 
+### R3.11 SOP builder output — ✅ **R2.10 decision properly implemented**
+- ✅ **Best-practice defaults + CONFIRM flags exactly as specced** — e.g. *"[CONFIRM: repeat prescriptions without a same-day consultation? **Default: NO** — every supply follows a consultation or documented structured review]"*, *"[CONFIRM: notifying the patient's NHS GP the default (with consent)? **Default: YES** …]"*, monitoring/MHRA pregnancy-prevention item. Clinic **facts** never invented; **process content** full best-practice; **decisions** get default + explicit flag. Defaults are well-judged governance; cites GMC remote-consultation guidance.
+- ✅ **Framing verbatim** — "A generic SOP is an inspection liability — make it true to YOUR clinic, then sign it."
+- ✅ **R2.23 honesty fix landed** — now "**Checked against the compliance theme checklist (uploaded standards cited)**", not "gap-checked vs the standards". Claim matches mechanism pending RAG ingestion.
+- ✅ **Attestation answers the interview's killer question** — *"As clinic lead, I confirm this SOP reflects our clinic's **actual named leads, premises and processes**"* = a direct, recorded answer to *"how have you personalised these?"*
+- ✅ **Hard gate:** sign-off disabled until a **named clinical lead** is entered.
+- ⏳ To check: (1) does the finished document use the **full house format** (version block · References · Scope · AIM → POLICY → PROCEDURE)? (2) **does signing set "next review due"?** — this flow is where it should happen; that column is blank in the Master Policy Index (R3.10).
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
