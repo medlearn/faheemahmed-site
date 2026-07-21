@@ -62,6 +62,12 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - 🐛 **Card design inconsistent (Faheem: "I don't get the cards").** The second chip means **three different things** across cards: a **state** (`draft`), **our version** (`v1`/`v3`), the **official guideline ID** (`NG87`/`NG109`/`NG112`), or an **internal DB slug** (`CKS-ROS`, `GPHC-STD`, `GMC-GP`, `BNF-LDX`, `MHRA-VAL` — same leak as `[g-ng87]` in the chat). Consequence: on *our summary* cards you can't see which guideline is being summarised; on *pointer* cards you can't see our version.
   - **Fix — one fixed meaning per slot on every card:** `source · official reference` (NICE · NG87) on top → **state** + **depth** badges → title → description → `our vX · updated YYYY-MM` small at the bottom → Open. **Never show internal slugs.** Scanning should read as one sentence: "NICE NG87, we've written a full summary, it's live, our third version." 
 
+### R3.8 Guideline detail pages — ✅ NG112 authored; 🛑 card badge contradicts page state
+- ✅ **NG112 (recurrent UTI) is now a genuine FULL SUMMARY** (answers the R3.7 question) — house format *Recognise the pattern / Assess & rule out / Management approach / Safety-netting & review*, **per-statement citations throughout**, BNF link-out for doses, "names no regimen — verify at source". Richest entry in the library; notably deeper than the NG87 update (only 2 recommendations).
+- ✅ Pointer entries (NG109, GPhC Standards) correctly render Scope / How to use / Keeping it current with **no clinical content** — by design.
+- 🛑 **Card badge contradicts the detail page.** Cards for **NG112** and **Rosacea CKS** show **GOVERNED**, but their pages read **"Draft v1.0 … awaiting sign-off"** with the banner **"not for clinical use until signed off"**. GOVERNED must mean signed+live. Either these are different entries with near-identical names (also a problem) or **the badge is wrong** — a clinician trusting GOVERNED would be reading unsigned content. Verify and fix.
+- 💡 **Badge model to document for users:** three independent questions — publisher (NICE/GPhC/…), **our governance state** (draft → in review → governed), **our depth** (full summary vs index→source). State × depth are independent; that's why the shelf looks uneven.
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
