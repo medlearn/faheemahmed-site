@@ -18,6 +18,13 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - ✅ **Second half VERIFIED — grounding-by-citation proven.** In-scope ADHD prompt returns: **citation chips `NICE NG87 ↗` + `BNF LDX ↗`**; **honest about its own gaps** ("library covers ADHD… but does not provide a detailed checklist of pre-escalation safety steps" — flag-don't-fabricate applied to chat); **general not patient-specific** ("before escalating ANY stimulant dose"); **approach/dose split holds** (no thresholds given — "always consult the BNF monograph at source… this summary does not replace that step"); verify-at-source threaded throughout; clinician decides. **Ask Clinickly went from riskiest surface to best-behaved in one round.**
 - 🐛 Cosmetic: **raw internal IDs leak into prose** — "at scope level **[g-ng87]**", "**[g-bnf-ldx]**". Database keys shouldn't be user-facing; hide them or fold into the existing citation chips.
 
+### R3.2 Demand loop — ✅ **VERIFIED END TO END (live test)**
+- Test: the R3.1 ear-ache refusal → **"Top missed searches — content gaps"** now shows *"confirm the differential for ear ache" **×1 · `ask-clinickly`*** with **[+ Add to authoring backlog]**.
+- ✅ Missed-search logging **IS wired** (upgrades the round-2 downgrade). ✅ **Bonus: source attribution** (`ask-clinickly` vs Guidelines search) — not specced, genuinely useful. ✅ Privacy badges hold (aggregate · PII-scrubbed · no patient data).
+- **Flywheel proven:** ask → refusal → logged miss → content gap → one-click backlog → draft → panel verify → sign → published → chat can answer it. First real data-driven authoring decision (ear ache) is already on the board.
+- ⏳ Last mile: click "Add to authoring backlog" → confirm a draft appears in Content libraries.
+- ⏳ Still missing (other demand signals): pointer-entry opens (INDEX→SOURCE promotion), SOP demand (builds + requests), top *successful* searches / most-opened guidelines, CPD team roll-up.
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
