@@ -71,6 +71,16 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 ### R3.9 DECISION — one standard for the library (supersedes two tiers)
 Faheem, round 3: *"Either we have it or we don't — the rest is dilution."* Two-tier model reversed. Library = **full summaries only**; `INDEX → SOURCE` cards removed; signposting moves to **search results**; un-authored topics become the **admin authoring backlog**. Rationale: pointers diluted the core promise, confused users across R2.8/R3.7/R3.8, and enabled the GOVERNED-on-unsigned-draft P0. Accepted consequence: ~12 cards → ~4 real entries, making the **starter set the launch blocker**.
 
+### R3.10 Templates & SOPs — ✅ four fixes landed incl. Master Policy Index; 🐛 index columns empty
+- ✅ **"Request an SOP" button + search bar** — both round-2 P3 gaps, done.
+- ✅ **Policy numbers on cards** (`C07f` prescribing · `C05` consent · `C08` safeguarding) — **adopts Faheem's corpus numbering, correctly matched.** Evidence the dev is working from the source documents.
+- ✅ **Master Policy Index BUILT + Export CSV** — auto-generated from the signed SOP library, "current versions only", subtitle *"The first thing an inspection asks for."* (The feature derived from Faheem's own hand-maintained index.)
+- ✅ **Duplicate SOPs cleaned** (the RIverside/Riverside pair from R2.9 is gone).
+- ✅ Governance split still correct — note templates have no "Build for my clinic".
+- 🐛 **Index: Policy No shows "—"** despite the source card showing `C07f`. Number not carried into the index.
+- 🐛 **Index: "Next review due" empty.** This is the column inspectors scan. Signing an SOP must set the next review date (corpus convention: **2-yearly**, or per policy type). Without it the index cannot evidence currency — the exact failure mode the product sells against.
+- Known/unchanged: catalogue still 8 starters (corpus seeding is our work, not his); "gap-checked vs GPhC, CQC, MHRA, NHS" still overstates until standards are RAG-ingested (R2.23).
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
