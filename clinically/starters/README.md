@@ -37,7 +37,7 @@ Every starter has:
 | [C02 Infection prevention & control](C02-infection-prevention-control.md) | 11, 13, 12, 15 | C02 v01 | ✅ **v1.0** (supersedes v01) |
 | [C017 Risk management & serious incidents](C017-risk-management-incidents.md) | 12, 20, 17, 23 | C017 v01 | ✅ **v1.0** (supersedes v01) |
 | C038 Health & safety | 13 | C038 | ⬜ |
-| C024 Clinical governance | 20 | C024 | ⬜ |
+| [C024 Clinical governance](C024-clinical-governance.md) | 20, 21, 12, 15 | C024 v01 | ✅ **v1.0** (supersedes v01) |
 | [C033 Clinical audit](C033-clinical-audit.md) | 20, 12, 9 | C033 v01 | ✅ **v1.0** (supersedes v01) |
 | [C025 Recruitment & fitness to practise](C025-recruitment.md) | 14, 15, 18, 1 | C025 v01 | ✅ **v1.0** (supersedes v01) |
 | [C010 Training, supervision & appraisal](C010-training-supervision-appraisal.md) | 15, 14, 20 | C010 v01 | ✅ **v1.0** (supersedes v01) |
@@ -45,13 +45,13 @@ Every starter has:
 | [C039 Patient identification](C039-patient-identification.md) | 8, 12, 4, 1 | C039 v01 | ✅ **v1.0** (supersedes v01) |
 | [C029 Document control](C029-document-control.md) | 10, 9, 8, 20 | C029 v01 | ✅ **v1.0** (supersedes v01) |
 | [S01 Equality, diversity & inclusion](S01-equality-diversity-inclusion.md) | 18, 16, 14, 23 | S01 v01 | ✅ **v1.0** (supersedes v01) |
-| Business continuity | 22 | Business Continuity (2022) | ⬜ |
+| [Business Continuity Plan](BCP-business-continuity.md) | 22, 12, 13, 9 | BCP (2022) | ✅ **v1.0** (supersedes 2022) |
 | [C015 Operational policy](C015-operational-policy.md) | 3, 20, 21, 10 | C015 v01 | ✅ **v1.0** (supersedes v01) |
 | [C07 Medicines management](C07-medicines-management.md) | 6, 5, 12, 8 | C07 v01 | ✅ **v1.0** (supersedes v01) |
-| C040 Remote consultations | 4 | C040 | ⬜ |
+| [C040 Remote consultations](C040-remote-consultations.md) | 4, 3, 9, 2, 6 | C040 v01 | ✅ **v1.0** (supersedes v01) |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**23 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**26 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
