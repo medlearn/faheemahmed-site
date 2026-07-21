@@ -39,19 +39,19 @@ Every starter has:
 | C038 Health & safety | 13 | C038 | ⬜ |
 | C024 Clinical governance | 20 | C024 | ⬜ |
 | [C033 Clinical audit](C033-clinical-audit.md) | 20, 12, 9 | C033 v01 | ✅ **v1.0** (supersedes v01) |
-| C025 Recruitment & fitness to practise | 14 | C025 | ⬜ |
+| [C025 Recruitment & fitness to practise](C025-recruitment.md) | 14, 15, 18, 1 | C025 v01 | ✅ **v1.0** (supersedes v01) |
 | [C010 Training, supervision & appraisal](C010-training-supervision-appraisal.md) | 15, 14, 20 | C010 v01 | ✅ **v1.0** (supersedes v01) |
 | [C01 Chaperone](C01-chaperone.md) | 18, 2, 8, 15 | C01 v01 | ✅ **v1.0** (supersedes v01) |
 | [C039 Patient identification](C039-patient-identification.md) | 8, 12, 4, 1 | C039 v01 | ✅ **v1.0** (supersedes v01) |
-| C029 Document control | 10 | C029 | ⬜ |
-| S01 Equality & diversity | 18 | S01 | ⬜ |
+| [C029 Document control](C029-document-control.md) | 10, 9, 8, 20 | C029 v01 | ✅ **v1.0** (supersedes v01) |
+| [S01 Equality, diversity & inclusion](S01-equality-diversity-inclusion.md) | 18, 16, 14, 23 | S01 v01 | ✅ **v1.0** (supersedes v01) |
 | Business continuity | 22 | Business Continuity (2022) | ⬜ |
 | [C015 Operational policy](C015-operational-policy.md) | 3, 20, 21, 10 | C015 v01 | ✅ **v1.0** (supersedes v01) |
 | [C07 Medicines management](C07-medicines-management.md) | 6, 5, 12, 8 | C07 v01 | ✅ **v1.0** (supersedes v01) |
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**20 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**23 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
@@ -84,6 +84,23 @@ Errors found in the 2022 source corpus during authoring, to be checked for where
 Files anchored to DPA 1998: S04 Communication · S10 Occupational Health · HR05 Appraisal Guidelines · **C028 Patient Access to Records** · C029 Document Control · C033 Clinical Audit · **C03e Information Governance** · **CT12 Patient Information About Consent**.
 
 The three in bold matter most: an information governance policy, a subject-access policy, and a **patient-facing** consent leaflet, all built on the pre-2018 regime. Subject access rights, timescales and lawful bases all changed. This is a corpus-wide re-basing job, not eight individual edits — and it is a strong argument for the requirement-theme layer, since theme 9 (Confidentiality & information governance) touches all eight.
+
+## 🔴 URGENT: an unlawful instruction in two live recruitment policies
+
+**C025 Staff Recruitment** and **S07 Staff Recruitment** — two near-duplicate policies, both signed, both live — contain this paragraph verbatim:
+
+> *"Where there is an international candidate and a candidate from the UK who are equal after the selection process is complete and both meet the requirements of the role, then **the candidate from the UK must take precedence, and be offered the role. This reflects the statutory employment requirements.**"*
+
+**There is no such statutory requirement, and following the instruction would be unlawful.**
+
+- The **Resident Labour Market Test** was **abolished in December 2020**. Even while it existed it was an advertising duty on sponsors, never a rule requiring a British candidate to be preferred at appointment.
+- **Nationality is part of race under s.9 Equality Act 2010.** Preferring a candidate because they are British is **direct race discrimination**, which cannot be justified. A written instruction to do so is evidence in itself.
+
+**Actions:** withdraw both v01s from circulation now · check whether any appointment relied on it · check whether either policy was shared with anyone else · check job adverts, agency briefs and interview materials for the same wording.
+
+This is the most serious defect found in the corpus. Everything else has been a stale reference, a missing procedure or a contradiction. **This is an instruction to break the law, in the document that governs who gets hired.**
+
+**Note the duplication itself is a finding:** two recruitment policies exist (C025 clinical series, S07 non-clinical series) with near-identical text. Correcting one would have left the other live — which is precisely what a policy register (see C029) exists to prevent.
 
 ## 🚩 SYSTEMIC: the corpus reports to a body abolished in 2012
 
