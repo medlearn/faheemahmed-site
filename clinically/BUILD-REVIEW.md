@@ -59,6 +59,8 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - ⚠️ **Duplicate topic cards confuse depth** — NG87 twice ("NG87 (ADHD) — update" FULL SUMMARY v3 **and** "ADHD: diagnosis and management" INDEX→SOURCE); Rosacea twice (in-review draft + published CKS). Rosacea pair is legitimate but consider attaching drafts to their parent entry rather than separate cards.
 - 🐛 **Test junk still published** — "R3 sign test" + "Impetigo first-line — cross-machine E2E", both GOVERNED · FULL SUMMARY; now also polluting tier counts.
 - ✅ **Confirms the R3.4 citation bug** — NG87 is ADHD, stated twice on this page; decision-support citing "NICE NG87 (Chest pain of recent onset)" contradicts the product's own library.
+- 🐛 **Card design inconsistent (Faheem: "I don't get the cards").** The second chip means **three different things** across cards: a **state** (`draft`), **our version** (`v1`/`v3`), the **official guideline ID** (`NG87`/`NG109`/`NG112`), or an **internal DB slug** (`CKS-ROS`, `GPHC-STD`, `GMC-GP`, `BNF-LDX`, `MHRA-VAL` — same leak as `[g-ng87]` in the chat). Consequence: on *our summary* cards you can't see which guideline is being summarised; on *pointer* cards you can't see our version.
+  - **Fix — one fixed meaning per slot on every card:** `source · official reference` (NICE · NG87) on top → **state** + **depth** badges → title → description → `our vX · updated YYYY-MM` small at the bottom → Open. **Never show internal slugs.** Scanning should read as one sentence: "NICE NG87, we've written a full summary, it's live, our third version." 
 
 ---
 
