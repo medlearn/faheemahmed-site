@@ -25,7 +25,7 @@ Every starter has:
 | [S12 Fees and Financial Transparency](S12-fees-financial-transparency.md) | 19, 2, 17, 18 | 🆕 none | ✅ Draft |
 | [S03 Speaking Up (Raising Concerns)](S03-speaking-up.md) | 23, 16, 12, 20 | S03 v01 (2022) | ✅ Draft — supersedes v01 |
 | [S13 Display of Ratings and Registration](S13-ratings-registration-display.md) | 24 | 🆕 none | ✅ Draft |
-| C08 Safeguarding adults | 1 | C08 | ⬜ |
+| [C08 Safeguarding adults](C08-safeguarding-adults.md) | 1, 2, 12, 15 | C08 v01 | ✅ Draft — supersedes v01 |
 | C032 Safeguarding children | 1 | C032 | ⬜ |
 | C05 Consent | 2 | C05 | ⬜ |
 | C03 Confidentiality & information governance | 9 | C03, C03c, C03e | ⬜ |
@@ -49,7 +49,7 @@ Every starter has:
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**5 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**6 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
@@ -64,3 +64,22 @@ Errors found in the 2022 source corpus during authoring, to be checked for where
 - **"MIMMS"** used where **MIMS** was meant (C07f, three occurrences) — MIMMS is Major Incident Medical Management and Support
 - **National Patient Safety Agency** — abolished 2012; alerts now issue as National Patient Safety Alerts via CAS
 - **GMC *Good Medical Practice* 2013** — superseded by the 2024 edition; cited in S03 v01 and likely elsewhere
+- **Intercollegiate Document, adult safeguarding roles & competencies** — 2018 first edition cited in C08 v01; a later edition exists
+
+## 🚩 Unreplaced template placeholders in live signed policies
+
+Found by corpus scan, 21 Jul 2026. These are **signed, authorised policies that were adopted from a template and never finished.** This is the direct answer to the inspector's *"how have you personalised these?"* test — and it is the wrong answer.
+
+| Policy | Placeholder left in | Where |
+|---|---|---|
+| **C05 Consent** | `XXXXX procedure` | **In a patient-facing consent form** — "to assist you in making an informed decision to undergo XXXXX procedure" |
+| **C08 Safeguarding Adults** | `Xxxx` ×4 | AIM, key roles, reporting, abuse-within headings |
+| **C08 Safeguarding Adults** | `INSERT LOCAL S/S` ×2 | The multi-agency safeguarding framework |
+| **C032 Safeguarding Children** | `[INSERT Social Services Safeguarding Protocols for Children and Young People]` | The referral framework |
+| **C017 Risk Management & SUI** | `<INSERT NAME>` | Who co-ordinates media communications during a serious incident |
+| **C038 Health and Safety** | `<INSERT NAME>` | Who to report obstructed access/egress to |
+| **C035 Practising Privileges** | `Dr. [INSERT NAME]` | Medical Director, in a letter sent to applicants |
+
+**Not defects** (blanks by design): S00, C00, C00b policy templates · HR06 appraisal invite · HR15 sample contract · C037/S07b fit-and-proper declarations (completed by hand on signing).
+
+**Every starter template addresses this structurally:** placeholders are `[CONFIRM: … Default: …]` rather than `Xxxx`, so an unfinished field is visible rather than camouflaged, and C08 carries a do-not-adopt-with-blanks warning at the head.
