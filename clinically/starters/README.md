@@ -53,6 +53,12 @@ Every starter has:
 
 **28 of 28 — COMPLETE.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
+## Forms
+
+**[`forms/`](forms/) — 4 governed forms, v1.0.** Consent · complaints leaflet · incident report · safeguarding concern record. Several other forms are embedded as appendices in their parent policy (chaperone notice in C01, staff safeguarding alert in C08, confidentiality agreement in C03, candour quick reference in C021).
+
+**The worst defect found in the whole corpus was on a form**, not a policy — `XXXXX procedure` on a consent form a patient was asked to sign. Patient-facing forms carry the loudest warnings and the strictest publish gate.
+
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
 - **C41** and **S12** were both probed at the real CQC inspection and had no policy behind them.
