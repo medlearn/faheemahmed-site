@@ -36,7 +36,7 @@ Every starter has:
 | [C021 Being Open & Duty of Candour](C021-duty-of-candour.md) | 17, 12, 20, 23 | C021 v01 | ✅ **v1.0** (supersedes v01) |
 | [C02 Infection prevention & control](C02-infection-prevention-control.md) | 11, 13, 12, 15 | C02 v01 | ✅ **v1.0** (supersedes v01) |
 | [C017 Risk management & serious incidents](C017-risk-management-incidents.md) | 12, 20, 17, 23 | C017 v01 | ✅ **v1.0** (supersedes v01) |
-| C038 Health & safety | 13 | C038 | ⬜ |
+| [C038 Health & safety](C038-health-and-safety.md) | 13, 12, 16, 15 | C038 v01 | ✅ **v1.0** (supersedes v01) |
 | [C024 Clinical governance](C024-clinical-governance.md) | 20, 21, 12, 15 | C024 v01 | ✅ **v1.0** (supersedes v01) |
 | [C033 Clinical audit](C033-clinical-audit.md) | 20, 12, 9 | C033 v01 | ✅ **v1.0** (supersedes v01) |
 | [C025 Recruitment & fitness to practise](C025-recruitment.md) | 14, 15, 18, 1 | C025 v01 | ✅ **v1.0** (supersedes v01) |
@@ -49,9 +49,9 @@ Every starter has:
 | [C015 Operational policy](C015-operational-policy.md) | 3, 20, 21, 10 | C015 v01 | ✅ **v1.0** (supersedes v01) |
 | [C07 Medicines management](C07-medicines-management.md) | 6, 5, 12, 8 | C07 v01 | ✅ **v1.0** (supersedes v01) |
 | [C040 Remote consultations](C040-remote-consultations.md) | 4, 3, 9, 2, 6 | C040 v01 | ✅ **v1.0** (supersedes v01) |
-| C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
+| [C034 Resuscitation & medical emergencies](C034-resuscitation.md) | 5, 6, 15, 13 | C034 v01 | ✅ **v1.0** (supersedes v01) |
 
-**26 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**28 of 28 — COMPLETE.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
