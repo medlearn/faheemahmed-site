@@ -30,8 +30,8 @@ Every starter has:
 | [C05 Consent](C05-consent.md) | 2, 8, 18, 19 | C05 v01 | ✅ Draft — supersedes v01 |
 | [C03 Patient Confidentiality](C03-patient-confidentiality.md) | 9, 8, 2, 18 | C03 v01 | ✅ Draft — supersedes v01 |
 | [C09 Record keeping](C09-record-keeping.md) | 8, 9, 10 | C09 v01 | ✅ Draft — supersedes v01 |
-| C04 Complaints | 17 | C04 | ⬜ |
-| C021 Duty of candour | 17 | C021 | ⬜ |
+| [C04 Complaints](C04-complaints.md) | 17, 20, 18, 19 | C04 v01 | ✅ Draft — supersedes v01 |
+| [C021 Being Open & Duty of Candour](C021-duty-of-candour.md) | 17, 12, 20, 23 | C021 v01 | ✅ Draft — supersedes v01 |
 | C02 Infection prevention & control | 11 | C02 | ⬜ |
 | C017 Risk management & serious incidents | 12 | C017 | ⬜ |
 | C038 Health & safety | 13 | C038 | ⬜ |
@@ -49,7 +49,7 @@ Every starter has:
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**10 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**12 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
@@ -82,6 +82,37 @@ Errors found in the 2022 source corpus during authoring, to be checked for where
 Files anchored to DPA 1998: S04 Communication · S10 Occupational Health · HR05 Appraisal Guidelines · **C028 Patient Access to Records** · C029 Document Control · C033 Clinical Audit · **C03e Information Governance** · **CT12 Patient Information About Consent**.
 
 The three in bold matter most: an information governance policy, a subject-access policy, and a **patient-facing** consent leaflet, all built on the pre-2018 regime. Subject access rights, timescales and lawful bases all changed. This is a corpus-wide re-basing job, not eight individual edits — and it is a strong argument for the requirement-theme layer, since theme 9 (Confidentiality & information governance) touches all eight.
+
+## 🚩 Internal contradictions found so far
+
+Three documents state two incompatible things about the same fact. All three are machine-detectable.
+
+| Policy | Contradiction | Why it matters |
+|---|---|---|
+| **C032 Safeguarding Children** | *"under 18s are not seen at the clinic"* vs *"At Ahmeys Clinic under 18s are seen"* — same section, four lines apart | Determines the mandatory safeguarding training level for every clinical member of staff |
+| **C04 Complaints** | Response due in *"21 days"* / *"28 working days"* / *"21 working days"* — three figures | The patient leaflet, the staff following it, and an inspector each get a different answer |
+| **C04 Complaints** | Tells dissatisfied complainants to *"approach the Care Quality Commission"*, then states *"the CQC will not arbitrate in a complaint"* | Sends complainants to a body that cannot help them, producing a second complaint about the first |
+
+## 🚩 Private patients have no Ombudsman — and the corpus never says so
+
+C04 v01 offers CQC as the escalation route. CQC does not investigate individual complaints, and **the PHSO covers NHS-funded care only**. A privately funded patient's only genuine independent route is a subscription scheme such as **ISCAS**.
+
+Corpus-wide: *Ombudsman* appears **0 times in 119 documents**; ISCAS or independent adjudication appears in 4.
+
+**Every private-sector starter must make scheme membership an explicit `[CONFIRM`], because a clinic that is not a member cannot offer independent adjudication and must not imply it in a patient leaflet.**
+
+## 🚩 The two duties of candour were treated as one
+
+C021 v01 is a faithful account of the NPSA **Being Open** framework — but never states **Regulation 20**: no notifiable-safety-incident thresholds, none of the prescribed steps, and no mention that non-compliance with parts of Reg 20 is a **criminal offence**.
+
+It also does not distinguish:
+
+| | Statutory (CQC Reg 20) | Professional (GMC/NMC; **GPhC Std 8**) |
+|---|---|---|
+| Held by | the organisation | **every individual registrant** |
+| Threshold | notifiable safety incident | **anything that goes wrong** |
+
+Without the distinction, *"it wasn't a notifiable safety incident"* reads as a reason to tell the patient nothing. That is the commonest way candour fails, and it fails in good faith.
 
 ## 🚩 The two thinnest policies cover the most-inspected subjects
 
