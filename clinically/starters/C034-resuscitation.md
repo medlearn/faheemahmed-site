@@ -15,7 +15,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | **Annually** `[CONFIRM — shortened from two years; see the closing note]` |
 | **Requirement themes** | 5 Emergency care & resuscitation · 6 Medicines management · 15 Training · 13 Health, safety & premises |
-| **Evidences** | **CQC Reg 12 (safe care and treatment)** · CQC Reg 15 (premises and equipment) · CQC Reg 18 (staffing) · GPhC Professional Standard 5 · Pharmacy Principle 4 |
+| **Evidences** | **CQC Reg 12 (safe care and treatment)** · CQC Reg 15 (premises and equipment) · CQC Reg 18 (staffing) · GPhC Professional Standard 5 · GPhC Pharmacy Principle 4 (pharmacy services) · Pharmacy Principle 5 (equipment and facilities) |
 
 ---
 

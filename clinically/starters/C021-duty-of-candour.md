@@ -68,18 +68,29 @@ There are **two** duties of candour, and they are not the same duty.
 
 ## WHEN THE STATUTORY DUTY IS TRIGGERED
 
-A **notifiable safety incident** is an unintended or unexpected incident occurring in the course of a regulated activity that, in the reasonable opinion of a healthcare professional, **could result in, or appears to have resulted in**:
+> ⚠️ **There are TWO definitions in Regulation 20, and most clinics are given the wrong one.**
+>
+> **Regulation 20(8)** defines a notifiable safety incident for **health service bodies** (NHS trusts) — death, severe harm, moderate harm, prolonged psychological harm.
+>
+> **Regulation 20(9)** defines it for **every other registered person** — which includes `[CLINIC NAME]`. **The thresholds are different, and they are lower.** Use the table below, not the NHS one.
 
-| Category | Meaning |
+A **notifiable safety incident** for a registered person **other than a health service body** is an unintended or unexpected incident occurring during the provision of a regulated activity that, in the reasonable opinion of a healthcare professional, **appears to have resulted in one of the following, where the outcome relates directly to the incident rather than to the natural course of the illness or underlying condition**:
+
+| Category | Threshold |
 |---|---|
-| **Death** | Where the death relates directly to the incident, rather than to the natural course of the patient's illness or underlying condition |
-| **Severe harm** | A permanent lessening of bodily, sensory, motor, physiologic or intellectual functions, including removal of the wrong limb or organ, or brain damage |
-| **Moderate harm** | Harm requiring a moderate increase in treatment, **and** significant but not permanent harm |
-| **Prolonged psychological harm** | Psychological harm the patient has experienced, or is likely to experience, **for a continuous period of at least 28 days** |
+| **Death** | Where the death relates directly to the incident |
+| **Impairment of sensory, motor or intellectual functions** | Lasting, or likely to last, **28 days or more** |
+| **Changes to the structure of the body** | — |
+| **Prolonged pain** | Pain experienced, or likely to be experienced, for **28 days or more** |
+| **Prolonged psychological harm** | Harm experienced, or likely to be experienced, for **28 days or more** |
+| **Shortened life expectancy** | — |
+| **Treatment required to prevent any of the above** | Where the patient **required treatment by a healthcare professional in order to prevent** death, or any of the injuries above |
 
-`[CONFIRM: check these definitions against the current CQC Regulation 20 guidance before adopting — the thresholds differ slightly between health service bodies and other registered providers, and this clinic falls into the second category.]`
+> **Note what this means in practice.** The last row is wide. **An incident that would have caused harm but was prevented by treatment is still notifiable** — a wrong dose caught and corrected in a way that required clinical intervention meets the threshold even though the patient was ultimately fine.
+>
+> **And the durations are what matter, not severity labels.** "Moderate harm" and "severe harm" do not appear in this definition at all. The question is whether an effect lasts **28 days**, not how bad it looked on the day.
 
-> **"Could result in" matters.** The duty is triggered by an incident that *could* cause harm at these levels — not only one where harm has already been confirmed. Waiting to see how it turns out before telling the patient is a breach.
+`[CONFIRM: verify against the current text of Regulation 20(9) and CQC's guidance before adopting.]`
 
 **The duty applies regardless of:**
 

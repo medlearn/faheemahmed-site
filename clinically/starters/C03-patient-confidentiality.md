@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 9 Confidentiality & information governance · 8 Clinical record keeping · 2 Consent & capacity · 18 Equality, dignity & patient experience |
-| **Evidences** | CQC Reg 17 (good governance) · CQC Reg 10 (dignity and respect) · GPhC Professional Standard 6 (behave professionally) · GPhC Professional Standard 3 · Pharmacy Principle 1 · UK GDPR Articles 5, 6, 9, 33, 34 |
+| **Evidences** | CQC Reg 17 (good governance) · CQC Reg 10 (dignity and respect) · **GPhC Professional Standard 7 (respect and maintain confidentiality and privacy)** · GPhC Professional Standard 6 · GPhC Pharmacy Principle 1 (governance) · UK GDPR Articles 5, 6, 9, 33, 34 |
 
 ---
 

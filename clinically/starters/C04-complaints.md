@@ -15,7 +15,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 17 Complaints, feedback & duty of candour · 20 Clinical governance & audit · 18 Equality, dignity & patient experience · 19 Fees & financial transparency |
-| **Evidences** | **CQC Reg 16 (receiving and acting on complaints)** · CQC Reg 20 (duty of candour) · CQC Reg 17 (good governance) · GPhC Professional Standard 8 (speak up when things go wrong) · GPhC Professional Standard 3 · Pharmacy Principle 5 · GMC *Good Medical Practice* (2024) |
+| **Evidences** | **CQC Reg 16 (receiving and acting on complaints)** · CQC Reg 20 (duty of candour) · CQC Reg 17 (good governance) · GPhC Professional Standard 8 (speak up when things go wrong) · GPhC Professional Standard 3 · GPhC Pharmacy Principle 1 (governance) · GMC *Good Medical Practice* (2024) |
 
 ---
 

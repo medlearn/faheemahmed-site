@@ -1,5 +1,66 @@
 # Regulator mapping — CQC × GPhC × the 22 themes
 
+> ✅ **VERIFIED against published source texts, 21 Jul 2026.** No longer AI-drafted from memory.
+>
+> **Sources checked:** [Health and Social Care Act 2008 (Regulated Activities) Regulations 2014, Part 3](https://www.legislation.gov.uk/uksi/2014/2936/part/3/made) · [Regulation 20](https://www.legislation.gov.uk/uksi/2014/2936/regulation/20) · [Regulation 20A](https://www.legislation.gov.uk/uksi/2014/2936/regulation/20A) · [GPhC Standards for Pharmacy Professionals](https://www.pharmacyregulation.org/pharmacists/standards-and-guidance-pharmacy-professionals/standards-pharmacy-professionals) · [GPhC Standards for Registered Pharmacies](https://assets.pharmacyregulation.org/files/document/standards_for_registered_pharmacies_june_2018_0.pdf)
+
+## Corrections made at verification
+
+Four errors were found in the AI-drafted version and corrected across all 28 starters.
+
+### 1. Pharmacy Principles 1 and 5 were swapped
+
+The five **Standards for Registered Pharmacies** principles are:
+
+| # | Principle |
+|---|---|
+| **1** | **Governance** — governance arrangements safeguard health, safety and wellbeing |
+| **2** | **Staff** — staff are empowered and competent |
+| **3** | **Premises** — the environment and condition of the premises |
+| **4** | **Pharmacy services** — including the management of medicines and medical devices |
+| **5** | **Equipment and facilities** |
+
+Governance was mapped to **Principle 5**; it is **Principle 1**. Affected 8 documents.
+
+### 2. Professional Standard 7 was mis-stated
+
+The nine **Standards for Pharmacy Professionals**:
+
+| # | Standard |
+|---|---|
+| 1 | Provide person-centred care |
+| **2** | **Work in partnership with others** |
+| 3 | Communicate effectively |
+| 4 | Maintain, develop and use their professional knowledge and skills |
+| 5 | Use professional judgement |
+| 6 | Behave in a professional manner |
+| **7** | **Respect and maintain the person's confidentiality and privacy** |
+| 8 | Speak up when they have concerns or when things go wrong |
+| 9 | Demonstrate leadership |
+
+*Work in partnership* was mapped to Standard 7; it is **Standard 2**. And **C03 Patient Confidentiality did not cite Standard 7 at all** — the standard that exists for it.
+
+### 3. 🔴 C021 carried the WRONG duty of candour thresholds
+
+The most consequential correction. **Regulation 20 contains two different definitions of a notifiable safety incident:**
+
+- **Reg 20(8)** — for **health service bodies** (NHS trusts): death · severe harm · moderate harm · prolonged psychological harm
+- **Reg 20(9)** — for **every other registered person**, including a private clinic: death · impairment of sensory, motor or intellectual function lasting **28 days+** · changes to body structure · prolonged pain **28 days+** · prolonged psychological harm **28 days+** · shortened life expectancy · **or treatment required to prevent any of these**
+
+C021 carried the **NHS table**. Two practical consequences:
+
+- **"Moderate harm" and "severe harm" are not the test for a private clinic.** The test is **duration — 28 days** — not a severity label
+- **Reg 20(9) catches incidents where harm was prevented.** A wrong dose caught and corrected by clinical intervention is notifiable even though the patient was fine
+
+The corrected table is now in C021, with both definitions shown so nobody uses the NHS one by mistake.
+
+### 4. Regulation 20A confirmed
+
+Verified as *Requirement as to display of performance assessments* — website, signage at each premises, legible, conspicuous, accessible, dated. Theme 24 confirmed as correctly derived.
+
+---
+
+
 ⚠️ **DRAFT — AI-drafted from knowledge, NOT from the uploaded source texts.** Per the product's own rule (§5.6: *drafted from retrieved source text, never memory*), this **must be verified by the Governance MDT against the uploaded CQC and GPhC documents** before it drives required-policy lists or gap-checks. Treat every cell as a claim to check, not a fact.
 
 Themes: [CLINICKLY-MASTER.md](CLINICKLY-MASTER.md) §5.7 (approved 21 Jul 2026) · Corpus: [POLICY-CORPUS.md](POLICY-CORPUS.md)

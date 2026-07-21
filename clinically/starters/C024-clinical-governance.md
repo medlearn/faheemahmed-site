@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 20 Clinical governance & audit · 21 Communication & meetings · 12 Risk, incidents & never events · 15 Training |
-| **Evidences** | **CQC Reg 17 (good governance)** · CQC **Well-led** key question · CQC Reg 12 · **GPhC Pharmacy Principle 5 (governance)** · GPhC Professional Standard 4 |
+| **Evidences** | **CQC Reg 17 (good governance)** · CQC **Well-led** key question · CQC Reg 12 · **GPhC Pharmacy Principle 1 (governance)** · GPhC Professional Standard 4 |
 
 ---
 
@@ -196,7 +196,7 @@ Added: an annual governance calendar, and an assurance table that pairs each gov
 
 - **"CQC: Prof Sparrow No4 Quality Improvement Activity"** — the **fourth** appearance of this source in the corpus, after C01 Chaperone, C07 Medicines Management and C040 Remote Consultations. It is presented as CQC material and is not; it cannot be verified, reviewed or updated
 - *GMC Good Medical Practice 2013* → 2024
-- **No GPhC.** Governance is **Pharmacy Principle 5**, and for a pharmacist-led service it is the directly applicable standard
+- **No GPhC.** Governance is **Pharmacy Principle 1 (governance)**, and for a pharmacist-led service it is the directly applicable standard
 - **Regulation 17** — the regulation this policy exists to satisfy — was not cited
 - The cross-reference list runs *"Manual Handling Policy Infection Control Policy"* together as a single item, and refers to the *"Whistleblowing Policy"*, now superseded by **S03 Speaking Up v02**
 

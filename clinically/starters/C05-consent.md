@@ -15,7 +15,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 2 Consent & capacity · 8 Clinical record keeping · 18 Equality, dignity & patient experience · 19 Fees & financial transparency |
-| **Evidences** | **CQC Reg 11 (need for consent)** · CQC Reg 9 (person-centred care) · CQC Reg 10 (dignity and respect) · GPhC Professional Standard 1 (person-centred care) · GPhC Professional Standard 3 (communicate effectively) · GMC *Decision making and consent* (2020) · Pharmacy Principle 1 |
+| **Evidences** | **CQC Reg 11 (need for consent)** · CQC Reg 9 (person-centred care) · CQC Reg 10 (dignity and respect) · GPhC Professional Standard 1 (person-centred care) · GPhC Professional Standard 3 (communicate effectively) · GPhC Pharmacy Principle 4 (pharmacy services) · GMC *Decision making and consent* (2020)  |
 
 ---
 

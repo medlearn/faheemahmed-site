@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 6 Medicines management & prescribing · 5 Emergency care & resuscitation · 12 Risk, incidents & never events · 8 Clinical record keeping |
-| **Evidences** | **CQC Reg 12(2)(g) (safe and proper management of medicines)** · CQC Reg 17 · **GPhC Professional Standard 4 (maintain, develop and use professional knowledge)** · **GPhC Professional Standard 5** · **GPhC Pharmacy Principle 4 (safe and effective services)** · Human Medicines Regulations 2012 |
+| **Evidences** | **CQC Reg 12(2)(g) (safe and proper management of medicines)** · CQC Reg 17 · **GPhC Professional Standard 4 (maintain, develop and use professional knowledge)** · **GPhC Professional Standard 5** · **GPhC Pharmacy Principle 4 (pharmacy services)** · Human Medicines Regulations 2012 |
 
 ---
 

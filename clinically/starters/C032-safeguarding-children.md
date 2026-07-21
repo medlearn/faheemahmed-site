@@ -17,7 +17,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 1 Safeguarding · 2 Consent & capacity · 12 Risk, incidents & never events · 15 Training, supervision & appraisal |
-| **Evidences** | **CQC Reg 13 (safeguarding service users from abuse)** · CQC Reg 12 (safe care and treatment) · CQC Reg 17 (good governance) · CQC Reg 18 Registration Regs (statutory notifications) · GPhC Professional Standard 5 · GPhC Professional Standard 8 · Pharmacy Principle 1 |
+| **Evidences** | **CQC Reg 13 (safeguarding service users from abuse)** · CQC Reg 12 (safe care and treatment) · CQC Reg 17 (good governance) · CQC Reg 18 Registration Regs (statutory notifications) · GPhC Professional Standard 5 · GPhC Professional Standard 8 · Pharmacy Principle 1 (governance) |
 
 ---
 

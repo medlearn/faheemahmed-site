@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 11 Infection prevention & control · 13 Health, safety & premises · 12 Risk, incidents & never events · 15 Training, supervision & appraisal |
-| **Evidences** | **CQC Reg 12(2)(h) (assessing and preventing the spread of infection)** · CQC Reg 15 (premises and equipment) · GPhC Pharmacy Principle 3 (premises) · Pharmacy Principle 1 · Health and Safety at Work etc. Act 1974 |
+| **Evidences** | **CQC Reg 12(2)(h) (assessing and preventing the spread of infection)** · CQC Reg 15 (premises and equipment) · GPhC Pharmacy Principle 3 (premises) · Pharmacy Principle 5 (equipment and facilities) · Health and Safety at Work etc. Act 1974 |
 
 ---
 

@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 24 Regulatory transparency & ratings display · 18 Equality, dignity & patient experience · 20 Clinical governance & audit |
-| **Evidences** | **CQC Reg 20A (requirement as to display of performance assessments)** · CQC Reg 17 (good governance) · GPhC Pharmacy Principle 1 · GPhC Professional Standard 6 (behave professionally) |
+| **Evidences** | **CQC Reg 20A (requirement as to display of performance assessments)** · CQC Reg 17 (good governance) · GPhC Pharmacy Principle 1 (governance) · GPhC Professional Standard 6 (behave professionally) |
 
 ---
 

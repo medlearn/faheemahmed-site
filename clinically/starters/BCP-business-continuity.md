@@ -17,7 +17,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | **Annually**, or on significant change to the business |
 | **Requirement themes** | 22 Business continuity · 12 Risk, incidents & never events · 13 Health, safety & premises · 9 Confidentiality & IG |
-| **Evidences** | **CQC Reg 17 (good governance)** · CQC Reg 12 · CQC Reg 15 (premises and equipment) · GPhC Pharmacy Principle 5 |
+| **Evidences** | **CQC Reg 17 (good governance)** · CQC Reg 12 · CQC Reg 15 (premises and equipment) · GPhC Pharmacy Principle 1 (governance) · Pharmacy Principle 5 (equipment and facilities) |
 
 ---
 

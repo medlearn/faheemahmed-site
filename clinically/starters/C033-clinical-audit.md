@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 20 Clinical governance & audit · 12 Risk, incidents & never events · 9 Confidentiality & information governance |
-| **Evidences** | **CQC Reg 17 (good governance) — systems to assess, monitor and improve quality** · CQC Reg 12 · GPhC Pharmacy Principle 5 (governance) · GPhC Professional Standard 4 |
+| **Evidences** | **CQC Reg 17 (good governance) — systems to assess, monitor and improve quality** · CQC Reg 12 · GPhC Pharmacy Principle 1 (governance) · GPhC Professional Standard 4 |
 
 ---
 

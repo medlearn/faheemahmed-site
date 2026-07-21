@@ -15,7 +15,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 3 Assessment, pathways & scope · 20 Clinical governance & audit · 21 Communication & meetings · 10 Document control |
-| **Evidences** | **CQC Reg 17 (good governance)** · CQC Reg 12 · CQC Reg 18 (staffing) · **CQC statement of purpose requirements** · GPhC Pharmacy Principle 5 (governance) |
+| **Evidences** | **CQC Reg 17 (good governance)** · CQC Reg 12 · CQC Reg 18 (staffing) · **CQC statement of purpose requirements** · GPhC Pharmacy Principle 1 (governance) |
 
 ---
 

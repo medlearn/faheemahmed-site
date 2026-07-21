@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 19 Fees & financial transparency · 2 Consent & capacity · 17 Complaints, feedback & duty of candour · 18 Equality, dignity & patient experience |
-| **Evidences** | CQC Reg 9 (person-centred care) · CQC Reg 11 (need for consent) · CQC Reg 17 (good governance) · CQC Reg 19 (fees) · GPhC Professional Standard 3 (communicate effectively) · GPhC Professional Standard 6 (behave professionally) · Pharmacy Principle 1 |
+| **Evidences** | CQC Reg 9 (person-centred care) · CQC Reg 11 (need for consent) · CQC Reg 17 (good governance) · CQC Reg 19 (fees) · GPhC Professional Standard 3 (communicate effectively) · GPhC Professional Standard 6 (behave professionally) · Pharmacy Principle 1 (governance) |
 
 ---
 

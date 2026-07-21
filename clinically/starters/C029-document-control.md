@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 10 Document control & policy management · 9 Confidentiality & information governance · 8 Clinical record keeping · 20 Clinical governance |
-| **Evidences** | **CQC Reg 17 (good governance)** · CQC Reg 12 · GPhC Pharmacy Principle 5 (governance) · UK GDPR Article 5 |
+| **Evidences** | **CQC Reg 17 (good governance)** · CQC Reg 12 · GPhC Pharmacy Principle 1 (governance) · UK GDPR Article 5 |
 
 ---
 

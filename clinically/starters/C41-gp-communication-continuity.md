@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 7 Continuity & GP information sharing · 9 Confidentiality & information governance · 8 Clinical record keeping |
-| **Evidences** | CQC Reg 12 (safe care and treatment) · CQC Reg 17 (good governance) · GPhC Professional Standard 3 (communicate effectively) · GPhC Professional Standard 7 (work in partnership with others) · Pharmacy Principle 1 |
+| **Evidences** | CQC Reg 12 (safe care and treatment) · CQC Reg 17 (good governance) · GPhC Professional Standard 3 (communicate effectively) · GPhC Professional Standard 2 (work in partnership with others) · Pharmacy Principle 4 (pharmacy services) |
 
 ---
 

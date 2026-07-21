@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 12 Risk, incidents & never events · 20 Clinical governance & audit · 17 Complaints, feedback & duty of candour · 23 Speaking up |
-| **Evidences** | **CQC Reg 12 (safe care and treatment)** · CQC Reg 17 (good governance) · CQC Reg 20 (duty of candour) · CQC Reg 18 Registration Regs (statutory notifications) · GPhC Professional Standard 8 · Pharmacy Principle 5 · RIDDOR 2013 |
+| **Evidences** | **CQC Reg 12 (safe care and treatment)** · CQC Reg 17 (good governance) · CQC Reg 20 (duty of candour) · CQC Reg 18 Registration Regs (statutory notifications) · GPhC Professional Standard 8 · GPhC Pharmacy Principle 1 (governance) · RIDDOR 2013 |
 
 ---
 

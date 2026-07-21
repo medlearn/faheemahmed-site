@@ -13,7 +13,7 @@
 | **Issue Date** | `[CONFIRM]` |
 | **Review Date** | Every two years unless review required earlier |
 | **Requirement themes** | 8 Clinical record keeping · 12 Risk, incidents & never events · 4 Remote & digital consultations · 1 Safeguarding |
-| **Evidences** | **CQC Reg 12 (safe care and treatment)** · CQC Reg 17 · GPhC Professional Standard 5 · **GPhC guidance on providing pharmacy services at a distance, including on the internet** · Pharmacy Principle 4 |
+| **Evidences** | **CQC Reg 12 (safe care and treatment)** · CQC Reg 17 · GPhC Professional Standard 5 · **GPhC guidance on providing pharmacy services at a distance, including on the internet** · GPhC Pharmacy Principle 4 (pharmacy services) |
 
 ---
 
