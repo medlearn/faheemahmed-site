@@ -27,7 +27,7 @@ Every starter has:
 | [S13 Display of Ratings and Registration](S13-ratings-registration-display.md) | 24 | 🆕 none | ✅ Draft |
 | [C08 Safeguarding adults](C08-safeguarding-adults.md) | 1, 2, 12, 15 | C08 v01 | ✅ Draft — supersedes v01 |
 | [C032 Safeguarding children](C032-safeguarding-children.md) | 1, 2, 12, 15 | C032 v01 | ✅ Draft — supersedes v01 |
-| C05 Consent | 2 | C05 | ⬜ |
+| [C05 Consent](C05-consent.md) | 2, 8, 18, 19 | C05 v01 | ✅ Draft — supersedes v01 |
 | C03 Confidentiality & information governance | 9 | C03, C03c, C03e | ⬜ |
 | C09 Record keeping | 8 | C09 | ⬜ |
 | C04 Complaints | 17 | C04 | ⬜ |
@@ -49,7 +49,7 @@ Every starter has:
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**7 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**8 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
@@ -65,6 +65,7 @@ Errors found in the 2022 source corpus during authoring, to be checked for where
 - **National Patient Safety Agency** — abolished 2012; alerts now issue as National Patient Safety Alerts via CAS
 - **GMC *Good Medical Practice* 2013** — superseded by the 2024 edition; cited in S03 v01 and likely elsewhere
 - **Intercollegiate Document, adult safeguarding roles & competencies** — 2018 first edition cited in C08 v01; a later edition exists
+- **GMC *Consent: Patients and Doctors Making Decisions Together* (2008)** — 2 occurrences; replaced November 2020 by GMC *Decision making and consent*, a substantial rewrite
 - **Intercollegiate Document, children safeguarding** — 2014 cited in C032 v01 (4 occurrences corpus-wide); 2018 and 2019 also cited elsewhere, so the corpus is internally inconsistent about which edition it follows
 - **Working Together to Safeguard Children, DCSF 2010** — 3 occurrences; superseded several times. DCSF was abolished in 2010
 - **"Children and Young Persons Act 1989"** — no such Act; it is the **Children Act 1989**. 8 occurrences, all in C032. Also "Adoption and Children and Young Persons Act 2002" → **Adoption and Children Act 2002**
@@ -81,6 +82,24 @@ Errors found in the 2022 source corpus during authoring, to be checked for where
 Files anchored to DPA 1998: S04 Communication · S10 Occupational Health · HR05 Appraisal Guidelines · **C028 Patient Access to Records** · C029 Document Control · C033 Clinical Audit · **C03e Information Governance** · **CT12 Patient Information About Consent**.
 
 The three in bold matter most: an information governance policy, a subject-access policy, and a **patient-facing** consent leaflet, all built on the pre-2018 regime. Subject access rights, timescales and lawful bases all changed. This is a corpus-wide re-basing job, not eight individual edits — and it is a strong argument for the requirement-theme layer, since theme 9 (Confidentiality & information governance) touches all eight.
+
+## 🚩 SYSTEMIC: the corpus has no pharmacy regulator in it
+
+| Regulator | Documents mentioning it |
+|---|---|
+| **GMC** / General Medical Council | **41 of 119** |
+| **GPhC** / General Pharmaceutical Council | **0 of 119** |
+
+**Not one document in a 119-document corpus, owned and operated by a pharmacist prescriber who is the registered manager, references the pharmacy regulator.** The set is medically framed throughout — GMC guidance, "doctors must", Medical Protection Society, consultants and specialties.
+
+This is the most consequential systemic finding so far, for two reasons:
+
+1. **For the clinic** — a GPhC inspection of the premises would find a policy set that never once cites the standards the responsible person is actually registered against.
+2. **For Clinickly** — the core market is *pharmacist prescribers running clinical services from GPhC-regulated pharmacy premises*. The raw corpus, used unmodified, would deliver GMC-framed policies to a GPhC-regulated audience. **Every starter maps GPhC standards alongside CQC as standard**, which is precisely what the requirement-theme layer exists to make cheap.
+
+## 🚩 Gillick / Fraser conflation
+
+C05 v01 uses *"Fraser competent"* as the general test of a child's capacity to consent. **Fraser applies only to contraception and sexual health advice to under-16s; the general test is Gillick competence.** C05 mentions Fraser and never Gillick. Corpus-wide, Fraser appears in 4 documents and Gillick in 4 — with only 2 documents containing both, so the distinction is not reliably drawn anywhere in the set.
 
 ## 🚩 Find-and-replace damage (C032)
 
