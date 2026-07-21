@@ -28,8 +28,8 @@ Every starter has:
 | [C08 Safeguarding adults](C08-safeguarding-adults.md) | 1, 2, 12, 15 | C08 v01 | ✅ Draft — supersedes v01 |
 | [C032 Safeguarding children](C032-safeguarding-children.md) | 1, 2, 12, 15 | C032 v01 | ✅ Draft — supersedes v01 |
 | [C05 Consent](C05-consent.md) | 2, 8, 18, 19 | C05 v01 | ✅ Draft — supersedes v01 |
-| C03 Confidentiality & information governance | 9 | C03, C03c, C03e | ⬜ |
-| C09 Record keeping | 8 | C09 | ⬜ |
+| [C03 Patient Confidentiality](C03-patient-confidentiality.md) | 9, 8, 2, 18 | C03 v01 | ✅ Draft — supersedes v01 |
+| [C09 Record keeping](C09-record-keeping.md) | 8, 9, 10 | C09 v01 | ✅ Draft — supersedes v01 |
 | C04 Complaints | 17 | C04 | ⬜ |
 | C021 Duty of candour | 17 | C021 | ⬜ |
 | C02 Infection prevention & control | 11 | C02 | ⬜ |
@@ -49,7 +49,7 @@ Every starter has:
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**8 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**10 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
@@ -82,6 +82,24 @@ Errors found in the 2022 source corpus during authoring, to be checked for where
 Files anchored to DPA 1998: S04 Communication · S10 Occupational Health · HR05 Appraisal Guidelines · **C028 Patient Access to Records** · C029 Document Control · C033 Clinical Audit · **C03e Information Governance** · **CT12 Patient Information About Consent**.
 
 The three in bold matter most: an information governance policy, a subject-access policy, and a **patient-facing** consent leaflet, all built on the pre-2018 regime. Subject access rights, timescales and lawful bases all changed. This is a corpus-wide re-basing job, not eight individual edits — and it is a strong argument for the requirement-theme layer, since theme 9 (Confidentiality & information governance) touches all eight.
+
+## 🚩 The two thinnest policies cover the most-inspected subjects
+
+| Policy | Length | Subject |
+|---|---|---|
+| **C09 Record Keeping** | **898 words** | CQC Reg 17; a personal professional standard under both GMC and GPhC |
+| **C03 Patient Confidentiality** | **1,211 words** | UK GDPR, Caldicott, common law duty of confidence |
+
+Both were the shortest documents in a 119-document corpus. Between them:
+
+- **C03 had no data breach procedure at all** — no named person, no log, no mention of the **72-hour ICO notification duty**. Confidentiality policies are tested by what happens in the hour after an email goes to the wrong patient, and there was nothing there.
+- **C03 treated "next of kin" as conferring a right to information.** It has no legal standing in England and Wales; a spouse has no automatic right to information about an adult with capacity.
+- **C03's staff confidentiality agreement** — the document every worker signs — cites the *"**Date** Protection Act 1998"*: a typo and a repealed statute, in one line.
+- **C09 instructed that electronic records be "retained indefinitely"**, twice, attributed to *NHS Choices* (a public information website, replaced by NHS.uk in 2018). This conflicts with **UK GDPR Art. 5(1)(e)** storage limitation — a standing policy of indefinite retention of special category health data.
+- **C09's references cite the "Data Protection Act 1989"** — no such Act — and its body cites the repealed 1998 Act. The shortest policy in the corpus cites the wrong data protection statute twice, in two different wrong ways.
+- **C09 had no procedure for correcting a record.** Improperly altered records are among the most serious findings a clinician can face, and the rule is simple enough that its absence is the only reason anyone gets it wrong.
+
+**Product implication:** document length is a usable risk signal. A policy far shorter than its theme's peers, on a high-inspection theme, should be flagged for review before anyone reads a word of it.
 
 ## 🚩 SYSTEMIC: the corpus has no pharmacy regulator in it
 
