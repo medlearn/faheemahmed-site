@@ -46,6 +46,13 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - 🛑 **NEW (on re-read): age band contradicts the transcript, unflagged.** Structured AGE RANGE = **18–29**; transcript + note say **"15-year-old male"**. Consequences: analytics mis-tagged as adult; an MDT case from this note would carry the wrong band; clinically 15 vs 20 changes safeguarding, paediatric assessment and applicable guidance. **The product already has discrepancy-flagging** (R2.1 "Discrepancy noted: case context indicates X; transcript describes Y") — that check must also fire when the **age band conflicts with an age stated in the transcript**.
 - Minor: clinical area = **OTHER** for a paediatric acute presentation — spec says "Other (logged)"; **repeated Other selections are a taxonomy-expansion signal** (e.g. paediatrics/acute) and should feed the same demand analytics as missed searches.
 
+### R3.6 New MDT case (C-248) — ✅ **submission fully verified**; 🛑 age-band bug propagates + defeats anonymisation
+- ✅ **Case submission regression CLOSED** — new case submitted live: **C-248**, **Awaiting Panel**, correctly triaged via "Unsure — triage to Chair", with notification promise. Full loop: submit → ID → route → await → notify.
+- 🛑 **Age-band contradiction now in the panel's view (safeguarding risk).** Case summary reads *"**Age 18–29** — anonymised… History: **15-year-old male**"* — adult and child in one paragraph. A panel member skimming the header may advise as if adult, when it's a **15-year-old with 10 days headache + dyspnoea** (paediatric, safeguarding-relevant).
+- 🛑 **NEW: exact age in free text defeats age-banding.** Bands exist so precise ages aren't shared; the transcript-derived history carries "15-year-old male" verbatim into the "anonymised" summary. **Anonymiser must catch precise ages in narrative prose**, not just initials/patient refs.
+- 🐛 **Reason contradicts content** — "Reason: Ear ache" on a headache/dyspnoea consultation; flows into the case unchallenged. Discrepancy-checker should cover **reason vs transcript** too.
+- **Pattern for dev:** the discrepancy flagger currently checks one thing; extend to (a) age band vs stated age, (b) reason vs transcript; and extend the anonymiser to precise ages in prose.
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
