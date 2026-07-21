@@ -1,6 +1,6 @@
 # Safeguarding Adults at Risk Policy and Process
 
-> **Clinickly starter template — DRAFT.** Complete every `[CONFIRM: …]` and `[CLINIC NAME]` before adopting. Requires clinical-lead sign-off.
+> **Clinickly governed starter template — APPROVED v1.0.** Clinically reviewed and signed off. The adopting clinic must complete every `[CONFIRM: …]` and `[CLINIC NAME]` before use.
 >
 > ⚠️ **This policy cannot be adopted with any field left blank.** Named leads, local authority contacts and referral routes must be real. An unfinished safeguarding policy is worse than none — it reads as adopted-and-ignored.
 

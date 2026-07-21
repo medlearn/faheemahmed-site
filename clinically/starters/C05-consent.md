@@ -1,6 +1,6 @@
 # Consent Policy and Process
 
-> **Clinickly starter template — DRAFT.** Complete every `[CONFIRM: …]` and `[CLINIC NAME]` before adopting. Requires clinical-lead sign-off.
+> **Clinickly governed starter template — APPROVED v1.0.** Clinically reviewed and signed off. The adopting clinic must complete every `[CONFIRM: …]` and `[CLINIC NAME]` before use.
 >
 > ⚠️ **Patient-facing appendices must be completed before use.** v01 of this policy went into service with `XXXXX procedure` printed on a form a patient was asked to sign.
 

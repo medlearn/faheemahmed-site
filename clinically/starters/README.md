@@ -2,7 +2,9 @@
 
 Governed starter policies. Each is authored to the same standard: de-personalised from the source corpus, updated against current guidance, mapped to requirement themes and regulator requirements, and left with explicit `[CONFIRM: …]` decisions for the adopting clinic.
 
-**Every document here is DRAFT until Governance MDT review and clinical-lead sign-off.** See [CLINICKLY-MASTER.md](../CLINICKLY-MASTER.md) §8.
+**Status: APPROVED v1.0.** Clinically reviewed and signed off by the clinical lead (Faheem Ahmed, pharmacist prescriber and CQC registered manager), 21 Jul 2026. Ready for the library.
+
+**The `[CONFIRM: …]` fields are not a review gate — they are the adopting clinic's decisions.** A policy published with another clinic's safeguarding lead, referral route or retention schedule still in it is broken for the clinic receiving it. The completeness check must block publication while any remain unfilled.
 
 ## The standard
 
@@ -20,20 +22,20 @@ Every starter has:
 
 | Policy | Theme(s) | Source | Status |
 |---|---|---|---|
-| [C07f Prescribing](C07f-prescribing.md) | 6, 7 | C07f (2022) | ✅ Draft — approved shape |
-| [C41 GP Communication and Continuity of Care](C41-gp-communication-continuity.md) | 7, 9, 8 | 🆕 none | ✅ Draft |
-| [S12 Fees and Financial Transparency](S12-fees-financial-transparency.md) | 19, 2, 17, 18 | 🆕 none | ✅ Draft |
-| [S03 Speaking Up (Raising Concerns)](S03-speaking-up.md) | 23, 16, 12, 20 | S03 v01 (2022) | ✅ Draft — supersedes v01 |
-| [S13 Display of Ratings and Registration](S13-ratings-registration-display.md) | 24 | 🆕 none | ✅ Draft |
-| [C08 Safeguarding adults](C08-safeguarding-adults.md) | 1, 2, 12, 15 | C08 v01 | ✅ Draft — supersedes v01 |
-| [C032 Safeguarding children](C032-safeguarding-children.md) | 1, 2, 12, 15 | C032 v01 | ✅ Draft — supersedes v01 |
-| [C05 Consent](C05-consent.md) | 2, 8, 18, 19 | C05 v01 | ✅ Draft — supersedes v01 |
-| [C03 Patient Confidentiality](C03-patient-confidentiality.md) | 9, 8, 2, 18 | C03 v01 | ✅ Draft — supersedes v01 |
-| [C09 Record keeping](C09-record-keeping.md) | 8, 9, 10 | C09 v01 | ✅ Draft — supersedes v01 |
-| [C04 Complaints](C04-complaints.md) | 17, 20, 18, 19 | C04 v01 | ✅ Draft — supersedes v01 |
-| [C021 Being Open & Duty of Candour](C021-duty-of-candour.md) | 17, 12, 20, 23 | C021 v01 | ✅ Draft — supersedes v01 |
-| [C02 Infection prevention & control](C02-infection-prevention-control.md) | 11, 13, 12, 15 | C02 v01 | ✅ Draft — supersedes v01 |
-| [C017 Risk management & serious incidents](C017-risk-management-incidents.md) | 12, 20, 17, 23 | C017 v01 | ✅ Draft — supersedes v01 |
+| [C07f Prescribing](C07f-prescribing.md) | 6, 7 | C07f (2022) | ✅ **v1.0** |
+| [C41 GP Communication and Continuity of Care](C41-gp-communication-continuity.md) | 7, 9, 8 | 🆕 none | ✅ **v1.0** |
+| [S12 Fees and Financial Transparency](S12-fees-financial-transparency.md) | 19, 2, 17, 18 | 🆕 none | ✅ **v1.0** |
+| [S03 Speaking Up (Raising Concerns)](S03-speaking-up.md) | 23, 16, 12, 20 | S03 v01 (2022) | ✅ **v1.0** (supersedes v01) |
+| [S13 Display of Ratings and Registration](S13-ratings-registration-display.md) | 24 | 🆕 none | ✅ **v1.0** |
+| [C08 Safeguarding adults](C08-safeguarding-adults.md) | 1, 2, 12, 15 | C08 v01 | ✅ **v1.0** (supersedes v01) |
+| [C032 Safeguarding children](C032-safeguarding-children.md) | 1, 2, 12, 15 | C032 v01 | ✅ **v1.0** (supersedes v01) |
+| [C05 Consent](C05-consent.md) | 2, 8, 18, 19 | C05 v01 | ✅ **v1.0** (supersedes v01) |
+| [C03 Patient Confidentiality](C03-patient-confidentiality.md) | 9, 8, 2, 18 | C03 v01 | ✅ **v1.0** (supersedes v01) |
+| [C09 Record keeping](C09-record-keeping.md) | 8, 9, 10 | C09 v01 | ✅ **v1.0** (supersedes v01) |
+| [C04 Complaints](C04-complaints.md) | 17, 20, 18, 19 | C04 v01 | ✅ **v1.0** (supersedes v01) |
+| [C021 Being Open & Duty of Candour](C021-duty-of-candour.md) | 17, 12, 20, 23 | C021 v01 | ✅ **v1.0** (supersedes v01) |
+| [C02 Infection prevention & control](C02-infection-prevention-control.md) | 11, 13, 12, 15 | C02 v01 | ✅ **v1.0** (supersedes v01) |
+| [C017 Risk management & serious incidents](C017-risk-management-incidents.md) | 12, 20, 17, 23 | C017 v01 | ✅ **v1.0** (supersedes v01) |
 | C038 Health & safety | 13 | C038 | ⬜ |
 | C024 Clinical governance | 20 | C024 | ⬜ |
 | C033 Clinical audit | 20 | C033 | ⬜ |

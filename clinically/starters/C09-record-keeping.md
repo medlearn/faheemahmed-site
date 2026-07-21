@@ -1,6 +1,6 @@
 # Patient Record Keeping Policy and Process
 
-> **Clinickly starter template — DRAFT.** Complete every `[CONFIRM: …]` and `[CLINIC NAME]` before adopting. Requires clinical-lead sign-off.
+> **Clinickly governed starter template — APPROVED v1.0.** Clinically reviewed and signed off. The adopting clinic must complete every `[CONFIRM: …]` and `[CLINIC NAME]` before use.
 >
 > 🔴 **The retention schedule in v01 required correction.** It instructed that electronic records be *"retained indefinitely"*, which conflicts with the storage limitation principle in UK GDPR. Read the closing note before adopting.
 

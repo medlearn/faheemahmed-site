@@ -1,6 +1,6 @@
 # Complaints Policy and Process
 
-> **Clinickly starter template — DRAFT.** Complete every `[CONFIRM: …]` and `[CLINIC NAME]` before adopting. Requires sign-off by the Registered Manager.
+> **Clinickly governed starter template — APPROVED v1.0.** Clinically reviewed and signed off. The adopting clinic must complete every `[CONFIRM: …]` and `[CLINIC NAME]` before use.
 >
 > ⚠️ **The escalation route must be real.** A private patient has no Ombudsman. If the clinic does not belong to an independent adjudication scheme, the complaints leaflet cannot promise one. See the closing note.
 

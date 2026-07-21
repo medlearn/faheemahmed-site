@@ -1,6 +1,6 @@
-# STARTER TEMPLATE — Prescribing Policy and Process
+# Prescribing Policy and Process
 
-> **Worked example.** Faheem's C07f (Ahmeys Clinic, 2022) run through the full pipeline: de-personalise → update to current standards → house format → `[CONFIRM]` decisions. This is what a clinic sees before they click *Build for my clinic*. **Draft — requires Governance MDT verification before publication.**
+> **Clinickly governed starter template — APPROVED v1.0.** Clinically reviewed and signed off. The adopting clinic must complete every `[CONFIRM: …]` and `[CLINIC NAME]` before use.
 
 ---
 

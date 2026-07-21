@@ -1,6 +1,6 @@
 # Patient Confidentiality Policy and Process
 
-> **Clinickly starter template — DRAFT.** Complete every `[CONFIRM: …]` and `[CLINIC NAME]` before adopting. Requires sign-off by the Registered Manager.
+> **Clinickly governed starter template — APPROVED v1.0.** Clinically reviewed and signed off. The adopting clinic must complete every `[CONFIRM: …]` and `[CLINIC NAME]` before use.
 
 | | |
 |---|---|
