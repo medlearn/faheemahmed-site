@@ -68,6 +68,9 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - 🛑 **Card badge contradicts the detail page.** Cards for **NG112** and **Rosacea CKS** show **GOVERNED**, but their pages read **"Draft v1.0 … awaiting sign-off"** with the banner **"not for clinical use until signed off"**. GOVERNED must mean signed+live. Either these are different entries with near-identical names (also a problem) or **the badge is wrong** — a clinician trusting GOVERNED would be reading unsigned content. Verify and fix.
 - 💡 **Badge model to document for users:** three independent questions — publisher (NICE/GPhC/…), **our governance state** (draft → in review → governed), **our depth** (full summary vs index→source). State × depth are independent; that's why the shelf looks uneven.
 
+### R3.9 DECISION — one standard for the library (supersedes two tiers)
+Faheem, round 3: *"Either we have it or we don't — the rest is dilution."* Two-tier model reversed. Library = **full summaries only**; `INDEX → SOURCE` cards removed; signposting moves to **search results**; un-authored topics become the **admin authoring backlog**. Rationale: pointers diluted the core promise, confused users across R2.8/R3.7/R3.8, and enabled the GOVERNED-on-unsigned-draft P0. Accepted consequence: ~12 cards → ~4 real entries, making the **starter set the launch blocker**.
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
