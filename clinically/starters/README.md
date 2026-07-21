@@ -32,8 +32,8 @@ Every starter has:
 | [C09 Record keeping](C09-record-keeping.md) | 8, 9, 10 | C09 v01 | ✅ Draft — supersedes v01 |
 | [C04 Complaints](C04-complaints.md) | 17, 20, 18, 19 | C04 v01 | ✅ Draft — supersedes v01 |
 | [C021 Being Open & Duty of Candour](C021-duty-of-candour.md) | 17, 12, 20, 23 | C021 v01 | ✅ Draft — supersedes v01 |
-| C02 Infection prevention & control | 11 | C02 | ⬜ |
-| C017 Risk management & serious incidents | 12 | C017 | ⬜ |
+| [C02 Infection prevention & control](C02-infection-prevention-control.md) | 11, 13, 12, 15 | C02 v01 | ✅ Draft — supersedes v01 |
+| [C017 Risk management & serious incidents](C017-risk-management-incidents.md) | 12, 20, 17, 23 | C017 v01 | ✅ Draft — supersedes v01 |
 | C038 Health & safety | 13 | C038 | ⬜ |
 | C024 Clinical governance | 20 | C024 | ⬜ |
 | C033 Clinical audit | 20 | C033 | ⬜ |
@@ -49,7 +49,7 @@ Every starter has:
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**12 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**14 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
