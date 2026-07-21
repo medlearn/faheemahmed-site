@@ -26,7 +26,7 @@ Every starter has:
 | [S03 Speaking Up (Raising Concerns)](S03-speaking-up.md) | 23, 16, 12, 20 | S03 v01 (2022) | ✅ Draft — supersedes v01 |
 | [S13 Display of Ratings and Registration](S13-ratings-registration-display.md) | 24 | 🆕 none | ✅ Draft |
 | [C08 Safeguarding adults](C08-safeguarding-adults.md) | 1, 2, 12, 15 | C08 v01 | ✅ Draft — supersedes v01 |
-| C032 Safeguarding children | 1 | C032 | ⬜ |
+| [C032 Safeguarding children](C032-safeguarding-children.md) | 1, 2, 12, 15 | C032 v01 | ✅ Draft — supersedes v01 |
 | C05 Consent | 2 | C05 | ⬜ |
 | C03 Confidentiality & information governance | 9 | C03, C03c, C03e | ⬜ |
 | C09 Record keeping | 8 | C09 | ⬜ |
@@ -49,7 +49,7 @@ Every starter has:
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**6 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**7 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
@@ -65,6 +65,30 @@ Errors found in the 2022 source corpus during authoring, to be checked for where
 - **National Patient Safety Agency** — abolished 2012; alerts now issue as National Patient Safety Alerts via CAS
 - **GMC *Good Medical Practice* 2013** — superseded by the 2024 edition; cited in S03 v01 and likely elsewhere
 - **Intercollegiate Document, adult safeguarding roles & competencies** — 2018 first edition cited in C08 v01; a later edition exists
+- **Intercollegiate Document, children safeguarding** — 2014 cited in C032 v01 (4 occurrences corpus-wide); 2018 and 2019 also cited elsewhere, so the corpus is internally inconsistent about which edition it follows
+- **Working Together to Safeguard Children, DCSF 2010** — 3 occurrences; superseded several times. DCSF was abolished in 2010
+- **"Children and Young Persons Act 1989"** — no such Act; it is the **Children Act 1989**. 8 occurrences, all in C032. Also "Adoption and Children and Young Persons Act 2002" → **Adoption and Children Act 2002**
+
+## 🚩 Systemic: the corpus predates GDPR
+
+| | |
+|---|---|
+| Documents citing the **superseded Data Protection Act 1998** | **8** |
+| Documents mentioning GDPR at all | **12 of 119** |
+| Citations of the current **Data Protection Act 2018** | **1** |
+| Citations of Acts that do not exist | **2** — "Data Protection Act 1989", "Data Protection Act 2004" |
+
+Files anchored to DPA 1998: S04 Communication · S10 Occupational Health · HR05 Appraisal Guidelines · **C028 Patient Access to Records** · C029 Document Control · C033 Clinical Audit · **C03e Information Governance** · **CT12 Patient Information About Consent**.
+
+The three in bold matter most: an information governance policy, a subject-access policy, and a **patient-facing** consent leaflet, all built on the pre-2018 regime. Subject access rights, timescales and lawful bases all changed. This is a corpus-wide re-basing job, not eight individual edits — and it is a strong argument for the requirement-theme layer, since theme 9 (Confidentiality & information governance) touches all eight.
+
+## 🚩 Find-and-replace damage (C032)
+
+C032 shows evidence of a document-wide replacement of *child* → *young person*, never proofread. It is what turned the **Children Act 1989** into the non-existent *"Children and Young Persons Act 1989"*, and it left sentences like *"'Children and children and young persons' therefore means 'children and young persons and young people'"*.
+
+C032 also **contradicts itself on whether the clinic sees under-18s** — both statements appear in the same section, four lines apart. That answer determines the mandatory training level for every clinical member of staff.
+
+**Product implication:** the completeness check must catch more than empty fields. Contradictory statements within one document, and citations of statutes that do not exist, are both machine-detectable.
 
 ## 🚩 Unreplaced template placeholders in live signed policies
 
