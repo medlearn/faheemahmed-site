@@ -83,6 +83,28 @@ Files anchored to DPA 1998: S04 Communication · S10 Occupational Health · HR05
 
 The three in bold matter most: an information governance policy, a subject-access policy, and a **patient-facing** consent leaflet, all built on the pre-2018 regime. Subject access rights, timescales and lawful bases all changed. This is a corpus-wide re-basing job, not eight individual edits — and it is a strong argument for the requirement-theme layer, since theme 9 (Confidentiality & information governance) touches all eight.
 
+## 🚩 SYSTEMIC: the corpus reports to a body abolished in 2012
+
+The **National Patient Safety Agency** appears in **9 of 119 documents** — as a current source of alerts, as a framework author, and in C017 as the organisation staff *consent to have their incident data shared with*.
+
+S09 Being Open · C011 Unexpected Patient Death · **C017 Risk Management** · C021 Duty of Candour · C036 Never Events · C039 Patient ID Verification · C07a Controlled Drugs · **C07f Prescribing** · CT09b SUI Risk Assessment
+
+The NPSA was abolished in **2012**. Its functions moved to NHS England; the NRLS has since been replaced by **LFPSE**. Safety alerts now issue as **National Patient Safety Alerts via CAS**.
+
+The whole patient-safety spine of this corpus reports into an organisation that has not existed for over a decade. Note also that the national reporting system is designed around NHS providers — an independent clinic participates voluntarily, so each starter makes participation an explicit `[CONFIRM]` rather than describing a connection the clinic does not have.
+
+## 🚩 A prescribing service with no Yellow Card route
+
+| | Documents |
+|---|---|
+| Mentioning **Yellow Card** | **1 of 119** |
+| Mentioning **adverse drug reaction** | **1 of 119** |
+| Citing **RIDDOR** | 1, and in its **repealed 1995 edition** |
+
+C017 covers MHRA reporting thoroughly — **for medical devices only.** For a service running ADHD titration, weight management and hormone treatment, **suspected ADR reporting is the far more frequently relevant duty** and it is effectively absent from the corpus.
+
+Audit question added to C017: *a prescribing service that has Yellow Carded nothing in a year is almost certainly not reporting.*
+
 ## 🚩 Internal contradictions found so far
 
 Three documents state two incompatible things about the same fact. All three are machine-detectable.
