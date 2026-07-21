@@ -41,8 +41,8 @@ Every starter has:
 | [C033 Clinical audit](C033-clinical-audit.md) | 20, 12, 9 | C033 v01 | ✅ **v1.0** (supersedes v01) |
 | C025 Recruitment & fitness to practise | 14 | C025 | ⬜ |
 | [C010 Training, supervision & appraisal](C010-training-supervision-appraisal.md) | 15, 14, 20 | C010 v01 | ✅ **v1.0** (supersedes v01) |
-| C01 Chaperone | 18 | C01 | ⬜ |
-| C039 Patient identification | 8 | C039 | ⬜ |
+| [C01 Chaperone](C01-chaperone.md) | 18, 2, 8, 15 | C01 v01 | ✅ **v1.0** (supersedes v01) |
+| [C039 Patient identification](C039-patient-identification.md) | 8, 12, 4, 1 | C039 v01 | ✅ **v1.0** (supersedes v01) |
 | C029 Document control | 10 | C029 | ⬜ |
 | S01 Equality & diversity | 18 | S01 | ⬜ |
 | Business continuity | 22 | Business Continuity (2022) | ⬜ |
@@ -51,7 +51,7 @@ Every starter has:
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**18 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**20 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
