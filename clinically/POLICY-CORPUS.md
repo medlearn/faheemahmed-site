@@ -16,8 +16,8 @@ Model + pipeline: [CLINICKLY-MASTER.md](CLINICKLY-MASTER.md) §5.7 (de-personali
 
 **Two unexpected assets:** a **Pre-Compliance Inspection** document (an inspection-readiness checklist — the feature we specced, already written) and **Business Continuity** (assumed missing from the numbered series).
 
-## Draft requirement themes (for review)
-The middle layer that lets one policy satisfy many regulators (§5.7). Derived from what the corpus actually contains.
+## Requirement themes — APPROVED 21 Jul 2026
+The middle layer that lets one policy satisfy many regulators (§5.7). Derived from the corpus + the real CQC interview. **Approved by Faheem 21 Jul 2026.** Three refinements deferred to the framework-mapping step (whistleblowing split · Communication vs governance · Remote vs pathways) — to be decided on mapping evidence.
 
 | # | Theme | Corpus evidence |
 |---|---|---|

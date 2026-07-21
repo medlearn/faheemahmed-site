@@ -261,6 +261,16 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
     - **Clinics can always add or request:** (1) **in catalogue, not recommended** → "Add to my list", one click; (2) **not in catalogue** → "Request a policy" → authoring backlog → written, governed, published for all; (3) **bespoke** → builder attempts it, clearly flagged as bespoke and not verified against a standard.
     - **🔑 Additions are a signal that OUR RULES are wrong.** Track manual adds, recommended-but-never-built, and built-but-never-signed: *"cold chain manually added by 31% of clinics not recommended it — review the rule."* The questionnaire logic self-corrects from real clinic behaviour, the same demand loop as missed searches but pointed at our own recommendation rules.
 
+  - **⭐ THE 22 REQUIREMENT THEMES — APPROVED (Faheem, 21 Jul 2026).** Derived from the owned corpus + the real CQC interview; this is the shared vocabulary every policy and every regulator framework maps to. Clinics never see it.
+    **Clinical care:** 1 Safeguarding (adults & children) · 2 Consent & capacity · 3 Assessment, pathways & scope · 4 Remote & digital consultations · 5 Emergency care & resuscitation · 6 Medicines management & prescribing · 7 **Continuity & GP information sharing** 🆕
+    **Records & information:** 8 Clinical record keeping · 9 Confidentiality & information governance · 10 Document control & policy management
+    **Safety & environment:** 11 Infection prevention & control · 12 Risk, incidents & never events · 13 Health, safety & premises
+    **People:** 14 Recruitment & fitness to practise · 15 Training, supervision & appraisal · 16 Staff welfare & conduct
+    **Patient experience:** 17 Complaints, feedback & duty of candour · 18 Equality, dignity & patient experience · 19 **Fees & financial transparency** 🆕
+    **Running the organisation:** 20 Clinical governance & audit · 21 Communication & meetings · 22 Business continuity
+    - **Themes 7 and 19 have no policy in the corpus** — both were probed in the real interview (GP sharing incl. consent refusal; "how are people made aware of costs"). They are authoring priorities.
+    - **Three refinements deliberately deferred to the framework-mapping step** (decide on evidence, not instinct): split **whistleblowing** out of #16 if CQC/GPhC give speaking-up a distinct requirement · fold **#21 Communication** into #20 governance if it maps nowhere of its own · merge **#4 Remote** into #3 if no framework treats it separately.
+
   - **⭐ HOW DUAL/MULTI-REGULATOR WORKS — a shared REQUIREMENT-THEME layer (round 3).** Dual regulation is the normal case in this market (pharmacy premises = GPhC, clinic service = CQC), so it must be invisible to the clinic.
     - **Don't map policy → regulator directly** (123 policies × 5 regulators = 615 brittle mappings). **Map both sides to ~20 shared requirement themes:** safeguarding · consent & capacity · infection prevention · medicines management · record keeping · complaints & candour · staff competence & training · governance & audit · premises & equipment · information governance · risk & incidents · business continuity · (etc.).
     - `POLICY → THEME ← REGULATOR REQUIREMENT`. e.g. *C08 Safeguarding → safeguarding ← CQC FS13*; *C07 Medicines management → medicines management ← GPhC Std 4/5 + CQC FS12*.
