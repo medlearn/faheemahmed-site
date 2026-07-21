@@ -36,6 +36,8 @@ A pharmacy-based clinic is usually subject to **both GPhC sets and CQC** — whi
 | 20 | Clinical governance & audit | **Reg 17** | 9 leadership | **1 governance** |
 | 21 | Communication & meetings | Reg 17 | **3 communicate effectively** | 1 |
 | 22 | Business continuity | Reg 17 · Reg 12 | 9 | 1 |
+| 23 | 🆕 Speaking up / raising concerns | Reg 17 (well-led) | **8 speak up** | 1 |
+| 24 | 🆕 Regulatory transparency & ratings display | **Reg 20A** · Reg 9 | 3 communicate | 1 |
 
 ## ⭐ The three deferred decisions — now settled on evidence
 As agreed, the mapping decides them rather than instinct:
@@ -47,14 +49,30 @@ As agreed, the mapping decides them rather than instinct:
 
 **Result: 23 themes.**
 
+## ⭐ Reverse check — is every requirement covered? (completeness)
+Mapping *themes → regulations* proves the themes are **justified**. Mapping *regulations → themes* proves they are **complete**. Both are needed. Result of the reverse pass:
+
+- **GPhC:** all **9 professional standards** ✓ and all **5 pharmacy principles** ✓ covered.
+- **CQC:** Regs 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20 and Reg 5 ✓ covered. **Two were not:**
+
+| Regulation | Finding |
+|---|---|
+| **Reg 14** — nutritional & hydration needs | **Not applicable** to a consultation clinic — record explicitly as N/A (silence ≠ considered) |
+| **Reg 20A** — **display of performance assessments (CQC rating)** | ❌ **Genuine hole.** Providers must display their rating conspicuously at the premises **and on their website**. No theme covered it; no policy in the 119 addresses it. |
+
+→ **New theme 24: Regulatory transparency & ratings display** — CQC **Reg 20A** (+ Reg 9 informed choice) · GPhC Prof Std 3 communicate · Pharmacy Principle 1. **No existing policy — authoring priority.**
+
+**Result: 24 themes.**
+
 ## Coverage check — what each regulator demands that the corpus lacks
 - **Theme 7 (GP continuity/information sharing)** — GPhC Prof Std 2 "work in partnership" makes this explicit; no policy exists. **Authoring priority.**
 - **Theme 19 (fees & transparency)** — required for informed choice/consent in a private setting; no policy exists. **Authoring priority.**
 - **Theme 23 (speaking up)** — S03 exists but sits under welfare; needs to stand alone and reference the correct external routes.
+- **Theme 24 (ratings display)** — **no policy exists**; CQC Reg 20A is a legal duty (display at premises + website). Nothing in the corpus or the system would have prompted a clinic to do it. **Authoring priority.**
 
 ## Verification tasks for the Governance MDT
 1. Verify every CQC regulation number and title against the uploaded 2014 Regulations.
 2. Verify the GPhC professional standards (9) and pharmacy principles (5) wording and numbering against the uploaded documents.
-3. Confirm no fundamental standard or GPhC principle is **unmapped** (a requirement with no theme = a gap in the taxonomy).
+3. **Re-run the reverse check** after any theme change — confirm no fundamental standard or GPhC principle is unmapped, and that N/A decisions (e.g. Reg 14) are recorded explicitly rather than left silent.
 4. Confirm statutory **notification** duties (CQC Registration Regulations) are captured under theme 12.
 5. Add NMC / HIW / HIS / RQIA later — one framework each, zero policy changes.

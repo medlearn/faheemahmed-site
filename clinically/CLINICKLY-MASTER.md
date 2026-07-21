@@ -267,8 +267,9 @@ Searchable guidance library; also feeds the guidance surfaced in the consultatio
     **Safety & environment:** 11 Infection prevention & control · 12 Risk, incidents & never events · 13 Health, safety & premises
     **People:** 14 Recruitment & fitness to practise · 15 Training, supervision & appraisal · 16 Staff welfare & conduct
     **Patient experience:** 17 Complaints, feedback & duty of candour · 18 Equality, dignity & patient experience · 19 **Fees & financial transparency** 🆕
-    **Running the organisation:** 20 Clinical governance & audit · 21 Communication & meetings · 22 Business continuity
-    - **Themes 7 and 19 have no policy in the corpus** — both were probed in the real interview (GP sharing incl. consent refusal; "how are people made aware of costs"). They are authoring priorities.
+    **Running the organisation:** 20 Clinical governance & audit · 21 Communication & meetings · 22 Business continuity · 23 **Speaking up / raising concerns** 🆕 · 24 **Regulatory transparency & ratings display** 🆕
+    - **Themes 23–24 added by the regulator mapping (21 Jul):** #23 split out because **GPhC Prof Std 8 is a named standard** ("speak up when they have concerns"); #24 found by the **reverse completeness check** — **CQC Reg 20A** (display your rating at premises + website) had no theme and no policy. **Result: 24 themes.**
+    - **Themes 7, 19, 24 have no policy in the corpus** — both were probed in the real interview (GP sharing incl. consent refusal; "how are people made aware of costs"). They are authoring priorities.
     - **Three refinements deliberately deferred to the framework-mapping step** (decide on evidence, not instinct): split **whistleblowing** out of #16 if CQC/GPhC give speaking-up a distinct requirement · fold **#21 Communication** into #20 governance if it maps nowhere of its own · merge **#4 Remote** into #3 if no framework treats it separately.
 
   - **⭐ HOW DUAL/MULTI-REGULATOR WORKS — a shared REQUIREMENT-THEME layer (round 3).** Dual regulation is the normal case in this market (pharmacy premises = GPhC, clinic service = CQC), so it must be invisible to the clinic.
