@@ -53,6 +53,13 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - 🐛 **Reason contradicts content** — "Reason: Ear ache" on a headache/dyspnoea consultation; flows into the case unchallenged. Discrepancy-checker should cover **reason vs transcript** too.
 - **Pattern for dev:** the discrepancy flagger currently checks one thing; extend to (a) age band vs stated age, (b) reason vs transcript; and extend the anonymiser to precise ages in prose.
 
+### R3.7 Guidelines library — ✅ **two-tier badges BUILT**; verify NG112 badge; duplicates + junk remain
+- ✅ **`FULL SUMMARY` / `INDEX → SOURCE` badges implemented on every card** — the R2.8 decision, built as specified. BNF still correctly `INDEX → SOURCE` + "Open at BNF ↗".
+- ⚠️ **NG112 possibly mis-badged** — in R2.8 "UTI (recurrent) NG112" was a **pointer page** ("summarises what the guidance covers, not its full text", no clinical content/citations). Now badged **FULL SUMMARY**. Either authored since (good) or **badge is wrong** — a wrong badge is worse than none (promises Rosacea-depth, delivers a meta-page). **One click to verify.**
+- ⚠️ **Duplicate topic cards confuse depth** — NG87 twice ("NG87 (ADHD) — update" FULL SUMMARY v3 **and** "ADHD: diagnosis and management" INDEX→SOURCE); Rosacea twice (in-review draft + published CKS). Rosacea pair is legitimate but consider attaching drafts to their parent entry rather than separate cards.
+- 🐛 **Test junk still published** — "R3 sign test" + "Impetigo first-line — cross-machine E2E", both GOVERNED · FULL SUMMARY; now also polluting tier counts.
+- ✅ **Confirms the R3.4 citation bug** — NG87 is ADHD, stated twice on this page; decision-support citing "NICE NG87 (Chest pain of recent onset)" contradicts the product's own library.
+
 ---
 
 ## ROUND 2 — verification pass (developer's fixes, 9 Jul 2026)
