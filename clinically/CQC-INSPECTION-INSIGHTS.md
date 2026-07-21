@@ -53,5 +53,5 @@ Pattern: **the gaps were all "you do it but haven't documented it" or "you hadn'
 5. **Staff-knowledge evidence** — training assignment + completion tracking answers *"do your staff know?"*
 6. **Premises/equipment checklist** — emergency kit itemised (incl. paediatric strengths), accessibility, wipeable surfaces, sharps.
 
-## ⚠️ Provenance note
-The inspector refers to policies *"from Martha Walker, who's a consultant"* — i.e. the corpus was authored or supplied by an external consultant. Faheem has confirmed ownership; worth documenting the basis (commissioned work-for-hire vs licensed template pack) before the corpus becomes Clinickly's commercial content.
+## Provenance — settled
+The inspector refers to policies *"from Martha Walker, who's a consultant"* — the corpus was authored/supplied by an external consultant. **Faheem has confirmed he owns them outright (round 3); no further licensing question.** Free to use as Clinickly's source content.

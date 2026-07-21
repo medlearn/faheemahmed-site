@@ -1,6 +1,6 @@
 # Source policy corpus — catalogue & requirement themes
 
-The owned CQC-registered policy library (Ahmeys Clinic) that seeds Clinickly's SOP starter catalogue.
+The **owned** CQC-registered policy library (Ahmeys Clinic — ownership confirmed by Faheem, round 3; consultant-authored originally, no outstanding licensing question) that seeds Clinickly's SOP starter catalogue.
 Source: `~/Desktop/Ahmeys/Visa/.../Famly and Friends Policies/2.  Policies/` · **119 documents · 186,531 words** · dated **March 2022**.
 Model + pipeline: [CLINICKLY-MASTER.md](CLINICKLY-MASTER.md) §5.7 (de-personalise → AI update → Governance MDT verify → sign → publish as shared starters).
 
