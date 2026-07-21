@@ -38,20 +38,20 @@ Every starter has:
 | [C017 Risk management & serious incidents](C017-risk-management-incidents.md) | 12, 20, 17, 23 | C017 v01 | ✅ **v1.0** (supersedes v01) |
 | C038 Health & safety | 13 | C038 | ⬜ |
 | C024 Clinical governance | 20 | C024 | ⬜ |
-| C033 Clinical audit | 20 | C033 | ⬜ |
+| [C033 Clinical audit](C033-clinical-audit.md) | 20, 12, 9 | C033 v01 | ✅ **v1.0** (supersedes v01) |
 | C025 Recruitment & fitness to practise | 14 | C025 | ⬜ |
-| C010 Training, supervision & appraisal | 15 | C010 | ⬜ |
+| [C010 Training, supervision & appraisal](C010-training-supervision-appraisal.md) | 15, 14, 20 | C010 v01 | ✅ **v1.0** (supersedes v01) |
 | C01 Chaperone | 18 | C01 | ⬜ |
 | C039 Patient identification | 8 | C039 | ⬜ |
 | C029 Document control | 10 | C029 | ⬜ |
 | S01 Equality & diversity | 18 | S01 | ⬜ |
 | Business continuity | 22 | Business Continuity (2022) | ⬜ |
-| C015 Operational policy | 3 | C015 | ⬜ |
-| C07 Medicines management | 6 | C07 | ⬜ |
+| [C015 Operational policy](C015-operational-policy.md) | 3, 20, 21, 10 | C015 v01 | ✅ **v1.0** (supersedes v01) |
+| [C07 Medicines management](C07-medicines-management.md) | 6, 5, 12, 8 | C07 v01 | ✅ **v1.0** (supersedes v01) |
 | C040 Remote consultations | 4 | C040 | ⬜ |
 | C034 Resuscitation & emergency care | 5 | C034 | ⬜ |
 
-**14 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+**18 of 29 drafted.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
 
 ## Notes on the four gap policies (drafted 21 Jul 2026)
 
