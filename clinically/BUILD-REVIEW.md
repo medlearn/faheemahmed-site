@@ -43,6 +43,8 @@ Legend: **✅ confirmed working** · **🐛 fix** · **❓ confirm with develope
 - ✅ **Wrong citations do NOT reach the note.** Signed record contains only transcript-derived content + gap flags; the bad guideline IDs (NG87-as-chest-pain etc.) live only in the decision-support side-panel. Blast radius limited to in-the-moment advice — the permanent/exportable record stays clean. (Still a P0 to fix.)
 - ✅ Codes correct in the saved record (R51/R06.0) + "verify before use" caveat; **all 11 gap flags persist through signing**; lock + addenda model + demo-signature warning intact; single clinical inference appropriately hedged.
 - Minor: "ACTIVITY (LOCAL ONLY)" on the note — confirm whether note activity should be server-side like the main audit trail.
+- 🛑 **NEW (on re-read): age band contradicts the transcript, unflagged.** Structured AGE RANGE = **18–29**; transcript + note say **"15-year-old male"**. Consequences: analytics mis-tagged as adult; an MDT case from this note would carry the wrong band; clinically 15 vs 20 changes safeguarding, paediatric assessment and applicable guidance. **The product already has discrepancy-flagging** (R2.1 "Discrepancy noted: case context indicates X; transcript describes Y") — that check must also fire when the **age band conflicts with an age stated in the transcript**.
+- Minor: clinical area = **OTHER** for a paediatric acute presentation — spec says "Other (logged)"; **repeated Other selections are a taxonomy-expansion signal** (e.g. paediatrics/acute) and should feed the same demand analytics as missed searches.
 
 ---
 
