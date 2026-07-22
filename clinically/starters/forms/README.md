@@ -10,6 +10,7 @@ Forms and patient-facing documents supporting the policy library. Same standard 
 | [F02 Complaints Information Leaflet](F02-complaints-leaflet.md) | C04 | 🔴 **Yes** | ✅ **v1.0** |
 | [F03 Incident and Near Miss Report](F03-incident-report-form.md) | C017 | No | ✅ **v1.0** |
 | [F04 Safeguarding Concern Record](F04-safeguarding-concern-form.md) | C08, C032 | No | ✅ **v1.0** |
+| [F05 Consent for Clinical Photography](F05-photography-consent.md) | C05 §14, C03 | 🔴 **Yes** | ✅ **v1.0** |
 | Complaint register | C04 | No | ⬜ |
 | Chaperone notice | C01 | 🔴 Yes | ✅ *in C01 Appendix 1* |
 | Staff safeguarding alert notice | C08 | No | ✅ *in C08 Appendix A* |
@@ -28,3 +29,4 @@ Forms and patient-facing documents supporting the policy library. Same standard 
 3. **Never promise a route the clinic does not have.** F02's escalation section is the clearest case — a private patient has no Ombudsman, and independent adjudication requires scheme membership.
 4. **Plain language.** Short sentences, no jargon, no legalese.
 5. **No patient names on forms that travel** — F03 uses the record number only.
+6. **F05 never leaves the clinical record.** It carries the patient's name and signature. A clinician submitting an image to the MDT **attests** they hold it; the form itself stays in the patient's file. Uploading it would put a direct identifier into the system the image was anonymised for.
