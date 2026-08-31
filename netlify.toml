@@ -6,6 +6,42 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# ── Block internal files from public access ─────────────────
+# A Netlify Drop publishes the whole folder, so source/docs/schema would
+# otherwise be readable by URL. `force = true` is required: without it
+# Netlify serves the existing static file and ignores the rule.
+# NOTE: /netlify/* (source) is blocked; /.netlify/functions/* (runtime) is not.
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/supabase/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# NOTE: Netlify only supports a TRAILING splat (`/dir/*`) — it does NOT
+# support extension globs like `/*.md`, which silently match nothing.
+# So *.md docs are PRUNED FROM THE DEPLOY FOLDER before dropping rather
+# than blocked here (they can't be wildcarded: they live under /clinically/
+# and /library/, which are both live pages). They remain in git on main.
+# Before each Drop:  find <deploy-folder> -name "*.md" -type f -delete
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
 # Friendly short paths → the functions.
 [[redirects]]
   from = "/api/*"

@@ -1,0 +1,470 @@
+# Clinickly Co-pilot — MASTER BUILD DOCUMENT
+
+**The single source of truth for Clinickly Co-pilot — a standalone product.**
+Read top to bottom. **Clinickly Co-pilot is built as its own independent project** — its own code repository, its own hosting, and its own domain. It is **not** part of, and must **not** depend on, reference, or have access to, any other website or codebase.
+
+**Status:** a working prototype exists with real AI + a real database (see §2).
+
+---
+
+## 0. How to use this
+- **Non-technical reader:** §1–§8 explain the product and every decision in plain English.
+- **Developer:** §5–§12 are the build — page specs, integrations, governance pipeline, step-by-step code, build order, compliance.
+- **Golden rule of the whole product:** the AI **supports**, it never decides. Every note/flag is reviewed and signed by a human. Never auto-prescribe. (Also a legal requirement — §11.)
+
+---
+
+## 1. What you're building (plain English)
+
+A web app with **two pillars**:
+1. **AI co-pilot (software)** — during/around a consultation it **transcribes → drafts a structured SOAP note (documentation aid) → surfaces the relevant guidance** for the clinician to apply; plus a guidelines library, templates/SOPs, training. *(Guidance surfaced for the clinician — not patient-specific directives; see §3 positioning.)*
+2. **Human MDT (people)** — an expert panel (GP, psychiatrist, dermatologist, chair) that clinicians **submit anonymised cases to** and **meet with**; the panel also **governs the clinical content**.
+
+**Tagline:** *AI for the everyday, the MDT for the difficult.*
+**Who it's for:** independent prescribers (pharmacists, nurses, physios, paramedics) and private clinics — established or just starting out.
+
+---
+
+## 2. Current status — built vs to-build (honest)
+
+| Area | Now | To build |
+|------|-----|----------|
+| UI / all screens | ✅ Built | Refine per this spec |
+| Transcription | ✅ Browser mic (in-person) | Proper STT: speaker separation + remote calls (§7) |
+| Note drafting (SOAP) | ✅ Real Claude | Template/history structure (§5.2, §6) |
+| Decision support | ✅ Real Claude | Ground in real guidance, not memory (§7) |
+| Database | ✅ Real (notes persist) | Extend schema (§9) + confirm MDT cases persist |
+| Guidelines / codes | ⚠️ Placeholder / AI-from-memory | Real sources (§7) |
+| MDT case submit + tracking | ✅ Built | **Panel-answering loop (login → answer)** = key gap |
+| Governance pipeline | ❌ | Standard build (§8) |
+| Admin / Governance console | ❌ | Build (§4) |
+| Roles / permissions | ⚠️ Loose (a "patient" saw everything) | Lock to 3 roles (§4) |
+| Patient side | Built by dev | **Remove for pilot** (deferred) |
+
+---
+
+## 3. Foundational decisions (read before building)
+
+**⭐ Product positioning — build to this.** Clinickly is a **clinical guidance/reference + documentation tool**, plus an **anonymised education/CPD** activity (the MDT). It is **NOT patient-specific clinical decision-support software**, and is **not intended to be a medical device.** Build consequences:
+- The consultation **surfaces the relevant guidance for the clinician to read and apply** — it does **not** issue patient-specific directions. Frame prompts as *"relevant guidance,"* not *"do X for this patient."*
+- The **MDT is anonymised case-based teaching / training / CPD** — not a clinical advisory service on live patients. Panel responses are **teaching/discussion points.**
+- The clinician **reviews, applies and signs** everything — accountability stays with them.
+
+1. **Version A — Clinickly is an anonymised ASSISTANT, not the patient record.** Only **anonymised/minimal** data goes in (age range, reason, a clinician-controlled **patient reference** like initials — never name/DOB/NHS number). It **drafts + supports**; the clinician **copies/exports into their own record system**, which stays the source of truth. *(Version B — Clinickly as the medical record — is a much bigger compliance build for later.)* Known trade-off: two tools + cost → mitigated by one-click export now, integration next.
+2. **Three roles only for the pilot:** **Clinician · MDT panel member · Admin** (+ Chair/clinical lead). **No patient role** — the patient portal is **deferred to a later phase**.
+3. **Structured tags, not free text.** Anything you'll count/filter/route is a **controlled dropdown** (consultation type, specialty, urgency, query type). Free text only for clinical *content* (note body, case summary). Taxonomies in §6.
+4. **Closed pilot on synthetic/anonymised data** while integrations + approvals + compliance run. The compliance floor applies **per patient**, not per user count (§11).
+5. **UK/EU data residency** for all audio + text processing.
+6. **Everything is human-governed** — clinical content (guidelines, SOPs, templates, training) is AI-drafted but **MDT-reviewed and human-signed** before going live (§8).
+
+---
+
+## 4. The three roles + the Admin / Governance console
+
+| Role | Works in |
+|---|---|
+| **Clinician** | The co-pilot (notes · cases · training) |
+| **Panel member** | Claims tasks matched to their verified tags. **Two panels** (§4B): **Clinical MDT** (clinical content + case answers) · **Governance MDT** (SOPs/policies/regulatory). |
+| **Admin (+ Chair/clinical lead)** | The Admin / Governance console (below) |
+
+**Admin / Governance console — the "engine room"** (clinicians never see it):
+- **Panel management** — add/remove MDT members, set specialties, manage logins (members recruited via a panel-interest / recruitment form).
+  - **⭐ Member record = a full credentialing file (all in one place), not just name+specialty.** Fields: **name · professional registration/PIN (GMC/GPhC/NMC — verify against the register) · role + routing specialty · CV (upload) · photo · signed contract + terms (fee acceptance, confidentiality/data-processing) · DBS check · indemnity/insurance confirmation · verified qualification tags (§4B — gate what tasks they can claim) · active/inactive.** This record **is the vetting gate** that makes the §4B "closed, vetted marketplace" defensible. *(Build gap: current "Add member" form only captures name/role/routing specialty.)*
+  - **Case assignment override** exists (manual-assign a case to a member; chair sees everything; clearing returns to auto specialty routing; audit-logged) — keep, but cases must **also** auto-route to the matching specialist (routing fix).
+- **MDT scheduling** — recurring session rule + dates (auto-advance + override); agenda auto-pulls submitted cases + a teaching slot.
+- **Governance sign-off queues** — review & sign off guidelines, SOPs, note templates, training (the §8 pipeline).
+- **Content libraries** — create/edit/publish all clinical content; handle "Request an SOP/template".
+- **Regulatory standards** — upload GPhC/CQC/MHRA/NHS (reference + AI gap-check).
+- **Users, clinics & permissions** — accounts, roles, and **locking each role to its own area**.
+- **Reporting & audit** — consultation types, MDT query types, CPD completion, full audit trails.
+- **Search & content-gap analytics** — logs every Guidelines search + Ask-Clinickly query with **hit/miss**, result-opened, and **frequency**; surfaces **"Top missed searches"** (zero/weak result = content gap) with a one-click **"Add to authoring backlog"** → feeds the §8 authoring pipeline. Aggregate + tag-based, **no patient data / scrub free-text PII**. *(This is the demand signal behind §5.6 "author by data.")* **Also log opens of `INDEX → SOURCE` pointer entries** — a frequently-opened pointer is the §5.6 promotion signal to author that topic as a full summary.
+- **Billing** — later (Stripe), incl. the premium MDT-review add-on.
+
+---
+
+## 4A. The three portals — front-end + back-end (build breakdown)
+
+**One product, one codebase, three role-based portals.** Build the **shared foundation once**, then each portal is a set of screens (front-end) on top of shared APIs + data (back-end).
+
+**Shared foundation (built once — powers all three):**
+- **Auth + 3 roles + permissions** (RLS: each role sees only its own area/data).
+- **Database** (Postgres/Supabase) · **API layer** (Netlify Functions, `/api/*`).
+- **AI + integrations** (Claude, STT, guidance, codes — §7) · **audit log** · **hosting/deploy**.
+
+### Portal 1 — Clinician
+- **Front-end (screens):** Dashboard · Consultation · Clinical notes · Guidelines · Note-templates · Training · MDT overview · My cases (submit + track) · Session library · Ask Clinickly.
+- **Back-end:** `/api/notes` (SOAP), `/api/support` (decision support), `/api/transcribe-token`, `/api/codes` (SNOMED/ICD validate), `/api/guidelines` (search), `/api/cases` (create/list), `/api/cpd`. **Data:** consultations, notes, note_addenda, mdt_cases (create), training/CPD. **Logic:** template auto-select by consultation type, anonymise-on-create, note sign/lock.
+
+### Portal 2 — MDT panel member
+- **Front-end (screens):** My assigned cases (routed by specialty) · Case detail + **write response** · **Governance review queue** (content to check) · Session tools (agenda/recordings) · Profile.
+- **Back-end:** `/api/panel/cases` (list routed by specialty), `/api/panel/respond` (write → persist → **notify clinician**), `/api/governance/review` (submit review). **Data:** mdt_responses, governance review records. **Logic:** routing by specialty, notifications.
+
+### Portal 3 — Admin / Governance console
+- **Front-end (screens):** Panel management · MDT scheduling + agenda · **Governance sign-off queues** · Content libraries (create/edit/**publish** guidelines/SOPs/templates/training) · Regulatory-standards upload · Users/clinics/permissions · Reporting & audit · Billing (later).
+- **Back-end:** `/api/admin/panel`, `/api/admin/schedule`, `/api/admin/content` (CRUD + **publish/version**), `/api/admin/standards` (upload), `/api/admin/users`, `/api/admin/reports`, governance **sign-off** endpoints. **Data:** guidelines/templates/sops/training (+ version, reviewer_id, signer_id, published_at), schedules, users, clinics, audit_log. **Logic:** the **governance pipeline** (§8), AI change-detection (fast-follow), reporting queries.
+
+*Build order across portals: shared foundation → Clinician (core value) → MDT panel (answering loop) → Admin (governance). A minimal Admin ships with auth/DB; it grows into the full console. See §10.*
+
+---
+
+## 4B. Panel operating model (two panels · tag-routing · claim-a-task · fixed price)
+
+**Two panels, split by DOMAIN — not seniority. One item goes to ONE panel, never both.**
+
+| | **Clinical MDT** | **Governance MDT** |
+|---|---|---|
+| **Owns** | The **clinical** side — clinical guidance content, teaching/CPD case answers | The **admin/regulatory** side — SOPs, policies, IG/IPC/UK-GDPR, CQC/GPhC/MHRA, safeguarding |
+| **Signs off** | Clinical guidance/content before publish | SOPs, policies, governance docs before publish |
+| **Members** | Specialist clinicians | Ex-inspectors, governance/quality leads (+ clinicians with relevant regulatory experience) |
+
+**How work is routed & taken (the "closed marketplace"):**
+1. **Admin/AI drafts** the item (SOP, guideline, template, case) and it is **tagged**: `clinical | admin` + `domain/specialty` + `complexity/risk` (low/med/high).
+2. The tag routes it to a **pool of eligible members only** — those whose **verified tags + experience** qualify them for that item. Members **claim** a task from their queue (pull model, like Uber/gig — but a **vetted, gated pool**, not open to anyone).
+3. Claimant reviews → signs off → **published vX**, audit-logged (name of reviewer/signer recorded).
+
+**Pricing — admin-set fixed bands, NO bidding.**
+
+**⭐ Panel remuneration model (locked 9 Jul 2026) — two halves:**
+1. **Fixed sessional cost** — the monthly MDT session is sessional, not a task: **£150/hr** (≈ **£225/member** per 90-min session). This is the retainer core: guarantees attendance + the teaching happens.
+2. **Fixed fee per deliverable** — everything outside the session is a claimable task priced at **(realistic time) × £150/hr**, the rate the panel already accepted.
+
+**Starter fee bands (indicative — Faheem confirms exact figures; admin-editable table):**
+| Deliverable | Time | Fee |
+|---|---|---|
+| MDT case response (async teaching answer) | 15–20 min | £40–50 |
+| Training module review | ~30 min | £75 |
+| SOP / policy review + sign-off | 30–45 min | £75–110 |
+| Guideline review (per-statement source check) | 45–60 min | £110–150 |
+| High-risk independent second sign-off | 20–30 min | £50–75 |
+| Monthly MDT session (sessional) | 90 min | £225 |
+
+**Rules that keep it working:** (a) **AI keeps tasks short — that's the economics**: members *verify*, never author; if a 30-min band keeps taking 90, the band or the draft quality is wrong — the platform's **claim→sign timestamps** say which; review bands quarterly against actual times. (b) **Small menu, no haggling** — fee shown on the task, take it or leave it (the "upfront fare"). (c) **Cost-of-goods**: a governed guideline ≈ £110–150 of expert time **once**, amortised across every clinic (write-once-publish-everywhere) — this number underpins Clinickly's own subscription pricing/margin.
+- **Pricing is set by Admin, banded by task type × complexity** (low/med/high). Members see the fixed fee and choose to claim — like an **upfront fixed fare**, not an auction.
+- **Bidding was considered and rejected** for anything that gets signed off: open bidding drives price *down* → quality/accountability down, and "cheapest clinician who'll sign a safeguarding SOP" is indefensible to a regulator. *(Light bidding/first-come may be allowed later for non-sign-off bulk **authoring** only.)*
+
+**Cost-control principles (keep governance credible without committee bloat):**
+- **Route, don't chain** — one item → one owner → one sign-off gate.
+- **AI drafts, humans verify** — verifying against source is minutes; authoring is hours.
+- **Write once, publish to all** — central/standard content (§5.7) means one review covers every clinic; cost amortised, not repeated.
+- **Batch on a cycle** (sessional / paid-per-task), not people on standby.
+- **Tier by risk** — light-touch single reviewer for low-risk; full panel only for high-risk.
+
+**Build implications:** each content/task record carries `panel_type (clinical|governance)`, `domain`, `complexity`, `fee_band`, `claimed_by`, `reviewer_id`, `signer_id`. Member profiles carry **verified qualification tags** that gate which tasks they can see/claim. Task queues are **filtered to eligible members**. Fee bands live in an admin-editable table.
+
+---
+
+## 5. The product, page by page
+
+### 5.1 Dashboard
+Home/overview. Shows next-MDT banner, headline numbers, quick actions, recent notes, activity.
+- **Build:** the four numbers must **count real usage** (not samples). The **MDT date auto-advances** on a recurring rule (+ admin override) — not hard-coded.
+
+### 5.2 Consultation (the core)
+3 columns: **Live transcription → AI-drafted SOAP note → Relevant guidance.** *(The third column surfaces guidance for the clinician to apply — reference, not patient-specific directives; see §3.)*
+- **Input is flexible:** transcribe live, type/paste, or a mix → AI drafts → editable. Not transcription-only.
+- **Standardised output** governed by the chosen **note template**; content reflects only what was said; clinician reviews & signs.
+- **⭐ Never fabricate to fill a gap (safety-critical).** The note may contain **only what was actually said/typed.** If something expected is absent (esp. **objective data / vital signs / examination**), the note shows a **soft ⚠️ flag** ("No vital signs recorded — add if taken"), it **never invents a value** ("BP within normal range"). **Blank or flagged > fabricated.** The tool prompts; the clinician decides — no step-by-step forms, no forced fields.
+- **Note template = SOAP frame + clinical history structure *inside* Subjective**, scaled by consultation type:
+  - *New/initial assessment* → PC · HPC · PMH · DH · FH · SH · Menstrual (if relevant) · ROS → Exam (Objective) · Impression (Assessment) · Plan.
+  - *Follow-up/med review* → lighter (interval history, response, obs, plan).
+  - Template also **flags gaps** ("no drug history captured") — a completeness/safety prompt.
+- **Consultation type** = two required dropdowns (Appendix A), replacing the demo "Scenario" picker; auto-selects the template + MDT routing.
+- **Real Consultation inputs (no demo scenario):** Clinical area (dropdown) · Encounter type (dropdown) · **Age range (dropdown — bands: 0–17 · 18–29 · 30–39 · 40–49 · 50–59 · 60–69 · 70+)** · Patient reference (free text — clinician's own code) · Reason for encounter (free text — context only). **You tag on the dropdowns; free text (reason, patient ref) is never analysed.** **Remove the "Demo scenario" from the real product** (at most a hidden demo-mode toggle — never in the clinician workflow; and it must NOT inject content into the note).
+- **Codes, transcription, guidance** — see §7 (all need real integrations).
+
+### 5.3 Clinical notes
+Record-keeping hub — store, edit, **sign**, search, turn into MDT case; holds the audit trail.
+- **Version A:** notes drafted here, **copied/exported** to the clinician's own system. Each note carries a **clinician-controlled patient reference**.
+- **⭐ Draft → review → attest → sign (the human-in-the-loop gate).** Every AI note is a **DRAFT** first — fully editable. Missing-info shows as **soft ⚠️ flags** (prompt, not a blocker; clinician may still sign with gaps if clinically correct). Nothing becomes the record until the clinician **actively signs with an attestation tick**: *"I have read this note and confirm it is an accurate record of this consultation."* The attestation tick is the **only hard gate**. (This is what makes the tool defensible: no record exists without a named human reading and confirming it.)
+- **Sign = lock:** once signed, immutable + timestamped; later changes = **addendum**, not overwrite.
+- **Search = filters + keyword:** filter by taxonomy tags (Clinical area × Encounter type), status, date, patient reference; plus keyword search inside notes.
+- One-click **export** now → integration later (removes double-entry).
+
+### 5.4 MDT case (create + track = "My cases")
+Submit an **anonymised** case to the panel for **teaching, discussion & CPD** — case-based education, **not** advice on a live patient. Track Awaiting → Answered; panel responses are **teaching/discussion points** (advisory/educational, clinician stays responsible).
+- **Two structured dropdowns:** Specialty (who answers — Appendix B) + **Query type** (for audit — Appendix C; AI auto-suggests). Keep Urgency dropdown.
+- **Anonymise on create** (esp. from a note) — AI auto-anonymises + flags identifiers before submit.
+- **Image upload (essential — esp. dermatology):** attach **1–5 clinical photos** per case, visible to the routed panel member. Rules: anonymisation guidance at upload (crop to lesion; avoid faces/tattoos/jewellery/backgrounds) · **AI pre-check** flags identifiable images before submit · **auto-strip EXIF** (GPS/timestamps) · **required consent checkbox** (patient consent for clinical photography + sharing, logged) · encrypted **UK/EU storage** (Supabase Storage), access limited to submitter + routed panel member, audited, deletable.
+- **Filter/search cases** by specialty × query type × status × date (powers the MDT audit).
+- **⭐ Key build — the answering loop:** panel-member **login** → case routed by specialty → panel writes response → **persists to DB** → clinician notified. (Currently responses are samples; "0 in DB".)
+
+### 5.5 Saved records → **removed** (merged into Clinical notes / My cases). Delete the page. Remove "Release to patient" (Version A).
+
+### 5.6 Guidelines
+Searchable guidance library; also feeds the guidance surfaced in the consultation; underpins "what did guidance say at the time". Sources + interim/target in §7. Kept current via the **§8 governance pipeline**. Reference implementations: `guideline-sample.html` (published, clinician⟷patient views, cited) + `guideline-review.html` (MDT review & sign-off: each recommendation checked against its source).
+
+**Content authoring standard (non-negotiable — this is what makes it defensible):**
+- **Every recommendation is cited to a named source, per-statement** (not just a generic "sources" bar). The AI drafts **from retrieved source text, not from memory** — each claim carries its citation; a clinician verifies against the cited source before sign-off.
+- **State the first-line and *why*.** Don't just list options — say where to start and the rationale (efficacy/cost/tolerability/evidence strength). **Where there is no single first-line, say so** rather than inventing a preference.
+- **Approach vs dose:** our content gives the treatment *approach* (with its source); **doses, cautions, interactions & monitoring come from the BNF** (link/integrate) — never hand-authored or AI-guessed.
+- **Dual-audience:** each entry renders a **clinician view and a patient view** from one governed source.
+- **Governance metadata shown on every entry:** sources · version · last-reviewed · review state (drafted → reviewed → signed) · "verify at source" link · "decision support, not a directive."
+- *Reference format proven in the working sample: `clinically/app/guideline-sample.html` (Rosacea).*
+- **Per-statement citations are mandatory (build gap found):** a single document-level "Sources" bar is **not enough** — **every recommendation carries its own inline citation chip** (which source backs *this line*). That's the defensibility core.
+- **Library card = one fixed template for every entry** (consistency is the point): `[source·code] [state badge]` · title · one-line description · `Updated YYYY-MM` · `Open`. Variations live *inside* the template, not in its shape: **source-tag colour** (NICE/GPhC/GMC/BNF/MHRA); **state badge reflects the real pipeline state** — `GOVERNED` (signed/live) · `IN REVIEW` · `DRAFT` · **`NEEDS UPDATE`** (stale — source changed, from §8 change-detection); and **"Open" behaviour** — NICE/CKS/society open **our governed page** (Rosacea layout), **BNF opens OUT to the BNF** (link, not our content). Grid: 3-up desktop / 1-up mobile; search + source-filter tabs on top.
+- **⭐ ACTIONABLE GUIDANCE — every entry offers "turn this into something my clinic uses" (Faheem, round 3).** Reading a standard isn't the value; having the compliant document is. Each entry carries actions appropriate to its type, all reusing existing machinery (SOP builder, template library, training pipeline):
+  - **Professional standard (GPhC/GMC):** **Generate the SOP/policy that implements this** · **Check my existing SOPs against it** (gap-check) · add to governance pack.
+  - **Safety alert (MHRA):** **Generate the SOP** (e.g. valproate → pregnancy-prevention procedure) · **which of my SOPs need updating?** · create staff briefing / training module · add to risk register.
+  - **Clinical condition (NICE/CKS):** create a **note template** for this presentation · create a **patient leaflet** (patient view already authored) · create a training module · submit an MDT case.
+  - **Governance unchanged:** generated output is a **draft** pre-seeded from the entry → clinic completes → gap-checked → clinic lead signs. No shortcut past the pipeline.
+  - **🔑 PROVENANCE LINK (the compounding feature):** every generated document records **which entry/version it came from** (e.g. "generated from GPhC Standards v2025-09"). When that entry is flagged **NEEDS UPDATE** (§8 change-detection), **every derived SOP/template/module across every clinic is automatically flagged for re-review**. Real clinics cannot currently tell which of their policies went stale when a standard changed — Clinickly answers it as a by-product of the architecture. Strong differentiator; put it on the sales page.
+
+- **⭐ LIBRARY ENTRY STANDARD — the definition of done (round 3). Every entry, no exceptions.** Since there is now ONE standard, it must be written down: the AI drafts to this, the panel verifies against it, the lead signs only if all boxes pass. *(Evidence it's needed: NG112 and Rosacea use the full house format with citations on every line; the NG87 update has only two recommendations and a different structure — same GOVERNED badge, different depth.)*
+  - **Structure — one fixed format PER CONTENT TYPE (never free-form). The bar is identical across all types; only the shape differs:**
+    - **Clinical condition** (NICE / CKS): one-line overview · **Recognise the pattern** · **Assess & rule out** · **Management approach** · **Safety-netting & review**.
+    - **Professional / regulatory standard** (GPhC, GMC): **What it requires** · **How it applies in practice** · **Common pitfalls** · **What you must document**.
+    - **Safety alert / requirement** (MHRA): **What the requirement is** · **Who it applies to** · **What you must do** · **Evidence to record** · **Escalation**.
+    - *(BNF is the standing exception: link-out only, never our content — licensing.)*
+    - **If a content type has no defined format yet, entries of that type do not go in the library.**
+  - **Content rules:** every recommendation carries a **citation chip (source + section) linking to the exact location**; **no doses, thresholds or regimens in our text** — BNF link-out; where guidance mandates no single first-line, **say so — never invent a preference**; **clinician view + patient view** both render *(patient view applies to clinical entries; professional-standard and safety-alert entries are clinician-only)*; framing is "decision support, not a directive".
+  - **Governance block on every entry:** sources · our version · last reviewed · chain (AI-drafted → reviewed by [named] → signed by [named]) · **verify at source** link.
+  - **Panel checklist before sign-off (all must pass, else back to draft — no partial publishes):** ☐ all five sections present ☐ every recommendation has a citation chip ☐ every citation **opened and verified** against source ☐ no doses/regimens in our text ☐ patient view renders in plain English ☐ safety-netting includes red flags **and** a review interval.
+  - **Retro-apply:** existing entries that don't meet this (e.g. the NG87 update) go back to draft and are re-authored — the standard is not applied only to new work.
+  - **Immediate consequence (round 3):** every non-NICE entry currently in the library (GPhC Standards, GMC Good Medical Practice, MHRA Valproate) is an `INDEX → SOURCE` pointer, so **all come out** until authored to their proper format. The library is clinical-condition entries only for now. Same principle: have it properly or don't have it.
+
+- **⭐ DECISION (SUPERSEDES the 9 Jul two-tier model) — ONE STANDARD. (Faheem, round 3.)** *"Either we have it or we don't — the rest is dilution."*
+  - **The library contains ONLY full summaries.** House format, **a citation on every recommendation**, panel-verified against source, clinical-lead signed, versioned. Nothing else gets a card. No tiers, no depth badges — every entry means the same thing.
+  - **`INDEX → SOURCE` pointer entries are REMOVED from the clinician library.** They diluted the one promise the product owns (*everything here is verified, cited and signed*), confused users (R2.8/R3.7/R3.8), and caused the mis-badging P0 (GOVERNED shown on unsigned drafts).
+  - **Signposting moves to SEARCH RESULTS, not cards.** Search a topic we haven't authored → result reads *"Not in our library yet — NICE NG112 ↗"*. Same utility, **no governance badge on ungoverned content**.
+  - **Un-authored topics live admin-side as the authoring backlog** (candidates + metadata), never published to clinicians.
+  - **Consequence, accepted:** the library shrinks (~12 cards → ~4 real entries). This makes the **starter set the launch blocker**, which is the honest position. Demand data (missed searches) decides authoring order.
+  - *(BNF remains the one exception: card links OUT to the BNF, never our content — licensing.)*
+- **We do NOT replicate NICE or the BNF.** Your library is a **governed one-page synthesis that points to the source**, not a copy of it.
+  - **NICE / CKS / GMC / GPhC / society (BAD etc.):** **own-authored summary → cite + link → "verify at source."** Never reproduce their text. *(As the Rosacea page does.)*
+  - **BNF:** **never reproduce — link/integrate only.** Doses/cautions/interactions/monitoring = a **deep-link into the BNF** (licensed API — §7 target). Your page carries the *approach*; the BNF entry is a **pointer/launcher, not authored content.** *(Sidesteps BNF licensing until the licence is bought.)*
+- **Prioritise by data, not guesswork** — author driven by: (1) **searches with no good result** (build-next signal), (2) **commonest MDT case/query types** (guidance gaps), (3) **your clinics' actual scope** (start niche — ADHD/autism, derm/aesthetics, weight mgmt, sexual health, pharmacy — not all of medicine), (4) **high-frequency + high-risk first** (UTI/rosacea/ADHD titration *and* valproate/safeguarding/controlled drugs).
+- **Starter set (~12, matched to pilot clinics):** ADHD dx + titration · Autism assessment · Lower UTI · Recurrent UTI · Rosacea · Acne · Eczema · Weight-management pharmacotherapy · Valproate pregnancy prevention · Contraception/sexual health · Safeguarding · Controlled-drugs/shared-care. Then let search + case data drive the rest.
+- **Authoring pipeline (how one is made):** signal (data) → authoring backlog (admin) → **AI drafts our summary** (RAG over retrieved source text, house structure, per-statement cited, doses deferred to BNF) → **Clinical MDT review** (each line vs its cited source — `guideline-review.html`) → **clinical-lead sign-off** → Published vX (GOVERNED) → **§8 change-detection** watches source → stale flag → re-draft. **House structure:** Overview · Assess & rule out · Management approach · Safety-netting & review.
+
+### 5.7 Templates & SOPs → **split**
+- **Note templates** (move next to note-writing): the SOAP+history skeletons the AI fills. **Central + STANDARD — the SAME for every clinic** (Clinickly-created → MDT-reviewed → signed off → published to all). **No per-clinic customisation of note templates** (that would fragment documentation — "the structure melts"). New ones/changes go through the governance pipeline centrally. *(Contrast with SOPs below, which ARE clinic-specific by design — don't confuse the two.)*
+- **SOPs / policies / governance docs** (own admin area): **hybrid model** — Clinickly provides **governed starter templates** → **AI helps the clinic populate** their specifics (named leads, processes, premises) → **AI checks the finished SOP against uploaded GPhC/CQC/MHRA/NHS standards** (gap-check, cites what it checked) → **clinic lead signs off (standard)** / **Governance MDT review (premium — the §4B admin/regulatory panel)** → versioned/audited. **"Request an SOP"** button → authoring backlog.
+  - **⭐ DECISION (9 Jul 2026) — builder output must be a COMPLETE best-practice SOP, never a skeleton.** The developer over-applied the notes anti-fabrication rule to SOPs ("unfilled sections stay visibly unfinished") → minimal input produced empty headings = an inspection liability. Correct rule splits two things:
+    - **Clinic FACTS** (names, premises, their choices): **never invent** — from the form / clinic profile, else a **flagged placeholder** `[CONFIRM: named safeguarding lead]`.
+    - **Process CONTENT** (the procedure itself): **always the full best-practice default** — this is pre-authored, MDT-validated governed template content, not an AI invention. With ZERO clinic input the build still yields a complete, adoptable SOP.
+    - **Clinic DECISIONS** (options within best practice): best-practice default + explicit flag, e.g. `[CONFIRM: does your clinic prescribe controlled drugs? Default: NO]`.
+    - **Sign-off warns while placeholders remain unresolved** (lead resolves them before signing).
+    - **Output anatomy = a real CQC policy** (exemplar: Faheem's C07f Prescribing Policy): version-control block (Policy No · Responsible Person · Author · Authorised by · Issue date · Review date/cycle · Version) · References · Scope (standard employ wording) · **AIM → POLICY → PROCEDURE** · cross-references to related SOPs · END. The version-control header is what inspectors scan first.
+  - **⭐ SOURCE CORPUS — Faheem's CQC-registered policy library (owned; confirmed round 3).** ~123 inspection-tested documents from Ahmeys Clinic (`~/Desktop/Ahmeys/Visa/.../2.  Policies/`): Master Index + 58 clinical (C) + 22 clinical templates (CT) + 15 non-clinical (S) + 17 HR + 7 patient-facing (P), plus the CQC application bundle (Statement of Purpose, Statement of Governance, CQC meeting minutes). **This is the product's content moat** — software is replicable, an inspection-tested corpus is not.
+    - **They are the INPUT, never the published output.** Pipeline: convert → **de-personalise** (Ahmeys → `[CLINIC NAME]`; named leads → `[CONFIRM: named safeguarding lead]`; premises → `[CONFIRM: premises]` — **facts become placeholders, process text stays**) → **AI updates 2022 → current standards, cited** → **Governance MDT verifies each** → lead signs → published as Clinickly starter templates.
+    - **They supply the missing "best practice default"** that made the R2.10 SOP builder output empty skeletons: the builder now has proven, CQC-shaped content to fill in.
+    - Caveats: dated **March 2022** (overdue by their own 2-year rule); Ahmeys-specific content must be stripped before publication.
+  - **⭐ REGULATOR-AGNOSTIC BY DESIGN (Faheem, round 3) — not a CQC product.** The policy *content* is universal professional good practice (safeguarding, consent, infection control, complaints, record-keeping…); only the **framework it's judged against** changes. Build it once, map it many times:
+    - **Every starter policy carries regulator mappings** — "evidences: CQC Fundamental Standard [X] · GPhC Standard [Y] · NMC [Z]" — so one library serves all inspectorates.
+    - **Gap-check is regulator-selectable** — run an SOP against **GPhC standards**, **CQC fundamental standards**, or both (all already uploaded in Regulatory standards).
+    - **Master Policy Index renders to the asking regulator's expectations.**
+    - **Regulators in scope:** **CQC** (England) · **GPhC** (pharmacy — the core market) · **NMC** (nurse-led) · GMC · devolved inspectorates (**HIW** Wales, **HIS** Scotland, **RQIA** NI).
+    - **Why it matters commercially:** the core audience is **pharmacist prescribers running clinical services from GPhC-regulated pharmacy premises that are not CQC-registered** — a CQC-only scope would exclude most of MEDLRN's existing reach. Faheem's credibility is dual (GPhC-registered pharmacist **and** registered manager of a CQC-registered clinic).
+
+  - **⭐ RESPONSIBILITY + REQUEST + SELF-CORRECTION (Faheem, round 3).**
+    - **Disclaimer mirrors the clinical positioning** — clinical side says *"decision support, not a directive — the treating clinician decides"*; compliance side says **"compliance support, not certification — the registered manager decides."** Full wording: *"A recommended starting list based on what you've told us. The registered manager remains legally responsible under the Health and Social Care Act for identifying and meeting their regulatory obligations; requirements change and may apply differently to your circumstances — verify against current regulator guidance."* **Do not over-hedge** — the value is that we DO advise. Confident recommendation + clear accountability (a solicitor advises firmly; the client still signs).
+    - **Clinics can always add or request:** (1) **in catalogue, not recommended** → "Add to my list", one click; (2) **not in catalogue** → "Request a policy" → authoring backlog → written, governed, published for all; (3) **bespoke** → builder attempts it, clearly flagged as bespoke and not verified against a standard.
+    - **🔑 Additions are a signal that OUR RULES are wrong.** Track manual adds, recommended-but-never-built, and built-but-never-signed: *"cold chain manually added by 31% of clinics not recommended it — review the rule."* The questionnaire logic self-corrects from real clinic behaviour, the same demand loop as missed searches but pointed at our own recommendation rules.
+
+  - **⭐ THE 22 REQUIREMENT THEMES — APPROVED (Faheem, 21 Jul 2026).** Derived from the owned corpus + the real CQC interview; this is the shared vocabulary every policy and every regulator framework maps to. Clinics never see it.
+    **Clinical care:** 1 Safeguarding (adults & children) · 2 Consent & capacity · 3 Assessment, pathways & scope · 4 Remote & digital consultations · 5 Emergency care & resuscitation · 6 Medicines management & prescribing · 7 **Continuity & GP information sharing** 🆕
+    **Records & information:** 8 Clinical record keeping · 9 Confidentiality & information governance · 10 Document control & policy management
+    **Safety & environment:** 11 Infection prevention & control · 12 Risk, incidents & never events · 13 Health, safety & premises
+    **People:** 14 Recruitment & fitness to practise · 15 Training, supervision & appraisal · 16 Staff welfare & conduct
+    **Patient experience:** 17 Complaints, feedback & duty of candour · 18 Equality, dignity & patient experience · 19 **Fees & financial transparency** 🆕
+    **Running the organisation:** 20 Clinical governance & audit · 21 Communication & meetings · 22 Business continuity · 23 **Speaking up / raising concerns** 🆕 · 24 **Regulatory transparency & ratings display** 🆕
+    - **Themes 23–24 added by the regulator mapping (21 Jul):** #23 split out because **GPhC Prof Std 8 is a named standard** ("speak up when they have concerns"); #24 found by the **reverse completeness check** — **CQC Reg 20A** (display your rating at premises + website) had no theme and no policy. **Result: 24 themes.**
+    - **Themes 7, 19, 24 have no policy in the corpus** — both were probed in the real interview (GP sharing incl. consent refusal; "how are people made aware of costs"). They are authoring priorities.
+    - **Three refinements deliberately deferred to the framework-mapping step** (decide on evidence, not instinct): split **whistleblowing** out of #16 if CQC/GPhC give speaking-up a distinct requirement · fold **#21 Communication** into #20 governance if it maps nowhere of its own · merge **#4 Remote** into #3 if no framework treats it separately.
+
+  - **⭐ HOW DUAL/MULTI-REGULATOR WORKS — a shared REQUIREMENT-THEME layer (round 3).** Dual regulation is the normal case in this market (pharmacy premises = GPhC, clinic service = CQC), so it must be invisible to the clinic.
+    - **Don't map policy → regulator directly** (123 policies × 5 regulators = 615 brittle mappings). **Map both sides to ~20 shared requirement themes:** safeguarding · consent & capacity · infection prevention · medicines management · record keeping · complaints & candour · staff competence & training · governance & audit · premises & equipment · information governance · risk & incidents · business continuity · (etc.).
+    - `POLICY → THEME ← REGULATOR REQUIREMENT`. e.g. *C08 Safeguarding → safeguarding ← CQC FS13*; *C07 Medicines management → medicines management ← GPhC Std 4/5 + CQC FS12*.
+    - **Cost:** 123 policy→theme links (once) + ~20 theme links **per framework**. Adding NMC/HIW/HIS/RQIA = map **one framework**, touch **zero policies**.
+    - **What a dual-regulated clinic gets:** required policy list = **union** of both frameworks' themes · each policy displays **both mappings** ("evidences CQC FS13 · GPhC Std 1.6") · **gap-check runs either or both** ("covered for GPhC; CQC also expects business continuity — you don't have one") · **two index views from one library**. **One set of policies, two lenses — the clinic never maintains two sets.**
+    - **Conflict rule (Governance MDT):** where frameworks differ on the same theme (retention periods, CD storage), the policy **adopts the stricter requirement and notes both**, so it satisfies whichever regulator attends.
+    - **Build order:** (1) define the ~20 themes — keystone; (2) map the 123 policies → themes (AI-assisted, MDT-verified); (3) map CQC Fundamental Standards → themes; (4) map GPhC Standards → themes (both already uploaded in Regulatory standards); (5) gap-check, Master Policy Index and evidence pack then derive automatically.
+
+  - **⭐ POLICY-NEEDS ASSESSMENT (onboarding feature, round 3).** Clinics don't need all 123 — the catalogue is a menu. On first run, ask **which regulator(s) you answer to** (CQC · GPhC · NMC · HIW/HIS/RQIA) **plus** a few service questions (**what you do · who you see · do you prescribe · controlled drugs? · under-18s? · minor surgery? · remote consultations? · premises type**) → return **that clinic's required policy list**, prioritised → they build them one at a time → **the Master Policy Index assembles itself**. Turns "here are 123 documents" into "here are the 21 you need, in order" — a very strong first-run experience for a clinic that arrives with nothing.
+
+  - **Why starter + AI, not a finished handout:** an SOP must be true to the *actual* clinic (its real leads/processes) — a generic un-adapted SOP is an inspection liability. So the clinic makes it their own, with AI help + auto compliance-check.
+  - **"Our AI" = grounded, not fine-tuned:** Claude API **RAG-grounded on** our SOP templates + the uploaded regulatory standards (checks against *real* standards, cites them) — not a bespoke trained model.
+  - **Contrast:** SOPs are **clinic-specific by design** (meant to differ); **note templates are standard/central/same-for-all** (must not fork). Don't apply the note-template no-customise rule to SOPs.
+  - **Storage = per-clinic + tenant-isolated:** a finished SOP is stored in **that clinic's own private SOP library** (RLS on `clinic_id`) — visible only to them; Clinic B never sees Clinic A's SOPs. Clinickly provides the *starter + AI*; the populated/signed SOP **belongs to the clinic.** (Vs note templates = one central shared set for everyone.)
+- **Patient-leaflet builder:** keep — it generates a document the clinician shares their own way (Version A).
+- Taxonomy: Appendix D.
+
+### 5.8 Training
+Upskilling + CPD hub.
+- **Embedded learning:** video (host on **Bunny** — recommended) + text + optional quiz. Completion → logs CPD + prompts reflection. *(Keep v1 simple; quizzes/certs = Phase 2.)*
+- **⭐ CPD recording — GPhC-NATIVE record types (decision 9 Jul 2026; source: the real GPhC forms — planned/unplanned/peer-discussion/reflective-account, all sectors, in Faheem's ~/Downloads).** GPhC revalidation counts **RECORDS, not minutes** (minutes = old pre-2018 scheme; keep time as metadata only). Annual requirement: **6 records = 4 CPD (≥2 planned) + 1 peer discussion + 1 reflective account.** The log + export must produce **typed records matching the GPhC forms exactly**:
+  - **CPD planned learning:** Q1 what are you planning to learn (+relevance +effect on service users) · Q2 how · Q3 **example of how it benefited people using your services**.
+  - **CPD unplanned learning:** Q1 the unplanned event + what you learnt + how applied · Q2 **benefit example**.
+  - **Peer discussion:** Q1 **named peer** (name·role·organisation·contact; group = name one) · Q2 how it changed your practice for service users' benefit.
+  - **Reflective account:** how you met the **year's selected GPhC standards** — area of practice · typical service users · real examples.
+  - **Auto-mapping:** Training module → **planned learning** (Q1/Q2 pre-filled from module outline; Q3 = user reflection) · consultation/case learning → **unplanned learning** · **MDT case response → PEER DISCUSSION** (panel member = the named peer, with their standing consent to be named — Clinickly auto-generates the one peer-discussion record required annually; marketable: "your peer discussion, done") · reflective account scaffolded against the year's standards using the clinician's clinical-area tags.
+  - **Quality bar = the forms' own criteria** ("benefit to people using your services, with an example" recurs in every form). Reflection prompts mirror the criteria; **AI criteria pre-check before save** ("no concrete example of patient benefit yet") — same pattern as the SOP gap-check.
+  - **GMC-native too (grounded in the Academy of Medical Royal Colleges reflective template — in Faheem's ~/Downloads):** per-activity reflection = Title/date + **supporting-info category** (general info · keeping up to date · review of practice/QI/significant events · feedback/complaints) → **what have you learned** (tagged to the 4 **Good Medical Practice domains**: knowledge/skills/performance · safety & quality · communication/partnership/teamwork · maintaining trust) → **how has this influenced your practice** → **next steps with SMART objectives**. Rules: no one-word answers, beyond descriptive observation, **no patient-identifiable info**.
+  - **⭐ Capture once, render per regulator:** ONE reflection wizard with 4 questions serving both schemes — (1) what did you learn · (2) how has/will it change your practice · (3) **benefit to people using your services, with a real example** · (4) what next (SMART). Export engine renders the same entries as **GPhC record types** or **GMC Academy-template reflections** (auto-category: module→"keeping up to date", MDT case→"review of practice"; auto-GMP-domain tags). Clinician profile registration (GPhC/GMC) sets the default. **NMC = phase 2.**
+- **Content:** Clinickly-produced (your own educational content) + **MDT session recordings → modules**, all governance-signed.
+- **Data-driven curriculum:** commonest MDT query types + decision-support flags → new modules.
+- **Team training (admin):** assign modules to staff + track completion (inspection evidence).
+- **MDT = peer discussion + reflection** → revalidation evidence as a by-product.
+
+### 5.9 MDT overview
+Front page of Pillar 2 — panel, next session + agenda, how it works, links to submit/library. Informational. **Framed throughout as anonymised teaching/training/CPD (case-based education)**, not a clinical advisory service. Panel + scheduling + governance all managed in the **admin console** (§4).
+
+### 5.10 Session library
+Searchable recorded MDT sessions. **Consent + anonymisation required**; governance-signed before publishing; **tagged** for search; a session can be **promoted into a Training module** (Bunny video).
+- **Playback = embedded, gated — never downloads.** Bunny Stream player embedded in-page; **signed/tokenised URLs** (plays only for a logged-in user; link can't be shared/scraped); **access-controlled + audited** (log who watched what); UK/EU encrypted storage.
+- **Recordings MUST be reviewed before publishing (highest PII risk in the product).** Video leaks PII in ways you can't auto-strip — **spoken names**, **shared screens** (EHR/patient lists/letters), **faces/badges/reflections.** Pipeline: **record → PRIVATE holding area (admin/governance only)** → **human review** (watch/listen for PII) → **redact** (trim/mute/blur) → **confirm consent + anonymisation** → **governance sign-off (clinical lead)** → **publish (embedded, signed URL).** The "governance-signed before publishing" gate must be a **real review+sign step**, not a label.
+- **Safer by design:** cases are already anonymised pre-session (recording review = second safety net); prefer **audio-only / transcript / slides+voiceover** for sensitive content (no faces needed, same teaching value).
+
+### 5.11 Ask Clinickly (AI chat)
+Ask a clinical question → **guideline-backed answer**. **Grounded in the same restricted official sources** (not AI memory); **cites source + "verify at source"**; framed as **"decision support, not a decision"**; logged/audited; also answers "how do I use Clinickly?".
+
+### 5.12 Patient portal → **deferred to a later phase.** Remove patient portal + patient login + membership/"Activate" for the pilot. Returns done properly later.
+
+---
+
+## 6. Taxonomies (controlled lists — no free text)
+
+**A. Consultation** (two dropdowns):
+- *Clinical area:* ADHD · Autism (ASD) · Mental health · Weight management · Dermatology · Sexual & reproductive health · General & acute prescribing · Long-term condition · Travel health · Other (logged).
+- *Encounter type:* New/initial assessment · Medication review/titration · Routine/annual review · Follow-up/monitoring · Acute/minor illness · Prescribing query/second opinion · Shared-care review.
+
+**B. MDT routing specialty (who answers):** General practice · Psychiatry/mental health · Dermatology · Pharmacy & prescribing · Weight management* · Women's/sexual & reproductive health* · Governance/ethics (Chair) · Unsure — triage to Chair. *(*as panel grows)*
+
+**C. MDT query type (for audit; AI auto-suggests):** Diagnostic uncertainty · Treatment/management choice · Medication query · Escalation/referral threshold · Safety/risk · Scope of practice · Shared-care · Second opinion/sense-check · Complex/multi-morbidity · Other (logged).
+
+**D. Templates & SOPs — ⭐ catalogue taxonomy adopted from a real CQC-registered clinic's master policy index (Ahmeys clinic, 9 Jul 2026).** Faheem's inspection-tested index is the target catalogue; the source doc lives at `~/Desktop/Aug 2022/Desktop/CQC/Extra information/CQC POLICIES/Ahmeys clinic Master Index Policies.doc`.
+- *Top-level category (mirrors the index):* **Clinical policy** · **Clinical template** · **Organisational (non-clinical) policy** · **Staff/HR template** · **Patient-facing template** · Note template · Regulatory standard/reference.
+- *Catalogue discipline (from the index):* every document carries a **policy number** (C07f-style), **version**, **review cycle** (e.g. 2-yearly), authorised-by, and cross-references (e.g. staff/clinician handbook inclusion).
+- *Clinical policies (target set, C-series):* chaperone · infection control · patient confidentiality/privacy/GDPR-Caldicott/IG · complaints · consent · clinical & non-clinical waste · medicines management (+ controlled drugs · safe storage · cold chain · safety alerts · **prescribing** · repeat scripts) · safeguarding adults (+ pocket guide) · safeguarding children · patient record keeping · unexpected patient death · assessment arrangements · sample-signature register · clinical supervision · operational · OOH · risk management & SUI reporting · completion of medical records · monitoring quality & treatment · patient feedback · duty of candour · supporting staff · minor surgery · clinical governance · staff recruitment · communicating after harm · customer service · patient access to records · document control · advance directives · risk assessment in clinic · clinical audit (+ strategy) · resuscitation (+ paediatric) · practising privileges & contracts · never events · fit & proper persons · health & safety · patient ID verification · remote consultations.
+- *Clinical templates (CT):* consent form + patient info · PSDs · SUI/incident report + risk assessment · audit template · CG agenda/minutes/prep · Caldicott guardian outline · DBS record + risk assessment · registration forms (adult/child) · ligature risk · doctors handbook · consultant annual review.
+- *Organisational (S):* equality & diversity · whistle-blowing · communication · stress · fire safety · staff training & development · occupational health · social media · lone worker · being open.
+- *HR templates:* application · induction · appraisal suite · training records/certificates · meetings · contract · staff handbook. *Patient-facing (P):* complaint leaflet/forms/holding letter/record/register · chaperone notice.
+- **Phasing:** the ~12-type starter set is authored first (pilot); the full index is the roadmap, **prioritised by demand data** ("Request an SOP" + builds-per-template). "Other (request)" always available.
+- **⭐ Feature — auto-generated Master Policy Index per clinic:** the first thing an inspector requests. A living page/export listing every SOP the clinic holds: number · title · version · signed-by · issue date · next review date. Clinics maintain this by hand today; Clinickly generates it for free from the clinic's SOP library.
+- **⭐ Protected field — "How this process actually runs in your clinic" stays in the builder (Faheem, 9 Jul).** CQC's core test is *policy reflects actual practice* — this field is what makes the SOP true, not generic. It complements the best-practice-default rule: **empty field → complete SOP from defaults; filled field → their real workflow woven in.** Never remove it.
+
+Rules: both facets required dropdowns; "Other" logged & reviewed; clinical content stays free text; forward-looking — map tags to **SNOMED**.
+
+---
+
+## 7. Integrations — interim (now) vs target (licensed)
+
+| Capability | Interim (pilot, now) | Target | Start now |
+|---|---|---|---|
+| **Transcription** | Browser mic (in-person) | **Speechmatics** (UK, diarization) + **Recall.ai** (Zoom/Teams/Meet both sides) | Contract STT + bot |
+| **Codes (SNOMED/ICD)** | AI-suggested, flagged "verify" | AI proposes concept → validate against **NHS Terminology Server** (SNOMED) + **WHO ICD API**; meds via **dm+d** | Apply: NHS Terminology Server |
+| **Guidance + decision support** | **Restricted official-site search** (`nice.org.uk`, `cks.nice.org.uk`, BNF only) — reads current text, cites + "verify at source". Curated library = **AI draft → clinician check → link + date**. | **NICE Syndication API** (licensed) + own **version-tracked store** (RAG); + **BMJ Best Practice, UpToDate, DynaMed** | Apply: NICE Syndication (+ BMJ/UpToDate/DynaMed) |
+
+**⚠️ Copyright split:** the curated DB / pipeline covers **NICE/CKS + your own summaries ONLY**. **UpToDate / DynaMed / BMJ are commercial — link-out only until licensed; never AI-clone them.** Regulatory standards (GPhC/CQC/MHRA/NHS) are public — safe to hold + gap-check.
+**Updates handled by:** link + last-checked + **live-search for real decisions** + review cycle → automatic once APIs land.
+**Never** use the open web or AI memory for clinical guidance. Keep all keys server-side.
+
+---
+
+## 8. The governance pipeline (STANDARD build)
+
+Keeps all clinical content current + safe. **Reuses the MDT/roles/DB machinery.** Used for **guidelines, SOPs, note templates, training**.
+
+1. **AI drafts** (a summary / update / new item).
+2. **MDT reviews** — routed to the relevant specialty.
+3. **Clinical lead signs off** — named, dated.
+4. **Published** to users — **versioned**.
+5. **Every step audit-logged** (AI draft, reviewer, signer, when).
+
+- Run from the **Admin/Governance console**. Benefits: always-current + human-governed + defensible + strengthens clinical safety (DCB0129) + a trust story.
+
+**⭐ Separation of duties — RISK-TIERED (rigour where it counts, cheap elsewhere):**
+- **Rule:** the **reviewer ≠ the signer** — the person who reviewed an item cannot also do its final sign-off. Enforce in code (block same user_id as reviewer + signer). *(Inspectors check "who checked whose work"; self-signed content fails.)*
+- **But don't apply full two-person to everything — tier by risk to control cost:**
+
+| Tier | Examples | Sign-off requirement |
+|---|---|---|
+| **High** | Clinical guidance touching prescribing/diagnosis/safety; regulated SOPs (safeguarding, consent, controlled drugs, prescribing) | **Full two-person: reviewer ≠ independent clinical-lead signer.** |
+| **Medium** | New note template, non-safety guideline section, training module | **Single qualified reviewer + sign-off** (reviewer ≠ signer still preferred). |
+| **Low** | Typo, formatting, minor wording tweak, metadata | **Light-touch: single reviewer, or auto-approve + post-hoc audit.** Don't spend two experts on a comma. |
+
+- **Why tiered:** AI drafts + humans verify (minutes) + write-once-publish-to-all-clinics (§4B) already keep cost low; risk-tiering means you only pay for full independence where a mistake actually matters. The cost of a governance failure (harm, CQC finding, lost clinics) far exceeds the review — so full separation on high-risk items is cheap insurance.
+- Each item carries a **risk tier** (set at draft, adjustable by admin) that drives which sign-off path it follows.
+- **Fast-follow (not day-one):** AI **auto change-detection** (watches sources, flags "NG87 changed"). **Launch interim:** manual **"review due"** schedule (~3-monthly).
+
+---
+
+## 9. Technical build — step by step
+
+**Recommended stack (set up fresh in your own new project — do NOT reuse any other site's codebase):** static front end (plain HTML/CSS/JS or a framework of your choice) · **Netlify Functions** (backend, `/api/*`) · **Supabase** (Postgres + Auth) · **Bunny** (video) · **Stripe** (billing, later) · **Claude** (`claude-sonnet-4-6` default, `claude-opus-4-8` for hardest).
+
+**Setup (your own repo)**
+```bash
+mkdir clinickly && cd clinickly && npm init -y
+npm install @anthropic-ai/sdk @supabase/supabase-js
+npm install -g netlify-cli
+# add your keys to .env (§12)
+netlify dev            # runs the app + functions locally
+```
+
+**Phase 1 — real note drafting** (`netlify/functions/notes.js`): POST `{transcript, patient, template}` → Claude with a forced-JSON tool returning `{S,O,A,P,codes}`. System prompt: draft SOAP from transcript only, **do not invent findings**, flag uncertainty, follow the selected template, does not diagnose/prescribe. Wire into the consultation view's note generation (replace any mock).
+
+**Phase 2 — decision support** (`/api/support`): grounded in the restricted official-site search (§7), returns `{level,title,body,ref}[]`, each cites source + "verify at source".
+
+**Phase 3 — auth + database (Supabase).** Email login; gate the app; 3 roles + RLS. Core tables:
+```sql
+clinics(id, name, created_at)
+profiles(id→auth.users, role[clinician|panel|admin], full_name, reg_number, clinic_id)
+consultations(id, clinician_id, patient_ref, clinical_area, encounter_type, created_at)
+notes(id, consultation_id, clinician_id, patient_ref, s,o,a,p, codes[], status[draft|signed], signed_at, created_at)
+note_addenda(id, note_id, author_id, body, created_at)
+mdt_cases(id, clinician_id, specialty, query_type, urgency, title, summary, status, responder_id, created_at)
+mdt_responses(id, case_id, panel_member_id, body, created_at)
+case_images(id, case_id, storage_path, consent_confirmed bool, exif_stripped bool, ai_identifiable_flag bool, uploaded_by, created_at)  -- encrypted bucket, UK/EU
+mdt_sessions(id, date, agenda, recording_url, consented, published, created_at)
+guidelines / templates / sops / training(... + status, version, reviewer_id, signer_id, published_at)  -- governance pipeline
+audit_log(id, actor_id, action, entity, entity_id, at)
+```
+RLS: clinicians see only their own notes/cases; panel see cases routed to them; admin sees all. **No patient-identifiable data** in any table (patient_ref = clinician's own code).
+
+**Phase 4 — transcription** (Speechmatics + Recall.ai; token brokered server-side).
+**Phase 5 — MDT answering loop** (panel login → routed cases → responses persist → notify) **+ case image upload** (encrypted Supabase Storage bucket, EXIF strip on upload, AI identifiable-image pre-check, consent checkbox, access = submitter + routed panel member only).
+**Phase 6 — governance pipeline + admin console** (§8, §4).
+**Phase 7 — Training** (Bunny video embeds + CPD export).
+**Phase 8 — billing** (Stripe) + custom domain.
+
+**Deploy:** push to `main` on GitHub → Netlify auto-builds. Keys in **Netlify env vars**, never in code.
+
+---
+
+## 10. Build order (what first)
+
+1. **Real note drafting** (Phase 1) — highest value, proves the core.
+2. **Decision support grounded in official sources** (Phase 2 + §7 interim).
+3. **Auth + DB + 3 roles** (Phase 3) — unlocks everything else; **remove the patient side here**.
+4. **MDT answering loop** (Phase 5) — completes Pillar 2.
+5. **Governance pipeline + admin console** (Phase 6) — turns on content governance.
+6. **Transcription upgrade, Training/CPD, billing, domain** (Phases 4/7/8).
+*Run the closed pilot on synthetic/anonymised data from Phase 3; do NOT touch real patient data until the compliance gate (§11) is cleared.*
+
+---
+
+## 11. Compliance & safety (do NOT skip)
+
+- **Positioning:** built as a **guidance/reference + documentation tool + anonymised education/CPD** — **not** patient-specific decision-support software, and **not intended as a medical device** (§3). Device status turns on *function*, so **avoid patient-specific directives** — surface guidance, don't instruct. (Confirm scope with a regulatory adviser.)
+- **Clinical safety:** UK **DCB0129 / DCB0160** (clinical risk management for health IT) — good practice even as a guidance/documentation tool. Appoint a **Clinical Safety Officer**; keep a **hazard log**. (The §8 sign-off pipeline supports this.)
+- **Data protection:** UK GDPR — **DPIA** before any real patient data; UK/EU residency; retention; subject access/erasure. (Version A minimises this by holding no identifiers.)
+- **No auto-prescribe.** AI drafts; clinician signs. Keep **"supports, not decides"** in the UI + T&Cs.
+- **Audit everything** — who saw/signed/published what, when. (Selling point *and* safety.)
+- **Keys server-side only.** Never ship API keys to the browser.
+- **MDT framing:** **anonymised teaching/training/CPD** (case-based education), advisory only — not a clinical service, not transfer of responsibility; sort indemnity/consent + panel agreements before launch.
+- **Copyright:** §7 split — never republish commercial guidance without a licence.
+
+---
+
+## 12. Applications / accounts to START NOW (lead time)
+
+- [ ] **NICE Syndication API** (licence) · **BMJ Best Practice / UpToDate / DynaMed** (commercial licences)
+- [ ] **NHS Terminology Server** (SNOMED CT) · **WHO ICD API**
+- [ ] **Speechmatics** (STT) + **Recall.ai** (meeting bot)
+- [ ] **Anthropic** API key (Claude) · **Bunny** (video, already in stack) · **Stripe** (billing, later)
+- [ ] **Clinical Safety Officer** appointed · **DPIA** started · solicitor for **T&Cs / DPA / indemnity**
+
+---
+
+*Env vars: `ANTHROPIC_API_KEY`, `SUPABASE_URL/ANON_KEY/SERVICE_ROLE_KEY`, `SPEECHMATICS_API_KEY`, `RECALL_API_KEY`, `NICE_SYNDICATION_KEY`, `NHS_TERMINOLOGY_*`, `BUNNY_*`, `STRIPE_*`. All server-side.*

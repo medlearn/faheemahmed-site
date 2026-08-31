@@ -1,0 +1,224 @@
+# Clinickly starter templates
+
+Governed starter policies. Each is authored to the same standard: de-personalised from the source corpus, updated against current guidance, mapped to requirement themes and regulator requirements, and left with explicit `[CONFIRM: …]` decisions for the adopting clinic.
+
+**Status: APPROVED v1.0.** Clinically reviewed and signed off by the clinical lead (Faheem Ahmed, pharmacist prescriber and CQC registered manager), 21 Jul 2026. Ready for the library.
+
+**The `[CONFIRM: …]` fields are not a review gate — they are the adopting clinic's decisions.** A policy published with another clinic's safeguarding lead, referral route or retention schedule still in it is broken for the clinic receiving it. The completeness check must block publication while any remain unfilled.
+
+## The standard
+
+Every starter has:
+
+1. **Document control table** — policy no, version, responsible person, themes, regulator mappings
+2. **References** — current editions only; superseded references are corrected, and the correction is noted
+3. **Scope · AIM · POLICY · PROCEDURE · END** — house format from the source corpus
+4. **`[CONFIRM: … Default: …]`** — every clinic-specific decision made visible, with a recommended default. Never a silent assumption
+5. **`[CLINIC NAME]`** — no residual personalisation from the source
+6. **An audit section** — with an owner, a frequency, and the actual questions
+7. **A closing note** — *what changed and why* (where there is a source) or *why this policy exists* (where there is not)
+
+## Progress
+
+| Policy | Theme(s) | Source | Status |
+|---|---|---|---|
+| [C07f Prescribing](C07f-prescribing.md) | 6, 7 | C07f (2022) | ✅ **v1.0** |
+| [C41 GP Communication and Continuity of Care](C41-gp-communication-continuity.md) | 7, 9, 8 | 🆕 none | ✅ **v1.0** |
+| [S12 Fees and Financial Transparency](S12-fees-financial-transparency.md) | 19, 2, 17, 18 | 🆕 none | ✅ **v1.0** |
+| [S03 Speaking Up (Raising Concerns)](S03-speaking-up.md) | 23, 16, 12, 20 | S03 v01 (2022) | ✅ **v1.0** (supersedes v01) |
+| [S13 Display of Ratings and Registration](S13-ratings-registration-display.md) | 24 | 🆕 none | ✅ **v1.0** |
+| [C08 Safeguarding adults](C08-safeguarding-adults.md) | 1, 2, 12, 15 | C08 v01 | ✅ **v1.0** (supersedes v01) |
+| [C032 Safeguarding children](C032-safeguarding-children.md) | 1, 2, 12, 15 | C032 v01 | ✅ **v1.0** (supersedes v01) |
+| [C05 Consent](C05-consent.md) | 2, 8, 18, 19 | C05 v01 | ✅ **v1.0** (supersedes v01) |
+| [C03 Patient Confidentiality](C03-patient-confidentiality.md) | 9, 8, 2, 18 | C03 v01 | ✅ **v1.0** (supersedes v01) |
+| [C09 Record keeping](C09-record-keeping.md) | 8, 9, 10 | C09 v01 | ✅ **v1.0** (supersedes v01) |
+| [C04 Complaints](C04-complaints.md) | 17, 20, 18, 19 | C04 v01 | ✅ **v1.0** (supersedes v01) |
+| [C021 Being Open & Duty of Candour](C021-duty-of-candour.md) | 17, 12, 20, 23 | C021 v01 | ✅ **v1.0** (supersedes v01) |
+| [C02 Infection prevention & control](C02-infection-prevention-control.md) | 11, 13, 12, 15 | C02 v01 | ✅ **v1.0** (supersedes v01) |
+| [C017 Risk management & serious incidents](C017-risk-management-incidents.md) | 12, 20, 17, 23 | C017 v01 | ✅ **v1.0** (supersedes v01) |
+| [C038 Health & safety](C038-health-and-safety.md) | 13, 12, 16, 15 | C038 v01 | ✅ **v1.0** (supersedes v01) |
+| [C024 Clinical governance](C024-clinical-governance.md) | 20, 21, 12, 15 | C024 v01 | ✅ **v1.0** (supersedes v01) |
+| [C033 Clinical audit](C033-clinical-audit.md) | 20, 12, 9 | C033 v01 | ✅ **v1.0** (supersedes v01) |
+| [C025 Recruitment & fitness to practise](C025-recruitment.md) | 14, 15, 18, 1 | C025 v01 | ✅ **v1.0** (supersedes v01) |
+| [C010 Training, supervision & appraisal](C010-training-supervision-appraisal.md) | 15, 14, 20 | C010 v01 | ✅ **v1.0** (supersedes v01) |
+| [C01 Chaperone](C01-chaperone.md) | 18, 2, 8, 15 | C01 v01 | ✅ **v1.0** (supersedes v01) |
+| [C039 Patient identification](C039-patient-identification.md) | 8, 12, 4, 1 | C039 v01 | ✅ **v1.0** (supersedes v01) |
+| [C029 Document control](C029-document-control.md) | 10, 9, 8, 20 | C029 v01 | ✅ **v1.0** (supersedes v01) |
+| [S01 Equality, diversity & inclusion](S01-equality-diversity-inclusion.md) | 18, 16, 14, 23 | S01 v01 | ✅ **v1.0** (supersedes v01) |
+| [Business Continuity Plan](BCP-business-continuity.md) | 22, 12, 13, 9 | BCP (2022) | ✅ **v1.0** (supersedes 2022) |
+| [C015 Operational policy](C015-operational-policy.md) | 3, 20, 21, 10 | C015 v01 | ✅ **v1.0** (supersedes v01) |
+| [C07 Medicines management](C07-medicines-management.md) | 6, 5, 12, 8 | C07 v01 | ✅ **v1.0** (supersedes v01) |
+| [C040 Remote consultations](C040-remote-consultations.md) | 4, 3, 9, 2, 6 | C040 v01 | ✅ **v1.0** (supersedes v01) |
+| [C034 Resuscitation & medical emergencies](C034-resuscitation.md) | 5, 6, 15, 13 | C034 v01 | ✅ **v1.0** (supersedes v01) |
+
+**28 of 28 — COMPLETE.** The four 🆕 entries had no policy anywhere in the 123-document corpus — themes 7, 19, 23 and 24 were the authoring priorities identified by the regulator mapping.
+
+## Forms
+
+**[`forms/`](forms/) — 4 governed forms, v1.0.** Consent · complaints leaflet · incident report · safeguarding concern record. Several other forms are embedded as appendices in their parent policy (chaperone notice in C01, staff safeguarding alert in C08, confidentiality agreement in C03, candour quick reference in C021).
+
+**The worst defect found in the whole corpus was on a form**, not a policy — `XXXXX procedure` on a consent form a patient was asked to sign. Patient-facing forms carry the loudest warnings and the strictest publish gate.
+
+## Notes on the four gap policies (drafted 21 Jul 2026)
+
+- **C41** and **S12** were both probed at the real CQC inspection and had no policy behind them.
+- **S03 v02** supersedes the 2022 whistle-blowing policy; the reframing to *speaking up* is driven by **GPhC Professional Standard 8**, which is a named professional duty and was the reason theme 23 was split out.
+- **S13** was found by reverse completeness check, not by inspection — **CQC Reg 20A** had no theme and no policy.
+
+## Known corrections carried forward
+
+Errors found in the 2022 source corpus during authoring, to be checked for wherever else they appear:
+
+- **"MIMMS"** used where **MIMS** was meant (C07f, three occurrences) — MIMMS is Major Incident Medical Management and Support
+- **National Patient Safety Agency** — abolished 2012; alerts now issue as National Patient Safety Alerts via CAS
+- **GMC *Good Medical Practice* 2013** — superseded by the 2024 edition; cited in S03 v01 and likely elsewhere
+- **Intercollegiate Document, adult safeguarding roles & competencies** — 2018 first edition cited in C08 v01; a later edition exists
+- **GMC *Consent: Patients and Doctors Making Decisions Together* (2008)** — 2 occurrences; replaced November 2020 by GMC *Decision making and consent*, a substantial rewrite
+- **Intercollegiate Document, children safeguarding** — 2014 cited in C032 v01 (4 occurrences corpus-wide); 2018 and 2019 also cited elsewhere, so the corpus is internally inconsistent about which edition it follows
+- **Working Together to Safeguard Children, DCSF 2010** — 3 occurrences; superseded several times. DCSF was abolished in 2010
+- **"Children and Young Persons Act 1989"** — no such Act; it is the **Children Act 1989**. 8 occurrences, all in C032. Also "Adoption and Children and Young Persons Act 2002" → **Adoption and Children Act 2002**
+
+## 🚩 Systemic: the corpus predates GDPR
+
+| | |
+|---|---|
+| Documents citing the **superseded Data Protection Act 1998** | **8** |
+| Documents mentioning GDPR at all | **12 of 119** |
+| Citations of the current **Data Protection Act 2018** | **1** |
+| Citations of Acts that do not exist | **2** — "Data Protection Act 1989", "Data Protection Act 2004" |
+
+Files anchored to DPA 1998: S04 Communication · S10 Occupational Health · HR05 Appraisal Guidelines · **C028 Patient Access to Records** · C029 Document Control · C033 Clinical Audit · **C03e Information Governance** · **CT12 Patient Information About Consent**.
+
+The three in bold matter most: an information governance policy, a subject-access policy, and a **patient-facing** consent leaflet, all built on the pre-2018 regime. Subject access rights, timescales and lawful bases all changed. This is a corpus-wide re-basing job, not eight individual edits — and it is a strong argument for the requirement-theme layer, since theme 9 (Confidentiality & information governance) touches all eight.
+
+## 🔴 URGENT: an unlawful instruction in two live recruitment policies
+
+**C025 Staff Recruitment** and **S07 Staff Recruitment** — two near-duplicate policies, both signed, both live — contain this paragraph verbatim:
+
+> *"Where there is an international candidate and a candidate from the UK who are equal after the selection process is complete and both meet the requirements of the role, then **the candidate from the UK must take precedence, and be offered the role. This reflects the statutory employment requirements.**"*
+
+**There is no such statutory requirement, and following the instruction would be unlawful.**
+
+- The **Resident Labour Market Test** was **abolished in December 2020**. Even while it existed it was an advertising duty on sponsors, never a rule requiring a British candidate to be preferred at appointment.
+- **Nationality is part of race under s.9 Equality Act 2010.** Preferring a candidate because they are British is **direct race discrimination**, which cannot be justified. A written instruction to do so is evidence in itself.
+
+**Actions:** withdraw both v01s from circulation now · check whether any appointment relied on it · check whether either policy was shared with anyone else · check job adverts, agency briefs and interview materials for the same wording.
+
+This is the most serious defect found in the corpus. Everything else has been a stale reference, a missing procedure or a contradiction. **This is an instruction to break the law, in the document that governs who gets hired.**
+
+**Note the duplication itself is a finding:** two recruitment policies exist (C025 clinical series, S07 non-clinical series) with near-identical text. Correcting one would have left the other live — which is precisely what a policy register (see C029) exists to prevent.
+
+## 🚩 SYSTEMIC: the corpus reports to a body abolished in 2012
+
+The **National Patient Safety Agency** appears in **9 of 119 documents** — as a current source of alerts, as a framework author, and in C017 as the organisation staff *consent to have their incident data shared with*.
+
+S09 Being Open · C011 Unexpected Patient Death · **C017 Risk Management** · C021 Duty of Candour · C036 Never Events · C039 Patient ID Verification · C07a Controlled Drugs · **C07f Prescribing** · CT09b SUI Risk Assessment
+
+The NPSA was abolished in **2012**. Its functions moved to NHS England; the NRLS has since been replaced by **LFPSE**. Safety alerts now issue as **National Patient Safety Alerts via CAS**.
+
+The whole patient-safety spine of this corpus reports into an organisation that has not existed for over a decade. Note also that the national reporting system is designed around NHS providers — an independent clinic participates voluntarily, so each starter makes participation an explicit `[CONFIRM]` rather than describing a connection the clinic does not have.
+
+## 🚩 A prescribing service with no Yellow Card route
+
+| | Documents |
+|---|---|
+| Mentioning **Yellow Card** | **1 of 119** |
+| Mentioning **adverse drug reaction** | **1 of 119** |
+| Citing **RIDDOR** | 1, and in its **repealed 1995 edition** |
+
+C017 covers MHRA reporting thoroughly — **for medical devices only.** For a service running ADHD titration, weight management and hormone treatment, **suspected ADR reporting is the far more frequently relevant duty** and it is effectively absent from the corpus.
+
+Audit question added to C017: *a prescribing service that has Yellow Carded nothing in a year is almost certainly not reporting.*
+
+## 🚩 Internal contradictions found so far
+
+Three documents state two incompatible things about the same fact. All three are machine-detectable.
+
+| Policy | Contradiction | Why it matters |
+|---|---|---|
+| **C032 Safeguarding Children** | *"under 18s are not seen at the clinic"* vs *"At Ahmeys Clinic under 18s are seen"* — same section, four lines apart | Determines the mandatory safeguarding training level for every clinical member of staff |
+| **C04 Complaints** | Response due in *"21 days"* / *"28 working days"* / *"21 working days"* — three figures | The patient leaflet, the staff following it, and an inspector each get a different answer |
+| **C04 Complaints** | Tells dissatisfied complainants to *"approach the Care Quality Commission"*, then states *"the CQC will not arbitrate in a complaint"* | Sends complainants to a body that cannot help them, producing a second complaint about the first |
+
+## 🚩 Private patients have no Ombudsman — and the corpus never says so
+
+C04 v01 offers CQC as the escalation route. CQC does not investigate individual complaints, and **the PHSO covers NHS-funded care only**. A privately funded patient's only genuine independent route is a subscription scheme such as **ISCAS**.
+
+Corpus-wide: *Ombudsman* appears **0 times in 119 documents**; ISCAS or independent adjudication appears in 4.
+
+**Every private-sector starter must make scheme membership an explicit `[CONFIRM`], because a clinic that is not a member cannot offer independent adjudication and must not imply it in a patient leaflet.**
+
+## 🚩 The two duties of candour were treated as one
+
+C021 v01 is a faithful account of the NPSA **Being Open** framework — but never states **Regulation 20**: no notifiable-safety-incident thresholds, none of the prescribed steps, and no mention that non-compliance with parts of Reg 20 is a **criminal offence**.
+
+It also does not distinguish:
+
+| | Statutory (CQC Reg 20) | Professional (GMC/NMC; **GPhC Std 8**) |
+|---|---|---|
+| Held by | the organisation | **every individual registrant** |
+| Threshold | notifiable safety incident | **anything that goes wrong** |
+
+Without the distinction, *"it wasn't a notifiable safety incident"* reads as a reason to tell the patient nothing. That is the commonest way candour fails, and it fails in good faith.
+
+## 🚩 The two thinnest policies cover the most-inspected subjects
+
+| Policy | Length | Subject |
+|---|---|---|
+| **C09 Record Keeping** | **898 words** | CQC Reg 17; a personal professional standard under both GMC and GPhC |
+| **C03 Patient Confidentiality** | **1,211 words** | UK GDPR, Caldicott, common law duty of confidence |
+
+Both were the shortest documents in a 119-document corpus. Between them:
+
+- **C03 had no data breach procedure at all** — no named person, no log, no mention of the **72-hour ICO notification duty**. Confidentiality policies are tested by what happens in the hour after an email goes to the wrong patient, and there was nothing there.
+- **C03 treated "next of kin" as conferring a right to information.** It has no legal standing in England and Wales; a spouse has no automatic right to information about an adult with capacity.
+- **C03's staff confidentiality agreement** — the document every worker signs — cites the *"**Date** Protection Act 1998"*: a typo and a repealed statute, in one line.
+- **C09 instructed that electronic records be "retained indefinitely"**, twice, attributed to *NHS Choices* (a public information website, replaced by NHS.uk in 2018). This conflicts with **UK GDPR Art. 5(1)(e)** storage limitation — a standing policy of indefinite retention of special category health data.
+- **C09's references cite the "Data Protection Act 1989"** — no such Act — and its body cites the repealed 1998 Act. The shortest policy in the corpus cites the wrong data protection statute twice, in two different wrong ways.
+- **C09 had no procedure for correcting a record.** Improperly altered records are among the most serious findings a clinician can face, and the rule is simple enough that its absence is the only reason anyone gets it wrong.
+
+**Product implication:** document length is a usable risk signal. A policy far shorter than its theme's peers, on a high-inspection theme, should be flagged for review before anyone reads a word of it.
+
+## 🚩 SYSTEMIC: the corpus has no pharmacy regulator in it
+
+| Regulator | Documents mentioning it |
+|---|---|
+| **GMC** / General Medical Council | **41 of 119** |
+| **GPhC** / General Pharmaceutical Council | **0 of 119** |
+
+**Not one document in a 119-document corpus, owned and operated by a pharmacist prescriber who is the registered manager, references the pharmacy regulator.** The set is medically framed throughout — GMC guidance, "doctors must", Medical Protection Society, consultants and specialties.
+
+This is the most consequential systemic finding so far, for two reasons:
+
+1. **For the clinic** — a GPhC inspection of the premises would find a policy set that never once cites the standards the responsible person is actually registered against.
+2. **For Clinickly** — the core market is *pharmacist prescribers running clinical services from GPhC-regulated pharmacy premises*. The raw corpus, used unmodified, would deliver GMC-framed policies to a GPhC-regulated audience. **Every starter maps GPhC standards alongside CQC as standard**, which is precisely what the requirement-theme layer exists to make cheap.
+
+## 🚩 Gillick / Fraser conflation
+
+C05 v01 uses *"Fraser competent"* as the general test of a child's capacity to consent. **Fraser applies only to contraception and sexual health advice to under-16s; the general test is Gillick competence.** C05 mentions Fraser and never Gillick. Corpus-wide, Fraser appears in 4 documents and Gillick in 4 — with only 2 documents containing both, so the distinction is not reliably drawn anywhere in the set.
+
+## 🚩 Find-and-replace damage (C032)
+
+C032 shows evidence of a document-wide replacement of *child* → *young person*, never proofread. It is what turned the **Children Act 1989** into the non-existent *"Children and Young Persons Act 1989"*, and it left sentences like *"'Children and children and young persons' therefore means 'children and young persons and young people'"*.
+
+C032 also **contradicts itself on whether the clinic sees under-18s** — both statements appear in the same section, four lines apart. That answer determines the mandatory training level for every clinical member of staff.
+
+**Product implication:** the completeness check must catch more than empty fields. Contradictory statements within one document, and citations of statutes that do not exist, are both machine-detectable.
+
+## 🚩 Unreplaced template placeholders in live signed policies
+
+Found by corpus scan, 21 Jul 2026. These are **signed, authorised policies that were adopted from a template and never finished.** This is the direct answer to the inspector's *"how have you personalised these?"* test — and it is the wrong answer.
+
+| Policy | Placeholder left in | Where |
+|---|---|---|
+| **C05 Consent** | `XXXXX procedure` | **In a patient-facing consent form** — "to assist you in making an informed decision to undergo XXXXX procedure" |
+| **C08 Safeguarding Adults** | `Xxxx` ×4 | AIM, key roles, reporting, abuse-within headings |
+| **C08 Safeguarding Adults** | `INSERT LOCAL S/S` ×2 | The multi-agency safeguarding framework |
+| **C032 Safeguarding Children** | `[INSERT Social Services Safeguarding Protocols for Children and Young People]` | The referral framework |
+| **C017 Risk Management & SUI** | `<INSERT NAME>` | Who co-ordinates media communications during a serious incident |
+| **C038 Health and Safety** | `<INSERT NAME>` | Who to report obstructed access/egress to |
+| **C035 Practising Privileges** | `Dr. [INSERT NAME]` | Medical Director, in a letter sent to applicants |
+
+**Not defects** (blanks by design): S00, C00, C00b policy templates · HR06 appraisal invite · HR15 sample contract · C037/S07b fit-and-proper declarations (completed by hand on signing).
+
+**Every starter template addresses this structurally:** placeholders are `[CONFIRM: … Default: …]` rather than `Xxxx`, so an unfinished field is visible rather than camouflaged, and C08 carries a do-not-adopt-with-blanks warning at the head.

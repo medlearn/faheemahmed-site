@@ -606,7 +606,7 @@
       </div>
       <div class="cb">
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
-          <span class="tag">${esc(c.specialty)}</span><span class="tag">${esc(c.id)}</span><span class="tag">Submitted ${esc(fmtDate(c.submitted))}</span>
+          <span class="tag">${esc(c.specialty)}</span><span class="tag">${esc(c.id)}</span><span class="tag">Submitted ${esc(fmtDate(c.submitted))}</span>${c.photos ? `<span class="tag teal">📷 ${c.photos} photo${c.photos > 1 ? "s" : ""} · consented</span>` : ""}
         </div>
         <div class="lbl">Case summary</div>
         <p>${esc(c.summary)}</p>
@@ -633,6 +633,12 @@
         <div class="field"><label>Anonymised case summary <span class="req">*</span></label>
           <div class="help">Age, sex, presentation, what you've considered and your specific question.</div>
           <textarea class="textarea" name="summary" required placeholder="29F, 6 weeks on lisdexamfetamine 30mg…">${esc(prefill.summary || "")}</textarea></div>
+        <div class="field"><label>Clinical photos <span style="color:var(--muted);font-weight:400">(optional — up to 5, e.g. dermatology)</span></label>
+          <div class="help">Crop to the affected area. Avoid faces, tattoos, jewellery or backgrounds. Location data (EXIF) is stripped on upload; AI flags potentially identifiable images.</div>
+          <input class="input" type="file" id="caseImgs" accept="image/*" multiple>
+          <div id="imgPrev" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"></div>
+          <label id="consentRow" style="display:none;gap:8px;align-items:flex-start;font-size:.78rem;color:var(--ink-2);margin-top:8px;font-weight:400;cursor:pointer"><input type="checkbox" id="imgConsent" style="margin-top:3px;accent-color:var(--brand)"> I confirm the patient has consented to clinical photography and to sharing these images for advisory review.</label>
+        </div>
         <div style="display:flex;gap:10px;justify-content:flex-end">
           <button type="button" class="btn ghost" data-cancel>Cancel</button>
           <button type="submit" class="btn">${ic("i-send")} Submit to MDT</button>
@@ -640,15 +646,24 @@
       </form>`;
     modal("Submit a case to the MDT", body, (bg, close) => {
       $("[data-cancel]", bg).addEventListener("click", close);
+      const imgInput = $("#caseImgs", bg), prev = $("#imgPrev", bg), consentRow = $("#consentRow", bg);
+      imgInput.addEventListener("change", () => {
+        const files = [...imgInput.files].slice(0, 5);
+        prev.innerHTML = files.map(f => `<img src="${URL.createObjectURL(f)}" alt="" style="width:72px;height:72px;object-fit:cover;border-radius:10px;border:1px solid var(--line)">`).join("");
+        consentRow.style.display = files.length ? "flex" : "none";
+      });
       $("#caseForm", bg).addEventListener("submit", e => {
         e.preventDefault();
+        const nImgs = Math.min(imgInput.files.length, 5);
+        if (nImgs && !$("#imgConsent", bg).checked) { toast("Please confirm patient consent for the photos."); return; }
         const fd = new FormData(e.target);
         const spec = fd.get("specialty");
         const responder = (D.panel.find(p => p.specialty === spec) || {}).name;
         const id = "C-" + (240 + state.cases.length);
         state.cases.unshift({
           id, title: fd.get("title"), specialty: spec, submitted: today(),
-          status: "Awaiting panel", responder, summary: fd.get("summary"), response: null
+          status: "Awaiting panel", responder, summary: fd.get("summary"), response: null,
+          photos: nImgs || undefined
         });
         save(); buildSidebar();
         close();
