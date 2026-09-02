@@ -127,6 +127,23 @@
   .fcard p{color:var(--muted);font-size:.9rem;font-weight:300}
   @media(max-width:760px){.feat{grid-template-columns:1fr}}
 
+  /* prices */
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  .pcard{border:1px solid var(--line);border-radius:20px;padding:34px 34px 30px;background:#fff}
+  .pcard .cat{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .pcard .cat .ic{width:40px;height:40px;border-radius:11px;background:var(--rose-soft);color:var(--rose-deep);display:grid;place-items:center;flex:0 0 40px}
+  .pcard .cat .ic svg{width:20px;height:20px}
+  .pcard .cat h3{font-size:1.55rem;font-weight:600}
+  .prow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-top:1px solid var(--line)}
+  .prow:first-of-type{border-top:none}
+  .prow .nm{font-size:1rem;color:var(--ink);font-weight:400}
+  .prow .nm small{display:block;font-size:.82rem;color:var(--muted);font-weight:300;margin-top:2px}
+  .prow .pr{font-family:var(--display);font-size:1.32rem;font-weight:600;color:var(--rose-deep);white-space:nowrap}
+  .prow .pr span{font-size:.8rem;color:var(--muted);font-family:var(--body);font-weight:300}
+  .price-note{margin-top:30px;font-size:.9rem;color:var(--ink-2);font-weight:300;max-width:760px;line-height:1.6;text-align:center;margin-left:auto;margin-right:auto}
+  .price-note b{font-weight:500;color:var(--ink)}
+  @media(max-width:760px){.price-grid{grid-template-columns:1fr}.pcard{padding:28px 26px}}
+
   /* about */
   .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
   .about-img .frame{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(160deg,var(--rose-soft),var(--blush));display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 56px rgba(183,110,121,.18)}
@@ -197,6 +214,7 @@
   <div class="nlinks">
     <a href="#services">Services</a>
     <a href="#treatments">Treatments</a>
+    <a href="#prices">Prices</a>
     <a href="#about">Dr Aya</a>
     <a href="#process">How it works</a>
     <a href="#book" class="btn">Book<span class="full">&nbsp;a consultation</span></a>
@@ -311,6 +329,69 @@
         <p>Tailored medical skincare and routines that actually suit your skin.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kick">Treatment prices</span>
+      <h2>Clear, honest pricing</h2>
+      <p>Guide prices for our aesthetic menu — every treatment is performed personally by Dr Aya and confirmed at your consultation. No hidden fees, no pressure.</p>
+    </div>
+    <div class="price-grid">
+
+      <div class="pcard rv">
+        <div class="cat">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-7 15-7 18 0-3 7-15 7-18 0z"/><circle cx="12" cy="12" r="2.5"/></svg></span>
+          <h3>Injectables</h3>
+        </div>
+        <div class="prow"><span class="nm">Anti-wrinkle — 1 area</span><span class="pr">£199</span></div>
+        <div class="prow"><span class="nm">Anti-wrinkle — 2 areas</span><span class="pr">£259</span></div>
+        <div class="prow"><span class="nm">Anti-wrinkle — 3 areas</span><span class="pr">£299</span></div>
+        <div class="prow"><span class="nm">Dermal filler<small>per area / ml</small></span><span class="pr">from £275</span></div>
+        <div class="prow"><span class="nm">Lip enhancement</span><span class="pr">from £245</span></div>
+        <div class="prow"><span class="nm">Fat-dissolving injections<small>Aqualyx, per session</small></span><span class="pr">from £250</span></div>
+      </div>
+
+      <div class="pcard rv">
+        <div class="cat">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21c-2.5 0-4-2-4-4 0-3 4-5 4-9a5 5 0 0 1 10 0c0 4 4 6 4 9 0 2-1.5 4-4 4z"/></svg></span>
+          <h3>Skin Boosters &amp; Regeneration</h3>
+        </div>
+        <div class="prow"><span class="nm">Profhilo — single</span><span class="pr">£280</span></div>
+        <div class="prow"><span class="nm">Profhilo — course of 2</span><span class="pr">£520</span></div>
+        <div class="prow"><span class="nm">Polynucleotides — single</span><span class="pr">£250</span></div>
+        <div class="prow"><span class="nm">Polynucleotides — course of 3</span><span class="pr">£650</span></div>
+        <div class="prow"><span class="nm">Skin booster / mesotherapy</span><span class="pr">from £220</span></div>
+      </div>
+
+      <div class="pcard rv">
+        <div class="cat">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6 6 .5-4.5 4 1.4 6L12 15.5 6.6 18.5 8 12.5 3.5 8.5l6-.5z"/></svg></span>
+          <h3>Skin Treatments</h3>
+        </div>
+        <div class="prow"><span class="nm">Microneedling — single</span><span class="pr">£160</span></div>
+        <div class="prow"><span class="nm">Microneedling — course of 3</span><span class="pr">£420</span></div>
+        <div class="prow"><span class="nm">Chemical peel<small>per session</small></span><span class="pr">from £150</span></div>
+        <div class="prow"><span class="nm">Chemical peel — course of 3</span><span class="pr">£390</span></div>
+        <div class="prow"><span class="nm">Bespoke facial</span><span class="pr">from £95</span></div>
+        <div class="prow"><span class="nm">LED light therapy</span><span class="pr">from £45</span></div>
+      </div>
+
+      <div class="pcard rv">
+        <div class="cat">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg></span>
+          <h3>Consultations</h3>
+        </div>
+        <div class="prow"><span class="nm">Aesthetic consultation<small>redeemable against treatment</small></span><span class="pr">£50</span></div>
+        <div class="prow"><span class="nm">Follow-up &amp; review</span><span class="pr">Complimentary</span></div>
+        <div class="prow"><span class="nm">Bespoke treatment plan</span><span class="pr">Included</span></div>
+      </div>
+
+    </div>
+    <p class="price-note rv"><b>All injectable treatments include a face-to-face consultation with Dr Aya</b> and follow a medical assessment, as they involve prescription-only medicines. Final prices depend on the areas treated and the products used, and are confirmed at your consultation. Course prices are payable upfront.</p>
   </div>
 </section>
 
